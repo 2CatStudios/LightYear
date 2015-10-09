@@ -14,6 +14,8 @@
 		7B6B1DC81BC80718005C483E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B6B1DC61BC80718005C483E /* Main.storyboard */; };
 		7B6B1DD31BC80718005C483E /* Light_YearTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B6B1DD21BC80718005C483E /* Light_YearTests.m */; };
 		7B6B1DDE1BC80718005C483E /* Light_YearUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B6B1DDD1BC80718005C483E /* Light_YearUITests.m */; };
+		7B6B1DEF1BC80AAC005C483E /* MainWindow.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7B6B1DEE1BC80AAC005C483E /* MainWindow.mm */; settings = {ASSET_TAGS = (); }; };
+		7B6B1DF21BC80B96005C483E /* ChangeLabelTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B6B1DF01BC80B96005C483E /* ChangeLabelTest.cpp */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,11 @@
 		7B6B1DD91BC80718005C483E /* Light-YearUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Light-YearUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B6B1DDD1BC80718005C483E /* Light_YearUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Light_YearUITests.m; sourceTree = "<group>"; };
 		7B6B1DDF1BC80718005C483E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7B6B1DED1BC80AAC005C483E /* MainWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainWindow.h; sourceTree = "<group>"; };
+		7B6B1DEE1BC80AAC005C483E /* MainWindow.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MainWindow.mm; sourceTree = "<group>"; };
+		7B6B1DF01BC80B96005C483E /* ChangeLabelTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ChangeLabelTest.cpp; path = CPP/ChangeLabelTest.cpp; sourceTree = "<group>"; };
+		7B6B1DF11BC80B96005C483E /* ChangeLabelTest.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ChangeLabelTest.hpp; path = CPP/ChangeLabelTest.hpp; sourceTree = "<group>"; };
+		7B6B1DF31BC80D42005C483E /* MainWindow_CInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainWindow_CInterface.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +106,8 @@
 		7B6B1DBA1BC80718005C483E /* Light-Year */ = {
 			isa = PBXGroup;
 			children = (
-				7B6B1DBB1BC80718005C483E /* AppDelegate.h */,
-				7B6B1DBC1BC80718005C483E /* AppDelegate.m */,
-				7B6B1DC11BC80718005C483E /* ViewController.h */,
-				7B6B1DC21BC80718005C483E /* ViewController.m */,
+				7B6B1DEC1BC80A6F005C483E /* C++ */,
+				7B6B1DEB1BC80A63005C483E /* ObjecctiveC */,
 				7B6B1DC41BC80718005C483E /* Assets.xcassets */,
 				7B6B1DC61BC80718005C483E /* Main.storyboard */,
 				7B6B1DC91BC80718005C483E /* Info.plist */,
@@ -135,6 +140,29 @@
 				7B6B1DDF1BC80718005C483E /* Info.plist */,
 			);
 			path = "Light-YearUITests";
+			sourceTree = "<group>";
+		};
+		7B6B1DEB1BC80A63005C483E /* ObjecctiveC */ = {
+			isa = PBXGroup;
+			children = (
+				7B6B1DBB1BC80718005C483E /* AppDelegate.h */,
+				7B6B1DBC1BC80718005C483E /* AppDelegate.m */,
+				7B6B1DC11BC80718005C483E /* ViewController.h */,
+				7B6B1DC21BC80718005C483E /* ViewController.m */,
+				7B6B1DED1BC80AAC005C483E /* MainWindow.h */,
+				7B6B1DEE1BC80AAC005C483E /* MainWindow.mm */,
+				7B6B1DF31BC80D42005C483E /* MainWindow_CInterface.h */,
+			);
+			name = ObjecctiveC;
+			sourceTree = "<group>";
+		};
+		7B6B1DEC1BC80A6F005C483E /* C++ */ = {
+			isa = PBXGroup;
+			children = (
+				7B6B1DF01BC80B96005C483E /* ChangeLabelTest.cpp */,
+				7B6B1DF11BC80B96005C483E /* ChangeLabelTest.hpp */,
+			);
+			name = "C++";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,6 +295,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B6B1DEF1BC80AAC005C483E /* MainWindow.mm in Sources */,
+				7B6B1DF21BC80B96005C483E /* ChangeLabelTest.cpp in Sources */,
 				7B6B1DC31BC80718005C483E /* ViewController.m in Sources */,
 				7B6B1DC01BC80718005C483E /* main.m in Sources */,
 				7B6B1DBD1BC80718005C483E /* AppDelegate.m in Sources */,
@@ -492,6 +522,7 @@
 				7B6B1DE41BC80718005C483E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7B6B1DE51BC80718005C483E /* Build configuration list for PBXNativeTarget "Light-YearTests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +531,7 @@
 				7B6B1DE71BC80718005C483E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7B6B1DE81BC80718005C483E /* Build configuration list for PBXNativeTarget "Light-YearUITests" */ = {
 			isa = XCConfigurationList;
@@ -508,6 +540,7 @@
 				7B6B1DEA1BC80718005C483E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
