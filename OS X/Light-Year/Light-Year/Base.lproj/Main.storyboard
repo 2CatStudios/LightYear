@@ -670,7 +670,7 @@
         <scene sceneID="hIz-AP-VOD">
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" sceneMemberID="viewController">
-                    <view key="view" id="m2S-Jp-Qdl" customClass="MainWindow">
+                    <view key="view" id="m2S-Jp-Qdl" customClass="MainView">
                         <rect key="frame" x="0.0" y="0.0" width="720" height="405"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
@@ -683,10 +683,21 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JB6-2F-1PY">
+                                <rect key="frame" x="318" y="153" width="85" height="32"/>
+                                <animations/>
+                                <buttonCell key="cell" type="push" title="Update" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="eKj-tl-t2E">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="updateButton:" target="m2S-Jp-Qdl" id="2fO-tU-pUf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <connections>
-                            <outlet property="centerLabel" destination="PNg-4t-hpH" id="pKF-zU-qBN"/>
+                            <outlet property="centerLabel" destination="PNg-4t-hpH" id="WoL-X7-fUJ"/>
                         </connections>
                     </view>
                 </viewController>
