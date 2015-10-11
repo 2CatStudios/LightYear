@@ -7,6 +7,8 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "UpdateStringLiaison.h"
+
 
 @interface MainView : NSView
 

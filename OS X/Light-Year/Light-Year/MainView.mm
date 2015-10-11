@@ -17,7 +17,7 @@
 
 - (IBAction)updateButton:(id)sender {
 
-	
+	[[self centerLabel] setStringValue:[UpdateStringLiaison getNewString]];
 
 	NSLog(@"Update Pressed");
 }

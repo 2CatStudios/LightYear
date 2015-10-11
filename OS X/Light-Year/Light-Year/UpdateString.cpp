@@ -6,12 +6,13 @@
 //  Copyright © 2015 2Cat Studios. All rights reserved.
 //
 
-#include "UpdateString.hpp"
+#include "UpdateString.h"
 
-std::string NewString::getNewText()
+const char* baseString = "%s's Hellos to you, World!";
+
+const char* newStringFromInput(const char* stringInput)
 {
-
-	newText = "Foo/Bar";
-
-	return newText;
+	char* concatenedString = new char[strlen(baseString) + strlen(stringInput)];
+	sprintf(concatenedString, baseString, stringInput);
+	return concatenedString;
 }
