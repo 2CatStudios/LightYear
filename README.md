@@ -1,6 +1,6 @@
 # Light Year
 A hybrid IF engine, lightyears ahead.
 
-[Marketing/LightYear - Title - Catch.jpg](https://github.com/AVividLight/Light-Year/raw/master/Marketing/LightYear%20-%20Title%20-%20Catch.jpg)
+![Cannot Find Image](/Marketing/LightYear%20-%20Title%20-%20Catch.jpg "Marketing/LightYear - Title - Catch.jpg")
 
 Text
