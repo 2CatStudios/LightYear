@@ -1,0 +1,1 @@
+This is the latest *STABLE* engine/API, copy from this into your project (don't link to it), and please don't push directly. Push to a branch, and open a merge/pull request, or send me (Michael) the source directly.
