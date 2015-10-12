@@ -25,9 +25,9 @@ We're working on a new class of Interactive Fiction engine– something modern, 
 
 <!--
 It would seem that fate is not on your side, however, as without warning a loud crack echos through the ancient halls. You fail to stifle a cry, feeling frayed strands tear across your back, leaving a throbbing trail in their wake. Panicked, you stumble forwards, wishing only to escape the reach of your mysterous adversary.
--->
 
 `Enter Command`
+-->
 
 ---
 
@@ -39,4 +39,5 @@ Or, maybe, you're playing the role of a space captain, with a whole fleet at you
 
 Interactive fiction isn't about controlling a rogue mage in their magical tower, nor is it about making tough moral choices on the bridge of an A3-12 Falcon-class command ship, it's about exploring a new space, realizing yourself there, and seeing what kind of tale the author has in mind for you.
 
+---
 (CONCLUDE WITH EXPLINATION OF *ANYONE* CREATING IF, AND THE ENDLESS POSSIBLE UNIQUE STORIES)
