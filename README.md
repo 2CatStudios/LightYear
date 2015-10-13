@@ -13,8 +13,8 @@ We're working on a new class of interactive fiction engine– something modern, 
 	* a. [Example](#a-example)
 	* b. [Explination](#b-explination)
 	* c. [Advantages](#c-advantages)
-2. [Why You Should Play with Light Year](#2-why-you-should-play-with-light-year)
-3. [Why You Should Develop with Light Year](#3-why-you-should-develop-with-light-year)
+2. [Play with Light Year](#2-play-with-light-year)
+3. [Develop using Light Year](#3-develop-using-light-year)
 
 
 ---
@@ -82,10 +82,10 @@ We're being ambiguous about what can be created here on purpose. Sure, you can p
 
 
 ---
-#2. Why You Should Play with Light Year
+#2. Play with Light Year
 Fill this out, Michael.
 
 
 ---
-#3. Why You Should Develop with Light Year
+#3. Develop using Light Year
 Fill this out, Michael.
