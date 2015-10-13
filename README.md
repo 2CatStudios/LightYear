@@ -11,6 +11,8 @@ We're working on a new class of interactive fiction engine– something modern, 
 a) Example
 ---
 
+• • •
+
 `go down`
 
 *Step after step, you decend the cramped spiral-stairway, hearing only your solid leather boots striking the hard granite steps, and seeing little more. If it weren't for the moss occasionally felt along the cold, dull stone walls, it would seem like you're somehow stuck in a loop of the same left turn, and after ten minutes of this, a break might be nice.*
