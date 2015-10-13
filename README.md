@@ -4,12 +4,21 @@
 # Light Year
 A hybrid IF engine, lightyears ahead.
 
-We're working on a new class of interactive fiction engine– something modern, sleek, and empowering. Every human being is creative; everyone can tell stories, and technology should enhance their vision, not get in the way. The Light Year engine makes it easy for anyone to create an immersive, enveloping interactive fiction, and provides a comprehensive API for expirenced developers to create something truly unique.
+We're working on a new class of interactive fiction engine– something modern, sleek, and empowering. Every human being is creative; everyone can tell stories, and technology should enhance their vision, not get in the way. The Light Year engine makes it very easy for *anyone* to create an immersive, enveloping interactive fiction, and provides a comprehensive API for expirenced developers to create something truly unique.
 
 ---
-#1) What is 'IF'?
-a) Example
----
+#0 // Table of Contents
+1. [What is 'IF'](#1// What is 'IF'?)
+	* 1a [Example]()
+	* 1b [Explination]()
+	* 1c [Advantages]()
+2. [Why You Should Play with Light Year](#2 // Why You Should Play with Light Year)
+3. [Why You Should Develop with Light Year](#3 // Why You Should Develop with Light Year)
+
+
+#1 // What is 'IF'?
+###a. Example
+
 
 • • •
 
@@ -51,7 +60,7 @@ a) Example
 
 `*Enter Command*`
 
-b) Explination
+###b. Explination
 ---
 
 You get it now, right? No? Okay, here's the gist: interactive fiction is a story in which you are an active participant. In traditional cases, short passages of text will precede a text box. After reading, you'd decide on an action, type it, then repeat the cycle. How do you know what to type, you ask? Anything. Type anything. Really. What separates IF from other text-based entertainment is that as the reader, you get to define the story.
@@ -62,9 +71,13 @@ Or, maybe, you're a space captain, with a whole fleet at your disposal. However,
 
 Interactive fiction isn't about controlling a rogue mage in their magical tower, nor is it about making tough moral choices on the bridge of an A3-12 Falcon-class command ship, it's about exploring a new space, realizing yourself there, and seeing what kind of tale the author has in mind for you, and how you'll make it your own.
 
-c) Advantages
+###c. Advantages
 ---
 
 The best thing about IF as a genre, and Light Year as an engine, is that it allows anyone to craft a story, a game. No programming knowledge, modeling expertise, or level-design skills are required, and the turn around time is nearly immediate. Absolutely everyone has indulged their creativity at one time or another, pretending they were in a different situation, making up stuff as they went along. Developing an IF is just like that, although you might want to put a little planning into it.
 
 We're being ambiguous about what can be created here on purpose. Sure, you can produce a dungeon to explore, replete with deviously trapped containers and trip wires at every other passage, or a a fully decked-out spaceship with hundreds of rooms, but you're not limited to those. Want to write a mystery about some little town near Arizona, USA, in which aliens have crashed? A horror adventure where the player is trapped in a snowed-in cabin? Or, how about a school drama? Maybe three of them? Light Year gives you the tools to create whatever you can dream up, empowering you to let your imagination loose, share your games with the world, and expirence new and unique situations, which are only possible through the medium of interactive fiction.
+
+#2 // Why You Should Play with Light Year
+
+#3 // Why You Should Develop with Light Year
