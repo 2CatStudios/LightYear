@@ -4,30 +4,48 @@
 # Light Year
 A hybrid IF engine, lightyears ahead.
 
-We're working on a new class of Interactive Fiction engine– something modern, sleek, and empowering. Every human being is creative; everyone can tell stories, and technology should enhance their vision, not get in the way. The Light Year engine makes it easy for anyone to create an immersive, enveloping interactive fiction, and provides a comprehensive API for expirenced developers to create something truly unique, and unexpected.
+We're working on a new class of interactive fiction engine– something modern, sleek, and empowering. Every human being is creative; everyone can tell stories, and technology should enhance their vision, not get in the way. The Light Year engine makes it easy for anyone to create an immersive, enveloping interactive fiction, and provides a comprehensive API for expirenced developers to create something truly unique.
 
 ---
 #What is 'IF'?
 
+`go down`
+
 *Step after step, you decend the cramped spiral-stairway, hearing only your solid leather boots striking the hard granite steps, and seeing little more. If it weren't for the moss occasionally felt along the cold, dull stone walls, it would seem like you're somehow stuck in a loop of the same left turn, and after ten minutes of this, a break might be nice.*
 
-*As if your wish is being granted, the stairway comes to an abrupt end, leaving you with your nose pressed firmly against an old wooden door. Suddenly, you hear a deep voice on the other side, and, startled, you pull your head back. Curiosity again gets a hold of you, though, and you stoop closer to the keyhole, hoping to make out the words.*
+`go down`
+
+*How much deeper could this stairway lead? After, what, another eight laps, you find yourself wishing to be at the bottom, whatever it takes. As if your wish is being granted, the stairway suddenly ends, leaving you with your nose pressed firmly against an old wooden door.*
+
+`examine door`
+
+*An exquisite show of craftsmanship, constructed with very old lumber, and finely brandished with an overly gaudy handle and key hole. You wonder if the door was made in these depths, or carried down. You'd hate to think of what happened to the porter, in the case of the latter.*
+
+`open door`
+
+*Suddenly, you hear a deep voice on the other side, and, startled, you pull your hand back. Curiosity gets a hold of you, and you stoop closer to the keyhole, hoping to make out the words.*
+
+`wait`
 
 *"Yes, but what is IF?"*
 
-*After a few moments of silence, the question is vocalized again; "What is IF?!". This time, it's said with more emotion. Eventually, a sigh can be heard, although higher in pitch. There are two people beyond this door? I was told this crypt had been abandoned.*
+*After a few moments of silence, the question is vocalized again; "What is IF?!". This time, it's said with more emotion. Eventually, a sigh can be heard, although higher in pitch. There are two people beyond this door? I was told that no one had been down here in decades.*
 
 *"How simple do I need to make this?", the higher-voice asks. "IF, like interactive fiction."*
 
 *"So, you've said, but this doesn't make any sense. Fiction isn't something to be meddled with, surely, you're playing with the arcane!"*
 
-*"Alright", replies the soprano voice, clearly more agitated than when you first heard it. "Listen well, I shan't explain again."*
+*"Alright", replies the soprano voice, clearly more agitated than when you first heard it. "Listen well, I shan't explain again".*
 
-<!--
-It would seem that fate is not on your side, however, as without warning a loud crack echos through the ancient halls. You fail to stifle a cry, feeling frayed strands tear across your back, leaving a throbbing trail in their wake. Panicked, you stumble forwards, wishing only to escape the reach of your mysterous adversary.
+*However, in place of an explination, the sound of hardened leather rapping on stone can be heard in quick succession, followed by ambient metal clatter.*
 
-`Enter Command`
--->
+`look through keyhole`
+
+*Your curious nature takes over once again, and you shift slightly, doing your best to keep silent while peering through the keyhole.*
+
+*It would seem that fate is not on your side, however, as without warning a loud crack echos through the ancient halls. You fail to stifle a cry, feeling frayed strands tear across your back, leaving a throbbing trail in their wake. Panicked, you stumble forwards, tossing the door open in your panic, wishing only to escape the reach of your mysterous adversary.*
+
+`*Enter Command*`
 
 ---
 
