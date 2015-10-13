@@ -8,12 +8,12 @@ We're working on a new class of interactive fiction engine– something modern, 
 
 ---
 #0. Table of Contents
-1. [What is 'IF'](#1-What-is-IF)
-	* 1a [Example](###a-Example)
-	* 1b [Explination](###b-Explination)
-	* 1c [Advantages](###c-Advantages)
-2. [Why You Should Play with Light Year](#2-Why-You-Should-Play-with-Light-Year)
-3. [Why You Should Develop with Light Year](#3-Why-You-Should-Develop-with-Light-Year)
+1. [What is 'IF'](#1-what-is-if)
+	* 1a [Example](###a-example)
+	* 1b [Explination](###b-explination)
+	* 1c [Advantages](###c-advantages)
+2. [Why You Should Play with Light Year](#2-why-you-should-play-with-light-year)
+3. [Why You Should Develop with Light Year](#3-why-you-should-develop-with-light-year)
 
 
 #1. What is IF?
