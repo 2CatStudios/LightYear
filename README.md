@@ -7,16 +7,16 @@ A hybrid IF engine, lightyears ahead.
 We're working on a new class of interactive fiction engine– something modern, sleek, and empowering. Every human being is creative; everyone can tell stories, and technology should enhance their vision, not get in the way. The Light Year engine makes it very easy for *anyone* to create an immersive, enveloping interactive fiction, and provides a comprehensive API for expirenced developers to create something truly unique.
 
 ---
-#0 // Table of Contents
-1. [What is 'IF'](#1// What is 'IF'?)
-	* 1a [Example]()
-	* 1b [Explination]()
-	* 1c [Advantages]()
-2. [Why You Should Play with Light Year](#2 // Why You Should Play with Light Year)
-3. [Why You Should Develop with Light Year](#3 // Why You Should Develop with Light Year)
+#0. Table of Contents
+1. [What is 'IF'](#1. What is IF?)
+	* 1a [Example](###a. Example)
+	* 1b [Explination](###b. Explination)
+	* 1c [Advantages](###c. Advantages)
+2. [Why You Should Play with Light Year](#2. Why You Should Play with Light Year)
+3. [Why You Should Develop with Light Year](#3. Why You Should Develop with Light Year)
 
 
-#1 // What is 'IF'?
+#1. What is IF?
 ###a. Example
 
 
@@ -78,6 +78,8 @@ The best thing about IF as a genre, and Light Year as an engine, is that it allo
 
 We're being ambiguous about what can be created here on purpose. Sure, you can produce a dungeon to explore, replete with deviously trapped containers and trip wires at every other passage, or a a fully decked-out spaceship with hundreds of rooms, but you're not limited to those. Want to write a mystery about some little town near Arizona, USA, in which aliens have crashed? A horror adventure where the player is trapped in a snowed-in cabin? Or, how about a school drama? Maybe three of them? Light Year gives you the tools to create whatever you can dream up, empowering you to let your imagination loose, share your games with the world, and expirence new and unique situations, which are only possible through the medium of interactive fiction.
 
-#2 // Why You Should Play with Light Year
+#2. Why You Should Play with Light Year
+Fill this out, Michael.
 
-#3 // Why You Should Develop with Light Year
+#3. Why You Should Develop with Light Year
+Fill this out, Michael.
