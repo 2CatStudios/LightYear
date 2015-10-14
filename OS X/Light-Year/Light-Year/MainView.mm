@@ -15,11 +15,9 @@
 
 }
 
-- (IBAction)updateButton:(id)sender {
+- (IBAction)buttonBuildVersion:(id)sender {
 
-	[[self centerLabel] setStringValue:[UpdateStringLiaison getNewString]];
-
-	NSLog(@"Update Pressed");
+	[[self labelBuildVersion] setStringValue:[NSString stringWithUTF8String:buildVersion()]];
 }
 
 @end

@@ -8,11 +8,17 @@
 
 #include "UpdateString.h"
 
-const char* baseString = "%s's Hellos to you, World!";
+/*const char* baseString = "%s's Hellos to you, World!";
 
 const char* newStringFromInput(const char* stringInput)
 {
 	char* concatenedString = new char[strlen(baseString) + strlen(stringInput)];
 	sprintf(concatenedString, baseString, stringInput);
 	return concatenedString;
+}*/
+
+const char* buildVersion ()
+{
+
+	return engineBuildVersion();
 }

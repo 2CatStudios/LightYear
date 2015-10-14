@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7B0D45D51BCA12D400D51A3C /* UpdateStringLiaison.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7B0D45D41BCA12D400D51A3C /* UpdateStringLiaison.mm */; };
+		7B5136271BCDF740007C8B46 /* MetaInformation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B5136251BCDF740007C8B46 /* MetaInformation.cpp */; };
 		7B6B1DC01BC80718005C483E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B6B1DBF1BC80718005C483E /* main.m */; };
 		7B6B1DC51BC80718005C483E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B6B1DC41BC80718005C483E /* Assets.xcassets */; };
 		7B6B1DC81BC80718005C483E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B6B1DC61BC80718005C483E /* Main.storyboard */; };
@@ -37,8 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7B0D45D31BCA12D400D51A3C /* UpdateStringLiaison.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateStringLiaison.h; sourceTree = "<group>"; };
-		7B0D45D41BCA12D400D51A3C /* UpdateStringLiaison.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = UpdateStringLiaison.mm; sourceTree = "<group>"; };
+		7B5136251BCDF740007C8B46 /* MetaInformation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MetaInformation.cpp; sourceTree = "<group>"; };
+		7B5136261BCDF740007C8B46 /* MetaInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetaInformation.h; sourceTree = "<group>"; };
 		7B6B1DB81BC80718005C483E /* Light-Year.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Light-Year.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B6B1DBF1BC80718005C483E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7B6B1DC41BC80718005C483E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -150,8 +150,6 @@
 			children = (
 				7B7D08061BC8A58B0029CE85 /* AppDelegate.h */,
 				7B7D08071BC8A58B0029CE85 /* AppDelegate.m */,
-				7B7D08081BC8A58B0029CE85 /* MainView.h */,
-				7B7D08091BC8A58B0029CE85 /* MainView.mm */,
 				7B7D080C1BC8A58B0029CE85 /* ViewController.h */,
 				7B7D080D1BC8A58B0029CE85 /* ViewController.m */,
 			);
@@ -163,6 +161,8 @@
 			children = (
 				7B7D081A1BC8A66A0029CE85 /* UpdateString.cpp */,
 				7B7D081B1BC8A66A0029CE85 /* UpdateString.h */,
+				7B5136251BCDF740007C8B46 /* MetaInformation.cpp */,
+				7B5136261BCDF740007C8B46 /* MetaInformation.h */,
 			);
 			name = "C++";
 			sourceTree = "<group>";
@@ -170,8 +170,8 @@
 		7B9A9FD31BCA111700DD6CD5 /* ObjectiveC++ */ = {
 			isa = PBXGroup;
 			children = (
-				7B0D45D31BCA12D400D51A3C /* UpdateStringLiaison.h */,
-				7B0D45D41BCA12D400D51A3C /* UpdateStringLiaison.mm */,
+				7B7D08081BC8A58B0029CE85 /* MainView.h */,
+				7B7D08091BC8A58B0029CE85 /* MainView.mm */,
 			);
 			name = "ObjectiveC++";
 			sourceTree = "<group>";
@@ -309,9 +309,9 @@
 				7B7D080E1BC8A58B0029CE85 /* AppDelegate.m in Sources */,
 				7B6B1DC01BC80718005C483E /* main.m in Sources */,
 				7B7D080F1BC8A58B0029CE85 /* MainView.mm in Sources */,
-				7B0D45D51BCA12D400D51A3C /* UpdateStringLiaison.mm in Sources */,
 				7B7D08111BC8A58B0029CE85 /* ViewController.m in Sources */,
 				7B7D081C1BC8A66A0029CE85 /* UpdateString.cpp in Sources */,
+				7B5136271BCDF740007C8B46 /* MetaInformation.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

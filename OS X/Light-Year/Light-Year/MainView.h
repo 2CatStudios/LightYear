@@ -7,13 +7,12 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "UpdateStringLiaison.h"
+#import "UpdateString.h"
 
 
 @interface MainView : NSView
 
-@property (strong) IBOutlet NSTextField *centerLabel;
-
-- (IBAction)updateButton:(id)sender;
+@property (strong) IBOutlet NSTextField *labelBuildVersion;
+- (IBAction)buttonBuildVersion:(id)sender;
 
 @end
