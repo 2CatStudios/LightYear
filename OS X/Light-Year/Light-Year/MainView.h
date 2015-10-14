@@ -13,6 +13,5 @@
 @interface MainView : NSView
 
 @property (strong) IBOutlet NSTextField *labelBuildVersion;
-- (IBAction)buttonBuildVersion:(id)sender;
 
 @end

@@ -13,11 +13,7 @@
 - (void)drawRect:(NSRect)dirtyRect {
     [super drawRect:dirtyRect];
 
-}
-
-- (IBAction)buttonBuildVersion:(id)sender {
-
-	[[self labelBuildVersion] setStringValue:[NSString stringWithUTF8String:buildVersion()]];
+	[[self labelBuildVersion] setStringValue:[NSString stringWithFormat:@"Build %@", [NSString stringWithUTF8String:buildVersion()]]];
 }
 
 @end
