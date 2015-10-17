@@ -1,0 +1,9 @@
+C:\Users\Nick\Documents\GitHub\Light-Year\Windows\Light-Year\Light-Year\obj\Debug\Light_Year.MainView.resources
+C:\Users\Nick\Documents\GitHub\Light-Year\Windows\Light-Year\Light-Year\obj\Debug\Light_Year.Properties.Resources.resources
+C:\Users\Nick\Documents\GitHub\Light-Year\Windows\Light-Year\Light-Year\obj\Debug\Light-Year.csproj.GenerateResource.Cache
+C:\Users\Nick\Documents\GitHub\Light-Year\Windows\Light-Year\Light-Year\bin\Debug\Light-Year.exe.config
+C:\Users\Nick\Documents\GitHub\Light-Year\Windows\Light-Year\Light-Year\bin\Debug\Light-Year.exe
+C:\Users\Nick\Documents\GitHub\Light-Year\Windows\Light-Year\Light-Year\bin\Debug\Light-Year.pdb
+C:\Users\Nick\Documents\GitHub\Light-Year\Windows\Light-Year\Light-Year\obj\Debug\Light-Year.exe
+C:\Users\Nick\Documents\GitHub\Light-Year\Windows\Light-Year\Light-Year\obj\Debug\Light-Year.pdb
+C:\Users\Nick\Documents\GitHub\Light-Year\Windows\Light-Year\Light-Year\obj\Debug\Light-Year.csprojResolveAssemblyReference.cache
