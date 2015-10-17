@@ -10,7 +10,10 @@
 #define UpdateString_h
 
 #include <iostream>
+#include "MetaInformation.h"
 
-const char* newStringFromInput(const char* myString);
+//const char* newStringFromInput(const char* myString);
+
+const char* buildVersion ();
 
 #endif /* UpdateString_h */

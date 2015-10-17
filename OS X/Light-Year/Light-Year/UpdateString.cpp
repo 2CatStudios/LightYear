@@ -20,5 +20,5 @@ const char* newStringFromInput(const char* stringInput)
 const char* buildVersion ()
 {
 
-	return engineBuildVersion();
+	return clientBuildVersion();
 }
