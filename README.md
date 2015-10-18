@@ -26,7 +26,7 @@ We're working on a new class of interactive fiction engine– something modern, 
 
 `go down`
 
-*Step after step, you decend the cramped spiral-stairway, hearing only your solid leather boots striking the hard granite steps, and seeing little more. If it weren't for the moss occasionally felt along the cold, dull stone walls, it would seem like you're somehow stuck in a loop of the same left turn, and after ten minutes of this, a break might be nice.*
+*Step after step, you descend the cramped spiral-stairway, hearing only your solid leather boots striking the hard granite steps, and seeing little more. If it weren't for the moss occasionally felt along the cold, dull stone walls, it would seem like you're somehow stuck in a loop of the same left turn, and after ten minutes of this, a break might be nice.*
 
 `go down`
 
@@ -52,13 +52,13 @@ We're working on a new class of interactive fiction engine– something modern, 
 
 *"Alright", replies the soprano voice, clearly more agitated than when you first heard it. "Listen well, I shan't explain again".*
 
-*However, in place of an explination, the sound of hardened leather rapping on stone can be heard in quick succession, followed by ambient metal clatter.*
+*However, in place of an explanation, the sound of hardened leather rapping on stone can be heard in quick succession, followed by ambient metal clatter.*
 
-`look through keyhole`
+`look in keyhole`
 
 *Your curious nature takes over once again, and you shift slightly, doing your best to keep silent while peering through the keyhole.*
 
-*It would seem that fate is not on your side, however, as without warning a loud crack echos through the ancient halls. You fail to stifle a cry, feeling frayed strands tear across your back, leaving a throbbing trail in their wake. Panicked, you stumble forwards, tossing the door open in your panic, wishing only to escape the reach of your mysterous adversary.*
+*It would seem that fate is not on your side, however, as without warning a loud crack echoes through the ancient halls. You fail to stifle a cry, feeling frayed strands tear across your back, leaving a throbbing trail in their wake. Panicked, you stumble forwards, tossing the door open in your panic, wishing only to escape the reach of your mysterious adversary.*
 
 `*Enter Command*`
 
