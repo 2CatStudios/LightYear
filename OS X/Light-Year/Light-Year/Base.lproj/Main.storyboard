@@ -11,9 +11,9 @@
                 <application id="hnw-xV-0zn" sceneMemberID="viewController">
                     <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
                         <items>
-                            <menuItem title="Light-Year" id="1Xt-HY-uBw">
+                            <menuItem title="Light Year IF" id="1Xt-HY-uBw">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="Light-Year" systemMenu="apple" id="uQy-DD-JDr">
+                                <menu key="submenu" title="Light Year IF" systemMenu="apple" id="uQy-DD-JDr">
                                     <items>
                                         <menuItem title="About Light-Year" id="5kV-Vb-QxS">
                                             <modifierMask key="keyEquivalentModifierMask"/>
@@ -692,8 +692,13 @@
                                     <rect key="frame" x="0.0" y="0.0" width="607" height="691"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
+<<<<<<< Updated upstream
                                         <textView ambiguous="YES" editable="NO" importsGraphics="NO" richText="NO" findStyle="panel" verticallyResizable="YES" id="esW-VP-A8d">
                                             <rect key="frame" x="0.0" y="0.0" width="607" height="714"/>
+=======
+                                        <textView ambiguous="YES" editable="NO" drawsBackground="NO" importsGraphics="NO" richText="NO" verticallyResizable="YES" id="esW-VP-A8d">
+                                            <rect key="frame" x="0.0" y="0.0" width="622" height="1302"/>
+>>>>>>> Stashed changes
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <animations/>
                                             <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -701,16 +706,43 @@
                                             <size key="maxSize" width="625" height="10000000"/>
                                             <attributedString key="textStorage">
                                                 <fragment>
-                                                    <mutableString key="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed sapien quam. Sed dapibus est id enim facilisis, at posuere turpis adipiscing. Quisque sit amet dui dui.
-Duis rhoncus velit nec est condimentum feugiat. Donec aliquam augue nec gravida lobortis. Nunc arcu mi, pretium quis dolor id, iaculis euismod ligula. Donec tincidunt gravida lacus eget lacinia.
-Cras et dui mollis, tempus velit placerat, sodales tellus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque et venenatis sapien. Maecenas sem diam, lacinia in ipsum et, fermentum rutrum lacus.
-Nulla facilisis, arcu ac facilisis tincidunt, tortor est congue ligula, eu adipiscing quam ligula ut purus. Suspendisse at gravida dolor. Vestibulum eget odio in massa luctus imperdiet. Donec consequat orci a diam pellentesque mollis.
-Nulla nec varius dui. Aliquam erat volutpat. Nunc at viverra nisi, id lobortis quam. Aenean hendrerit fermentum nibh nec lobortis.
-Ut sit amet magna orci. Integer sit amet varius ipsum. Ut mattis ullamcorper fermentum. Integer pretium felis sit amet urna volutpat, ac elementum ante interdum.
-Nam auctor eget quam vitae fringilla. Vestibulum quam orci, porttitor in nisl aliquam, placerat gravida ligula. Quisque sed malesuada velit. Proin vulputate velit sed cursus feugiat.
-Mauris scelerisque nulla ut mauris iaculis, a euismod nulla eleifend. Maecenas consequat interdum nibh, at tincidunt justo commodo eget. Pellentesque ut pharetra tellus, eu pulvinar ligula. Duis ac nisl rhoncus, ultrices eros sed, consequat orci.
-Maecenas volutpat lacus vitae arcu semper, a bibendum urna viverra. Suspendisse congue dolor nec commodo volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus commodo vulputate elementum. Nam sed urna non tellus vulputate molestie sit amet at sapien.
-Vivamus massa odio, dignissim ac ante at, euismod dignissim risus. Cras ut blandit lorem. Maecenas nisl quam, cursus nec aliquet facilisis, mattis id augue. Fusce semper odio et gravida interdum.</mutableString>
+                                                    <mutableString key="content">`go down`
+
+*Step after step, you descend the cramped spiral-stairway, hearing only your solid leather boots striking the hard granite steps, and seeing little more. If it weren't for the moss occasionally felt along the cold, dull stone walls, it would seem like you're somehow stuck in a loop of the same left turn, and after ten minutes of this, a break might be nice.*
+
+`go down`
+
+*How much deeper could this stairway lead? After, what, another eight laps, you find yourself wishing to be at the bottom, whatever it takes. As if your wish is being granted, the stairway suddenly ends, leaving you with your nose pressed firmly against an old wooden door.*
+
+`examine door`
+
+*An exquisite show of craftsmanship, constructed with very old lumber, and finely brandished with an overly gaudy handle and key hole. You wonder if the door was made in these depths, or carried down. You'd hate to think of what happened to the porter, in the case of the latter.*
+
+`open door`
+
+*Suddenly, you hear a deep voice on the other side, and, startled, you pull your hand back. Curiosity gets a hold of you, and you stoop closer to the keyhole, hoping to make out the words.*
+
+`wait`
+
+*"Yes, but what is IF?"*
+
+*After a few moments of silence, the question is vocalized again; "What is IF?!". This time, it's said with more emotion. Eventually, a sigh can be heard, although higher in pitch. There are two people beyond this door? I was told that no one had been down here in decades.*
+
+*"How simple do I need to make this?", the higher-voice asks. "IF, like interactive fiction."*
+
+*"So, you've said, but this doesn't make any sense. Fiction isn't something to be meddled with, surely, you're playing with the arcane!"*
+
+*"Alright", replies the soprano voice, clearly more agitated than when you first heard it. "Listen well, I shan't explain again".*
+
+*However, in place of an explanation, the sound of hardened leather rapping on stone can be heard in quick succession, followed by ambient metal clatter.*
+
+`look in keyhole`
+
+*Your curious nature takes over once again, and you shift slightly, doing your best to keep silent while peering through the keyhole.*
+
+*It would seem that fate is not on your side, however, as without warning a loud crack echoes through the ancient halls. You fail to stifle a cry, feeling frayed strands tear across your back, leaving a throbbing trail in their wake. Panicked, you stumble forwards, tossing the door open in your panic, wishing only to escape the reach of your mysterious adversary.*
+
+`*Enter Command*`</mutableString>
                                                     <attributes>
                                                         <font key="NSFont" size="18" name=".AppleSystemUIFont"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
