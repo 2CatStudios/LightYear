@@ -17,6 +17,7 @@
 		7B7D080F1BC8A58B0029CE85 /* MainView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7B7D08091BC8A58B0029CE85 /* MainView.mm */; };
 		7B7D08111BC8A58B0029CE85 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B7D080D1BC8A58B0029CE85 /* ViewController.m */; };
 		7B7D081C1BC8A66A0029CE85 /* UpdateString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B7D081A1BC8A66A0029CE85 /* UpdateString.cpp */; };
+		7BDC5F5D1BD56AF600EE3DAB /* CustomClassStructure.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BDC5F5B1BD56AF600EE3DAB /* CustomClassStructure.cpp */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		7B7D080D1BC8A58B0029CE85 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		7B7D081A1BC8A66A0029CE85 /* UpdateString.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UpdateString.cpp; sourceTree = "<group>"; };
 		7B7D081B1BC8A66A0029CE85 /* UpdateString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateString.h; sourceTree = "<group>"; };
+		7BDC5F5B1BD56AF600EE3DAB /* CustomClassStructure.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CustomClassStructure.cpp; sourceTree = "<group>"; };
+		7BDC5F5C1BD56AF600EE3DAB /* CustomClassStructure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomClassStructure.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +166,8 @@
 				7B7D081B1BC8A66A0029CE85 /* UpdateString.h */,
 				7B5136251BCDF740007C8B46 /* MetaInformation.cpp */,
 				7B5136261BCDF740007C8B46 /* MetaInformation.h */,
+				7BDC5F5B1BD56AF600EE3DAB /* CustomClassStructure.cpp */,
+				7BDC5F5C1BD56AF600EE3DAB /* CustomClassStructure.h */,
 			);
 			name = "C++";
 			sourceTree = "<group>";
@@ -311,6 +316,7 @@
 				7B7D080F1BC8A58B0029CE85 /* MainView.mm in Sources */,
 				7B7D08111BC8A58B0029CE85 /* ViewController.m in Sources */,
 				7B7D081C1BC8A66A0029CE85 /* UpdateString.cpp in Sources */,
+				7BDC5F5D1BD56AF600EE3DAB /* CustomClassStructure.cpp in Sources */,
 				7B5136271BCDF740007C8B46 /* MetaInformation.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
