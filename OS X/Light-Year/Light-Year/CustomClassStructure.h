@@ -11,4 +11,12 @@
 
 #include <stdio.h>
 
+class customClass
+{
+
+	public:
+		char* name;
+		char* uuid;
+};
+
 #endif /* CustomClassStructure_h */
