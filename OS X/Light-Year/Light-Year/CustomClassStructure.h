@@ -10,5 +10,28 @@
 #define CustomClassStructure_h
 
 #include <stdio.h>
+#include <list>
+
+class SimepleString {
+
+public:
+	char* name;
+	char* contents;
+
+private:
+	char* uuid;
+};
+
+
+class CustomClass {
+
+public:
+	char* name;
+
+	std::list<SimepleString*> simpleStrings;
+
+private:
+	char* uuid;
+};
 
 #endif /* CustomClassStructure_h */
