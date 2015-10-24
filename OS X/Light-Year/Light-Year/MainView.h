@@ -14,4 +14,7 @@
 
 @property (strong) IBOutlet NSTextField *labelBuildVersion;
 
+@property (strong) IBOutlet NSScrollView *labelMainContent;
+@property (strong) IBOutlet NSTextField *textFieldInput;
+
 @end
