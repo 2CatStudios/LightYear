@@ -21,7 +21,7 @@ We're working on a new class of interactive fiction engine– something modern, 
 3. [Develop using Light Year](#3-develop-using-light-year)
 	* a. [Streamlined Development](#a-streamlined-development)
 	* b. [Reach New Players](#b-reach-new-players)
-	* c. [Why is Light Year Better than Other IF Engines](c-why-is-light-year-better-than-other-if-engines)
+	* c. [Why is Light Year Better than Other IF Engines](#c-why-is-light-year-better-than-other-if-engines)
 	* d. [Technical Details](#d-technical-details)
 
 
