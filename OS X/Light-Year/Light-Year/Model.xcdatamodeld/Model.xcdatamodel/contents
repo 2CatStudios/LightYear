@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9057" systemVersion="15B42" minimumToolsVersion="Xcode 7.0">
+    <entity name="DeepStairway" parentEntity="Stairway" syncable="YES"/>
+    <entity name="ExampleStory" syncable="YES">
+        <attribute name="author" attributeType="String" defaultValueString="Michael Bethke" syncable="YES"/>
+        <attribute name="crueltyRating" attributeType="Integer 16" minValueString="0" maxValueString="5" defaultValueString="0" syncable="YES"/>
+        <attribute name="genre" attributeType="String" defaultValueString="Sample" syncable="YES"/>
+    </entity>
+    <entity name="Player" parentEntity="ExampleStory" syncable="YES">
+        <attribute name="gender" attributeType="Integer 16" minValueString="0" defaultValueString="1" syncable="YES"/>
+        <attribute name="name" attributeType="String" defaultValueString="Yuki" syncable="YES"/>
+    </entity>
+    <entity name="Stairway" parentEntity="ExampleStory" syncable="YES">
+        <attribute name="narrative" attributeType="String" defaultValueString="Step after step, you descend the cramped spiral-stairway, hearing only your solid leather boots striking the hard granite steps, and seeing little more. If it weren't for the moss occasionally felt along the cold, dull stone walls, it would seem like you're somehow stuck in a loop of the same left turn, and after ten minutes of this, a break might be nice." syncable="YES"/>
+        <relationship name="down" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DeepStairway" syncable="YES"/>
+        <relationship name="up" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ExampleStory" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="ExampleStory" positionX="-198" positionY="5042" width="128" height="88"/>
+        <element name="Stairway" positionX="-128" positionY="5184" width="128" height="88"/>
+        <element name="Player" positionX="-2" positionY="5040" width="128" height="75"/>
+        <element name="DeepStairway" positionX="52" positionY="5328" width="128" height="43"/>
+    </elements>
+</model>

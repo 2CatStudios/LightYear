@@ -17,7 +17,7 @@
 		7B7D080F1BC8A58B0029CE85 /* MainView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7B7D08091BC8A58B0029CE85 /* MainView.mm */; };
 		7B7D08111BC8A58B0029CE85 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B7D080D1BC8A58B0029CE85 /* ViewController.m */; };
 		7B7D081C1BC8A66A0029CE85 /* UpdateString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B7D081A1BC8A66A0029CE85 /* UpdateString.cpp */; };
-		7BDC5F5D1BD56AF600EE3DAB /* CustomClassStructure.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BDC5F5B1BD56AF600EE3DAB /* CustomClassStructure.cpp */; settings = {ASSET_TAGS = (); }; };
+		7BDC5F5D1BD56AF600EE3DAB /* CustomClassStructure.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BDC5F5B1BD56AF600EE3DAB /* CustomClassStructure.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
