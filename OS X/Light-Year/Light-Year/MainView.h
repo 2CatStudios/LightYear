@@ -8,13 +8,17 @@
 
 #import <Cocoa/Cocoa.h>
 #import "UpdateString.h"
+#import "ReceiveInput.h"
 
 
 @interface MainView : NSView
 
 @property (strong) IBOutlet NSTextField *labelBuildVersion;
 
-@property (strong) IBOutlet NSScrollView *labelMainContent;
+@property (strong) IBOutlet NSScrollView *labelMainScroll;
+@property (strong) IBOutlet NSTextView *labelMainText;
 @property (strong) IBOutlet NSTextField *textFieldInput;
+- (IBAction)textFieldInputAction:(id)sender;
+
 
 @end

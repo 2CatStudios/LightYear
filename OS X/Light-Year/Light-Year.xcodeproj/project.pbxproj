@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B0E2A751BE85F7F0073728A /* ReceiveInput.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B0E2A731BE85F7F0073728A /* ReceiveInput.cpp */; };
 		7B5136271BCDF740007C8B46 /* MetaInformation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B5136251BCDF740007C8B46 /* MetaInformation.cpp */; };
 		7B6B1DC01BC80718005C483E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B6B1DBF1BC80718005C483E /* main.m */; };
 		7B6B1DC51BC80718005C483E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B6B1DC41BC80718005C483E /* Assets.xcassets */; };
@@ -38,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7B0E2A731BE85F7F0073728A /* ReceiveInput.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ReceiveInput.cpp; sourceTree = "<group>"; };
+		7B0E2A741BE85F7F0073728A /* ReceiveInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceiveInput.h; sourceTree = "<group>"; };
 		7B5136251BCDF740007C8B46 /* MetaInformation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MetaInformation.cpp; sourceTree = "<group>"; };
 		7B5136261BCDF740007C8B46 /* MetaInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetaInformation.h; sourceTree = "<group>"; };
 		7B6B1DB81BC80718005C483E /* Light-Year.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Light-Year.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -168,6 +171,8 @@
 				7B5136261BCDF740007C8B46 /* MetaInformation.h */,
 				7BDC5F5B1BD56AF600EE3DAB /* CustomClassStructure.cpp */,
 				7BDC5F5C1BD56AF600EE3DAB /* CustomClassStructure.h */,
+				7B0E2A731BE85F7F0073728A /* ReceiveInput.cpp */,
+				7B0E2A741BE85F7F0073728A /* ReceiveInput.h */,
 			);
 			name = "C++";
 			sourceTree = "<group>";
@@ -315,6 +320,7 @@
 				7B6B1DC01BC80718005C483E /* main.m in Sources */,
 				7B7D080F1BC8A58B0029CE85 /* MainView.mm in Sources */,
 				7B7D08111BC8A58B0029CE85 /* ViewController.m in Sources */,
+				7B0E2A751BE85F7F0073728A /* ReceiveInput.cpp in Sources */,
 				7B7D081C1BC8A66A0029CE85 /* UpdateString.cpp in Sources */,
 				7BDC5F5D1BD56AF600EE3DAB /* CustomClassStructure.cpp in Sources */,
 				7B5136271BCDF740007C8B46 /* MetaInformation.cpp in Sources */,

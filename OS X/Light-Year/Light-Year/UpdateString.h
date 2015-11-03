@@ -12,8 +12,8 @@
 #include <iostream>
 #include "MetaInformation.h"
 
-//const char* newStringFromInput(const char* myString);
-
 const char* buildVersion ();
+
+const char* updateStory ();
 
 #endif /* UpdateString_h */

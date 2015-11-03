@@ -8,17 +8,15 @@
 
 #include "UpdateString.h"
 
-/*const char* baseString = "%s's Hellos to you, World!";
-
-const char* newStringFromInput(const char* stringInput)
-{
-	char* concatenedString = new char[strlen(baseString) + strlen(stringInput)];
-	sprintf(concatenedString, baseString, stringInput);
-	return concatenedString;
-}*/
-
 const char* buildVersion ()
 {
 
 	return clientBuildVersion();
+}
+
+
+const char* updateStory ()
+{
+
+	return "Step after step, you descend the cramped spiral-stairway, hearing only your solid leather boots striking the hard granite steps, and seeing little more. If it weren't for the moss occasionally felt along the cold, dull stone walls, it would seem like you're somehow stuck in a loop of the same left turn, and after ten minutes of this, a break might be nice.";
 }
