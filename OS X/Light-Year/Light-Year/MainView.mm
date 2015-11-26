@@ -15,7 +15,7 @@
 
 	[[self labelBuildVersion] setStringValue:[NSString stringWithFormat:@"Build %@", [NSString stringWithUTF8String:buildVersion()]]];
 }
-
+/*
 - (IBAction)textFieldInputAction:(id)sender {
 
 	NSLog (@"'%@'", self.textFieldInput.stringValue);
@@ -23,5 +23,5 @@
 	NSLog (@"'%@'", newString);
 
 	[[self labelMainText] setString:newString];
-}
+}*/
 @end
