@@ -77,7 +77,7 @@ You get it now, right? No? Okay, here's the gist: interactive fiction is a story
 
 Does our hero check that cupboard before continuing onwards? Maybe they find a tin of beans. They examine the tin, and find it contains magical beans. A warning on the side prompts that they're prone to grow into a giant beanstalk. You- the hero- decide not to take the tin, and instead go south.
 
-Or, maybe, you're a space captain, with a whole fleet at your disposal. However, are all of those ships- those people's lives- really yours to toss away? How would you face yourself after knowingly sending these brave soldiers to their doom? Surely, many innocent civilians will perish if you hold some back, but can you really justify this suicide mission? All I know is, your choices would probably lead to a resolution different from how I'd choose deal with it. The freedom in IF games can lead to very creative outcomes, some which you might not expect, and others which you may have worked very hard for.
+Or, maybe, you're a space captain, with a whole fleet at your disposal. However, are all of those ships- those people's lives- really yours to toss away? How would you face yourself after knowingly sending these brave soldiers to their doom? Surely, many innocent civilians will perish if you hold some back, but can you really justify this suicide mission? All I know is, your choices would probably lead to a resolution different from mine. The freedom in IF games can lead to very creative outcomes, some which you might not expect, and others which you may have worked very hard for.
 
 Interactive fiction isn't about controlling a rogue mage in their magical tower, nor is it about making tough moral choices on the bridge of an A3-12 Falcon-class command ship, it's about exploring a new space, realising yourself there, and seeing what kind of tale the author has in mind for you, and how you'll make it your own.
 
@@ -122,8 +122,8 @@ Main Points: Use our localisation system, and outsource translation to the commu
 
 ###c. Why is Light Year Better than Other IF Engines
 ---
-Main Points: Standardised menus, saving, and format. 
+Main Points: Standardised in-game menus, lower-level functions automatically taken care of, understandable format, access to API for more complex ideas, and simple, clear, Object-Oriented designer. 
 
 ###d. Technical Details
 ---
-Main Points: Core written in C++, clients in native languages (Objective C, C#). API in C++. Git repo location, contributions welcome (get in touch before you submit a push request). Roadmap/Trello board.
+Main Points: Core written in C++, clients in native languages (Objective C, C#). API in C++. Git repo location (pro tip: you're already there), contributions welcome (get in touch before you submit a push request). Roadmap/Trello board.
