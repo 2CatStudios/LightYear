@@ -1,1 +1,0 @@
-DevTest.sqlite is a SQLite Database example for a story. I'm not sure if this is the format we should use, but I'm testing it anyway. Story.txt is the story from the main ReadMe, cleared of formatting. This is for easy access, and is not intended to be included in any final product.
