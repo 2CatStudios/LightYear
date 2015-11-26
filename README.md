@@ -1,4 +1,4 @@
-![](Marketing/Scaled/LightYear%20-%20Title%20-%20Catch.jpg "LightYear - Title - Catch.jpg")
+![](Marketing/Scaled/LightYear Title Catch/512x512.png")
 
 
 # Light Year
