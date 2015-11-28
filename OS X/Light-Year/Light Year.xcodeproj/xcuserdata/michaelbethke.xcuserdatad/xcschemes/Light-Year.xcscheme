@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7B6B1DB71BC80718005C483E"
-               BuildableName = "Light-Year.app"
-               BlueprintName = "Light-Year"
-               ReferencedContainer = "container:Light-Year.xcodeproj">
+               BuildableName = "Light Year.app"
+               BlueprintName = "Light Year"
+               ReferencedContainer = "container:Light Year.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7B6B1DCD1BC80718005C483E"
-               BuildableName = "Light-YearTests.xctest"
-               BlueprintName = "Light-YearTests"
-               ReferencedContainer = "container:Light-Year.xcodeproj">
+               BuildableName = "Light Year.xctest"
+               BlueprintName = "Light YearTests"
+               ReferencedContainer = "container:Light Year.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7B6B1DD81BC80718005C483E"
-               BuildableName = "Light-YearUITests.xctest"
-               BlueprintName = "Light-YearUITests"
-               ReferencedContainer = "container:Light-Year.xcodeproj">
+               BuildableName = "Light Year.xctest"
+               BlueprintName = "Light YearUITests"
+               ReferencedContainer = "container:Light Year.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -53,9 +53,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7B6B1DB71BC80718005C483E"
-            BuildableName = "Light-Year.app"
-            BlueprintName = "Light-Year"
-            ReferencedContainer = "container:Light-Year.xcodeproj">
+            BuildableName = "Light Year.app"
+            BlueprintName = "Light Year"
+            ReferencedContainer = "container:Light Year.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7B6B1DB71BC80718005C483E"
-            BuildableName = "Light-Year.app"
-            BlueprintName = "Light-Year"
-            ReferencedContainer = "container:Light-Year.xcodeproj">
+            BuildableName = "Light Year.app"
+            BlueprintName = "Light Year"
+            ReferencedContainer = "container:Light Year.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,9 +95,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7B6B1DB71BC80718005C483E"
-            BuildableName = "Light-Year.app"
-            BlueprintName = "Light-Year"
-            ReferencedContainer = "container:Light-Year.xcodeproj">
+            BuildableName = "Light Year.app"
+            BlueprintName = "Light Year"
+            ReferencedContainer = "container:Light Year.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
