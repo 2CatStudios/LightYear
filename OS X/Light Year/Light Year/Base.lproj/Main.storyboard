@@ -810,11 +810,11 @@
                                 <tabViewItems>
                                     <tabViewItem label="Object" identifier="1" id="9iZ-pG-3bw">
                                         <view key="view" ambiguous="YES" id="0fC-9T-TDy">
-                                            <rect key="frame" x="10" y="33" width="802" height="514"/>
+                                            <rect key="frame" x="10" y="33" width="133" height="0.0"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YPT-m3-iak">
-                                                    <rect key="frame" x="17" y="489" width="160" height="22"/>
+                                                    <rect key="frame" x="17" y="-25" width="160" height="22"/>
                                                     <animations/>
                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Object Name" drawsBackground="YES" id="28B-81-Etp">
                                                         <font key="font" metaFont="system"/>
