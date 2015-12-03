@@ -14,6 +14,8 @@
 		7B4839B31C096B0800C4C770 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B4839B11C096B0800C4C770 /* Main.storyboard */; };
 		7B4839BE1C096B0800C4C770 /* Light_YearTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B4839BD1C096B0800C4C770 /* Light_YearTests.m */; };
 		7B4839C91C096B0800C4C770 /* Light_YearUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B4839C81C096B0800C4C770 /* Light_YearUITests.m */; };
+		7B52C27A1C0FEAE60033FA5E /* ObjectActionCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B52C2791C0FEAE60033FA5E /* ObjectActionCreator.m */; };
+		7B52C27D1C10034B0033FA5E /* ObjectsCollectionViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B52C27C1C10034B0033FA5E /* ObjectsCollectionViewItem.m */; };
 		7BE2E40A1C096BED008EF8E9 /* CustomClassStructure.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BE2E4081C096BED008EF8E9 /* CustomClassStructure.cpp */; };
 		7BE2E4111C096C29008EF8E9 /* MainView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7BE2E4101C096C29008EF8E9 /* MainView.mm */; };
 		7BE2E4141C096C32008EF8E9 /* MetaInformation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BE2E4121C096C32008EF8E9 /* MetaInformation.cpp */; };
@@ -55,6 +57,10 @@
 		7B4839C81C096B0800C4C770 /* Light_YearUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Light_YearUITests.m; sourceTree = "<group>"; };
 		7B4839CA1C096B0800C4C770 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B4839D61C096B4E00C4C770 /* Light Year.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Light Year.entitlements"; sourceTree = "<group>"; };
+		7B52C2781C0FEAE60033FA5E /* ObjectActionCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectActionCreator.h; sourceTree = "<group>"; };
+		7B52C2791C0FEAE60033FA5E /* ObjectActionCreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectActionCreator.m; sourceTree = "<group>"; };
+		7B52C27B1C10034B0033FA5E /* ObjectsCollectionViewItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectsCollectionViewItem.h; sourceTree = "<group>"; };
+		7B52C27C1C10034B0033FA5E /* ObjectsCollectionViewItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectsCollectionViewItem.m; sourceTree = "<group>"; };
 		7BE2E4081C096BED008EF8E9 /* CustomClassStructure.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CustomClassStructure.cpp; sourceTree = "<group>"; };
 		7BE2E4091C096BED008EF8E9 /* CustomClassStructure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomClassStructure.h; sourceTree = "<group>"; };
 		7BE2E40F1C096C29008EF8E9 /* MainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainView.h; sourceTree = "<group>"; };
@@ -175,6 +181,10 @@
 				7B4839A71C096B0800C4C770 /* AppDelegate.m */,
 				7B4839AC1C096B0800C4C770 /* ViewController.h */,
 				7B4839AD1C096B0800C4C770 /* ViewController.m */,
+				7B52C2781C0FEAE60033FA5E /* ObjectActionCreator.h */,
+				7B52C2791C0FEAE60033FA5E /* ObjectActionCreator.m */,
+				7B52C27B1C10034B0033FA5E /* ObjectsCollectionViewItem.h */,
+				7B52C27C1C10034B0033FA5E /* ObjectsCollectionViewItem.m */,
 			);
 			name = "Objective C";
 			sourceTree = "<group>";
@@ -326,6 +336,8 @@
 				7B4839AE1C096B0800C4C770 /* ViewController.m in Sources */,
 				7B4839AB1C096B0800C4C770 /* main.m in Sources */,
 				7BE2E4191C096C3D008EF8E9 /* ReceiveInput.cpp in Sources */,
+				7B52C27A1C0FEAE60033FA5E /* ObjectActionCreator.m in Sources */,
+				7B52C27D1C10034B0033FA5E /* ObjectsCollectionViewItem.m in Sources */,
 				7BE2E41A1C096C3D008EF8E9 /* UpdateString.cpp in Sources */,
 				7B4839A81C096B0800C4C770 /* AppDelegate.m in Sources */,
 				7BE2E40A1C096BED008EF8E9 /* CustomClassStructure.cpp in Sources */,
