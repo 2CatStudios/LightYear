@@ -20,6 +20,11 @@
 	NSCollectionViewItem *objectsCollectionViewItem = [self.storyboard instantiateControllerWithIdentifier:@"ObjectsCollectionViewItem"];
 	[self.objectsCollectionView setItemPrototype:objectsCollectionViewItem];
 
+	[self publishNewObjectButton:nil];
+}
+
+- (IBAction)publishNewObjectButton:(id)sender {
+
 	ObjectActionCreatorObjectsArrayItem *newTestingObject;
 	[newTestingObject setItemName:@"Testing Object"];
 	[newTestingObject setItemID:@"001"];
@@ -27,6 +32,13 @@
 	[[self objectsCollectionViewItemsArray] addObject:newTestingObject];
 
 	NSLog (@"Test Object Added");
+
+	[self updateObjectsCollectionViewCount];
+
 }
 
+- (void)updateObjectsCollectionViewCount {
+
+	[[self objectsCollectionViewCountAndTitle] setStringValue:[NSString stringWithFormat:@"%lu Objects", [[self objectsCollectionViewItemsArray] count]]];
+}
 @end

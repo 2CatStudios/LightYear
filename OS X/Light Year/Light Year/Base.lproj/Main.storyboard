@@ -804,17 +804,48 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <tabView fixedFrame="YES" initialItem="9iZ-pG-3bw" translatesAutoresizingMaskIntoConstraints="NO" id="sKf-sj-nJP">
-                                <rect key="frame" x="189" y="10" width="822" height="560"/>
+                                <rect key="frame" x="13" y="10" width="998" height="560"/>
                                 <animations/>
                                 <font key="font" metaFont="system"/>
                                 <tabViewItems>
                                     <tabViewItem label="Object" identifier="1" id="9iZ-pG-3bw">
                                         <view key="view" ambiguous="YES" id="0fC-9T-TDy">
-                                            <rect key="frame" x="10" y="33" width="802" height="514"/>
+                                            <rect key="frame" x="10" y="33" width="978" height="514"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
+                                                <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yLo-fZ-nd4">
+                                                    <rect key="frame" x="17" y="17" width="156" height="459"/>
+                                                    <clipView key="contentView" ambiguous="YES" drawsBackground="NO" copiesOnScroll="NO" id="lFH-on-EtU">
+                                                        <rect key="frame" x="1" y="1" width="154" height="457"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <subviews>
+                                                            <collectionView ambiguous="YES" id="hhQ-Hh-GFM">
+                                                                <rect key="frame" x="0.0" y="0.0" width="154" height="457"/>
+                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                <animations/>
+                                                                <color key="primaryBackgroundColor" name="windowBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                <connections>
+                                                                    <binding destination="qCr-3e-ngm" name="content" keyPath="arrangedObjects" id="czn-qm-bFr"/>
+                                                                </connections>
+                                                            </collectionView>
+                                                        </subviews>
+                                                        <animations/>
+                                                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </clipView>
+                                                    <animations/>
+                                                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="CKx-l0-KtK">
+                                                        <rect key="frame" x="1" y="144" width="233" height="15"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <animations/>
+                                                    </scroller>
+                                                    <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="Zbn-t6-du5">
+                                                        <rect key="frame" x="234" y="1" width="15" height="143"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <animations/>
+                                                    </scroller>
+                                                </scrollView>
                                                 <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mTI-ZN-WT1">
-                                                    <rect key="frame" x="17" y="489" width="175" height="22"/>
+                                                    <rect key="frame" x="181" y="454" width="175" height="22"/>
                                                     <animations/>
                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="New Object Name" drawsBackground="YES" id="cXn-XF-92A">
                                                         <font key="font" metaFont="system"/>
@@ -823,7 +854,7 @@
                                                     </textFieldCell>
                                                 </textField>
                                                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xKH-cd-v7o">
-                                                    <rect key="frame" x="15" y="459" width="73" height="18"/>
+                                                    <rect key="frame" x="179" y="424" width="73" height="18"/>
                                                     <animations/>
                                                     <buttonCell key="cell" type="check" title="Storable" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="0jp-mU-8MN">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -831,7 +862,7 @@
                                                     </buttonCell>
                                                 </button>
                                                 <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ipe-EW-Cxx">
-                                                    <rect key="frame" x="96" y="457" width="96" height="22"/>
+                                                    <rect key="frame" x="260" y="422" width="96" height="22"/>
                                                     <animations/>
                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Weight" drawsBackground="YES" id="W20-34-ceq">
                                                         <font key="font" metaFont="system"/>
@@ -840,134 +871,72 @@
                                                     </textFieldCell>
                                                 </textField>
                                                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A1p-Oq-tul">
-                                                    <rect key="frame" x="15" y="429" width="82" height="18"/>
+                                                    <rect key="frame" x="179" y="394" width="82" height="18"/>
                                                     <animations/>
                                                     <buttonCell key="cell" type="check" title="Equipable" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="ldD-Me-OnY">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                         <font key="font" metaFont="system"/>
                                                     </buttonCell>
                                                 </button>
-                                                <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fm2-45-rYw">
-                                                    <rect key="frame" x="118" y="394" width="77" height="26"/>
-                                                    <animations/>
-                                                    <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" pullsDown="YES" autoenablesItems="NO" altersStateOfSelectedItem="NO" id="EUc-er-2OE">
-                                                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                        <font key="font" metaFont="menu"/>
-                                                        <menu key="menu" autoenablesItems="NO" id="yOY-W6-Cka">
-                                                            <items>
-                                                                <menuItem title="Item 1" state="on" keyEquivalent="1" id="fps-m6-IVe">
-                                                                    <modifierMask key="keyEquivalentModifierMask"/>
-                                                                </menuItem>
-                                                                <menuItem title="Item 2" keyEquivalent="2" id="O3F-Ol-Kjh">
-                                                                    <modifierMask key="keyEquivalentModifierMask"/>
-                                                                </menuItem>
-                                                                <menuItem title="Item 3" keyEquivalent="3" id="A9q-1H-i7S">
-                                                                    <modifierMask key="keyEquivalentModifierMask"/>
-                                                                </menuItem>
-                                                            </items>
-                                                        </menu>
-                                                    </popUpButtonCell>
-                                                </popUpButton>
-                                                <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EUf-e3-Fed">
-                                                    <rect key="frame" x="118" y="425" width="77" height="26"/>
-                                                    <animations/>
-                                                    <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" pullsDown="YES" selectedItem="NtW-UP-mz2" id="bOI-vs-ABd">
-                                                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                        <font key="font" metaFont="menu"/>
-                                                        <menu key="menu" id="Kre-Nf-OS7">
-                                                            <items>
-                                                                <menuItem title="Item 1" state="on" hidden="YES" id="NtW-UP-mz2"/>
-                                                                <menuItem title="Item 2" id="tMk-fF-eUZ"/>
-                                                                <menuItem title="Item 3" id="QGs-PD-8J0"/>
-                                                            </items>
-                                                        </menu>
-                                                    </popUpButtonCell>
-                                                </popUpButton>
                                                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hBI-c1-jDr">
-                                                    <rect key="frame" x="15" y="399" width="64" height="18"/>
+                                                    <rect key="frame" x="179" y="364" width="64" height="18"/>
                                                     <animations/>
                                                     <buttonCell key="cell" type="check" title="Usable" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Ebw-eI-Vs5">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                         <font key="font" metaFont="system"/>
                                                     </buttonCell>
                                                 </button>
+                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LaT-JH-9f4">
+                                                    <rect key="frame" x="425" y="247" width="129" height="32"/>
+                                                    <animations/>
+                                                    <buttonCell key="cell" type="push" title="Publish Object" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ZEA-VK-eQX">
+                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                    <connections>
+                                                        <action selector="publishNewObjectButton:" target="baN-of-jPD" id="ahE-Fo-UJP"/>
+                                                    </connections>
+                                                </button>
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VXV-Op-rNh">
+                                                    <rect key="frame" x="15" y="484" width="160" height="22"/>
+                                                    <animations/>
+                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Objects" id="Jxy-FR-aiN">
+                                                        <font key="font" metaFont="system" size="18"/>
+                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </textField>
                                             </subviews>
                                             <animations/>
                                         </view>
                                     </tabViewItem>
                                     <tabViewItem label="Action" identifier="2" id="jRD-dg-GnN">
                                         <view key="view" id="HRf-WJ-4Ep">
-                                            <rect key="frame" x="10" y="33" width="802" height="514"/>
+                                            <rect key="frame" x="10" y="33" width="978" height="514"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <animations/>
                                         </view>
                                     </tabViewItem>
                                 </tabViewItems>
                             </tabView>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MsU-eV-Tht">
-                                <rect key="frame" x="18" y="539" width="160" height="17"/>
-                                <animations/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Objects" id="vNU-jm-4R9">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gsl-i5-xAe">
-                                <rect key="frame" x="18" y="262" width="160" height="17"/>
-                                <animations/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Actions" id="AWk-Ks-OTj">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yLo-fZ-nd4">
-                                <rect key="frame" x="20" y="287" width="156" height="244"/>
-                                <clipView key="contentView" ambiguous="YES" drawsBackground="NO" copiesOnScroll="NO" id="lFH-on-EtU">
-                                    <rect key="frame" x="1" y="1" width="154" height="242"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <collectionView ambiguous="YES" id="hhQ-Hh-GFM">
-                                            <rect key="frame" x="0.0" y="0.0" width="154" height="242"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <animations/>
-                                            <color key="primaryBackgroundColor" name="windowBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            <connections>
-                                                <binding destination="qCr-3e-ngm" name="content" keyPath="arrangedObjects" id="9BC-aC-ctZ"/>
-                                            </connections>
-                                        </collectionView>
-                                    </subviews>
-                                    <animations/>
-                                    <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </clipView>
-                                <animations/>
-                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="CKx-l0-KtK">
-                                    <rect key="frame" x="1" y="144" width="233" height="15"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <animations/>
-                                </scroller>
-                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="Zbn-t6-du5">
-                                    <rect key="frame" x="234" y="1" width="15" height="143"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <animations/>
-                                </scroller>
-                            </scrollView>
                         </subviews>
                         <animations/>
                     </view>
                     <connections>
                         <outlet property="objectsCollectionView" destination="hhQ-Hh-GFM" id="mZA-bu-tLV"/>
+                        <outlet property="objectsCollectionViewCountAndTitle" destination="VXV-Op-rNh" id="tQl-vy-y2I"/>
+                        <outlet property="objectsCollectionViewItemsArray" destination="qCr-3e-ngm" id="rRw-bi-j9M"/>
+                        <outlet property="publishObjectButton" destination="LaT-JH-9f4" id="v2Q-Cc-1cp"/>
                     </connections>
                 </viewController>
                 <customObject id="CGR-6u-gjE" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <arrayController objectClassName="ObjectsCollectionViewItemArray" automaticallyRearrangesObjects="YES" id="qCr-3e-ngm">
+                <arrayController objectClassName="ObjectsCollectionViewItemArray" id="qCr-3e-ngm" userLabel="Objects Array Controller">
                     <declaredKeys>
                         <string>itemName</string>
                         <string>itemID</string>
                     </declaredKeys>
                     <connections>
-                        <binding destination="baN-of-jPD" name="contentArray" keyPath="objectsCollectionViewItemsArray" id="Fuc-aP-khU"/>
+                        <binding destination="baN-of-jPD" name="contentArray" keyPath="objectsCollectionViewItemsArray" id="Kz4-yc-Wwd"/>
                     </connections>
                 </arrayController>
             </objects>
@@ -978,11 +947,11 @@
             <objects>
                 <collectionViewItem storyboardIdentifier="ObjectsCollectionViewItem" id="c5A-OS-Yht" customClass="ObjectsCollectionViewItem" sceneMemberID="viewController">
                     <view key="view" id="L3A-f8-MuY">
-                        <rect key="frame" x="0.0" y="0.0" width="146" height="40"/>
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="40"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="og8-X6-e4A">
-                                <rect key="frame" x="17" y="3" width="112" height="32"/>
+                                <rect key="frame" x="-6" y="3" width="112" height="32"/>
                                 <animations/>
                                 <buttonCell key="cell" type="push" title="New Object" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="FHc-gI-RrD">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>

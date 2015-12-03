@@ -11,6 +11,9 @@
 @interface ObjectActionCreator : NSViewController
 
 @property (strong) IBOutlet NSCollectionView *objectsCollectionView;
+@property (strong) IBOutlet NSTextField *objectsCollectionViewCountAndTitle;
+
+- (IBAction)publishNewObjectButton:(id)sender;
 
 @property (nonatomic, strong) NSMutableArray *objectsCollectionViewItemsArray;
 

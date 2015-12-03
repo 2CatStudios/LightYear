@@ -19,6 +19,8 @@
     // Do view setup here.
 
 	[[self PrimaryButton] setTitle:@"Hello, World!"];
+
+	NSLog (@"Objects Collection View Item View Created!");
 }
 
 @end
