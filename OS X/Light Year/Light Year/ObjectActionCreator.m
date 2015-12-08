@@ -36,6 +36,10 @@
 	[newTestingObject setItemID:@"001"];
 
 	[[self objectsCollectionViewObjectsArray] addObject:newTestingObject];
+
+	/*NSButton *arrayButton = [[[self.objectsCollectionViewObjectsArray arrangedObjects] objectAtIndex:0] viewWithTag:1];
+	[arrayButton setTitle:[[[self.objectsCollectionViewObjectsArray arrangedObjects] objectAtIndex:0] itemName]];*/
+
 	[self updateObjectsCollectionViewCount];
 }
 

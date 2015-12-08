@@ -7,6 +7,7 @@
 //
 
 #import "ObjectsCollectionViewItem.h"
+#import "ObjectActionCreator.h"
 
 @interface ObjectsCollectionViewItem ()
 
@@ -16,9 +17,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do view setup here.
 
-	[[self primaryButton] setTitle:[NSString stringWithFormat:@"%@", [NSNumber numberWithLong:random()]]];
+	[[self primaryButton] setTitle:@""];
+}
+
+- (void) viewWillAppear
+{
+
+	[self populateObject];
+}
+
+- (void) populateObject
+{
+
+	ObjectActionCreatorObjectsArrayItem *arrayObject = self.representedObject;
+
+	NSButton *primaryButton = [self.view viewWithTag:1];
+	[primaryButton setTitle:arrayObject.itemName];
 }
 
 @end
