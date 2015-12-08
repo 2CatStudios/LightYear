@@ -10,6 +10,6 @@
 
 @interface ObjectsCollectionViewItem : NSCollectionViewItem
 
-@property (strong) IBOutlet NSButton *PrimaryButton;
+@property (strong) IBOutlet NSButton *primaryButton;
 
 @end

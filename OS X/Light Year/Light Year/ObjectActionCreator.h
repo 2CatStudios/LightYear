@@ -14,6 +14,8 @@
 @property (strong) IBOutlet NSTextField *objectsCollectionViewCountAndTitle;
 @property (strong) IBOutlet NSArrayController *objectsCollectionViewObjectsArray;
 
+- (void) createNewObjectWithTitle:(NSString *)objectName andUUID:(NSNumber *)objectUUID;
+
 @end
 
 

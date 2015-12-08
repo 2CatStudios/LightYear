@@ -947,7 +947,7 @@
                     </connections>
                 </viewController>
                 <customObject id="CGR-6u-gjE" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <arrayController objectClassName="ObjectsCollectionViewItemArray" id="qCr-3e-ngm" userLabel="Objects Array Controller">
+                <arrayController objectClassName="ObjectsCollectionViewItemArray" automaticallyRearrangesObjects="YES" id="qCr-3e-ngm" userLabel="Objects Array Controller">
                     <declaredKeys>
                         <string>itemName</string>
                         <string>itemID</string>
@@ -961,13 +961,13 @@
             <objects>
                 <collectionViewItem storyboardIdentifier="ObjectsCollectionViewItem" id="c5A-OS-Yht" customClass="ObjectsCollectionViewItem" sceneMemberID="viewController">
                     <view key="view" id="L3A-f8-MuY">
-                        <rect key="frame" x="0.0" y="0.0" width="100" height="40"/>
+                        <rect key="frame" x="0.0" y="0.0" width="156" height="40"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="og8-X6-e4A">
-                                <rect key="frame" x="-6" y="3" width="112" height="32"/>
+                                <rect key="frame" x="14" y="3" width="128" height="32"/>
                                 <animations/>
-                                <buttonCell key="cell" type="push" title="New Object" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="FHc-gI-RrD">
+                                <buttonCell key="cell" type="push" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="FHc-gI-RrD">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -976,7 +976,7 @@
                         <animations/>
                     </view>
                     <connections>
-                        <outlet property="PrimaryButton" destination="og8-X6-e4A" id="eAF-eH-6y0"/>
+                        <outlet property="primaryButton" destination="og8-X6-e4A" id="nbN-ft-amn"/>
                     </connections>
                 </collectionViewItem>
                 <customObject id="gHv-ia-CXt" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

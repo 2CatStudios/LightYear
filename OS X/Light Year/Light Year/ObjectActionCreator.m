@@ -8,10 +8,6 @@
 
 #import "ObjectActionCreator.h"
 
-/*@interface ObjectActionCreator ()
-
-@end*/
-
 @implementation ObjectActionCreatorObjectsArrayItem
 @end
 
@@ -23,24 +19,44 @@
 	NSCollectionViewItem *objectsCollectionViewItem = [self.storyboard instantiateControllerWithIdentifier:@"ObjectsCollectionViewItem"];
 	[self.objectsCollectionView setItemPrototype:objectsCollectionViewItem];
 
-	//[self publishNewObjectButton:nil];
+	[self publishNewObjectButton:nil];
 }
 
 - (IBAction)publishNewObjectButton:(id)sender
 {
 
+	[self createNewObjectWithTitle:@"Create Object" andUUID:0];
+}
+
+- (void) createNewObjectWithTitle:(NSString *)objectName andUUID:(NSNumber *)objectUUID
+{
+
 	ObjectActionCreatorObjectsArrayItem *newTestingObject = [[ObjectActionCreatorObjectsArrayItem alloc] init];
-	[newTestingObject setItemName:@"Testing Object"];
+	[newTestingObject setItemName:[NSString stringWithFormat:@"New Object %@", [NSNumber numberWithLong:[self objectsCollectionViewObjectsArrayCount] + 1]]];
 	[newTestingObject setItemID:@"001"];
 
 	[[self objectsCollectionViewObjectsArray] addObject:newTestingObject];
-	NSLog (@"Test Object Added");
-
 	[self updateObjectsCollectionViewCount];
 }
 
 - (void)updateObjectsCollectionViewCount {
 
-	[[self objectsCollectionViewCountAndTitle] setStringValue:[NSString stringWithFormat:@"%ld Objects", [[[self objectsCollectionViewObjectsArray] arrangedObjects] count]]];
+	NSNumber *arrayCount = [NSNumber numberWithLong:[self objectsCollectionViewObjectsArrayCount]];
+	NSString *correctObjectString = @"Objects";
+
+	if ([arrayCount integerValue] == [[NSNumber numberWithInt:1] integerValue])
+	{
+
+		correctObjectString = [correctObjectString substringToIndex:[correctObjectString length] - 1];
+	}
+
+	[[self objectsCollectionViewCountAndTitle] setStringValue:[NSString stringWithFormat:@"%@ %@", arrayCount, correctObjectString]];
 }
+
+-(NSUInteger) objectsCollectionViewObjectsArrayCount
+{
+
+	return [[[self objectsCollectionViewObjectsArray] arrangedObjects] count];
+}
+
 @end
