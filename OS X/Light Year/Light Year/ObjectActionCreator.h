@@ -12,10 +12,7 @@
 
 @property (strong) IBOutlet NSCollectionView *objectsCollectionView;
 @property (strong) IBOutlet NSTextField *objectsCollectionViewCountAndTitle;
-
-- (IBAction)publishNewObjectButton:(id)sender;
-
-@property (nonatomic, strong) NSMutableArray *objectsCollectionViewItemsArray;
+@property (strong) IBOutlet NSArrayController *objectsCollectionViewObjectsArray;
 
 @end
 

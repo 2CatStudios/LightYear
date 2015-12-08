@@ -813,19 +813,28 @@
                                             <rect key="frame" x="10" y="33" width="978" height="514"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VXV-Op-rNh">
+                                                    <rect key="frame" x="15" y="489" width="160" height="22"/>
+                                                    <animations/>
+                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Objects" id="Jxy-FR-aiN">
+                                                        <font key="font" metaFont="system" size="18"/>
+                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </textField>
                                                 <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yLo-fZ-nd4">
-                                                    <rect key="frame" x="17" y="17" width="156" height="459"/>
+                                                    <rect key="frame" x="17" y="17" width="156" height="464"/>
                                                     <clipView key="contentView" ambiguous="YES" drawsBackground="NO" copiesOnScroll="NO" id="lFH-on-EtU">
-                                                        <rect key="frame" x="1" y="1" width="154" height="457"/>
+                                                        <rect key="frame" x="1" y="1" width="154" height="462"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
                                                             <collectionView ambiguous="YES" id="hhQ-Hh-GFM">
-                                                                <rect key="frame" x="0.0" y="0.0" width="154" height="457"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="154" height="462"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <animations/>
                                                                 <color key="primaryBackgroundColor" name="windowBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                 <connections>
-                                                                    <binding destination="qCr-3e-ngm" name="content" keyPath="arrangedObjects" id="czn-qm-bFr"/>
+                                                                    <binding destination="qCr-3e-ngm" name="content" keyPath="arrangedObjects" id="QXr-Wh-KYB"/>
                                                                 </connections>
                                                             </collectionView>
                                                         </subviews>
@@ -845,7 +854,7 @@
                                                     </scroller>
                                                 </scrollView>
                                                 <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mTI-ZN-WT1">
-                                                    <rect key="frame" x="181" y="454" width="175" height="22"/>
+                                                    <rect key="frame" x="181" y="459" width="175" height="22"/>
                                                     <animations/>
                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="New Object Name" drawsBackground="YES" id="cXn-XF-92A">
                                                         <font key="font" metaFont="system"/>
@@ -854,7 +863,7 @@
                                                     </textFieldCell>
                                                 </textField>
                                                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xKH-cd-v7o">
-                                                    <rect key="frame" x="179" y="424" width="73" height="18"/>
+                                                    <rect key="frame" x="179" y="431" width="73" height="18"/>
                                                     <animations/>
                                                     <buttonCell key="cell" type="check" title="Storable" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="0jp-mU-8MN">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -862,7 +871,7 @@
                                                     </buttonCell>
                                                 </button>
                                                 <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ipe-EW-Cxx">
-                                                    <rect key="frame" x="260" y="422" width="96" height="22"/>
+                                                    <rect key="frame" x="260" y="429" width="96" height="22"/>
                                                     <animations/>
                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Weight" drawsBackground="YES" id="W20-34-ceq">
                                                         <font key="font" metaFont="system"/>
@@ -871,7 +880,7 @@
                                                     </textFieldCell>
                                                 </textField>
                                                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A1p-Oq-tul">
-                                                    <rect key="frame" x="179" y="394" width="82" height="18"/>
+                                                    <rect key="frame" x="179" y="401" width="82" height="18"/>
                                                     <animations/>
                                                     <buttonCell key="cell" type="check" title="Equipable" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="ldD-Me-OnY">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -879,33 +888,42 @@
                                                     </buttonCell>
                                                 </button>
                                                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hBI-c1-jDr">
-                                                    <rect key="frame" x="179" y="364" width="64" height="18"/>
+                                                    <rect key="frame" x="179" y="371" width="64" height="18"/>
                                                     <animations/>
                                                     <buttonCell key="cell" type="check" title="Usable" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Ebw-eI-Vs5">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                         <font key="font" metaFont="system"/>
                                                     </buttonCell>
                                                 </button>
-                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LaT-JH-9f4">
-                                                    <rect key="frame" x="425" y="247" width="129" height="32"/>
+                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5EP-bw-hub">
+                                                    <rect key="frame" x="181" y="155" width="256" height="64"/>
                                                     <animations/>
-                                                    <buttonCell key="cell" type="push" title="Publish Object" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ZEA-VK-eQX">
+                                                    <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Object Short Description" drawsBackground="YES" id="k73-aJ-Aia">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </textField>
+                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nnG-fZ-O7L">
+                                                    <rect key="frame" x="180" y="17" width="256" height="128"/>
+                                                    <animations/>
+                                                    <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Object Long Description" drawsBackground="YES" id="hHn-S9-qyI">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </textField>
+                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cue-OG-bY0">
+                                                    <rect key="frame" x="838" y="483" width="129" height="32"/>
+                                                    <animations/>
+                                                    <buttonCell key="cell" type="push" title="Publish Object" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="qWG-ec-JN2">
                                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                         <font key="font" metaFont="system"/>
                                                     </buttonCell>
                                                     <connections>
-                                                        <action selector="publishNewObjectButton:" target="baN-of-jPD" id="ahE-Fo-UJP"/>
+                                                        <action selector="publishNewObjectButton:" target="baN-of-jPD" id="QBj-0h-4Vh"/>
                                                     </connections>
                                                 </button>
-                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VXV-Op-rNh">
-                                                    <rect key="frame" x="15" y="484" width="160" height="22"/>
-                                                    <animations/>
-                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Objects" id="Jxy-FR-aiN">
-                                                        <font key="font" metaFont="system" size="18"/>
-                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                    </textFieldCell>
-                                                </textField>
                                             </subviews>
                                             <animations/>
                                         </view>
@@ -923,10 +941,9 @@
                         <animations/>
                     </view>
                     <connections>
-                        <outlet property="objectsCollectionView" destination="hhQ-Hh-GFM" id="mZA-bu-tLV"/>
+                        <outlet property="objectsCollectionView" destination="hhQ-Hh-GFM" id="ieT-ts-Jum"/>
                         <outlet property="objectsCollectionViewCountAndTitle" destination="VXV-Op-rNh" id="tQl-vy-y2I"/>
-                        <outlet property="objectsCollectionViewItemsArray" destination="qCr-3e-ngm" id="rRw-bi-j9M"/>
-                        <outlet property="publishObjectButton" destination="LaT-JH-9f4" id="v2Q-Cc-1cp"/>
+                        <outlet property="objectsCollectionViewObjectsArray" destination="qCr-3e-ngm" id="bOV-x2-haw"/>
                     </connections>
                 </viewController>
                 <customObject id="CGR-6u-gjE" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -935,9 +952,6 @@
                         <string>itemName</string>
                         <string>itemID</string>
                     </declaredKeys>
-                    <connections>
-                        <binding destination="baN-of-jPD" name="contentArray" keyPath="objectsCollectionViewItemsArray" id="Kz4-yc-Wwd"/>
-                    </connections>
                 </arrayController>
             </objects>
             <point key="canvasLocation" x="609" y="2532"/>
