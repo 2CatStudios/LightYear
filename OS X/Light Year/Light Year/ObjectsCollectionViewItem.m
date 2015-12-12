@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-	[[self primaryButton] setTitle:@""];
+	//[[self primaryButton] setTitle:@""];
 }
 
 - (void) viewWillAppear
@@ -32,8 +32,14 @@
 
 	ObjectActionCreatorObjectsArrayItem *arrayObject = self.representedObject;
 
+	NSNumberFormatter *nsstringToNSNumber = [[NSNumberFormatter alloc] init];
+	nsstringToNSNumber.numberStyle = NSNumberFormatterNoStyle;
+	self.itemID = [nsstringToNSNumber numberFromString:arrayObject.itemID];
+
+	self.itemName = arrayObject.itemName;
+
 	NSButton *primaryButton = [self.view viewWithTag:1];
-	[primaryButton setTitle:arrayObject.itemName];
+	[primaryButton setTitle:self.itemName];
 }
 
 @end

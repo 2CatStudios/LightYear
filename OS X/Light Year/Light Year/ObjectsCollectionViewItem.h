@@ -10,6 +10,9 @@
 
 @interface ObjectsCollectionViewItem : NSCollectionViewItem
 
+@property (nonatomic, strong) NSNumber *itemID;
+@property (nonatomic, strong) NSString *itemName;
+
 @property (strong) IBOutlet NSButton *primaryButton;
 
 @end
