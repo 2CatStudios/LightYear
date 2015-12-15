@@ -98,7 +98,7 @@ Main Points: Light Year is modern (has modern features, continuity). Light Year 
 
 ###b. What Kind of Games to Expect
 ---
-Main Points: Unlimited possibilities, sci-fi, fantasy, modern, abstract, historical, steampunk, anything.
+Main Points: Unlimited possibilities; sci-fi, fantasy, modern, abstract, historical, steampunk, anything.
 
 ###c. Where to Find Games
 ---
