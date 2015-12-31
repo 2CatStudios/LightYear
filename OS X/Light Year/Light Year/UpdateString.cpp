@@ -11,7 +11,7 @@
 const char* buildVersion ()
 {
 
-	return clientBuildVersion();
+	return engineBuildVersion();
 }
 
 

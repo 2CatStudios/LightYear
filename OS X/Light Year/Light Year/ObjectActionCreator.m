@@ -19,17 +19,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-	NSCollectionViewItem *objectsCollectionViewItem = [self.storyboard instantiateControllerWithIdentifier:@"ObjectsCollectionViewItem"];
-	[self.objectsCollectionView setItemPrototype:objectsCollectionViewItem];
-
-	[self publishNewObjectButton:nil];
+	//[self publishNewObjectButton:nil];
 }
 
-- (IBAction)publishNewObjectButton:(id)sender
+/*- (IBAction)publishNewObjectButton:(id)sender
 {
 
 	[self createNewObjectWithTitle:@"Create Object" andUUID:0];
-}
+}*/
 
 - (void) createNewObjectWithTitle:(NSString *)newTitle andUUID:(NSNumber *)newUUID
 {

@@ -28,7 +28,7 @@
 /*! An object's identifier for use in human-readable cases. This does not have to be unique.*/
 @property (nonatomic, strong) NSString *objectName;
 
-@property (nonatomic, strong) NSString *shortDescription;
+/*@property (nonatomic, strong) NSString *shortDescription;
 @property (nonatomic, strong) NSString *longDescription;
 
 @property (nonatomic) BOOL storable;
@@ -36,6 +36,6 @@
 
 @property (nonatomic) BOOL equipable;
 
-@property (nonatomic) BOOL usable;
+@property (nonatomic) BOOL usable;*/
 
 @end

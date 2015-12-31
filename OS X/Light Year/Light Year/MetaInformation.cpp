@@ -13,9 +13,3 @@ const char* engineBuildVersion()
 
 	return "00-0-2d";
 }
-
-const char* clientBuildVersion()
-{
-
-	return "00-0-1d";
-}

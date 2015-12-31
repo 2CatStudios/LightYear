@@ -12,6 +12,5 @@
 #include <iostream>
 
 const char* engineBuildVersion();
-const char* clientBuildVersion();
 
 #endif /* MetaInformation_h */
