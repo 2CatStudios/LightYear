@@ -7,11 +7,11 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "ObjectActionCreator.h"
 
 @interface ObjectsCollectionViewItem : NSCollectionViewItem
 
-@property (nonatomic, strong) NSNumber *itemID;
-@property (nonatomic, strong) NSString *itemName;
+@property (nonatomic, strong) lightyearObject *activeObject;
 
 @property (strong) IBOutlet NSButton *primaryButton;
 

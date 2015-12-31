@@ -8,7 +8,10 @@
 
 #import "ObjectActionCreator.h"
 
-@implementation ObjectActionCreatorObjectsArrayItem
+/*@implementation oacObjectsArrayItem
+@end*/
+
+@implementation lightyearObject
 @end
 
 @implementation ObjectActionCreator
@@ -28,26 +31,29 @@
 	[self createNewObjectWithTitle:@"Create Object" andUUID:0];
 }
 
-- (void) createNewObjectWithTitle:(NSString *)objectName andUUID:(NSNumber *)objectUUID
+- (void) createNewObjectWithTitle:(NSString *)newTitle andUUID:(NSNumber *)newUUID
 {
 
-	ObjectActionCreatorObjectsArrayItem *newTestingObject = [[ObjectActionCreatorObjectsArrayItem alloc] init];
-	[newTestingObject setItemName:[NSString stringWithFormat:@"New Object %@", [NSNumber numberWithLong:[self objectsCollectionViewObjectsArrayCount] + 1]]];
-	[newTestingObject setItemID:@"001"];
+	lightyearObject *newObject = [[lightyearObject alloc] init];
+	[newObject setObjectID:newUUID];
 
-	[[self objectsCollectionViewObjectsArray] addObject:newTestingObject];
+	NSString *newObjectTitle = newTitle;
+	if (!newObjectTitle)
+	{
 
-	/*NSButton *arrayButton = [[[self.objectsCollectionViewObjectsArray arrangedObjects] objectAtIndex:0] viewWithTag:1];
-	[arrayButton setTitle:[[[self.objectsCollectionViewObjectsArray arrangedObjects] objectAtIndex:0] itemName]];*/
+		newObjectTitle = [NSString stringWithFormat:@"Object %@", newUUID];
+	}
+	[newObject setObjectName:newTitle];
 
+	[[self objects] addObject:newObject];
 	[self updateObjectsCollectionViewCount];
 }
 
 - (void)updateObjectsCollectionViewCount {
 
-	NSNumber *arrayCount = [NSNumber numberWithLong:[self objectsCollectionViewObjectsArrayCount]];
-	NSString *correctObjectString = @"Objects";
+	NSNumber *arrayCount = [NSNumber numberWithLong:[self objectsArrayCount]];
 
+	NSString *correctObjectString = @"Objects";
 	if ([arrayCount integerValue] == [[NSNumber numberWithInt:1] integerValue])
 	{
 
@@ -57,10 +63,11 @@
 	[[self objectsCollectionViewCountAndTitle] setStringValue:[NSString stringWithFormat:@"%@ %@", arrayCount, correctObjectString]];
 }
 
--(NSUInteger) objectsCollectionViewObjectsArrayCount
+-(NSUInteger) objectsArrayCount
 {
 
-	return [[[self objectsCollectionViewObjectsArray] arrangedObjects] count];
+	//return [[[self objectsCollectionViewArray] arrangedObjects] count];
+	return [[self objects] count];
 }
 
 @end

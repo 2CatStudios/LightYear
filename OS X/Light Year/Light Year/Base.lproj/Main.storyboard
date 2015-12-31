@@ -825,7 +825,7 @@
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <color key="primaryBackgroundColor" name="windowBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                 <connections>
-                                                                    <binding destination="qCr-3e-ngm" name="content" keyPath="arrangedObjects" id="QXr-Wh-KYB"/>
+                                                                    <binding destination="qCr-3e-ngm" name="content" keyPath="arrangedObjects.objectName" id="ZH5-qh-wfA"/>
                                                                 </connections>
                                                             </collectionView>
                                                         </subviews>
@@ -910,9 +910,17 @@
                                                         <font key="font" metaFont="system"/>
                                                     </buttonCell>
                                                     <connections>
-                                                        <action selector="publishNewObjectButton:" target="baN-of-jPD" id="QBj-0h-4Vh"/>
+                                                        <action selector="add:" target="qCr-3e-ngm" id="A5l-ua-VZK"/>
                                                     </connections>
                                                 </button>
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w4Z-vN-jnx">
+                                                    <rect key="frame" x="265" y="402" width="37" height="17"/>
+                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="SLOT" id="B0m-7d-W4M">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </textField>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="yLo-fZ-nd4" firstAttribute="top" secondItem="VXV-Op-rNh" secondAttribute="bottom" constant="8" id="33N-ad-nmd"/>
@@ -984,17 +992,20 @@
                     </view>
                     <connections>
                         <outlet property="objectsCollectionView" destination="hhQ-Hh-GFM" id="ieT-ts-Jum"/>
+                        <outlet property="objectsCollectionViewArray" destination="qCr-3e-ngm" id="MIj-qm-k5t"/>
                         <outlet property="objectsCollectionViewCountAndTitle" destination="VXV-Op-rNh" id="tQl-vy-y2I"/>
-                        <outlet property="objectsCollectionViewObjectsArray" destination="qCr-3e-ngm" id="bOV-x2-haw"/>
                     </connections>
                 </viewController>
                 <customObject id="CGR-6u-gjE" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <arrayController objectClassName="ObjectsCollectionViewItemArray" automaticallyRearrangesObjects="YES" id="qCr-3e-ngm" userLabel="Objects Array Controller">
+                <arrayController objectClassName="lightyearObject" automaticallyPreparesContent="YES" automaticallyRearrangesObjects="YES" id="qCr-3e-ngm" userLabel="Objects Array Controller">
                     <declaredKeys>
-                        <string>itemName</string>
-                        <string>itemID</string>
+                        <string>objectName</string>
                     </declaredKeys>
+                    <connections>
+                        <binding destination="baN-of-jPD" name="contentArray" keyPath="self.objects" id="8oE-z6-VkH"/>
+                    </connections>
                 </arrayController>
+                <userDefaultsController representsSharedInstance="YES" id="OHQ-du-yXI"/>
             </objects>
             <point key="canvasLocation" x="609" y="2532"/>
         </scene>

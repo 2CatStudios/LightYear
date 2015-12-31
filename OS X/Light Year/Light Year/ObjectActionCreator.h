@@ -12,16 +12,30 @@
 
 @property (strong) IBOutlet NSCollectionView *objectsCollectionView;
 @property (strong) IBOutlet NSTextField *objectsCollectionViewCountAndTitle;
-@property (strong) IBOutlet NSArrayController *objectsCollectionViewObjectsArray;
+@property (strong) IBOutlet NSArrayController *objectsCollectionViewArray;
+
+@property (strong, nonatomic) NSMutableArray *objects;
 
 - (void) createNewObjectWithTitle:(NSString *)objectName andUUID:(NSNumber *)objectUUID;
 
 @end
 
 
-@interface ObjectActionCreatorObjectsArrayItem : NSObject
+@interface lightyearObject : NSObject
 
-@property (nonatomic, strong) NSString *itemName;
-@property (nonatomic, strong) NSString *itemID;
+/*! Unique numerical identification.*/
+@property (nonatomic, strong) NSNumber *objectID;
+/*! An object's identifier for use in human-readable cases. This does not have to be unique.*/
+@property (nonatomic, strong) NSString *objectName;
+
+@property (nonatomic, strong) NSString *shortDescription;
+@property (nonatomic, strong) NSString *longDescription;
+
+@property (nonatomic) BOOL storable;
+@property (nonatomic, strong) NSNumber *objectWeight;
+
+@property (nonatomic) BOOL equipable;
+
+@property (nonatomic) BOOL usable;
 
 @end

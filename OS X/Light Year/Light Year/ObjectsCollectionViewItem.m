@@ -30,16 +30,17 @@
 - (void) populateObject
 {
 
-	ObjectActionCreatorObjectsArrayItem *arrayObject = self.representedObject;
+	//lightyearObject *arrayObject = self.representedObject;
+	/*//oacObjectsArrayItem *arrayObject = self.representedObject;
 
 	NSNumberFormatter *nsstringToNSNumber = [[NSNumberFormatter alloc] init];
 	nsstringToNSNumber.numberStyle = NSNumberFormatterNoStyle;
 	self.itemID = [nsstringToNSNumber numberFromString:arrayObject.itemID];
 
-	self.itemName = arrayObject.itemName;
+	self.itemName = arrayObject.itemName;*/
 
 	NSButton *primaryButton = [self.view viewWithTag:1];
-	[primaryButton setTitle:self.itemName];
+	[primaryButton setTitle:self.activeObject.objectName];
 }
 
 @end
