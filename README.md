@@ -4,29 +4,42 @@
 # Light Year
 A hybrid IF engine, lightyears ahead.
 
-We're working on a new class of interactive fiction engine– something modern, sleek, and empowering. Every human being is creative; everyone can tell stories, and technology should enhance their vision, not get in the way. The Light Year engine makes it very easy for *anyone* to create an immersive, enveloping interactive fiction, and provides a comprehensive API for experienced developers to create something truly unique. It is currently in development, please contact us for pre-release testing opportunities.
+We're working on a new class of interactive fiction engine-something modern, sleek, and empowering. Every human being is creative; everyone can tell stories, and technology should enhance their vision, not get in the way. The Light Year engine makes it very easy for *anyone* to create an immersive, enveloping interactive fiction, and provides a comprehensive API for experienced developers to create something truly unique. It is currently in development, please contact us for pre-release testing opportunities.
 
 
 ---
 #0. Table of Contents
-1. [What is 'IF'](#1-what-is-if)
+0. [Why IF](#1-why-if)
+1. [What is 'IF'](#2-what-is-if)
 	* a. [Example](#a-example)
 	* b. [Explanation](#b-explanation)
 	* c. [Advantages](#c-advantages)
-2. [Play with Light Year](#2-play-with-light-year)
+2. [Play with Light Year](#3-play-with-light-year)
 	* a. [What Makes Light Year Fun](#a-what-makes-light-year-fun)
 	* b. [What Kind of Games to Expect](#b-what-kind-of-games-to-expect)
 	* c. [Where to Find Games](#c-where-to-find-games)
 	* d. [How to Play IF](#d-how-to-play-if)
-3. [Develop with Light Year](#3-develop-using-light-year)
+3. [Develop with Light Year](#4-develop-using-light-year)
 	* a. [Streamlined Development](#a-streamlined-development)
 	* b. [Reach New Players](#b-reach-new-players)
 	* c. [Why is Light Year Better than Other IF Engines](#c-why-is-light-year-better-than-other-if-engines)
 	* d. [Technical Details](#d-technical-details)
 
 
+#1. Why IF
 ---
-#1. What is IF?
+We're living in a golden age of technology; as Moore has observed, every year hardware components double in power, or half in size or cost. This is an unprecedented time when the people who created the original computers are seeing their wildest dreams achieved, and the video game industry is readily keeping up with the outstanding pace. Computer graphics are starting to fool even the most astute, and the marriage of psychology and game design has kept some players cooped up in their homes for months on end. Improvements made to our network infrastructures are allowing mass-multiplayer like never before, and with the advent of affordable virtual reality looming in what's left of this decade, certainly, why play interactive fiction?
+
+Strict interactive fiction saw the height of it's popularity in the early eighties, and a sharp decline into the twenty-first century. Niche communities have persisted, but interactive fiction has not been mainstream again since graphics were able to sweep people away. One might assume that 4k gaming or VR would deal the finishing blow, but we believe that the opposite is true; as games become more visual, they also become more restrictive, and players will desire the freedom that high-budget graphical standards naturally inhibit. Interactive fiction, with next to no graphical requirements, allows developers to add, for example, a beautifully shaded luxury car by simply informing you of it's existence: 'the new Volinni's polished hood reflected this evening's sun with an almost unreal sparkle'.
+
+Do note, we're not talking about game design restrictions, but immersion restrictions. Of course, the higher the resolution, the higher the quality (right, guys?), but also the less a player is able to 'put themselves into the game'– the distinction is rather than the player projecting onto the game, the game projects onto the player. What colour was that car I described earlier? I didn't specify, making what you imagined probably different from me. Anyway, what even is a Volinni? By taking away one of the senses, we can heighten the others (in this instance, imagination gets to be a sense). When an IF developer puts in the time to write a story bursting with content and character, the player is naturally immersed, and they fill in the details on the own, ultimately leading to a more intimate and personal experience.
+
+This concept of allowing players to create details is not unique to interactive fiction, and even if you've never played an IF game before, odds are good that you've experienced it at some point. It can most commonly be found in books, which have not failed to steal many hours from eager readers since the inception of human script. How many times, however, have you wished you could exist in the composed place of a great book?
+
+While video games give players experience, and books draw their readers along on a distinctive narrative trail, interactive fiction combines the two. Some interactive fiction is more of one than the other, perhaps more about exploration than traditional storytelling, or focusing more on a main quest or plot than the actions taken while inside it, but the unique experience of IF is something that is rarely found elsewhere. Whether you're looking for a deeper experience than what can be found in AAA shooters, or you'd like to more freely exist in a fantastical narrative world, interactive fiction, powered by the Light Year engine, can astound you with both it's breadth and depth.
+
+---
+#2. What is IF?
 ###a. Example
 ---
 
@@ -94,7 +107,7 @@ We're being ambiguous about what can be created here on purpose. Sure, you can p
 
 
 ---
-#2. Play with Light Year
+#3. Play with Light Year
 (Section Incomplete)
 ###a. What Makes Light Year Fun
 ---
@@ -114,7 +127,7 @@ Main Points: Type your commands, role play, be immersed.
 
 
 ---
-#3. Develop using Light Year
+#4. Develop using Light Year
 (Section Incomplete)
 ###a. Streamlined Development
 ---
