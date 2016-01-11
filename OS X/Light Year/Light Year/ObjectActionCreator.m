@@ -8,9 +8,6 @@
 
 #import "ObjectActionCreator.h"
 
-/*@implementation oacObjectsArrayItem
-@end*/
-
 @implementation lightyearObject
 @end
 
@@ -19,19 +16,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-	//[self publishNewObjectButton:nil];
+	self.createdObjects = [NSMutableArray array];
+	[self createNewObjectWithTitle:@"New Object" andUUID:0];
 }
 
-/*- (IBAction)publishNewObjectButton:(id)sender
-{
 
-	[self createNewObjectWithTitle:@"Create Object" andUUID:0];
-}*/
+- (IBAction)publishActionButton:(id)sender {
+
+	[self createNewObjectWithTitle:@"Create Object" andUUID:nil];
+}
+
 
 - (void) createNewObjectWithTitle:(NSString *)newTitle andUUID:(NSNumber *)newUUID
 {
 
 	lightyearObject *newObject = [[lightyearObject alloc] init];
+
+	NSNumber *newObjectUUID = newUUID;
+	if (!newObjectUUID /*|| UUID Exists */)
+	{
+
+		newObjectUUID = [NSNumber numberWithInteger:[self objectsArrayCount]+1];
+	}
 	[newObject setObjectID:newUUID];
 
 	NSString *newObjectTitle = newTitle;
@@ -42,9 +48,10 @@
 	}
 	[newObject setObjectName:newTitle];
 
-	[[self objects] addObject:newObject];
+	[[self createdObjects] addObject:newObject];
 	[self updateObjectsCollectionViewCount];
 }
+
 
 - (void)updateObjectsCollectionViewCount {
 
@@ -60,11 +67,11 @@
 	[[self objectsCollectionViewCountAndTitle] setStringValue:[NSString stringWithFormat:@"%@ %@", arrayCount, correctObjectString]];
 }
 
+
 -(NSUInteger) objectsArrayCount
 {
 
-	//return [[[self objectsCollectionViewArray] arrangedObjects] count];
-	return [[self objects] count];
+	return [[self createdObjects] count];
 }
 
 @end

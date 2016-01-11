@@ -8,7 +8,7 @@
 
 #include "MetaInformation.h"
 
-const char* engineBuildVersion()
+const char* apiBuildVersion()
 {
 
 	return "00-0-2d";

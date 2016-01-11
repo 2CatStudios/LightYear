@@ -15,9 +15,11 @@
 
 
 	NSDictionary *info = [[NSBundle mainBundle] infoDictionary];
-	NSString *version = [info objectForKey:@"CFBundleShortVersionString"];
+	NSString *clientVersion = [info objectForKey:@"CFBundleShortVersionString"];
 
-	[[self versionText] setStringValue:[NSString stringWithFormat:@"Version %@", version]];
+	NSString *engineVersion = @"GET BUILD VERSION"; //engineBuildVersion;
+
+	[[self versionText] setStringValue:[NSString stringWithFormat:@"%@, %@", clientVersion, engineVersion]];
 }
 
 - (IBAction)websiteButton:(id)sender {

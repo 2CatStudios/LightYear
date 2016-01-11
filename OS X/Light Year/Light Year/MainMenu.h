@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+//#import "MainView.h"
 
 @interface MainMenu : NSView
 @property (strong) IBOutlet NSTextField *versionText;

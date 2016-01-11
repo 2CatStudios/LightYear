@@ -10,12 +10,12 @@
 
 @interface ObjectActionCreator : NSViewController
 
-@property (strong) IBOutlet NSCollectionView *objectsCollectionView;
 @property (strong) IBOutlet NSTextField *objectsCollectionViewCountAndTitle;
-@property (strong) IBOutlet NSArrayController *objectsCollectionViewArray;
+@property (strong, nonatomic) NSMutableArray *createdObjects;
 
-@property (strong, nonatomic) NSMutableArray *objects;
+@property (strong) IBOutlet NSTableView *createdObjectsTableView;
 
+- (IBAction)publishActionButton:(id)sender;
 - (void) createNewObjectWithTitle:(NSString *)objectName andUUID:(NSNumber *)objectUUID;
 
 @end

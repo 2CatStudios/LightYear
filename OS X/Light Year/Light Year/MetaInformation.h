@@ -11,6 +11,6 @@
 
 #include <iostream>
 
-const char* engineBuildVersion();
+const char* apiBuildVersion();
 
 #endif /* MetaInformation_h */

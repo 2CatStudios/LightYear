@@ -13,8 +13,14 @@
 - (void)drawRect:(NSRect)dirtyRect {
     [super drawRect:dirtyRect];
 
-	[[self labelBuildVersion] setStringValue:[NSString stringWithFormat:@"Build %@", [NSString stringWithUTF8String:buildVersion()]]];
+	//[[self labelBuildVersion] setStringValue:[NSString stringWithFormat:@"Build %@", [NSString stringWithUTF8String:buildVersion()]]];
 }
+
+- (NSString *) engineBuildVersion {
+
+	return [NSString stringWithUTF8String:apiBuildVersion()];
+}
+
 /*
 - (IBAction)textFieldInputAction:(id)sender {
 

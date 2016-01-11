@@ -7,13 +7,13 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "UpdateString.h"
-#import "ReceiveInput.h"
+#import "MetaInformation.h"
 
 
 @interface MainView : NSView
 
-@property (strong) IBOutlet NSTextField *labelBuildVersion;
+- (NSString *) engineBuildVersion;
+
 /*
 @property (strong) IBOutlet NSScrollView *labelMainScroll;
 @property (strong) IBOutlet NSTextView *labelMainText;
