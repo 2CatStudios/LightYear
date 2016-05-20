@@ -1,10 +1,10 @@
 ![LightYear Title Catch](Marketing/Scaled/LightYear_Title_Catch/920x920.png)
 
 
-# Light Year
+# LightYear
 A hybrid IF engine, lightyears ahead.
 
-We're working on a new class of interactive fiction engine: something modern, sleek, and empowering. Every human being is creative, everyone can tell stories, and technology should enhance their vision, not get in the way. The Light Year engine makes it very easy for *anyone* to create an immersive, enveloping interactive fiction, and provides a comprehensive API for experienced developers to create something truly unique. It is currently in development, please contact us for pre-release testing opportunities.
+We're working on a new class of interactive fiction engine: something modern, sleek, and empowering. Every human being is creative, everyone can tell stories, and technology should enhance their vision, not get in the way. The LightYear engine makes it very easy for *anyone* to create an immersive, enveloping interactive fiction, and provides a comprehensive API for experienced developers to create something truly unique. It is currently in development, please contact us for pre-release testing opportunities.
 
 
 ---
@@ -14,16 +14,19 @@ We're working on a new class of interactive fiction engine: something modern, sl
 	* b. [Explanation](#b-explanation)
 	* c. [Advantages](#c-advantages)
 1. [Why IF](#2-why-if)
-2. [Play with Light Year](#3-play-with-light-year)
-	* a. [What Makes Light Year Fun](#a-what-makes-light-year-fun)
+2. [Play with LightYear](#3-play-with-lightyear)
+	* a. [What Makes LightYear Fun](#a-what-makes-lightyear-fun)
 	* b. [What Kind of Games to Expect](#b-what-kind-of-games-to-expect)
 	* c. [Where to Find Games](#c-where-to-find-games)
 	* d. [How to Play IF](#d-how-to-play-if)
-3. [Develop with Light Year](#4-develop-with-light-year)
+3. [Develop with LightYear](#4-develop-with-lightyear)
 	* a. [Streamlined Development](#a-streamlined-development)
 	* b. [Reach New Players](#b-reach-new-players)
-	* c. [Why is Light Year Better than Other IF Engines](#c-why-is-light-year-better-than-other-if-engines)
+	* c. [Why is LightYear Better than Other IF Engines](#c-why-is-lightyear-better-than-other-if-engines)
 	* d. [Technical Details](#d-technical-details)
+4. [LightYear Roadmap](#5-lightyear-roadmap)
+	* a. [Overview](#a-overview)
+	* b. [Tracking Resources](#a-tracking-resources)
 
 
 #1. What is IF?
@@ -88,9 +91,9 @@ Interactive fiction isn't about controlling a rogue mage in their magical tower,
 ###c. Advantages
 ---
 
-The best thing about IF as a genre, and Light Year as an engine, is that it allows anyone to craft a story, a game. No programming knowledge, modeling expertise, or level-design skills are required, and the turn around time is nearly immediate. Absolutely everyone has indulged their creativity at one time or another, pretending they were in a different situation, making up stuff as they went along. Developing an IF is just like that, although you might want to put a little planning into it.
+The best thing about IF as a genre, and LightYear as an engine, is that it allows anyone to craft a story, a game. No programming knowledge, modeling expertise, or level-design skills are required, and the turn around time is nearly immediate. Absolutely everyone has indulged their creativity at one time or another, pretending they were in a different situation, making up stuff as they went along. Developing an IF is just like that, although you might want to put a little planning into it.
 
-We're being ambiguous about what can be created here on purpose. Sure, you can produce a dungeon to explore, replete with deviously trapped containers and trip wires at every other passage, or a a fully decked-out spaceship with hundreds of rooms, but you're not limited to those common tropes. Want to write a mystery about some little town near Arizona, USA, in which aliens have crashed? A horror adventure where the player is trapped in a snowed-in cabin? Or, how about a secondary school drama? Maybe a trilogy? Light Year gives you the tools to create whatever you can dream up, empowering you to let your imagination loose, share your games with the world, and experience new and unique situations, which are only possible through the medium of interactive fiction.
+We're being ambiguous about what can be created here on purpose. Sure, you can produce a dungeon to explore, replete with deviously trapped containers and trip wires at every other passage, or a a fully decked-out spaceship with hundreds of rooms, but you're not limited to those common tropes. Want to write a mystery about some little town near Arizona, USA, in which aliens have crashed? A horror adventure where the player is trapped in a snowed-in cabin? Or, how about a secondary school drama? Maybe a trilogy? LightYear gives you the tools to create whatever you can dream up, empowering you to let your imagination loose, share your games with the world, and experience new and unique situations, which are only possible through the medium of interactive fiction.
 
 
 
@@ -104,14 +107,14 @@ Do note, we're not talking about game design restrictions, but immersion restric
 
 This concept of allowing players to create details is not unique to interactive fiction, and even if you've never played an IF game before, odds are good that you've experienced it at some point. It can most commonly be found in books, which have not failed to steal many hours from eager readers since the inception of human script. How many times, however, have you wished you could exist in the composed place of a great book?
 
-While video games give players experience, and books draw their readers along on a distinctive narrative trail, interactive fiction combines the two. Some interactive fiction is more of one than the other, perhaps more about exploration than traditional storytelling, or focusing more on a main quest or plot than the actions taken while inside it, but the unique experience of IF is something that is rarely found elsewhere. Whether you're looking for a deeper experience than what can be found in AAA shooters, or you'd like to more freely exist in a fantastical narrative world, interactive fiction, powered by the Light Year engine, can astound you with both it's breadth and depth.
+While video games give players experience, and books draw their readers along on a distinctive narrative trail, interactive fiction combines the two. Some interactive fiction is more of one than the other, perhaps more about exploration than traditional storytelling, or focusing more on a main quest or plot than the actions taken while inside it, but the unique experience of IF is something that is rarely found elsewhere. Whether you're looking for a deeper experience than what can be found in AAA shooters, or you'd like to more freely exist in a fantastical narrative world, interactive fiction, powered by the LightYear engine, can astound you with both it's breadth and depth.
 
 
-#3. Play with Light Year
+#3. Play with LightYear
 (Section Incomplete)
-###a. What Makes Light Year Fun
+###a. What Makes LightYear Fun
 ---
-Main Points: Light Year is modern (has modern features, continuity). Light Year builds off of what makes older engines great (what you already love, and then some).
+Main Points: LightYear is modern (has modern features, continuity). LightYear builds off of what makes older engines great (what you already love, and then some).
 
 ###b. What Kind of Games to Expect
 ---
@@ -127,7 +130,7 @@ Main Points: Type your commands, role play, be immersed.
 
 
 
-#4. Develop with Light Year
+#4. Develop with LightYear
 (Section Incomplete)
 ###a. Streamlined Development
 ---
@@ -137,10 +140,18 @@ Main Points: Develop using refined tools that let you focus on creating immersiv
 ---
 Main Points: Use our localization system, and outsource translation to the community. Optionally distribute the client along with your game to make it easy for users (built-in update system means you don't *have* to worry about keeping up-to-date with the latest client releases).
 
-###c. Why is Light Year Better than Other IF Engines
+###c. Why is LightYear Better than Other IF Engines
 ---
 Main Points: Standardized systems, lower-level functions automatically taken care of, understandable format, access to API for more complex ideas, and simple, clear, object-oriented designer. Currently in development, doesn't carry years of 'old baggage', or ineffective systems for compatibility's sake.
 
 ###d. Technical Details
 ---
 Main Points: Core written in C++, clients in native languages (Objective C, C#). API in C++. Git repo location (pro tip: you're already there), contributions welcome (get in touch before you submit a push request). Roadmap/Trello board.
+
+#5. LightYear Roadmap
+###a. Overview
+---
+Currently, we're working to consolidate several projects into LightYear to streamline the build process, and will soon move out of the prototype phase!
+
+###b. Tracking Resources
+Follow the Trello board for all the updates, the official page for important updates, and our News+Blog for only significant updates.
