@@ -46,7 +46,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/build
+CMAKE_BINARY_DIR = "/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear Build"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/LightYear.dir/depend.make
@@ -58,8 +58,8 @@ include CMakeFiles/LightYear.dir/progress.make
 include CMakeFiles/LightYear.dir/flags.make
 
 CMakeFiles/LightYear.dir/src/main.cpp.o: CMakeFiles/LightYear.dir/flags.make
-CMakeFiles/LightYear.dir/src/main.cpp.o: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/LightYear.dir/src/main.cpp.o"
+CMakeFiles/LightYear.dir/src/main.cpp.o: /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear Build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/LightYear.dir/src/main.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LightYear.dir/src/main.cpp.o -c /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/src/main.cpp
 
 CMakeFiles/LightYear.dir/src/main.cpp.i: cmake_force
@@ -82,8 +82,8 @@ CMakeFiles/LightYear.dir/src/main.cpp.o.provides.build: CMakeFiles/LightYear.dir
 
 
 CMakeFiles/LightYear.dir/src/LoopController.cpp.o: CMakeFiles/LightYear.dir/flags.make
-CMakeFiles/LightYear.dir/src/LoopController.cpp.o: ../src/LoopController.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/LightYear.dir/src/LoopController.cpp.o"
+CMakeFiles/LightYear.dir/src/LoopController.cpp.o: /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/src/LoopController.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear Build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/LightYear.dir/src/LoopController.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LightYear.dir/src/LoopController.cpp.o -c /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/src/LoopController.cpp
 
 CMakeFiles/LightYear.dir/src/LoopController.cpp.i: cmake_force
@@ -106,8 +106,8 @@ CMakeFiles/LightYear.dir/src/LoopController.cpp.o.provides.build: CMakeFiles/Lig
 
 
 CMakeFiles/LightYear.dir/src/EventManager.cpp.o: CMakeFiles/LightYear.dir/flags.make
-CMakeFiles/LightYear.dir/src/EventManager.cpp.o: ../src/EventManager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/LightYear.dir/src/EventManager.cpp.o"
+CMakeFiles/LightYear.dir/src/EventManager.cpp.o: /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/src/EventManager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear Build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/LightYear.dir/src/EventManager.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LightYear.dir/src/EventManager.cpp.o -c /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/src/EventManager.cpp
 
 CMakeFiles/LightYear.dir/src/EventManager.cpp.i: cmake_force
@@ -130,8 +130,8 @@ CMakeFiles/LightYear.dir/src/EventManager.cpp.o.provides.build: CMakeFiles/Light
 
 
 CMakeFiles/LightYear.dir/src/LogicDelegate.cpp.o: CMakeFiles/LightYear.dir/flags.make
-CMakeFiles/LightYear.dir/src/LogicDelegate.cpp.o: ../src/LogicDelegate.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/LightYear.dir/src/LogicDelegate.cpp.o"
+CMakeFiles/LightYear.dir/src/LogicDelegate.cpp.o: /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/src/LogicDelegate.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear Build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/LightYear.dir/src/LogicDelegate.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LightYear.dir/src/LogicDelegate.cpp.o -c /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/src/LogicDelegate.cpp
 
 CMakeFiles/LightYear.dir/src/LogicDelegate.cpp.i: cmake_force
@@ -154,8 +154,8 @@ CMakeFiles/LightYear.dir/src/LogicDelegate.cpp.o.provides.build: CMakeFiles/Ligh
 
 
 CMakeFiles/LightYear.dir/src/RenderManager.cpp.o: CMakeFiles/LightYear.dir/flags.make
-CMakeFiles/LightYear.dir/src/RenderManager.cpp.o: ../src/RenderManager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/LightYear.dir/src/RenderManager.cpp.o"
+CMakeFiles/LightYear.dir/src/RenderManager.cpp.o: /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/src/RenderManager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear Build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/LightYear.dir/src/RenderManager.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LightYear.dir/src/RenderManager.cpp.o -c /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/src/RenderManager.cpp
 
 CMakeFiles/LightYear.dir/src/RenderManager.cpp.i: cmake_force
@@ -178,8 +178,8 @@ CMakeFiles/LightYear.dir/src/RenderManager.cpp.o.provides.build: CMakeFiles/Ligh
 
 
 CMakeFiles/LightYear.dir/src/WindowManager.cpp.o: CMakeFiles/LightYear.dir/flags.make
-CMakeFiles/LightYear.dir/src/WindowManager.cpp.o: ../src/WindowManager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/LightYear.dir/src/WindowManager.cpp.o"
+CMakeFiles/LightYear.dir/src/WindowManager.cpp.o: /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/src/WindowManager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear Build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/LightYear.dir/src/WindowManager.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LightYear.dir/src/WindowManager.cpp.o -c /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/src/WindowManager.cpp
 
 CMakeFiles/LightYear.dir/src/WindowManager.cpp.i: cmake_force
@@ -202,8 +202,8 @@ CMakeFiles/LightYear.dir/src/WindowManager.cpp.o.provides.build: CMakeFiles/Ligh
 
 
 CMakeFiles/LightYear.dir/lib/kiss_sdl-0.10.4/kiss_draw.c.o: CMakeFiles/LightYear.dir/flags.make
-CMakeFiles/LightYear.dir/lib/kiss_sdl-0.10.4/kiss_draw.c.o: ../lib/kiss_sdl-0.10.4/kiss_draw.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/LightYear.dir/lib/kiss_sdl-0.10.4/kiss_draw.c.o"
+CMakeFiles/LightYear.dir/lib/kiss_sdl-0.10.4/kiss_draw.c.o: /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/kiss_sdl-0.10.4/kiss_draw.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear Build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/LightYear.dir/lib/kiss_sdl-0.10.4/kiss_draw.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/LightYear.dir/lib/kiss_sdl-0.10.4/kiss_draw.c.o   -c /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/kiss_sdl-0.10.4/kiss_draw.c
 
 CMakeFiles/LightYear.dir/lib/kiss_sdl-0.10.4/kiss_draw.c.i: cmake_force
@@ -226,8 +226,8 @@ CMakeFiles/LightYear.dir/lib/kiss_sdl-0.10.4/kiss_draw.c.o.provides.build: CMake
 
 
 CMakeFiles/LightYear.dir/lib/kiss_sdl-0.10.4/kiss_general.c.o: CMakeFiles/LightYear.dir/flags.make
-CMakeFiles/LightYear.dir/lib/kiss_sdl-0.10.4/kiss_general.c.o: ../lib/kiss_sdl-0.10.4/kiss_general.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/LightYear.dir/lib/kiss_sdl-0.10.4/kiss_general.c.o"
+CMakeFiles/LightYear.dir/lib/kiss_sdl-0.10.4/kiss_general.c.o: /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/kiss_sdl-0.10.4/kiss_general.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear Build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/LightYear.dir/lib/kiss_sdl-0.10.4/kiss_general.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/LightYear.dir/lib/kiss_sdl-0.10.4/kiss_general.c.o   -c /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/kiss_sdl-0.10.4/kiss_general.c
 
 CMakeFiles/LightYear.dir/lib/kiss_sdl-0.10.4/kiss_general.c.i: cmake_force
@@ -250,8 +250,8 @@ CMakeFiles/LightYear.dir/lib/kiss_sdl-0.10.4/kiss_general.c.o.provides.build: CM
 
 
 CMakeFiles/LightYear.dir/lib/kiss_sdl-0.10.4/kiss_posix.c.o: CMakeFiles/LightYear.dir/flags.make
-CMakeFiles/LightYear.dir/lib/kiss_sdl-0.10.4/kiss_posix.c.o: ../lib/kiss_sdl-0.10.4/kiss_posix.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/LightYear.dir/lib/kiss_sdl-0.10.4/kiss_posix.c.o"
+CMakeFiles/LightYear.dir/lib/kiss_sdl-0.10.4/kiss_posix.c.o: /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/kiss_sdl-0.10.4/kiss_posix.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear Build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/LightYear.dir/lib/kiss_sdl-0.10.4/kiss_posix.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/LightYear.dir/lib/kiss_sdl-0.10.4/kiss_posix.c.o   -c /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/kiss_sdl-0.10.4/kiss_posix.c
 
 CMakeFiles/LightYear.dir/lib/kiss_sdl-0.10.4/kiss_posix.c.i: cmake_force
@@ -274,8 +274,8 @@ CMakeFiles/LightYear.dir/lib/kiss_sdl-0.10.4/kiss_posix.c.o.provides.build: CMak
 
 
 CMakeFiles/LightYear.dir/lib/kiss_sdl-0.10.4/kiss_widgets.c.o: CMakeFiles/LightYear.dir/flags.make
-CMakeFiles/LightYear.dir/lib/kiss_sdl-0.10.4/kiss_widgets.c.o: ../lib/kiss_sdl-0.10.4/kiss_widgets.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/LightYear.dir/lib/kiss_sdl-0.10.4/kiss_widgets.c.o"
+CMakeFiles/LightYear.dir/lib/kiss_sdl-0.10.4/kiss_widgets.c.o: /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/kiss_sdl-0.10.4/kiss_widgets.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear Build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/LightYear.dir/lib/kiss_sdl-0.10.4/kiss_widgets.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/LightYear.dir/lib/kiss_sdl-0.10.4/kiss_widgets.c.o   -c /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/kiss_sdl-0.10.4/kiss_widgets.c
 
 CMakeFiles/LightYear.dir/lib/kiss_sdl-0.10.4/kiss_widgets.c.i: cmake_force
@@ -298,8 +298,8 @@ CMakeFiles/LightYear.dir/lib/kiss_sdl-0.10.4/kiss_widgets.c.o.provides.build: CM
 
 
 CMakeFiles/LightYear.dir/lib/pugixml/pugixml.cpp.o: CMakeFiles/LightYear.dir/flags.make
-CMakeFiles/LightYear.dir/lib/pugixml/pugixml.cpp.o: ../lib/pugixml/pugixml.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/LightYear.dir/lib/pugixml/pugixml.cpp.o"
+CMakeFiles/LightYear.dir/lib/pugixml/pugixml.cpp.o: /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/pugixml/pugixml.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear Build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/LightYear.dir/lib/pugixml/pugixml.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LightYear.dir/lib/pugixml/pugixml.cpp.o -c /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/pugixml/pugixml.cpp
 
 CMakeFiles/LightYear.dir/lib/pugixml/pugixml.cpp.i: cmake_force
@@ -351,7 +351,7 @@ bin/LightYear: CMakeFiles/LightYear.dir/lib/kiss_sdl-0.10.4/kiss_widgets.c.o
 bin/LightYear: CMakeFiles/LightYear.dir/lib/pugixml/pugixml.cpp.o
 bin/LightYear: CMakeFiles/LightYear.dir/build.make
 bin/LightYear: CMakeFiles/LightYear.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable bin/LightYear"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear Build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable bin/LightYear"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/LightYear.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -378,6 +378,6 @@ CMakeFiles/LightYear.dir/clean:
 .PHONY : CMakeFiles/LightYear.dir/clean
 
 CMakeFiles/LightYear.dir/depend:
-	cd /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/build /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/build /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/build/CMakeFiles/LightYear.dir/DependInfo.cmake --color=$(COLOR)
+	cd "/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear Build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear "/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear Build" "/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear Build" "/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear Build/CMakeFiles/LightYear.dir/DependInfo.cmake" --color=$(COLOR)
 .PHONY : CMakeFiles/LightYear.dir/depend
 

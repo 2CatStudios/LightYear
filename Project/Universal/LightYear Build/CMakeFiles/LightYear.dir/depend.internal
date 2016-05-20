@@ -202,9 +202,6 @@ CMakeFiles/LightYear.dir/lib/pugixml/pugixml.cpp.o
  /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/pugixml/pugixml.cpp
  /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/pugixml/pugixml.hpp
 CMakeFiles/LightYear.dir/src/EventManager.cpp.o
- ../include/EventManager.h
- ../include/WindowManager.h
- ../include/cleanup.h
  /Library/Frameworks/SDL2.framework/Headers/SDL.h
  /Library/Frameworks/SDL2.framework/Headers/SDL_assert.h
  /Library/Frameworks/SDL2.framework/Headers/SDL_atomic.h
@@ -251,12 +248,11 @@ CMakeFiles/LightYear.dir/src/EventManager.cpp.o
  /Library/Frameworks/SDL2.framework/Headers/close_code.h
  /Library/Frameworks/SDL2_image.framework/Headers/SDL_image.h
  /Library/Frameworks/SDL2_ttf.framework/Headers/SDL_ttf.h
+ /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/include/LightYear/EventManager.h
+ /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/include/LightYear/WindowManager.h
+ /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/include/SDL2/cleanup.h
  /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/src/EventManager.cpp
 CMakeFiles/LightYear.dir/src/LogicDelegate.cpp.o
- ../include/LogicDelegate.h
- ../include/RenderManager.h
- ../include/WindowManager.h
- ../include/cleanup.h
  /Library/Frameworks/SDL2.framework/Headers/SDL.h
  /Library/Frameworks/SDL2.framework/Headers/SDL_assert.h
  /Library/Frameworks/SDL2.framework/Headers/SDL_atomic.h
@@ -303,14 +299,12 @@ CMakeFiles/LightYear.dir/src/LogicDelegate.cpp.o
  /Library/Frameworks/SDL2.framework/Headers/close_code.h
  /Library/Frameworks/SDL2_image.framework/Headers/SDL_image.h
  /Library/Frameworks/SDL2_ttf.framework/Headers/SDL_ttf.h
+ /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/include/LightYear/LogicDelegate.h
+ /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/include/LightYear/RenderManager.h
+ /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/include/LightYear/WindowManager.h
+ /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/include/SDL2/cleanup.h
  /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/src/LogicDelegate.cpp
 CMakeFiles/LightYear.dir/src/LoopController.cpp.o
- ../include/EventManager.h
- ../include/LogicDelegate.h
- ../include/LoopController.h
- ../include/RenderManager.h
- ../include/WindowManager.h
- ../include/cleanup.h
  /Library/Frameworks/SDL2.framework/Headers/SDL.h
  /Library/Frameworks/SDL2.framework/Headers/SDL_assert.h
  /Library/Frameworks/SDL2.framework/Headers/SDL_atomic.h
@@ -357,11 +351,14 @@ CMakeFiles/LightYear.dir/src/LoopController.cpp.o
  /Library/Frameworks/SDL2.framework/Headers/close_code.h
  /Library/Frameworks/SDL2_image.framework/Headers/SDL_image.h
  /Library/Frameworks/SDL2_ttf.framework/Headers/SDL_ttf.h
+ /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/include/LightYear/EventManager.h
+ /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/include/LightYear/LogicDelegate.h
+ /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/include/LightYear/LoopController.h
+ /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/include/LightYear/RenderManager.h
+ /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/include/LightYear/WindowManager.h
+ /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/include/SDL2/cleanup.h
  /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/src/LoopController.cpp
 CMakeFiles/LightYear.dir/src/RenderManager.cpp.o
- ../include/RenderManager.h
- ../include/WindowManager.h
- ../include/cleanup.h
  /Library/Frameworks/SDL2.framework/Headers/SDL.h
  /Library/Frameworks/SDL2.framework/Headers/SDL_assert.h
  /Library/Frameworks/SDL2.framework/Headers/SDL_atomic.h
@@ -408,10 +405,11 @@ CMakeFiles/LightYear.dir/src/RenderManager.cpp.o
  /Library/Frameworks/SDL2.framework/Headers/close_code.h
  /Library/Frameworks/SDL2_image.framework/Headers/SDL_image.h
  /Library/Frameworks/SDL2_ttf.framework/Headers/SDL_ttf.h
+ /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/include/LightYear/RenderManager.h
+ /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/include/LightYear/WindowManager.h
+ /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/include/SDL2/cleanup.h
  /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/src/RenderManager.cpp
 CMakeFiles/LightYear.dir/src/WindowManager.cpp.o
- ../include/WindowManager.h
- ../include/cleanup.h
  /Library/Frameworks/SDL2.framework/Headers/SDL.h
  /Library/Frameworks/SDL2.framework/Headers/SDL_assert.h
  /Library/Frameworks/SDL2.framework/Headers/SDL_atomic.h
@@ -458,14 +456,10 @@ CMakeFiles/LightYear.dir/src/WindowManager.cpp.o
  /Library/Frameworks/SDL2.framework/Headers/close_code.h
  /Library/Frameworks/SDL2_image.framework/Headers/SDL_image.h
  /Library/Frameworks/SDL2_ttf.framework/Headers/SDL_ttf.h
+ /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/include/LightYear/WindowManager.h
+ /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/include/SDL2/cleanup.h
  /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/src/WindowManager.cpp
 CMakeFiles/LightYear.dir/src/main.cpp.o
- ../include/EventManager.h
- ../include/LogicDelegate.h
- ../include/LoopController.h
- ../include/RenderManager.h
- ../include/WindowManager.h
- ../include/cleanup.h
  /Library/Frameworks/SDL2.framework/Headers/SDL.h
  /Library/Frameworks/SDL2.framework/Headers/SDL_assert.h
  /Library/Frameworks/SDL2.framework/Headers/SDL_atomic.h
@@ -512,4 +506,10 @@ CMakeFiles/LightYear.dir/src/main.cpp.o
  /Library/Frameworks/SDL2.framework/Headers/close_code.h
  /Library/Frameworks/SDL2_image.framework/Headers/SDL_image.h
  /Library/Frameworks/SDL2_ttf.framework/Headers/SDL_ttf.h
+ /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/include/LightYear/EventManager.h
+ /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/include/LightYear/LogicDelegate.h
+ /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/include/LightYear/LoopController.h
+ /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/include/LightYear/RenderManager.h
+ /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/include/LightYear/WindowManager.h
+ /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/include/SDL2/cleanup.h
  /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/src/main.cpp

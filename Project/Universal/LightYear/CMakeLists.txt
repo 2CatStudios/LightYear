@@ -23,7 +23,8 @@ find_package(SDL2_image REQUIRED)
 include_directories(${SDL2_IMAGE_INCLUDE_DIR})
 
 #Include all files in the /include directory (our .h files)
-include_directories(include)
+include_directories(include/LightYear/)
+include_directories(include/SDL2/)
 
 #Add our code and loose libraries to the project
 add_executable(LightYear src/main.cpp src/LoopController.cpp src/EventManager.cpp src/LogicDelegate.cpp src/RenderManager.cpp src/WindowManager.cpp lib/kiss_sdl-0.10.4/kiss_draw.c lib/kiss_sdl-0.10.4/kiss_general.c lib/kiss_sdl-0.10.4/kiss_posix.c lib/kiss_sdl-0.10.4/kiss_widgets.c lib/pugixml/pugixml.cpp)

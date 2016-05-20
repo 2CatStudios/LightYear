@@ -29,13 +29,13 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/Applications/CMake.app/Contents/share/cmake-3.5/Modules/Platform/Darwin-Initialize.cmake"
   "/Applications/CMake.app/Contents/share/cmake-3.5/Modules/Platform/Darwin.cmake"
   "/Applications/CMake.app/Contents/share/cmake-3.5/Modules/Platform/UnixPaths.cmake"
-  "../CMakeLists.txt"
   "CMakeFiles/3.5.2/CMakeCCompiler.cmake"
   "CMakeFiles/3.5.2/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.5.2/CMakeSystem.cmake"
-  "../cmake/FindSDL2.cmake"
-  "../cmake/FindSDL2_image.cmake"
-  "../cmake/FindSDL2_ttf.cmake"
+  "/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/CMakeLists.txt"
+  "/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/cmake/FindSDL2.cmake"
+  "/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/cmake/FindSDL2_image.cmake"
+  "/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/cmake/FindSDL2_ttf.cmake"
   )
 
 # The corresponding makefile is:

@@ -36,7 +36,7 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/bin" TYPE EXECUTABLE FILES "/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/build/bin/LightYear")
+file(INSTALL DESTINATION "/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/bin" TYPE EXECUTABLE FILES "/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear Build/bin/LightYear")
   if(EXISTS "$ENV{DESTDIR}/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/bin/LightYear" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/bin/LightYear")
     execute_process(COMMAND /usr/bin/install_name_tool
@@ -56,5 +56,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear Build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

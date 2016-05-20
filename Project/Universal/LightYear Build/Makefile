@@ -51,7 +51,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/build
+CMAKE_BINARY_DIR = "/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear Build"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -124,9 +124,9 @@ install/local/fast: install/local
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/build/CMakeFiles /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear Build/CMakeFiles" "/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear Build/CMakeFiles/progress.marks"
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear Build/CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
