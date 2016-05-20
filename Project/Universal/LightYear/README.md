@@ -62,9 +62,11 @@ Whenever a change is made to the program, whether you edit some code or sync the
 ---
 We'd like to thank the following for their help, without them, whether they're aware of their assistance or not, this project would not be in as complete a state as it may currently be found. This list is not exhaustive, already, I'm sure I forgot some amazing StackOverflow posts.
 
-[Will Usher](http://www.willusher.io) for the amazing SDL2 tutorials.
+[Tarvo Korrovits](https://github.com/actsl/kiss_sdl) for KISS_SDL
 
-[Lazy Foo' Productions](http://lazyfoo.net) for the SDL2 examples.
+[Will Usher](http://www.willusher.io) for amazing SDL2 tutorials.
+
+[Lazy Foo' Productions](http://lazyfoo.net) for SDL2 examples.
 
 [Jet Brains](https://www.jetbrains.com) for your CMake explinations.
 
