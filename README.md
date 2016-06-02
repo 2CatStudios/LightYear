@@ -1,4 +1,4 @@
-![LightYear Title Catch](Marketing/Scaled/LightYear_Title_Catch/920x920.png)
+![LightYear Title Catch](Marketing/Scaled/Header/920x920.jpg)
 
 
 # LightYear

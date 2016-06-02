@@ -78,6 +78,7 @@ int LoopController::EventsLogicRendering ()
 		
 		case 2:
 			m_mainLoop = false;
+			std::cout << "quit" << std::endl;
 			break;
 	}
 	
