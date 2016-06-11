@@ -1,16 +1,11 @@
-﻿#include "LoopController.h"
+﻿#include "CoreLoopDelegate.h"
 
 
 int main (int argc, char *argv[])
 {
 	
-	LoopController loopController;
+	CoreLoopDelegate coreLoopDelegate;
+	if (!coreLoopDelegate.Run ()) return 1;
 	
-	if (loopController.CoreLoop () != 0)
-	{
-		
-		return 1;
-	}
-
 	return 0;
 }

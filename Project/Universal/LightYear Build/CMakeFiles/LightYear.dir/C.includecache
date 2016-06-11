@@ -598,19 +598,19 @@ SDL2/begin_code.h
 SDL2/close_code.h
 -
 
-/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/kiss_sdl-0.10.4/kiss_draw.c
+/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/kiss_sdl-1.0.4/kiss_draw.c
 kiss_sdl.h
-/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/kiss_sdl-0.10.4/kiss_sdl.h
+/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/kiss_sdl-1.0.4/kiss_sdl.h
 
-/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/kiss_sdl-0.10.4/kiss_general.c
+/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/kiss_sdl-1.0.4/kiss_general.c
 kiss_sdl.h
-/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/kiss_sdl-0.10.4/kiss_sdl.h
+/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/kiss_sdl-1.0.4/kiss_sdl.h
 
-/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/kiss_sdl-0.10.4/kiss_posix.c
+/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/kiss_sdl-1.0.4/kiss_posix.c
 kiss_sdl.h
-/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/kiss_sdl-0.10.4/kiss_sdl.h
+/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/kiss_sdl-1.0.4/kiss_sdl.h
 
-/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/kiss_sdl-0.10.4/kiss_sdl.h
+/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/kiss_sdl-1.0.4/kiss_sdl.h
 SDL.h
 -
 SDL_ttf.h
@@ -618,11 +618,11 @@ SDL_ttf.h
 SDL_image.h
 -
 SDL.h
-/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/kiss_sdl-0.10.4/SDL.h
+-
 SDL_ttf.h
-/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/kiss_sdl-0.10.4/SDL_ttf.h
+-
 SDL_image.h
-/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/kiss_sdl-0.10.4/SDL_image.h
+-
 sys/types.h
 -
 direct.h
@@ -640,7 +640,7 @@ string.h
 stdio.h
 -
 
-/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/kiss_sdl-0.10.4/kiss_widgets.c
+/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/kiss_sdl-1.0.4/kiss_widgets.c
 kiss_sdl.h
-/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/kiss_sdl-0.10.4/kiss_sdl.h
+/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/kiss_sdl-1.0.4/kiss_sdl.h
 

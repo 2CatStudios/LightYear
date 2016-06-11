@@ -167,140 +167,194 @@ LightYear/fast:
 	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/build
 .PHONY : LightYear/fast
 
-src/EventManager.o: src/EventManager.cpp.o
+lib/kiss_sdl-1.0.4/kiss_draw.o: lib/kiss_sdl-1.0.4/kiss_draw.c.o
 
-.PHONY : src/EventManager.o
-
-# target to build an object file
-src/EventManager.cpp.o:
-	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/src/EventManager.cpp.o
-.PHONY : src/EventManager.cpp.o
-
-src/EventManager.i: src/EventManager.cpp.i
-
-.PHONY : src/EventManager.i
-
-# target to preprocess a source file
-src/EventManager.cpp.i:
-	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/src/EventManager.cpp.i
-.PHONY : src/EventManager.cpp.i
-
-src/EventManager.s: src/EventManager.cpp.s
-
-.PHONY : src/EventManager.s
-
-# target to generate assembly for a file
-src/EventManager.cpp.s:
-	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/src/EventManager.cpp.s
-.PHONY : src/EventManager.cpp.s
-
-src/LogicDelegate.o: src/LogicDelegate.cpp.o
-
-.PHONY : src/LogicDelegate.o
+.PHONY : lib/kiss_sdl-1.0.4/kiss_draw.o
 
 # target to build an object file
-src/LogicDelegate.cpp.o:
-	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/src/LogicDelegate.cpp.o
-.PHONY : src/LogicDelegate.cpp.o
+lib/kiss_sdl-1.0.4/kiss_draw.c.o:
+	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/lib/kiss_sdl-1.0.4/kiss_draw.c.o
+.PHONY : lib/kiss_sdl-1.0.4/kiss_draw.c.o
 
-src/LogicDelegate.i: src/LogicDelegate.cpp.i
+lib/kiss_sdl-1.0.4/kiss_draw.i: lib/kiss_sdl-1.0.4/kiss_draw.c.i
 
-.PHONY : src/LogicDelegate.i
+.PHONY : lib/kiss_sdl-1.0.4/kiss_draw.i
 
 # target to preprocess a source file
-src/LogicDelegate.cpp.i:
-	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/src/LogicDelegate.cpp.i
-.PHONY : src/LogicDelegate.cpp.i
+lib/kiss_sdl-1.0.4/kiss_draw.c.i:
+	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/lib/kiss_sdl-1.0.4/kiss_draw.c.i
+.PHONY : lib/kiss_sdl-1.0.4/kiss_draw.c.i
 
-src/LogicDelegate.s: src/LogicDelegate.cpp.s
+lib/kiss_sdl-1.0.4/kiss_draw.s: lib/kiss_sdl-1.0.4/kiss_draw.c.s
 
-.PHONY : src/LogicDelegate.s
+.PHONY : lib/kiss_sdl-1.0.4/kiss_draw.s
 
 # target to generate assembly for a file
-src/LogicDelegate.cpp.s:
-	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/src/LogicDelegate.cpp.s
-.PHONY : src/LogicDelegate.cpp.s
+lib/kiss_sdl-1.0.4/kiss_draw.c.s:
+	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/lib/kiss_sdl-1.0.4/kiss_draw.c.s
+.PHONY : lib/kiss_sdl-1.0.4/kiss_draw.c.s
 
-src/LoopController.o: src/LoopController.cpp.o
+lib/kiss_sdl-1.0.4/kiss_general.o: lib/kiss_sdl-1.0.4/kiss_general.c.o
 
-.PHONY : src/LoopController.o
+.PHONY : lib/kiss_sdl-1.0.4/kiss_general.o
 
 # target to build an object file
-src/LoopController.cpp.o:
-	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/src/LoopController.cpp.o
-.PHONY : src/LoopController.cpp.o
+lib/kiss_sdl-1.0.4/kiss_general.c.o:
+	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/lib/kiss_sdl-1.0.4/kiss_general.c.o
+.PHONY : lib/kiss_sdl-1.0.4/kiss_general.c.o
 
-src/LoopController.i: src/LoopController.cpp.i
+lib/kiss_sdl-1.0.4/kiss_general.i: lib/kiss_sdl-1.0.4/kiss_general.c.i
 
-.PHONY : src/LoopController.i
+.PHONY : lib/kiss_sdl-1.0.4/kiss_general.i
 
 # target to preprocess a source file
-src/LoopController.cpp.i:
-	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/src/LoopController.cpp.i
-.PHONY : src/LoopController.cpp.i
+lib/kiss_sdl-1.0.4/kiss_general.c.i:
+	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/lib/kiss_sdl-1.0.4/kiss_general.c.i
+.PHONY : lib/kiss_sdl-1.0.4/kiss_general.c.i
 
-src/LoopController.s: src/LoopController.cpp.s
+lib/kiss_sdl-1.0.4/kiss_general.s: lib/kiss_sdl-1.0.4/kiss_general.c.s
 
-.PHONY : src/LoopController.s
+.PHONY : lib/kiss_sdl-1.0.4/kiss_general.s
 
 # target to generate assembly for a file
-src/LoopController.cpp.s:
-	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/src/LoopController.cpp.s
-.PHONY : src/LoopController.cpp.s
+lib/kiss_sdl-1.0.4/kiss_general.c.s:
+	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/lib/kiss_sdl-1.0.4/kiss_general.c.s
+.PHONY : lib/kiss_sdl-1.0.4/kiss_general.c.s
 
-src/RenderManager.o: src/RenderManager.cpp.o
+lib/kiss_sdl-1.0.4/kiss_posix.o: lib/kiss_sdl-1.0.4/kiss_posix.c.o
 
-.PHONY : src/RenderManager.o
+.PHONY : lib/kiss_sdl-1.0.4/kiss_posix.o
 
 # target to build an object file
-src/RenderManager.cpp.o:
-	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/src/RenderManager.cpp.o
-.PHONY : src/RenderManager.cpp.o
+lib/kiss_sdl-1.0.4/kiss_posix.c.o:
+	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/lib/kiss_sdl-1.0.4/kiss_posix.c.o
+.PHONY : lib/kiss_sdl-1.0.4/kiss_posix.c.o
 
-src/RenderManager.i: src/RenderManager.cpp.i
+lib/kiss_sdl-1.0.4/kiss_posix.i: lib/kiss_sdl-1.0.4/kiss_posix.c.i
 
-.PHONY : src/RenderManager.i
+.PHONY : lib/kiss_sdl-1.0.4/kiss_posix.i
 
 # target to preprocess a source file
-src/RenderManager.cpp.i:
-	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/src/RenderManager.cpp.i
-.PHONY : src/RenderManager.cpp.i
+lib/kiss_sdl-1.0.4/kiss_posix.c.i:
+	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/lib/kiss_sdl-1.0.4/kiss_posix.c.i
+.PHONY : lib/kiss_sdl-1.0.4/kiss_posix.c.i
 
-src/RenderManager.s: src/RenderManager.cpp.s
+lib/kiss_sdl-1.0.4/kiss_posix.s: lib/kiss_sdl-1.0.4/kiss_posix.c.s
 
-.PHONY : src/RenderManager.s
+.PHONY : lib/kiss_sdl-1.0.4/kiss_posix.s
 
 # target to generate assembly for a file
-src/RenderManager.cpp.s:
-	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/src/RenderManager.cpp.s
-.PHONY : src/RenderManager.cpp.s
+lib/kiss_sdl-1.0.4/kiss_posix.c.s:
+	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/lib/kiss_sdl-1.0.4/kiss_posix.c.s
+.PHONY : lib/kiss_sdl-1.0.4/kiss_posix.c.s
 
-src/WindowManager.o: src/WindowManager.cpp.o
+lib/kiss_sdl-1.0.4/kiss_widgets.o: lib/kiss_sdl-1.0.4/kiss_widgets.c.o
 
-.PHONY : src/WindowManager.o
+.PHONY : lib/kiss_sdl-1.0.4/kiss_widgets.o
 
 # target to build an object file
-src/WindowManager.cpp.o:
-	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/src/WindowManager.cpp.o
-.PHONY : src/WindowManager.cpp.o
+lib/kiss_sdl-1.0.4/kiss_widgets.c.o:
+	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/lib/kiss_sdl-1.0.4/kiss_widgets.c.o
+.PHONY : lib/kiss_sdl-1.0.4/kiss_widgets.c.o
 
-src/WindowManager.i: src/WindowManager.cpp.i
+lib/kiss_sdl-1.0.4/kiss_widgets.i: lib/kiss_sdl-1.0.4/kiss_widgets.c.i
 
-.PHONY : src/WindowManager.i
+.PHONY : lib/kiss_sdl-1.0.4/kiss_widgets.i
 
 # target to preprocess a source file
-src/WindowManager.cpp.i:
-	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/src/WindowManager.cpp.i
-.PHONY : src/WindowManager.cpp.i
+lib/kiss_sdl-1.0.4/kiss_widgets.c.i:
+	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/lib/kiss_sdl-1.0.4/kiss_widgets.c.i
+.PHONY : lib/kiss_sdl-1.0.4/kiss_widgets.c.i
 
-src/WindowManager.s: src/WindowManager.cpp.s
+lib/kiss_sdl-1.0.4/kiss_widgets.s: lib/kiss_sdl-1.0.4/kiss_widgets.c.s
 
-.PHONY : src/WindowManager.s
+.PHONY : lib/kiss_sdl-1.0.4/kiss_widgets.s
 
 # target to generate assembly for a file
-src/WindowManager.cpp.s:
-	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/src/WindowManager.cpp.s
-.PHONY : src/WindowManager.cpp.s
+lib/kiss_sdl-1.0.4/kiss_widgets.c.s:
+	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/lib/kiss_sdl-1.0.4/kiss_widgets.c.s
+.PHONY : lib/kiss_sdl-1.0.4/kiss_widgets.c.s
+
+src/CoreLoopDelegate.o: src/CoreLoopDelegate.cpp.o
+
+.PHONY : src/CoreLoopDelegate.o
+
+# target to build an object file
+src/CoreLoopDelegate.cpp.o:
+	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/src/CoreLoopDelegate.cpp.o
+.PHONY : src/CoreLoopDelegate.cpp.o
+
+src/CoreLoopDelegate.i: src/CoreLoopDelegate.cpp.i
+
+.PHONY : src/CoreLoopDelegate.i
+
+# target to preprocess a source file
+src/CoreLoopDelegate.cpp.i:
+	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/src/CoreLoopDelegate.cpp.i
+.PHONY : src/CoreLoopDelegate.cpp.i
+
+src/CoreLoopDelegate.s: src/CoreLoopDelegate.cpp.s
+
+.PHONY : src/CoreLoopDelegate.s
+
+# target to generate assembly for a file
+src/CoreLoopDelegate.cpp.s:
+	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/src/CoreLoopDelegate.cpp.s
+.PHONY : src/CoreLoopDelegate.cpp.s
+
+src/InputManager.o: src/InputManager.cpp.o
+
+.PHONY : src/InputManager.o
+
+# target to build an object file
+src/InputManager.cpp.o:
+	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/src/InputManager.cpp.o
+.PHONY : src/InputManager.cpp.o
+
+src/InputManager.i: src/InputManager.cpp.i
+
+.PHONY : src/InputManager.i
+
+# target to preprocess a source file
+src/InputManager.cpp.i:
+	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/src/InputManager.cpp.i
+.PHONY : src/InputManager.cpp.i
+
+src/InputManager.s: src/InputManager.cpp.s
+
+.PHONY : src/InputManager.s
+
+# target to generate assembly for a file
+src/InputManager.cpp.s:
+	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/src/InputManager.cpp.s
+.PHONY : src/InputManager.cpp.s
+
+src/RenderingManager.o: src/RenderingManager.cpp.o
+
+.PHONY : src/RenderingManager.o
+
+# target to build an object file
+src/RenderingManager.cpp.o:
+	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/src/RenderingManager.cpp.o
+.PHONY : src/RenderingManager.cpp.o
+
+src/RenderingManager.i: src/RenderingManager.cpp.i
+
+.PHONY : src/RenderingManager.i
+
+# target to preprocess a source file
+src/RenderingManager.cpp.i:
+	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/src/RenderingManager.cpp.i
+.PHONY : src/RenderingManager.cpp.i
+
+src/RenderingManager.s: src/RenderingManager.cpp.s
+
+.PHONY : src/RenderingManager.s
+
+# target to generate assembly for a file
+src/RenderingManager.cpp.s:
+	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/src/RenderingManager.cpp.s
+.PHONY : src/RenderingManager.cpp.s
 
 src/main.o: src/main.cpp.o
 
@@ -342,21 +396,27 @@ help:
 	@echo "... list_install_components"
 	@echo "... LightYear"
 	@echo "... install/local"
-	@echo "... src/EventManager.o"
-	@echo "... src/EventManager.i"
-	@echo "... src/EventManager.s"
-	@echo "... src/LogicDelegate.o"
-	@echo "... src/LogicDelegate.i"
-	@echo "... src/LogicDelegate.s"
-	@echo "... src/LoopController.o"
-	@echo "... src/LoopController.i"
-	@echo "... src/LoopController.s"
-	@echo "... src/RenderManager.o"
-	@echo "... src/RenderManager.i"
-	@echo "... src/RenderManager.s"
-	@echo "... src/WindowManager.o"
-	@echo "... src/WindowManager.i"
-	@echo "... src/WindowManager.s"
+	@echo "... lib/kiss_sdl-1.0.4/kiss_draw.o"
+	@echo "... lib/kiss_sdl-1.0.4/kiss_draw.i"
+	@echo "... lib/kiss_sdl-1.0.4/kiss_draw.s"
+	@echo "... lib/kiss_sdl-1.0.4/kiss_general.o"
+	@echo "... lib/kiss_sdl-1.0.4/kiss_general.i"
+	@echo "... lib/kiss_sdl-1.0.4/kiss_general.s"
+	@echo "... lib/kiss_sdl-1.0.4/kiss_posix.o"
+	@echo "... lib/kiss_sdl-1.0.4/kiss_posix.i"
+	@echo "... lib/kiss_sdl-1.0.4/kiss_posix.s"
+	@echo "... lib/kiss_sdl-1.0.4/kiss_widgets.o"
+	@echo "... lib/kiss_sdl-1.0.4/kiss_widgets.i"
+	@echo "... lib/kiss_sdl-1.0.4/kiss_widgets.s"
+	@echo "... src/CoreLoopDelegate.o"
+	@echo "... src/CoreLoopDelegate.i"
+	@echo "... src/CoreLoopDelegate.s"
+	@echo "... src/InputManager.o"
+	@echo "... src/InputManager.i"
+	@echo "... src/InputManager.s"
+	@echo "... src/RenderingManager.o"
+	@echo "... src/RenderingManager.i"
+	@echo "... src/RenderingManager.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

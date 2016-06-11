@@ -24,13 +24,14 @@
 
 #include "kiss_sdl.h"
 
-kiss_font kiss_textfont, kiss_buttonfont;
-kiss_image kiss_normal, kiss_prelight, kiss_active, kiss_bar,
-	kiss_up, kiss_down, kiss_left, kiss_right, kiss_vslider,
-	kiss_hslider, kiss_selected, kiss_unselected;
+kiss_font kiss_textfont, kiss_buttonfont, font_title, font_subtitle;
+int kiss_textfont_size = 16;
+int kiss_buttonfont_size = 14;
+int font_title_size = 128;
+int font_subtitle_size = 32;
+
+kiss_image kiss_normal, kiss_prelight, kiss_active, kiss_bar,kiss_up, kiss_down, kiss_left, kiss_right, kiss_vslider, kiss_hslider, kiss_selected, kiss_unselected, menu_background;
 int kiss_screen_width, kiss_screen_height;
-int kiss_textfont_size = 15;
-int kiss_buttonfont_size = 12;
 int kiss_click_interval = 140;
 int kiss_progress_interval = 50;
 int kiss_slider_padding = 2;
@@ -179,18 +180,24 @@ SDL_Renderer* kiss_init(char* title, kiss_array *a, int w, int h)
 	IMG_Init(IMG_INIT_PNG);
 	TTF_Init();
 	SDL_StartTextInput();
-	window = SDL_CreateWindow(title, srect.w / 2 - w / 2,
-		srect.h / 2 - h / 2, w, h, SDL_WINDOW_SHOWN);
-	renderer = SDL_CreateRenderer(window, -1,
-		SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
+	window = SDL_CreateWindow(title, srect.w / 2 - w / 2, srect.h / 2 - h / 2, w, h, SDL_WINDOW_SHOWN);
+	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
+	
 	kiss_array_new(a);
 	kiss_array_append(a, WINDOW_TYPE, window);
 	kiss_array_append(a, RENDERER_TYPE, renderer);
-	font_new(&kiss_textfont, "kiss_font.ttf", a, kiss_textfont_size);
-	font_new(&kiss_buttonfont, "kiss_font.ttf", a, kiss_buttonfont_size);
-	image_new(&kiss_normal, "kiss_normal.png", a, renderer);
-	image_new(&kiss_prelight, "kiss_prelight.png", a, renderer);
-	image_new(&kiss_active, "kiss_active.png", a, renderer);
+	
+	/*Assets*/
+	font_new(&kiss_textfont, "font_anson_regular.ttf", a, kiss_textfont_size);
+	font_new(&kiss_buttonfont, "font_anson_regular.ttf", a, kiss_buttonfont_size);
+	font_new (&font_title, "font_anson_regular.ttf", a, font_title_size);
+	font_new (&font_subtitle, "font_anson_regular.ttf", a, font_subtitle_size);
+	
+	image_new (&menu_background, "menu_background.png", a, renderer);
+	
+	image_new(&kiss_normal, "button_normal.png", a, renderer);
+	image_new(&kiss_prelight, "button_prelight.png", a, renderer);
+	image_new(&kiss_active, "button_active.png", a, renderer);
 	image_new(&kiss_bar, "kiss_bar.png", a, renderer);
 	image_new(&kiss_vslider, "kiss_vslider.png", a, renderer);
 	image_new(&kiss_hslider, "kiss_hslider.png", a, renderer);

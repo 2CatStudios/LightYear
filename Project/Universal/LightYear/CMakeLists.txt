@@ -22,6 +22,7 @@ find_package(SDL2_image REQUIRED)
 include_directories(${SDL2_IMAGE_INCLUDE_DIR})
 
 
+
 #Copy the resources folder into the binary directory
 file(COPY resources DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 
@@ -29,17 +30,18 @@ file(COPY resources DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 add_definitions(-DRESDIR=\"../resources/\")
 
 
+
 #Include all files in the /include directory (our .h files)
 include_directories(include/LightYear/)
-include_directories(include/SDL2/)
 
 #Include our libraries from /lib (pugixml and kiss_sdl)
-include_directories (lib/pugixml/)
 include_directories (lib/kiss_sdl-1.0.4/)
+include_directories (lib/pugixml/)
+
 
 
 #Define SOURCES to simplify the add_executable step. This contains our source code.
-set(SOURCES src/main.cpp src/LoopController.cpp src/EventManager.cpp src/LogicDelegate.cpp src/RenderManager.cpp src/WindowManager.cpp)
+set (SOURCES src/main.cpp src/CoreLoopDelegate.cpp src/InputManager.cpp src/RenderingManager.cpp lib/kiss_sdl-1.0.4/kiss_draw.c lib/kiss_sdl-1.0.4/kiss_general.c lib/kiss_sdl-1.0.4/kiss_posix.c lib/kiss_sdl-1.0.4/kiss_widgets.c)
 
 
 #Add our code and loose libraries to the project
