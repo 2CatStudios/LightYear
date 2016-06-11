@@ -40,8 +40,9 @@ include_directories (lib/pugixml/)
 
 
 
-#Define SOURCES to simplify the add_executable step. This contains our source code.
-set (SOURCES src/main.cpp src/CoreLoopDelegate.cpp src/InputManager.cpp src/RenderingManager.cpp lib/kiss_sdl-1.0.4/kiss_draw.c lib/kiss_sdl-1.0.4/kiss_general.c lib/kiss_sdl-1.0.4/kiss_posix.c lib/kiss_sdl-1.0.4/kiss_widgets.c)
+#Define SOURCES to simplify the add_executable step. This contains our source code, and the source files from included libraries.
+set (SOURCES src/main.cpp src/CoreLoopDelegate.cpp src/InputManager.cpp src/RenderingManager.cpp lib/pugixml/pugixml.cpp lib/kiss_sdl-1.0.4/kiss_draw.c lib/kiss_sdl-1.0.4/kiss_general.c lib/kiss_sdl-1.0.4/kiss_posix.c lib/kiss_sdl-1.0.4/kiss_widgets.c)
+
 
 
 #Add our code and loose libraries to the project

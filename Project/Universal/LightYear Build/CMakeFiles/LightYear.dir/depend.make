@@ -197,6 +197,10 @@ CMakeFiles/LightYear.dir/lib/kiss_sdl-1.0.4/kiss_widgets.c.o: /Library/Framework
 CMakeFiles/LightYear.dir/lib/kiss_sdl-1.0.4/kiss_widgets.c.o: /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/kiss_sdl-1.0.4/kiss_sdl.h
 CMakeFiles/LightYear.dir/lib/kiss_sdl-1.0.4/kiss_widgets.c.o: /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/kiss_sdl-1.0.4/kiss_widgets.c
 
+CMakeFiles/LightYear.dir/lib/pugixml/pugixml.cpp.o: /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/pugixml/pugiconfig.hpp
+CMakeFiles/LightYear.dir/lib/pugixml/pugixml.cpp.o: /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/pugixml/pugixml.cpp
+CMakeFiles/LightYear.dir/lib/pugixml/pugixml.cpp.o: /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/pugixml/pugixml.hpp
+
 CMakeFiles/LightYear.dir/src/CoreLoopDelegate.cpp.o: /Library/Frameworks/SDL2.framework/Headers/SDL.h
 CMakeFiles/LightYear.dir/src/CoreLoopDelegate.cpp.o: /Library/Frameworks/SDL2.framework/Headers/SDL_assert.h
 CMakeFiles/LightYear.dir/src/CoreLoopDelegate.cpp.o: /Library/Frameworks/SDL2.framework/Headers/SDL_atomic.h

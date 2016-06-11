@@ -275,6 +275,33 @@ lib/kiss_sdl-1.0.4/kiss_widgets.c.s:
 	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/lib/kiss_sdl-1.0.4/kiss_widgets.c.s
 .PHONY : lib/kiss_sdl-1.0.4/kiss_widgets.c.s
 
+lib/pugixml/pugixml.o: lib/pugixml/pugixml.cpp.o
+
+.PHONY : lib/pugixml/pugixml.o
+
+# target to build an object file
+lib/pugixml/pugixml.cpp.o:
+	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/lib/pugixml/pugixml.cpp.o
+.PHONY : lib/pugixml/pugixml.cpp.o
+
+lib/pugixml/pugixml.i: lib/pugixml/pugixml.cpp.i
+
+.PHONY : lib/pugixml/pugixml.i
+
+# target to preprocess a source file
+lib/pugixml/pugixml.cpp.i:
+	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/lib/pugixml/pugixml.cpp.i
+.PHONY : lib/pugixml/pugixml.cpp.i
+
+lib/pugixml/pugixml.s: lib/pugixml/pugixml.cpp.s
+
+.PHONY : lib/pugixml/pugixml.s
+
+# target to generate assembly for a file
+lib/pugixml/pugixml.cpp.s:
+	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/lib/pugixml/pugixml.cpp.s
+.PHONY : lib/pugixml/pugixml.cpp.s
+
 src/CoreLoopDelegate.o: src/CoreLoopDelegate.cpp.o
 
 .PHONY : src/CoreLoopDelegate.o
@@ -408,6 +435,9 @@ help:
 	@echo "... lib/kiss_sdl-1.0.4/kiss_widgets.o"
 	@echo "... lib/kiss_sdl-1.0.4/kiss_widgets.i"
 	@echo "... lib/kiss_sdl-1.0.4/kiss_widgets.s"
+	@echo "... lib/pugixml/pugixml.o"
+	@echo "... lib/pugixml/pugixml.i"
+	@echo "... lib/pugixml/pugixml.s"
 	@echo "... src/CoreLoopDelegate.o"
 	@echo "... src/CoreLoopDelegate.i"
 	@echo "... src/CoreLoopDelegate.s"

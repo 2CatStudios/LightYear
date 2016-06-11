@@ -71,13 +71,14 @@ void CoreLoopDelegate::DrawWindowMenu ()
 int CoreLoopDelegate::Run ()
 {
 	
-	InitializeKISS ();
-	CreateWindowMenu ();
-	Loop ();
+	if (InitializeKISS () != 0)
+		return 1;
 	
-	/*if (!InitializeKISS ()) return 1;
-	if (!CreateWindowMenu ()) return 1;
-	if (!Loop ()) return 1;*/
+	if (CreateWindowMenu () != 0)
+		return 1;
+	
+	if (Loop () != 0)
+		return 1;
 	
 	return 0;
 }

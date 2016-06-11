@@ -27,6 +27,7 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/pugixml"
   )
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/pugixml/pugixml.cpp" "/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear Build/CMakeFiles/LightYear.dir/lib/pugixml/pugixml.cpp.o"
   "/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/src/CoreLoopDelegate.cpp" "/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear Build/CMakeFiles/LightYear.dir/src/CoreLoopDelegate.cpp.o"
   "/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/src/InputManager.cpp" "/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear Build/CMakeFiles/LightYear.dir/src/InputManager.cpp.o"
   "/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/src/RenderingManager.cpp" "/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear Build/CMakeFiles/LightYear.dir/src/RenderingManager.cpp.o"
