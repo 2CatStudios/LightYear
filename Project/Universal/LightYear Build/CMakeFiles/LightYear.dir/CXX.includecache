@@ -609,12 +609,14 @@ kiss_sdl.h
 /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/include/LightYear/InputManager.h
 kiss_sdl.h
 /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/include/LightYear/kiss_sdl.h
+RenderingManager.h
+/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/include/LightYear/RenderingManager.h
 
 /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/include/LightYear/RenderingManager.h
 kiss_sdl.h
 /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/include/LightYear/kiss_sdl.h
 
-/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/kiss_sdl-1.0.4/kiss_sdl.h
+/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/kiss_sdl-1.0.12/kiss_sdl.h
 SDL.h
 -
 SDL_ttf.h
@@ -626,6 +628,12 @@ SDL.h
 SDL_ttf.h
 -
 SDL_image.h
+-
+SDL2/SDL.h
+-
+SDL2/SDL_ttf.h
+-
+SDL2/SDL_image.h
 -
 sys/types.h
 -

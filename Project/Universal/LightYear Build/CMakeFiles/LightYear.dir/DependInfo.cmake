@@ -5,10 +5,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/kiss_sdl-1.0.4/kiss_draw.c" "/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear Build/CMakeFiles/LightYear.dir/lib/kiss_sdl-1.0.4/kiss_draw.c.o"
-  "/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/kiss_sdl-1.0.4/kiss_general.c" "/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear Build/CMakeFiles/LightYear.dir/lib/kiss_sdl-1.0.4/kiss_general.c.o"
-  "/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/kiss_sdl-1.0.4/kiss_posix.c" "/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear Build/CMakeFiles/LightYear.dir/lib/kiss_sdl-1.0.4/kiss_posix.c.o"
-  "/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/kiss_sdl-1.0.4/kiss_widgets.c" "/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear Build/CMakeFiles/LightYear.dir/lib/kiss_sdl-1.0.4/kiss_widgets.c.o"
+  "/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/kiss_sdl-1.0.12/kiss_draw.c" "/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear Build/CMakeFiles/LightYear.dir/lib/kiss_sdl-1.0.12/kiss_draw.c.o"
+  "/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/kiss_sdl-1.0.12/kiss_general.c" "/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear Build/CMakeFiles/LightYear.dir/lib/kiss_sdl-1.0.12/kiss_general.c.o"
+  "/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/kiss_sdl-1.0.12/kiss_posix.c" "/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear Build/CMakeFiles/LightYear.dir/lib/kiss_sdl-1.0.12/kiss_posix.c.o"
+  "/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/kiss_sdl-1.0.12/kiss_widgets.c" "/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear Build/CMakeFiles/LightYear.dir/lib/kiss_sdl-1.0.12/kiss_widgets.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 
@@ -23,7 +23,7 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "/Library/Frameworks/SDL2_ttf.framework/Headers"
   "/Library/Frameworks/SDL2_image.framework/Headers"
   "/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/include/LightYear"
-  "/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/kiss_sdl-1.0.4"
+  "/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/kiss_sdl-1.0.12"
   "/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/pugixml"
   )
 set(CMAKE_DEPENDS_CHECK_CXX
@@ -46,7 +46,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/Library/Frameworks/SDL2_ttf.framework/Headers"
   "/Library/Frameworks/SDL2_image.framework/Headers"
   "/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/include/LightYear"
-  "/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/kiss_sdl-1.0.4"
+  "/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/kiss_sdl-1.0.12"
   "/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/pugixml"
   )
 

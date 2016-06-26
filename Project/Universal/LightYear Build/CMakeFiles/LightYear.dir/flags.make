@@ -7,11 +7,11 @@ C_FLAGS =  -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Pla
 
 C_DEFINES = -DRESDIR=\"../resources/\"
 
-C_INCLUDES = -I/Library/Frameworks/SDL2.framework/Headers -I/Library/Frameworks/SDL2_ttf.framework/Headers -I/Library/Frameworks/SDL2_image.framework/Headers -I/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/include/LightYear -I/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/kiss_sdl-1.0.4 -I/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/pugixml 
+C_INCLUDES = -I/Library/Frameworks/SDL2.framework/Headers -I/Library/Frameworks/SDL2_ttf.framework/Headers -I/Library/Frameworks/SDL2_image.framework/Headers -I/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/include/LightYear -I/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/kiss_sdl-1.0.12 -I/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/pugixml 
 
 CXX_FLAGS = -Wno-c++11-extensions -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -mmacosx-version-min=10.11   -F/Library/Frameworks 
 
 CXX_DEFINES = -DRESDIR=\"../resources/\"
 
-CXX_INCLUDES = -I/Library/Frameworks/SDL2.framework/Headers -I/Library/Frameworks/SDL2_ttf.framework/Headers -I/Library/Frameworks/SDL2_image.framework/Headers -I/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/include/LightYear -I/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/kiss_sdl-1.0.4 -I/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/pugixml 
+CXX_INCLUDES = -I/Library/Frameworks/SDL2.framework/Headers -I/Library/Frameworks/SDL2_ttf.framework/Headers -I/Library/Frameworks/SDL2_image.framework/Headers -I/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/include/LightYear -I/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/kiss_sdl-1.0.12 -I/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/pugixml 
 

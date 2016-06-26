@@ -34,14 +34,18 @@ add_definitions(-DRESDIR=\"../resources/\")
 #Include all files in the /include directory (our .h files)
 include_directories(include/LightYear/)
 
+#Define paths for our external libraries (for convenience)
+set (KISSSDL_PATH lib/kiss_sdl-1.0.12/)
+set (PUGIXML_PATH lib/pugixml/)
+
 #Include our libraries from /lib (pugixml and kiss_sdl)
-include_directories (lib/kiss_sdl-1.0.4/)
-include_directories (lib/pugixml/)
+include_directories (${KISSSDL_PATH})
+include_directories (${PUGIXML_PATH})
 
 
 
 #Define SOURCES to simplify the add_executable step. This contains our source code, and the source files from included libraries.
-set (SOURCES src/main.cpp src/CoreLoopDelegate.cpp src/InputManager.cpp src/RenderingManager.cpp lib/pugixml/pugixml.cpp lib/kiss_sdl-1.0.4/kiss_draw.c lib/kiss_sdl-1.0.4/kiss_general.c lib/kiss_sdl-1.0.4/kiss_posix.c lib/kiss_sdl-1.0.4/kiss_widgets.c)
+set (SOURCES src/main.cpp src/CoreLoopDelegate.cpp src/InputManager.cpp src/RenderingManager.cpp ${PUGIXML_PATH}/pugixml.cpp ${KISSSDL_PATH}/kiss_draw.c ${KISSSDL_PATH}/kiss_general.c ${KISSSDL_PATH}/kiss_posix.c ${KISSSDL_PATH}/kiss_widgets.c)
 
 
 

@@ -167,113 +167,113 @@ LightYear/fast:
 	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/build
 .PHONY : LightYear/fast
 
-lib/kiss_sdl-1.0.4/kiss_draw.o: lib/kiss_sdl-1.0.4/kiss_draw.c.o
+lib/kiss_sdl-1.0.12/kiss_draw.o: lib/kiss_sdl-1.0.12/kiss_draw.c.o
 
-.PHONY : lib/kiss_sdl-1.0.4/kiss_draw.o
-
-# target to build an object file
-lib/kiss_sdl-1.0.4/kiss_draw.c.o:
-	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/lib/kiss_sdl-1.0.4/kiss_draw.c.o
-.PHONY : lib/kiss_sdl-1.0.4/kiss_draw.c.o
-
-lib/kiss_sdl-1.0.4/kiss_draw.i: lib/kiss_sdl-1.0.4/kiss_draw.c.i
-
-.PHONY : lib/kiss_sdl-1.0.4/kiss_draw.i
-
-# target to preprocess a source file
-lib/kiss_sdl-1.0.4/kiss_draw.c.i:
-	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/lib/kiss_sdl-1.0.4/kiss_draw.c.i
-.PHONY : lib/kiss_sdl-1.0.4/kiss_draw.c.i
-
-lib/kiss_sdl-1.0.4/kiss_draw.s: lib/kiss_sdl-1.0.4/kiss_draw.c.s
-
-.PHONY : lib/kiss_sdl-1.0.4/kiss_draw.s
-
-# target to generate assembly for a file
-lib/kiss_sdl-1.0.4/kiss_draw.c.s:
-	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/lib/kiss_sdl-1.0.4/kiss_draw.c.s
-.PHONY : lib/kiss_sdl-1.0.4/kiss_draw.c.s
-
-lib/kiss_sdl-1.0.4/kiss_general.o: lib/kiss_sdl-1.0.4/kiss_general.c.o
-
-.PHONY : lib/kiss_sdl-1.0.4/kiss_general.o
+.PHONY : lib/kiss_sdl-1.0.12/kiss_draw.o
 
 # target to build an object file
-lib/kiss_sdl-1.0.4/kiss_general.c.o:
-	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/lib/kiss_sdl-1.0.4/kiss_general.c.o
-.PHONY : lib/kiss_sdl-1.0.4/kiss_general.c.o
+lib/kiss_sdl-1.0.12/kiss_draw.c.o:
+	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/lib/kiss_sdl-1.0.12/kiss_draw.c.o
+.PHONY : lib/kiss_sdl-1.0.12/kiss_draw.c.o
 
-lib/kiss_sdl-1.0.4/kiss_general.i: lib/kiss_sdl-1.0.4/kiss_general.c.i
+lib/kiss_sdl-1.0.12/kiss_draw.i: lib/kiss_sdl-1.0.12/kiss_draw.c.i
 
-.PHONY : lib/kiss_sdl-1.0.4/kiss_general.i
+.PHONY : lib/kiss_sdl-1.0.12/kiss_draw.i
 
 # target to preprocess a source file
-lib/kiss_sdl-1.0.4/kiss_general.c.i:
-	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/lib/kiss_sdl-1.0.4/kiss_general.c.i
-.PHONY : lib/kiss_sdl-1.0.4/kiss_general.c.i
+lib/kiss_sdl-1.0.12/kiss_draw.c.i:
+	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/lib/kiss_sdl-1.0.12/kiss_draw.c.i
+.PHONY : lib/kiss_sdl-1.0.12/kiss_draw.c.i
 
-lib/kiss_sdl-1.0.4/kiss_general.s: lib/kiss_sdl-1.0.4/kiss_general.c.s
+lib/kiss_sdl-1.0.12/kiss_draw.s: lib/kiss_sdl-1.0.12/kiss_draw.c.s
 
-.PHONY : lib/kiss_sdl-1.0.4/kiss_general.s
+.PHONY : lib/kiss_sdl-1.0.12/kiss_draw.s
 
 # target to generate assembly for a file
-lib/kiss_sdl-1.0.4/kiss_general.c.s:
-	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/lib/kiss_sdl-1.0.4/kiss_general.c.s
-.PHONY : lib/kiss_sdl-1.0.4/kiss_general.c.s
+lib/kiss_sdl-1.0.12/kiss_draw.c.s:
+	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/lib/kiss_sdl-1.0.12/kiss_draw.c.s
+.PHONY : lib/kiss_sdl-1.0.12/kiss_draw.c.s
 
-lib/kiss_sdl-1.0.4/kiss_posix.o: lib/kiss_sdl-1.0.4/kiss_posix.c.o
+lib/kiss_sdl-1.0.12/kiss_general.o: lib/kiss_sdl-1.0.12/kiss_general.c.o
 
-.PHONY : lib/kiss_sdl-1.0.4/kiss_posix.o
+.PHONY : lib/kiss_sdl-1.0.12/kiss_general.o
 
 # target to build an object file
-lib/kiss_sdl-1.0.4/kiss_posix.c.o:
-	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/lib/kiss_sdl-1.0.4/kiss_posix.c.o
-.PHONY : lib/kiss_sdl-1.0.4/kiss_posix.c.o
+lib/kiss_sdl-1.0.12/kiss_general.c.o:
+	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/lib/kiss_sdl-1.0.12/kiss_general.c.o
+.PHONY : lib/kiss_sdl-1.0.12/kiss_general.c.o
 
-lib/kiss_sdl-1.0.4/kiss_posix.i: lib/kiss_sdl-1.0.4/kiss_posix.c.i
+lib/kiss_sdl-1.0.12/kiss_general.i: lib/kiss_sdl-1.0.12/kiss_general.c.i
 
-.PHONY : lib/kiss_sdl-1.0.4/kiss_posix.i
+.PHONY : lib/kiss_sdl-1.0.12/kiss_general.i
 
 # target to preprocess a source file
-lib/kiss_sdl-1.0.4/kiss_posix.c.i:
-	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/lib/kiss_sdl-1.0.4/kiss_posix.c.i
-.PHONY : lib/kiss_sdl-1.0.4/kiss_posix.c.i
+lib/kiss_sdl-1.0.12/kiss_general.c.i:
+	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/lib/kiss_sdl-1.0.12/kiss_general.c.i
+.PHONY : lib/kiss_sdl-1.0.12/kiss_general.c.i
 
-lib/kiss_sdl-1.0.4/kiss_posix.s: lib/kiss_sdl-1.0.4/kiss_posix.c.s
+lib/kiss_sdl-1.0.12/kiss_general.s: lib/kiss_sdl-1.0.12/kiss_general.c.s
 
-.PHONY : lib/kiss_sdl-1.0.4/kiss_posix.s
+.PHONY : lib/kiss_sdl-1.0.12/kiss_general.s
 
 # target to generate assembly for a file
-lib/kiss_sdl-1.0.4/kiss_posix.c.s:
-	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/lib/kiss_sdl-1.0.4/kiss_posix.c.s
-.PHONY : lib/kiss_sdl-1.0.4/kiss_posix.c.s
+lib/kiss_sdl-1.0.12/kiss_general.c.s:
+	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/lib/kiss_sdl-1.0.12/kiss_general.c.s
+.PHONY : lib/kiss_sdl-1.0.12/kiss_general.c.s
 
-lib/kiss_sdl-1.0.4/kiss_widgets.o: lib/kiss_sdl-1.0.4/kiss_widgets.c.o
+lib/kiss_sdl-1.0.12/kiss_posix.o: lib/kiss_sdl-1.0.12/kiss_posix.c.o
 
-.PHONY : lib/kiss_sdl-1.0.4/kiss_widgets.o
+.PHONY : lib/kiss_sdl-1.0.12/kiss_posix.o
 
 # target to build an object file
-lib/kiss_sdl-1.0.4/kiss_widgets.c.o:
-	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/lib/kiss_sdl-1.0.4/kiss_widgets.c.o
-.PHONY : lib/kiss_sdl-1.0.4/kiss_widgets.c.o
+lib/kiss_sdl-1.0.12/kiss_posix.c.o:
+	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/lib/kiss_sdl-1.0.12/kiss_posix.c.o
+.PHONY : lib/kiss_sdl-1.0.12/kiss_posix.c.o
 
-lib/kiss_sdl-1.0.4/kiss_widgets.i: lib/kiss_sdl-1.0.4/kiss_widgets.c.i
+lib/kiss_sdl-1.0.12/kiss_posix.i: lib/kiss_sdl-1.0.12/kiss_posix.c.i
 
-.PHONY : lib/kiss_sdl-1.0.4/kiss_widgets.i
+.PHONY : lib/kiss_sdl-1.0.12/kiss_posix.i
 
 # target to preprocess a source file
-lib/kiss_sdl-1.0.4/kiss_widgets.c.i:
-	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/lib/kiss_sdl-1.0.4/kiss_widgets.c.i
-.PHONY : lib/kiss_sdl-1.0.4/kiss_widgets.c.i
+lib/kiss_sdl-1.0.12/kiss_posix.c.i:
+	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/lib/kiss_sdl-1.0.12/kiss_posix.c.i
+.PHONY : lib/kiss_sdl-1.0.12/kiss_posix.c.i
 
-lib/kiss_sdl-1.0.4/kiss_widgets.s: lib/kiss_sdl-1.0.4/kiss_widgets.c.s
+lib/kiss_sdl-1.0.12/kiss_posix.s: lib/kiss_sdl-1.0.12/kiss_posix.c.s
 
-.PHONY : lib/kiss_sdl-1.0.4/kiss_widgets.s
+.PHONY : lib/kiss_sdl-1.0.12/kiss_posix.s
 
 # target to generate assembly for a file
-lib/kiss_sdl-1.0.4/kiss_widgets.c.s:
-	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/lib/kiss_sdl-1.0.4/kiss_widgets.c.s
-.PHONY : lib/kiss_sdl-1.0.4/kiss_widgets.c.s
+lib/kiss_sdl-1.0.12/kiss_posix.c.s:
+	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/lib/kiss_sdl-1.0.12/kiss_posix.c.s
+.PHONY : lib/kiss_sdl-1.0.12/kiss_posix.c.s
+
+lib/kiss_sdl-1.0.12/kiss_widgets.o: lib/kiss_sdl-1.0.12/kiss_widgets.c.o
+
+.PHONY : lib/kiss_sdl-1.0.12/kiss_widgets.o
+
+# target to build an object file
+lib/kiss_sdl-1.0.12/kiss_widgets.c.o:
+	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/lib/kiss_sdl-1.0.12/kiss_widgets.c.o
+.PHONY : lib/kiss_sdl-1.0.12/kiss_widgets.c.o
+
+lib/kiss_sdl-1.0.12/kiss_widgets.i: lib/kiss_sdl-1.0.12/kiss_widgets.c.i
+
+.PHONY : lib/kiss_sdl-1.0.12/kiss_widgets.i
+
+# target to preprocess a source file
+lib/kiss_sdl-1.0.12/kiss_widgets.c.i:
+	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/lib/kiss_sdl-1.0.12/kiss_widgets.c.i
+.PHONY : lib/kiss_sdl-1.0.12/kiss_widgets.c.i
+
+lib/kiss_sdl-1.0.12/kiss_widgets.s: lib/kiss_sdl-1.0.12/kiss_widgets.c.s
+
+.PHONY : lib/kiss_sdl-1.0.12/kiss_widgets.s
+
+# target to generate assembly for a file
+lib/kiss_sdl-1.0.12/kiss_widgets.c.s:
+	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/lib/kiss_sdl-1.0.12/kiss_widgets.c.s
+.PHONY : lib/kiss_sdl-1.0.12/kiss_widgets.c.s
 
 lib/pugixml/pugixml.o: lib/pugixml/pugixml.cpp.o
 
@@ -423,18 +423,18 @@ help:
 	@echo "... list_install_components"
 	@echo "... LightYear"
 	@echo "... install/local"
-	@echo "... lib/kiss_sdl-1.0.4/kiss_draw.o"
-	@echo "... lib/kiss_sdl-1.0.4/kiss_draw.i"
-	@echo "... lib/kiss_sdl-1.0.4/kiss_draw.s"
-	@echo "... lib/kiss_sdl-1.0.4/kiss_general.o"
-	@echo "... lib/kiss_sdl-1.0.4/kiss_general.i"
-	@echo "... lib/kiss_sdl-1.0.4/kiss_general.s"
-	@echo "... lib/kiss_sdl-1.0.4/kiss_posix.o"
-	@echo "... lib/kiss_sdl-1.0.4/kiss_posix.i"
-	@echo "... lib/kiss_sdl-1.0.4/kiss_posix.s"
-	@echo "... lib/kiss_sdl-1.0.4/kiss_widgets.o"
-	@echo "... lib/kiss_sdl-1.0.4/kiss_widgets.i"
-	@echo "... lib/kiss_sdl-1.0.4/kiss_widgets.s"
+	@echo "... lib/kiss_sdl-1.0.12/kiss_draw.o"
+	@echo "... lib/kiss_sdl-1.0.12/kiss_draw.i"
+	@echo "... lib/kiss_sdl-1.0.12/kiss_draw.s"
+	@echo "... lib/kiss_sdl-1.0.12/kiss_general.o"
+	@echo "... lib/kiss_sdl-1.0.12/kiss_general.i"
+	@echo "... lib/kiss_sdl-1.0.12/kiss_general.s"
+	@echo "... lib/kiss_sdl-1.0.12/kiss_posix.o"
+	@echo "... lib/kiss_sdl-1.0.12/kiss_posix.i"
+	@echo "... lib/kiss_sdl-1.0.12/kiss_posix.s"
+	@echo "... lib/kiss_sdl-1.0.12/kiss_widgets.o"
+	@echo "... lib/kiss_sdl-1.0.12/kiss_widgets.i"
+	@echo "... lib/kiss_sdl-1.0.12/kiss_widgets.s"
 	@echo "... lib/pugixml/pugixml.o"
 	@echo "... lib/pugixml/pugixml.i"
 	@echo "... lib/pugixml/pugixml.s"

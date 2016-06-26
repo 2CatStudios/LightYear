@@ -1,15 +1,12 @@
 /*
   kiss_sdl widget toolkit
   Copyright (c) 2016 Tarvo Korrovits <tkorrovi@mail.com>
-
   This software is provided 'as-is', without any express or implied
   warranty. In no event will the authors be held liable for any damages
   arising from the use of this software.
-
   Permission is granted to anyone to use this software for any purpose,
   including commercial applications, and to alter it and redistribute it
   freely, subject to the following restrictions:
-
   1. The origin of this software must not be misrepresented; you must not
      claim that you wrote the original software. If you use this software
      in a product, an acknowledgment in the product documentation would
@@ -19,7 +16,7 @@
   3. This notice may not be removed or altered from any source
      distribution.
 
-  kiss_sdl version 1.0.4
+  kiss_sdl version 1.0.12
 */
 
 #ifndef _kiss_sdl_h
@@ -29,14 +26,18 @@
 #define RESDIR ""
 #endif
 
-#ifdef _MSC_VER
+#if defined(_MSC_VER)
+#include <SDL.h>
+#include <SDL_ttf.h>
+#include <SDL_image.h>
+#elif defined(__APPLE__)
 #include <SDL.h>
 #include <SDL_ttf.h>
 #include <SDL_image.h>
 #else
-#include <SDL.h>
-#include <SDL_ttf.h>
-#include <SDL_image.h>
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_ttf.h>
+#include <SDL2/SDL_image.h>
 #endif
 #include <sys/types.h>
 #ifdef _MSC_VER
@@ -54,8 +55,7 @@
 #define KISS_MIN_LENGTH 10
 #define KISS_MAX_LABEL 500
 
-enum {OTHER_TYPE, WINDOW_TYPE, RENDERER_TYPE, TEXTURE_TYPE, SURFACE_TYPE,
-	FONT_TYPE, STRING_TYPE, ARRAY_TYPE};
+enum {OTHER_TYPE, WINDOW_TYPE, RENDERER_TYPE, TEXTURE_TYPE, SURFACE_TYPE, FONT_TYPE, STRING_TYPE, ARRAY_TYPE};
 
 #ifdef _MSC_VER
 #ifdef _WIN32
@@ -236,22 +236,23 @@ typedef struct kiss_combobox {
 	kiss_window *wdw;
 } kiss_combobox;
 
-extern kiss_font kiss_textfont, kiss_buttonfont, font_title, font_subtitle;
-extern int kiss_textfont_size, kiss_buttonfont_size, font_title_size, font_subtitle_size;
-
 extern SDL_Color kiss_white, kiss_black, kiss_green, kiss_blue, kiss_lightblue;
-
-extern kiss_image kiss_normal, kiss_prelight, kiss_active, kiss_bar, kiss_up, kiss_down, kiss_left, kiss_right, kiss_vslider, kiss_hslider, kiss_selected, kiss_unselected, menu_background ;
+extern kiss_font kiss_textfont, kiss_buttonfont;
+extern kiss_image kiss_normal, kiss_prelight, kiss_active, kiss_bar, kiss_up, kiss_down, kiss_left, kiss_right, kiss_vslider, kiss_hslider, kiss_selected, kiss_unselected;
 extern double kiss_spacing;
+extern int kiss_textfont_size, kiss_buttonfont_size;
 extern int kiss_click_interval, kiss_progress_interval;
 extern int kiss_slider_padding;
 extern int kiss_border, kiss_edge;
 extern int kiss_screen_width, kiss_screen_height;
 
+extern kiss_font font_title, font_subtitle;
+extern int font_title_size, font_subtitle_size;
+extern kiss_image menu_background;
+
 #ifdef __cplusplus
 extern "C" {
 #endif
-
 
 char *kiss_getcwd(char *buf, int size);
 int kiss_chdir(char *path);

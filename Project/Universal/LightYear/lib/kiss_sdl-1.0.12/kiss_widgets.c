@@ -19,7 +19,7 @@
   3. This notice may not be removed or altered from any source
      distribution.
 
-  kiss_sdl version 1.0.4
+  kiss_sdl version 1.0.12
 */
 
 #include "kiss_sdl.h"
@@ -120,6 +120,7 @@ int kiss_button_new(kiss_button *button, kiss_window *wdw, char *text,
 
 int kiss_button_event(kiss_button *button, SDL_Event *event, int *draw)
 {
+	
 	if (!button || !button->visible || !event) return 0;
 	if (event->type == SDL_WINDOWEVENT &&
 		event->window.event == SDL_WINDOWEVENT_EXPOSED)
