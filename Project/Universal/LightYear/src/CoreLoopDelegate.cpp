@@ -24,7 +24,7 @@ int CoreLoopDelegate::Loop ()
 	{
 		
 		SDL_Delay (m_millisecondLoopDelay);
-		inputManager.GetInput (renderingManager, renderingManager.draw, quit);
+		inputManager.GetInput (renderingManager, quit);
 		renderingManager.Update ();
 	}
 	

@@ -1,7 +1,7 @@
 #include "InputManager.h"
 
 
-int InputManager::GetInput (RenderingManager renderingManager, int &draw, int &quit)
+int InputManager::GetInput (RenderingManager &renderingManager, int &quit)
 {
 	
 	while (SDL_PollEvent(&m_event))
@@ -13,11 +13,11 @@ int InputManager::GetInput (RenderingManager renderingManager, int &draw, int &q
 			break;
 		}
 
-		kiss_window_event ((kiss_window*) kiss_array_data (&renderingManager.gui_objects, 0), &m_event, &draw);
-		button_playGame_event ((kiss_button*) kiss_array_data (&renderingManager.gui_objects, 4), &m_event, &draw);
-		button_options_event ((kiss_button*) kiss_array_data (&renderingManager.gui_objects, 5), &m_event, &draw);
-		button_about_event ((kiss_button*) kiss_array_data (&renderingManager.gui_objects, 6), &m_event, &draw);
-		button_quit_event ((kiss_button*) kiss_array_data (&renderingManager.gui_objects, 7), &m_event, &quit, &draw);
+		kiss_window_event ((kiss_window*) kiss_array_data (&renderingManager.gui_objects, 0), &m_event, &renderingManager.draw);
+		button_playGame_event ((kiss_button*) kiss_array_data (&renderingManager.gui_objects, 4), &m_event, &renderingManager.draw);
+		button_options_event ((kiss_button*) kiss_array_data (&renderingManager.gui_objects, 5), &m_event, &renderingManager.draw);
+		button_about_event ((kiss_button*) kiss_array_data (&renderingManager.gui_objects, 6), &m_event, &renderingManager.draw);
+		button_quit_event ((kiss_button*) kiss_array_data (&renderingManager.gui_objects, 7), &m_event, &quit, &renderingManager.draw);
 	}
 	
 	return 0;
