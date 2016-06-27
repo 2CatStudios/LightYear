@@ -356,6 +356,33 @@ src/InputManager.cpp.s:
 	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/src/InputManager.cpp.s
 .PHONY : src/InputManager.cpp.s
 
+src/LexicalManager.o: src/LexicalManager.cpp.o
+
+.PHONY : src/LexicalManager.o
+
+# target to build an object file
+src/LexicalManager.cpp.o:
+	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/src/LexicalManager.cpp.o
+.PHONY : src/LexicalManager.cpp.o
+
+src/LexicalManager.i: src/LexicalManager.cpp.i
+
+.PHONY : src/LexicalManager.i
+
+# target to preprocess a source file
+src/LexicalManager.cpp.i:
+	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/src/LexicalManager.cpp.i
+.PHONY : src/LexicalManager.cpp.i
+
+src/LexicalManager.s: src/LexicalManager.cpp.s
+
+.PHONY : src/LexicalManager.s
+
+# target to generate assembly for a file
+src/LexicalManager.cpp.s:
+	$(MAKE) -f CMakeFiles/LightYear.dir/build.make CMakeFiles/LightYear.dir/src/LexicalManager.cpp.s
+.PHONY : src/LexicalManager.cpp.s
+
 src/RenderingManager.o: src/RenderingManager.cpp.o
 
 .PHONY : src/RenderingManager.o
@@ -444,6 +471,9 @@ help:
 	@echo "... src/InputManager.o"
 	@echo "... src/InputManager.i"
 	@echo "... src/InputManager.s"
+	@echo "... src/LexicalManager.o"
+	@echo "... src/LexicalManager.i"
+	@echo "... src/LexicalManager.s"
 	@echo "... src/RenderingManager.o"
 	@echo "... src/RenderingManager.i"
 	@echo "... src/RenderingManager.s"

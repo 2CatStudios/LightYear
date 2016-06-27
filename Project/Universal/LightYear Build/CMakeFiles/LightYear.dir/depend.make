@@ -249,6 +249,7 @@ CMakeFiles/LightYear.dir/src/CoreLoopDelegate.cpp.o: /Library/Frameworks/SDL2_im
 CMakeFiles/LightYear.dir/src/CoreLoopDelegate.cpp.o: /Library/Frameworks/SDL2_ttf.framework/Headers/SDL_ttf.h
 CMakeFiles/LightYear.dir/src/CoreLoopDelegate.cpp.o: /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/include/LightYear/CoreLoopDelegate.h
 CMakeFiles/LightYear.dir/src/CoreLoopDelegate.cpp.o: /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/include/LightYear/InputManager.h
+CMakeFiles/LightYear.dir/src/CoreLoopDelegate.cpp.o: /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/include/LightYear/LexicalManager.h
 CMakeFiles/LightYear.dir/src/CoreLoopDelegate.cpp.o: /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/include/LightYear/RenderingManager.h
 CMakeFiles/LightYear.dir/src/CoreLoopDelegate.cpp.o: /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/kiss_sdl-1.0.12/kiss_sdl.h
 CMakeFiles/LightYear.dir/src/CoreLoopDelegate.cpp.o: /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/src/CoreLoopDelegate.cpp
@@ -300,9 +301,13 @@ CMakeFiles/LightYear.dir/src/InputManager.cpp.o: /Library/Frameworks/SDL2.framew
 CMakeFiles/LightYear.dir/src/InputManager.cpp.o: /Library/Frameworks/SDL2_image.framework/Headers/SDL_image.h
 CMakeFiles/LightYear.dir/src/InputManager.cpp.o: /Library/Frameworks/SDL2_ttf.framework/Headers/SDL_ttf.h
 CMakeFiles/LightYear.dir/src/InputManager.cpp.o: /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/include/LightYear/InputManager.h
+CMakeFiles/LightYear.dir/src/InputManager.cpp.o: /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/include/LightYear/LexicalManager.h
 CMakeFiles/LightYear.dir/src/InputManager.cpp.o: /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/include/LightYear/RenderingManager.h
 CMakeFiles/LightYear.dir/src/InputManager.cpp.o: /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/kiss_sdl-1.0.12/kiss_sdl.h
 CMakeFiles/LightYear.dir/src/InputManager.cpp.o: /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/src/InputManager.cpp
+
+CMakeFiles/LightYear.dir/src/LexicalManager.cpp.o: /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/include/LightYear/LexicalManager.h
+CMakeFiles/LightYear.dir/src/LexicalManager.cpp.o: /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/src/LexicalManager.cpp
 
 CMakeFiles/LightYear.dir/src/RenderingManager.cpp.o: /Library/Frameworks/SDL2.framework/Headers/SDL.h
 CMakeFiles/LightYear.dir/src/RenderingManager.cpp.o: /Library/Frameworks/SDL2.framework/Headers/SDL_assert.h
@@ -350,6 +355,7 @@ CMakeFiles/LightYear.dir/src/RenderingManager.cpp.o: /Library/Frameworks/SDL2.fr
 CMakeFiles/LightYear.dir/src/RenderingManager.cpp.o: /Library/Frameworks/SDL2.framework/Headers/close_code.h
 CMakeFiles/LightYear.dir/src/RenderingManager.cpp.o: /Library/Frameworks/SDL2_image.framework/Headers/SDL_image.h
 CMakeFiles/LightYear.dir/src/RenderingManager.cpp.o: /Library/Frameworks/SDL2_ttf.framework/Headers/SDL_ttf.h
+CMakeFiles/LightYear.dir/src/RenderingManager.cpp.o: /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/include/LightYear/LexicalManager.h
 CMakeFiles/LightYear.dir/src/RenderingManager.cpp.o: /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/include/LightYear/RenderingManager.h
 CMakeFiles/LightYear.dir/src/RenderingManager.cpp.o: /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/kiss_sdl-1.0.12/kiss_sdl.h
 CMakeFiles/LightYear.dir/src/RenderingManager.cpp.o: /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/src/RenderingManager.cpp
@@ -402,6 +408,7 @@ CMakeFiles/LightYear.dir/src/main.cpp.o: /Library/Frameworks/SDL2_image.framewor
 CMakeFiles/LightYear.dir/src/main.cpp.o: /Library/Frameworks/SDL2_ttf.framework/Headers/SDL_ttf.h
 CMakeFiles/LightYear.dir/src/main.cpp.o: /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/include/LightYear/CoreLoopDelegate.h
 CMakeFiles/LightYear.dir/src/main.cpp.o: /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/include/LightYear/InputManager.h
+CMakeFiles/LightYear.dir/src/main.cpp.o: /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/include/LightYear/LexicalManager.h
 CMakeFiles/LightYear.dir/src/main.cpp.o: /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/include/LightYear/RenderingManager.h
 CMakeFiles/LightYear.dir/src/main.cpp.o: /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/kiss_sdl-1.0.12/kiss_sdl.h
 CMakeFiles/LightYear.dir/src/main.cpp.o: /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/src/main.cpp

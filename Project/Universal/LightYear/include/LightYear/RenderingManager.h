@@ -2,6 +2,7 @@
 #define RENDERINGMANAGER_H
 
 #include "kiss_sdl.h"
+#include "LexicalManager.h"
 
 
 class RenderingManager
@@ -9,7 +10,7 @@ class RenderingManager
 
 public:
 	kiss_array objects;
-	kiss_array gui_objects;
+	kiss_array menu_gui_objects;
 	
 	kiss_window window_menu;
 	kiss_label label_version;
@@ -30,6 +31,7 @@ public:
 
 private:
 	SDL_Renderer *m_renderer;
+	LexicalManager m_lexicalManager;
 	
 	const int m_buttonPadding = 18;
 };

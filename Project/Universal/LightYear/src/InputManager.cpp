@@ -13,11 +13,11 @@ int InputManager::GetInput (RenderingManager &renderingManager, int &quit)
 			break;
 		}
 
-		kiss_window_event ((kiss_window*) kiss_array_data (&renderingManager.gui_objects, 0), &m_event, &renderingManager.draw);
-		button_playGame_event ((kiss_button*) kiss_array_data (&renderingManager.gui_objects, 4), &m_event, &renderingManager.draw);
-		button_options_event ((kiss_button*) kiss_array_data (&renderingManager.gui_objects, 5), &m_event, &renderingManager.draw);
-		button_about_event ((kiss_button*) kiss_array_data (&renderingManager.gui_objects, 6), &m_event, &renderingManager.draw);
-		button_quit_event ((kiss_button*) kiss_array_data (&renderingManager.gui_objects, 7), &m_event, &quit, &renderingManager.draw);
+		kiss_window_event ((kiss_window*) kiss_array_data (&renderingManager.menu_gui_objects, 0), &m_event, &renderingManager.draw);
+		button_playGame_event ((kiss_button*) kiss_array_data (&renderingManager.menu_gui_objects, 4), &m_event, &renderingManager.draw);
+		button_options_event ((kiss_button*) kiss_array_data (&renderingManager.menu_gui_objects, 5), &m_event, &renderingManager.draw);
+		button_about_event ((kiss_button*) kiss_array_data (&renderingManager.menu_gui_objects, 6), &m_event, &renderingManager.draw);
+		button_quit_event ((kiss_button*) kiss_array_data (&renderingManager.menu_gui_objects, 7), &m_event, &quit, &renderingManager.draw);
 	}
 	
 	return 0;

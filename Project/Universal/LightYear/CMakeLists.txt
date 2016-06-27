@@ -45,7 +45,7 @@ include_directories (${PUGIXML_PATH})
 
 
 #Define SOURCES to simplify the add_executable step. This contains our source code, and the source files from included libraries.
-set (SOURCES src/main.cpp src/CoreLoopDelegate.cpp src/InputManager.cpp src/RenderingManager.cpp ${PUGIXML_PATH}/pugixml.cpp ${KISSSDL_PATH}/kiss_draw.c ${KISSSDL_PATH}/kiss_general.c ${KISSSDL_PATH}/kiss_posix.c ${KISSSDL_PATH}/kiss_widgets.c)
+set (SOURCES src/main.cpp src/CoreLoopDelegate.cpp src/InputManager.cpp src/RenderingManager.cpp src/LexicalManager.cpp ${PUGIXML_PATH}/pugixml.cpp ${KISSSDL_PATH}/kiss_draw.c ${KISSSDL_PATH}/kiss_general.c ${KISSSDL_PATH}/kiss_posix.c ${KISSSDL_PATH}/kiss_widgets.c)
 
 
 

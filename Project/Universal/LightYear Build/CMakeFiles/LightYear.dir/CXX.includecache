@@ -612,9 +612,13 @@ kiss_sdl.h
 RenderingManager.h
 /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/include/LightYear/RenderingManager.h
 
+/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/include/LightYear/LexicalManager.h
+
 /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/include/LightYear/RenderingManager.h
 kiss_sdl.h
 /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/include/LightYear/kiss_sdl.h
+LexicalManager.h
+/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/include/LightYear/LexicalManager.h
 
 /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/lib/kiss_sdl-1.0.12/kiss_sdl.h
 SDL.h
@@ -707,6 +711,10 @@ CoreLoopDelegate.h
 /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/src/InputManager.cpp
 InputManager.h
 /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/src/InputManager.h
+
+/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/src/LexicalManager.cpp
+LexicalManager.h
+/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/src/LexicalManager.h
 
 /Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear/src/RenderingManager.cpp
 RenderingManager.h
