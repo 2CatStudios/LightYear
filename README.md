@@ -25,7 +25,7 @@ We're working on a new class of interactive fiction engine: something modern, sl
 	* d. [Technical Details](#d-technical-details)
 4. [LightYear Roadmap](#5-lightyear-roadmap)
 	* a. [Overview](#a-overview)
-	* b. [Tracking Resources](#a-tracking-resources)
+	* b. [Tracking Resources](#b-tracking-resources)
 
 
 #1. What is IF?
