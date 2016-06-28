@@ -48,7 +48,7 @@ The best thing about IF as a genre, and LightYear as an engine, is that it allow
 We're being ambiguous about what can be created here on purpose. Sure, you can produce a dungeon to explore, replete with deviously trapped containers and trip wires at every other passage, or a fully decked-out spaceship with hundreds of rooms, but you're not limited to those common tropes. Want to write a mystery about some little town near Arizona, USA, in which aliens have crashed? A horror adventure where the player is trapped in a snowed-in cabin? Or, how about a secondary school drama? Maybe a trilogy? LightYear gives you the tools to create whatever you can dream up, empowering you to let your imagination loose, share your games with the world, and experience new and unique situations, which are only possible through the medium of interactive fiction.
 
 
-
+[Return to Top](#0-table-of-contents)
 #2. Why IF
 ---
 We're living in a golden age of technology; as Moore has observed, every year hardware components double in power, or half in size or cost. This is an unprecedented time when the people who created the original computers are seeing their wildest dreams achieved, and the video game industry is readily keeping up with this outstanding pace. Computer graphics are starting to fool even the most astute, and the marriage of psychology and game design has kept some players cooped up in their homes for months on end. Improvements made to our network infrastructures are allowing mass-multiplayer like never before, and with the advent of affordable virtual reality looming in what's left of this decade, certainly, why play interactive fiction?
@@ -61,7 +61,7 @@ This concept of allowing players to create details is not unique to interactive 
 
 While video games give players experience, and books draw their readers along on a distinctive narrative trail, interactive fiction combines the two. Some interactive fiction is more of one than the other, perhaps more about exploration than traditional storytelling, or focusing more on a main quest or plot than the actions taken while inside it, but the unique experience of IF is something that is rarely found elsewhere. Whether you're looking for a deeper experience than what can be found in AAA shooters, or you'd like to more freely exist in a fantastical narrative world, interactive fiction, powered by the LightYear engine, can astound you with both its breadth and depth.
 
-
+[Return to Top](#0-table-of-contents)
 #3. Play with LightYear
 (Section Incomplete)
 ###a. What Makes LightYear Fun
@@ -81,7 +81,7 @@ Main Points: Find them on our website/forum (to be created), or anywhere around 
 Main Points: Type your commands, role play, be immersed, ???, profit.
 
 
-
+[Return to Top](#0-table-of-contents)
 #4. Develop with LightYear
 (Section Incomplete)
 ###a. Streamlined Development
@@ -100,6 +100,7 @@ Main Points: Standardized systems, lower-level functions automatically taken car
 ---
 Main Points: Core written in C++, window in native style (macOS, Windows, Linux). API in C++. Git repo location (pro tip: you're already there), contributions welcome (get in touch before you submit a pull request). Roadmap/Trello board.
 
+[Return to Top](#0-table-of-contents)
 #5. LightYear Roadmap
 ###a. Overview
 ---
@@ -107,3 +108,5 @@ We're officially in-development, functional preview builds will be distributed e
 
 ###b. Tracking Resources
 Follow the Trello board (link) for all updates, the official page (link) for important updates, and our News+Blog (link) for significant updates only.
+
+[Return to Top](#0-table-of-contents)
