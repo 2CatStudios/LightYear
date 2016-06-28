@@ -5,14 +5,20 @@
 #include "LexicalManager.h"
 
 
-typedef struct main_menu
+typedef struct menu
 {
 	
 	bool created = false;
 	
 	kiss_array gui_objects;
-	
 	kiss_window window;
+
+} menu;
+
+
+typedef struct menu_main : menu
+{
+	
 	kiss_label label_version;
 	kiss_label label_title;
 	kiss_label label_subtitle;
@@ -21,7 +27,23 @@ typedef struct main_menu
 	kiss_button button_about;
 	kiss_button button_quit;
 
-} main_menu;
+} menu_main;
+
+
+typedef struct menu_options : menu
+{
+
+} menu_options;
+
+
+typedef struct menu_about : menu
+{
+	
+	kiss_label label_title;
+	kiss_label label_credits;
+	kiss_button button_back;
+
+} menu_about;
 
 
 class RenderingManager
@@ -33,7 +55,9 @@ public:
 	enum MenuState {NONE = 0, MAINMENU = 1, SELECTGAME = 2, OPTIONS = 3, ABOUT = 4};
 	MenuState menuState = NONE;
 	
-	main_menu mainMenu;
+	menu_main mainMenu;
+	menu_options optionsMenu;
+	menu_about aboutMenu;
 	
 	int draw = 1;
 	

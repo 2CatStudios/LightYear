@@ -12,16 +12,17 @@ public:
 	void Startup (RenderingManager *renderingManager);
 	int GetInput (int &quit);
 	
-	void button_playGame_event (kiss_button *button, SDL_Event *e, int *draw);
-	void button_options_event (kiss_button *button, SDL_Event *e, int *draw);
-	void button_about_event (kiss_button *button, SDL_Event *e, int *draw);
-	void button_quit_event (kiss_button *button, SDL_Event *e, int *quit, int *draw);
-	
 private:
 	SDL_Event m_event;
 	RenderingManager *renderingManager;
 	
-	void m_MenuWindowInput (int &quit);
+	void m_MainMenuWindowInput (int &quit);
+	void m_AboutWindowInput ();
+	
+	void m_mainmenu_button_playGame_event (kiss_button *button, SDL_Event *e, int *draw);
+	void m_mainmenu_button_options_event (kiss_button *button, SDL_Event *e, int *draw);
+	void m_mainmenu_button_about_event (kiss_button *button, SDL_Event *e, int *draw);
+	void m_mainmenu_button_quit_event (kiss_button *button, SDL_Event *e, int *quit, int *draw);
 };
 
 

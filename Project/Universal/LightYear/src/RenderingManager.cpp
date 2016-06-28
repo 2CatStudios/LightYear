@@ -21,7 +21,7 @@ int RenderingManager::CreateMainMenu ()
 		kiss_window_new (&mainMenu.window, NULL, 0, 0, 0, kiss_screen_width, kiss_screen_height);
 		kiss_array_append (&mainMenu.gui_objects, 0, &mainMenu.window);
 		
-		kiss_label_new (&mainMenu.label_version, &mainMenu.window, "Version 0.0.0d1", 4, 0);
+		kiss_label_new (&mainMenu.label_version, &mainMenu.window, "Version 0.0.0d2", 4, 0);
 		mainMenu.label_version.textcolor = kiss_white;
 		mainMenu.label_version.font = kiss_textfont;
 		kiss_array_append (&mainMenu.gui_objects, 1, &mainMenu.label_version);
@@ -52,8 +52,6 @@ int RenderingManager::CreateMainMenu ()
 		mainMenu.button_quit.textcolor = kiss_white;
 		kiss_array_append (&mainMenu.gui_objects, 7, &mainMenu.button_quit);
 		
-		mainMenu.window.visible = 1;
-		
 		mainMenu.created = true;
 		draw = 1;
 	}
@@ -65,6 +63,18 @@ int RenderingManager::CreateMainMenu ()
 int RenderingManager::CreateAboutMenu ()
 {
 	
+	if (aboutMenu.created == false)
+	{
+		
+		kiss_window_new (&aboutMenu.window, NULL, 0, 0, 0, kiss_screen_width, kiss_screen_height);
+		kiss_array_append (&aboutMenu.gui_objects, 0, &aboutMenu.window);
+		
+		kiss_label_new (&aboutMenu.label_title, &aboutMenu.window, "About", (aboutMenu.window.rect.w / 2) - (kiss_textwidth (font_title, "About", NULL) / 2), 10);
+		aboutMenu.label_title.textcolor = kiss_white;
+		aboutMenu.label_title.font = font_title;
+		kiss_array_append (&aboutMenu.gui_objects, 1, &aboutMenu.label_title);
+	}
+	
 	return 0;
 }
 
@@ -74,6 +84,8 @@ void RenderingManager::m_DrawMainMenu ()
 	
 	if (mainMenu.created == false)
 		CreateMainMenu ();
+	
+	mainMenu.window.visible = 1;
 	
 	kiss_window_draw (&mainMenu.window, m_renderer);
 	kiss_renderimage (m_renderer, menu_background, 0, 0, NULL);
@@ -91,7 +103,15 @@ void RenderingManager::m_DrawMainMenu ()
 void RenderingManager::m_DrawAboutMenu ()
 {
 	
+	if (aboutMenu.created == false)
+		CreateAboutMenu ();
 	
+	aboutMenu.window.visible = 1;
+	
+	kiss_window_draw (&aboutMenu.window, m_renderer);
+	kiss_renderimage (m_renderer, menu_background, 0, 0, NULL);
+	
+	kiss_label_draw (&aboutMenu.label_title, m_renderer);
 }
 
 
@@ -120,6 +140,8 @@ void RenderingManager::Update ()
 			break;
 		
 		case ABOUT:
+			mainMenu.window.visible = 0;
+			m_DrawAboutMenu ();
 			break;
 		
 		default:
