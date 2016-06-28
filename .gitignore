@@ -69,3 +69,6 @@ CMakeScripts
 Makefile
 cmake_install.cmake
 install_manifest.txt
+
+### Project Specifics
+Project/Universal/LightYear\ Build/
