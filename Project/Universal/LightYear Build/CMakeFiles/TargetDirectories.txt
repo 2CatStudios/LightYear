@@ -1,7 +1,0 @@
-/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear Build/CMakeFiles/install/strip.dir
-/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear Build/CMakeFiles/edit_cache.dir
-/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear Build/CMakeFiles/rebuild_cache.dir
-/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear Build/CMakeFiles/install.dir
-/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear Build/CMakeFiles/list_install_components.dir
-/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear Build/CMakeFiles/LightYear.dir
-/Users/michaelbethke/Documents/Development/Projects/LightYear/Project/Universal/LightYear Build/CMakeFiles/install/local.dir
