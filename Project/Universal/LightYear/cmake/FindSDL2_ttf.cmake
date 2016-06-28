@@ -41,7 +41,7 @@
 # module with the minor edit of changing "SDL" to "SDL2" where necessary. This
 # was not created for redistribution, and exists temporarily pending official
 # SDL2 CMake modules.
-# 
+#
 # Note that on windows this will only search for the 32bit libraries, to search
 # for 64bit change x86/i686-w64 to x64/x86_64-w64
 
@@ -154,4 +154,3 @@ ENDIF(SDL2_TTF_LIBRARY_TEMP)
 INCLUDE(FindPackageHandleStandardArgs)
 
 FIND_PACKAGE_HANDLE_STANDARD_ARGS(SDL2_TTF REQUIRED_VARS SDL2_TTF_LIBRARY SDL2_TTF_INCLUDE_DIR)
-
