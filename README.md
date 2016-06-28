@@ -40,7 +40,7 @@ Or, maybe, you're a space captain, with a whole fleet at your disposal. However,
 
 Interactive fiction isn't about controlling a rogue mage in their magical tower, nor is it about making tough moral choices on the bridge of an A3-12 Falcon-class command ship, it's about exploring a new space, realizing yourself there, and seeing what kind of tale the author has in mind for you, and how you'll make it your own.
 
-###c. Advantages
+###b. Advantages
 ---
 
 The best thing about IF as a genre, and LightYear as an engine, is that it allows anyone to craft a story, a game. No programming knowledge, modelling expertise, or level-design skills are required, and the turn around time is nearly immediate. Absolutely everyone has indulged their creativity at one time or another, pretending they were in a different situation, making up stuff as they went along. Developing an IF is just like that, although you might want to put a little planning into it.
