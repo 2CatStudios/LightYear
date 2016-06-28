@@ -9,7 +9,8 @@ class InputManager
 {
 	
 public:
-	int GetInput (RenderingManager &renderingManager, int &quit);
+	void Startup (RenderingManager *renderingManager);
+	int GetInput (int &quit);
 	
 	void button_playGame_event (kiss_button *button, SDL_Event *e, int *draw);
 	void button_options_event (kiss_button *button, SDL_Event *e, int *draw);
@@ -18,7 +19,9 @@ public:
 	
 private:
 	SDL_Event m_event;
+	RenderingManager *renderingManager;
 	
+	void m_MenuWindowInput (int &quit);
 };
 
 

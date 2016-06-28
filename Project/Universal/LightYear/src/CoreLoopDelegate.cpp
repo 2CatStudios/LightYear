@@ -7,8 +7,10 @@ int CoreLoopDelegate::Run ()
 	if (renderingManager.InitializeKISS () != 0)
 		return 1;
 	
-	if (renderingManager.CreateWindowMenu () != 0)
-		return 1;
+	renderingManager.CreateMainMenu ();
+	renderingManager.menuState = RenderingManager::MAINMENU;
+	
+	inputManager.Startup (&renderingManager);
 	
 	if (Loop () != 0)
 		return 1;
@@ -24,7 +26,7 @@ int CoreLoopDelegate::Loop ()
 	{
 		
 		SDL_Delay (m_millisecondLoopDelay);
-		inputManager.GetInput (renderingManager, quit);
+		inputManager.GetInput (quit);
 		renderingManager.Update ();
 	}
 	

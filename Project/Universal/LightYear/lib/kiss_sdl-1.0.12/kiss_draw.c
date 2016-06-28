@@ -226,9 +226,11 @@ SDL_Renderer* kiss_init(char* title, kiss_array *a, int w, int h)
 	r += image_new(&kiss_active, "button_active.png", a, renderer);
 	
 	if (r) {
+		
 		kiss_clean(a);
 		return NULL;
 	}
+	
 	return renderer;	
 }
 
