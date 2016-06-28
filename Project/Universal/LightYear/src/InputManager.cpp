@@ -1,13 +1,6 @@
 #include "InputManager.h"
 
 
-void InputManager::Startup (RenderingManager *rendering_manager)
-{
-	
-	renderingManager = rendering_manager;
-}
-
-
 int InputManager::GetInput (int &quit)
 {
 	
@@ -63,7 +56,8 @@ void InputManager::m_MainMenuWindowInput (int &quit)
 void InputManager::m_AboutWindowInput ()
 {
 	
-	
+	kiss_window_event ((kiss_window*) kiss_array_data (&renderingManager->aboutMenu.gui_objects, 0), &m_event, &renderingManager->draw);
+	m_aboutmenu_button_back_event ((kiss_button*) kiss_array_data (&renderingManager->aboutMenu.gui_objects, 3), &m_event, &renderingManager->draw);
 }
 
 
@@ -97,4 +91,15 @@ void InputManager::m_mainmenu_button_quit_event (kiss_button *button, SDL_Event 
 	
 	if (kiss_button_event(button, e, draw))
 		*quit = 1;
+}
+
+
+void InputManager::m_aboutmenu_button_back_event (kiss_button *button, SDL_Event *e, int *draw)
+{
+	
+	if (kiss_button_event (button, e, draw))
+	{
+		
+		renderingManager->menuState = RenderingManager::MAINMENU;
+	}
 }

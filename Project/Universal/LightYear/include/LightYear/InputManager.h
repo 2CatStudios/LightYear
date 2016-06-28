@@ -9,12 +9,12 @@ class InputManager
 {
 	
 public:
-	void Startup (RenderingManager *renderingManager);
+	RenderingManager *renderingManager;
+	//void Startup (RenderingManager *renderingManager);
 	int GetInput (int &quit);
 	
 private:
 	SDL_Event m_event;
-	RenderingManager *renderingManager;
 	
 	void m_MainMenuWindowInput (int &quit);
 	void m_AboutWindowInput ();
@@ -23,6 +23,8 @@ private:
 	void m_mainmenu_button_options_event (kiss_button *button, SDL_Event *e, int *draw);
 	void m_mainmenu_button_about_event (kiss_button *button, SDL_Event *e, int *draw);
 	void m_mainmenu_button_quit_event (kiss_button *button, SDL_Event *e, int *quit, int *draw);
+	
+	void m_aboutmenu_button_back_event (kiss_button *button, SDL_Event *e, int *draw);
 };
 
 

@@ -5,7 +5,6 @@ int RenderingManager::InitializeKISS ()
 {
 	
 	kiss_array_new (&objects);
-	kiss_array_new (&mainMenu.gui_objects);
 	m_renderer = kiss_init ("LightYear", &objects, 1024, 576);
 	
 	return 0;
@@ -17,6 +16,8 @@ int RenderingManager::CreateMainMenu ()
 	
 	if (mainMenu.created == false)
 	{
+	
+		kiss_array_new (&mainMenu.gui_objects);
 	
 		kiss_window_new (&mainMenu.window, NULL, 0, 0, 0, kiss_screen_width, kiss_screen_height);
 		kiss_array_append (&mainMenu.gui_objects, 0, &mainMenu.window);
@@ -66,6 +67,8 @@ int RenderingManager::CreateAboutMenu ()
 	if (aboutMenu.created == false)
 	{
 		
+		kiss_array_new (&aboutMenu.gui_objects);
+		
 		kiss_window_new (&aboutMenu.window, NULL, 0, 0, 0, kiss_screen_width, kiss_screen_height);
 		kiss_array_append (&aboutMenu.gui_objects, 0, &aboutMenu.window);
 		
@@ -73,6 +76,18 @@ int RenderingManager::CreateAboutMenu ()
 		aboutMenu.label_title.textcolor = kiss_white;
 		aboutMenu.label_title.font = font_title;
 		kiss_array_append (&aboutMenu.gui_objects, 1, &aboutMenu.label_title);
+		
+		kiss_label_new (&aboutMenu.label_credits, &aboutMenu.window, "The LightYear Interactive Fiction engine\nhas been lovingly created by\n\n2Cat Studios\nMichael Bethke - Programming & Design\nJan Heemstra - Feedback & Support\n\nWith thanks to\nAnders Huft - Design & Feedback\nTarvo Korrovits - KISS_SDL Support", (aboutMenu.window.rect.w / 2) - (kiss_textwidth (font_subtitle, "The LightYear Interactive Fiction engine", NULL) / 2), aboutMenu.label_title.rect.y + font_title.fontheight + m_labelPadding);
+		aboutMenu.label_credits.textcolor = kiss_white;
+		aboutMenu.label_credits.font = font_subtitle;
+		kiss_array_append (&aboutMenu.gui_objects, 2, &aboutMenu.label_title);
+		
+		kiss_button_new (&aboutMenu.button_back, &aboutMenu.window, "Return", m_buttonPadding, m_buttonPadding);
+		aboutMenu.button_back.textcolor = kiss_white;
+		kiss_array_append (&aboutMenu.gui_objects, 3, &aboutMenu.button_back);
+		
+		aboutMenu.created = true;
+		draw = 1;
 	}
 	
 	return 0;
@@ -112,6 +127,8 @@ void RenderingManager::m_DrawAboutMenu ()
 	kiss_renderimage (m_renderer, menu_background, 0, 0, NULL);
 	
 	kiss_label_draw (&aboutMenu.label_title, m_renderer);
+	kiss_label_draw (&aboutMenu.label_credits, m_renderer);
+	kiss_button_draw (&aboutMenu.button_back, m_renderer);
 }
 
 

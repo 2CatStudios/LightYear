@@ -10,7 +10,7 @@ int CoreLoopDelegate::Run ()
 	renderingManager.CreateMainMenu ();
 	renderingManager.menuState = RenderingManager::MAINMENU;
 	
-	inputManager.Startup (&renderingManager);
+	inputManager.renderingManager = &renderingManager;
 	
 	if (Loop () != 0)
 		return 1;

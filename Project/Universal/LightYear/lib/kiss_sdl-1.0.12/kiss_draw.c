@@ -221,9 +221,9 @@ SDL_Renderer* kiss_init(char* title, kiss_array *a, int w, int h)
 	r += font_new (&font_subtitle, "font_anson_regular.ttf", a, font_subtitle_size);
 	
 	r += image_new (&menu_background, "menu_background.png", a, renderer);
-	r += image_new(&kiss_normal, "button_normal.png", a, renderer);
-	r += image_new(&kiss_prelight, "button_prelight.png", a, renderer);
-	r += image_new(&kiss_active, "button_active.png", a, renderer);
+	r += image_new (&kiss_normal, "button_normal.png", a, renderer);
+	r += image_new (&kiss_prelight, "button_prelight.png", a, renderer);
+	r += image_new (&kiss_active, "button_active.png", a, renderer);
 	
 	if (r) {
 		

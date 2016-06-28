@@ -77,6 +77,7 @@ private:
 	void m_DrawAboutMenu ();
 	
 	const int m_buttonPadding = 18;
+	const int m_labelPadding = 15;
 };
 
 #endif /* end of include guard: RENDERINGMANAGER_H */
