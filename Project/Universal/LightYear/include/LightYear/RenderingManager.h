@@ -2,7 +2,7 @@
 #define RENDERINGMANAGER_H
 
 #include "kiss_sdl.h"
-#include "LexicalManager.h"
+#include <iostream>
 
 
 typedef struct menu
@@ -40,7 +40,17 @@ typedef struct menu_about : menu
 {
 	
 	kiss_label label_title;
-	kiss_label label_credits;
+	kiss_label label_preamble_top;
+	kiss_label label_preamble_bottom;
+	
+	kiss_label label_twocatstudios;
+	kiss_label label_team_michaelb;
+	kiss_label label_team_janh;
+	
+	kiss_label label_thanksto;
+	kiss_label label_supporters_bleikur;
+	kiss_label label_supporters_tarvok;
+	
 	kiss_button button_back;
 
 } menu_about;
@@ -56,7 +66,7 @@ public:
 	MenuState menuState = NONE;
 	
 	menu_main mainMenu;
-	menu_options optionsMenu;
+	//menu_options optionsMenu;
 	menu_about aboutMenu;
 	
 	int draw = 1;
@@ -71,7 +81,6 @@ public:
 
 private:
 	SDL_Renderer *m_renderer;
-	LexicalManager m_lexicalManager;
 	
 	void m_DrawMainMenu ();
 	void m_DrawAboutMenu ();

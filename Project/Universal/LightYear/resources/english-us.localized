@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Localization>
+	<Meta>
+		<Language>English-US</Language>
+		<Translator>Michael Bethke</Translator>
+		<Complete>True</Complete>
+	</Meta>
+	
+	<Windows>
+		<General>
+			<string index="0">LightYear</string>
+			<string index="1">A hybrid IF engine, lightyears ahead.</string>
+			<string index="2">Version</string>
+			<string index="3">2Cat Studios</string>
+		</General>
+		
+		<MainMenu>
+			<string index="0">PlayGame</string>
+			<string index="1">Options</string>
+			<string index="2">About</string>
+			<string index="3">Quit</string>
+		</MainMenu>
+		
+		<Options>
+		</Options>
+		
+		<About>
+			<string index="0">About</string>
+			<string index="1">The LightYear Interactive Fiction engine\nhas been lovingly created by\n\n2Cat Studios\nMichael Bethke - Programming & Design\nJan Heemstra - Feedback & Support\n\nWith thanks to\nAnders Huft - Design & Feedback\nTarvo Korrovits - KISS_SDL Support</string>
+			<string index="2">Return</string>
+		</About>
+	</Windows>
+</Localization>

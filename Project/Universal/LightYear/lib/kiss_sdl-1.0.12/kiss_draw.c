@@ -44,7 +44,7 @@ SDL_Color kiss_lightblue = {200, 225, 255, 255};
 kiss_font font_title, font_subtitle;
 int font_title_size = 128;
 int font_subtitle_size = 24;
-kiss_image menu_background;
+kiss_image background, horizontal_bar;
 
 
 unsigned int kiss_getticks(void)
@@ -220,7 +220,8 @@ SDL_Renderer* kiss_init(char* title, kiss_array *a, int w, int h)
 	r += font_new (&font_title, "font_anson_regular.ttf", a, font_title_size);
 	r += font_new (&font_subtitle, "font_anson_regular.ttf", a, font_subtitle_size);
 	
-	r += image_new (&menu_background, "menu_background.png", a, renderer);
+	r += image_new (&background, "background.png", a, renderer);
+	r += image_new (&horizontal_bar, "horizontal_bar.png", a, renderer);
 	r += image_new (&kiss_normal, "button_normal.png", a, renderer);
 	r += image_new (&kiss_prelight, "button_prelight.png", a, renderer);
 	r += image_new (&kiss_active, "button_active.png", a, renderer);

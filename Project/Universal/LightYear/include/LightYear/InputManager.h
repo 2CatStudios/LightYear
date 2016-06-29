@@ -10,7 +10,6 @@ class InputManager
 	
 public:
 	RenderingManager *renderingManager;
-	//void Startup (RenderingManager *renderingManager);
 	int GetInput (int &quit);
 	
 private:
