@@ -61,6 +61,33 @@ int RenderingManager::CreateMainMenu ()
 }
 
 
+int RenderingManager::CreateOptionsMenu ()
+{
+	
+	if (optionsMenu.created == false)
+	{
+		
+		kiss_array_new (&optionsMenu.gui_objects);
+		
+		kiss_window_new (&optionsMenu.window, NULL, 0, 0, 0, kiss_screen_width, kiss_screen_height);
+		kiss_array_append (&optionsMenu.gui_objects, 0, &optionsMenu.window);
+		
+		kiss_button_new (&optionsMenu.button_back, &optionsMenu.window, "Return", m_buttonPadding, m_buttonPadding);
+		optionsMenu.button_back.textcolor = kiss_white;
+		kiss_array_append (&optionsMenu.gui_objects, 1, &optionsMenu.button_back);
+		
+		
+		kiss_label_new (&optionsMenu.label_title, &optionsMenu.window, "Options", (optionsMenu.window.rect.w / 2) - (kiss_textwidth (font_title, "Options", NULL) / 2), 10);
+		optionsMenu.label_title.textcolor = kiss_white;
+		optionsMenu.label_title.font = font_title;
+		kiss_array_append (&optionsMenu.gui_objects, 2, &optionsMenu.label_title);
+		
+		optionsMenu.created = true;
+		draw = 1;
+	}
+}
+
+
 int RenderingManager::CreateAboutMenu ()
 {
 	
@@ -153,6 +180,22 @@ void RenderingManager::m_DrawMainMenu ()
 }
 
 
+void RenderingManager::m_DrawOptionsMenu ()
+{
+	
+	if (optionsMenu.created == false)
+		CreateOptionsMenu ();
+	
+	optionsMenu.window.visible = 1;
+	
+	kiss_window_draw (&optionsMenu.window, m_renderer);
+	kiss_renderimage (m_renderer, background, 0, 0, NULL);
+	
+	kiss_button_draw (&optionsMenu.button_back, m_renderer);
+	kiss_label_draw (&optionsMenu.label_title, m_renderer);
+}
+
+
 void RenderingManager::m_DrawAboutMenu ()
 {
 	
@@ -204,6 +247,7 @@ void RenderingManager::Update ()
 			break;
 		
 		case OPTIONS:
+			m_DrawOptionsMenu ();
 			break;
 		
 		case ABOUT:

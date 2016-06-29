@@ -27,6 +27,7 @@ int InputManager::GetInput (int &quit)
 				break;
 		
 			case RenderingManager::OPTIONS:
+				m_OptionsWindowInput ();
 				break;
 		
 			case RenderingManager::ABOUT:
@@ -53,6 +54,14 @@ void InputManager::m_MainMenuWindowInput (int &quit)
 }
 
 
+void InputManager::m_OptionsWindowInput ()
+{
+	
+	kiss_window_event ((kiss_window*) kiss_array_data (&renderingManager->optionsMenu.gui_objects, 0), &m_event, &renderingManager->draw);
+	m_optionsmenu_button_back_event ((kiss_button*) kiss_array_data (&renderingManager->optionsMenu.gui_objects, 1), &m_event, &renderingManager->draw);
+}
+
+
 void InputManager::m_AboutWindowInput ()
 {
 	
@@ -71,7 +80,11 @@ void InputManager::m_mainmenu_button_playGame_event (kiss_button *button, SDL_Ev
 void InputManager::m_mainmenu_button_options_event (kiss_button *button, SDL_Event *e, int *draw)
 {
 	
-	kiss_button_event (button, e, draw);
+	if (kiss_button_event (button, e, draw))
+	{
+		
+		renderingManager->menuState = RenderingManager::OPTIONS;
+	}
 }
 
 
@@ -90,7 +103,21 @@ void InputManager::m_mainmenu_button_quit_event (kiss_button *button, SDL_Event 
 {
 	
 	if (kiss_button_event(button, e, draw))
+	{
+		
 		*quit = 1;
+	}
+}
+
+
+void InputManager::m_optionsmenu_button_back_event (kiss_button *button, SDL_Event *e, int *draw)
+{
+	
+	if (kiss_button_event (button, e, draw))
+	{
+		
+		renderingManager->menuState = RenderingManager::MAINMENU;
+	}
 }
 
 

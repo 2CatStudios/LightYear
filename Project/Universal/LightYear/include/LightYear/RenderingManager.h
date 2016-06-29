@@ -32,12 +32,18 @@ typedef struct menu_main : menu
 
 typedef struct menu_options : menu
 {
+	
+	kiss_button button_back;
+	
+	kiss_label label_title;
 
 } menu_options;
 
 
 typedef struct menu_about : menu
 {
+	
+	kiss_button button_back;
 	
 	kiss_label label_title;
 	kiss_label label_preamble_top;
@@ -50,8 +56,6 @@ typedef struct menu_about : menu
 	kiss_label label_thanksto;
 	kiss_label label_supporters_bleikur;
 	kiss_label label_supporters_tarvok;
-	
-	kiss_button button_back;
 
 } menu_about;
 
@@ -66,7 +70,7 @@ public:
 	MenuState menuState = NONE;
 	
 	menu_main mainMenu;
-	//menu_options optionsMenu;
+	menu_options optionsMenu;
 	menu_about aboutMenu;
 	
 	int draw = 1;
@@ -74,6 +78,7 @@ public:
 	int InitializeKISS ();
 	
 	int CreateMainMenu ();
+	int CreateOptionsMenu ();
 	int CreateAboutMenu ();
 	
 	void Update ();
@@ -83,6 +88,7 @@ private:
 	SDL_Renderer *m_renderer;
 	
 	void m_DrawMainMenu ();
+	void m_DrawOptionsMenu ();
 	void m_DrawAboutMenu ();
 	
 	const int m_buttonPadding = 18;
