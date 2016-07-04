@@ -35,15 +35,13 @@ bool RenderingManager::m_IsRetinaDisplay ()
 	
 	SDL_GetDisplayDPI (0, ddpi, hdpi, vdpi);
 	
-	if ((*vdpi - 1.79417e+19) > 0.1)
+	if (fabs (*vdpi - 8.24955e+13) > 0.0001)
 	{
-		
-		//std::cout << "Is Retina" << std::endl;
-		return true;
-	} else {
-		
-		//std::cout << "Not Retina" << std::endl;
+
 		return false;
+	} else {
+
+		return true;
 	}
 }
 
