@@ -4,7 +4,6 @@
 int RenderingManager::InitializeKISS ()
 {
 	
-	//kiss_array_new (&objects);
 	m_renderer = kiss_init ("LightYear", &objects, 1024, 576);
 	
 	m_AddExternalAssets (&objects, m_IsRetinaDisplay ());
@@ -15,34 +14,36 @@ int RenderingManager::InitializeKISS ()
 
 bool RenderingManager::m_IsRetinaDisplay ()
 {
-
-	/*
-		iMac (non retina)
-			DDPI: 1.4013e-45
-			HDPI: 6.35875e-30
-		->	VDPI: 1.79417e+19
-		
-		MacBook Pro (retina)
-			DDPI: 1.4013e-45
-			HDPI: 6.35875e-30
-		->	VDPI: 8.24955e+13
 	
-	*/
+	float ddpi;
+	float hdpi;
+	float vdpi;
 	
-	float *ddpi;
-	float *hdpi;
-	float *vdpi;
-	
-	SDL_GetDisplayDPI (0, ddpi, hdpi, vdpi);
-	
-	if (fabs (*vdpi - 8.24955e+13) > 0.0001)
+	if (SDL_GetDisplayDPI (0, &ddpi, &hdpi, &vdpi) != 0)
 	{
-
-		return false;
-	} else {
-
-		return true;
+		
+		std::cout << "Error: " << SDL_GetError () << std::endl;
 	}
+
+	std::cout << "DDPI: " << ddpi << std::endl << "HDPI: " << hdpi << std::endl << "VDPI: " << vdpi << std::endl;
+	
+	
+	/*int gl_w;
+	int gl_h;
+	
+	SDL_GL_GetDrawableSize ((SDL_Window*) kiss_array_data (&objects, WINDOW_TYPE), &gl_w, &gl_h);
+	std::cout << "GL_W: " << gl_w << " GL_H: " << gl_h << std::endl;
+	
+	int sdl_w;
+	int sdl_h;
+	
+	SDL_GetWindowSize ((SDL_Window*) kiss_array_data (&objects, WINDOW_TYPE), &sdl_w, &sdl_h);
+	std::cout << "SDL_W: " << sdl_w << " SDL_H: " << sdl_h << std::endl;
+	
+	if (sdl_w != gl_w && sdl_h != gl_h)
+		return true;*/
+	
+	return false;
 }
 
 
@@ -54,18 +55,18 @@ int RenderingManager::m_AddExternalAssets (kiss_array *a, bool highDPI)
 	else
 		std::cout << "Not Retina" << std::endl;
 	
-	SDL_Renderer *renderer = (SDL_Renderer*) kiss_array_data (a, 1);
+	//SDL_Renderer *renderer = (SDL_Renderer*) kiss_array_data (a, RETINA_TYPE);
 	
 	/*Default Assets*/
-	image_new(&kiss_bar, "kiss_bar.png", a, renderer);
-	image_new(&kiss_vslider, "kiss_vslider.png", a, renderer);
-	image_new(&kiss_hslider, "kiss_hslider.png", a, renderer);
-	image_new(&kiss_up, "kiss_up.png", a, renderer);
-	image_new(&kiss_down, "kiss_down.png", a, renderer);
-	image_new(&kiss_left, "kiss_left.png", a, renderer);
-	image_new(&kiss_right, "kiss_right.png", a, renderer);
-	image_new(&kiss_selected, "kiss_selected.png", a, renderer);
-	image_new(&kiss_unselected, "kiss_unselected.png", a, renderer);
+	image_new(&kiss_bar, "kiss_bar.png", a, m_renderer);
+	image_new(&kiss_vslider, "kiss_vslider.png", a, m_renderer);
+	image_new(&kiss_hslider, "kiss_hslider.png", a, m_renderer);
+	image_new(&kiss_up, "kiss_up.png", a, m_renderer);
+	image_new(&kiss_down, "kiss_down.png", a, m_renderer);
+	image_new(&kiss_left, "kiss_left.png", a, m_renderer);
+	image_new(&kiss_right, "kiss_right.png", a, m_renderer);
+	image_new(&kiss_selected, "kiss_selected.png", a, m_renderer);
+	image_new(&kiss_unselected, "kiss_unselected.png", a, m_renderer);
 	
 	/*Custom Assets*/
 	font_new(&kiss_textfont, "font_anson_regular.ttf", a, kiss_textfont_size);
@@ -73,11 +74,11 @@ int RenderingManager::m_AddExternalAssets (kiss_array *a, bool highDPI)
 	font_new (&font_title, "font_anson_regular.ttf", a, font_title_size);
 	font_new (&font_subtitle, "font_anson_regular.ttf", a, font_subtitle_size);
 	
-	image_new (&background, "background.png", a, renderer);
-	image_new (&horizontal_bar, "horizontal_bar.png", a, renderer);
-	image_new (&kiss_normal, "button_normal.png", a, renderer);
-	image_new (&kiss_prelight, "button_prelight.png", a, renderer);
-	image_new (&kiss_active, "button_active.png", a, renderer);
+	image_new (&background, "background.png", a, m_renderer);
+	image_new (&horizontal_bar, "horizontal_bar.png", a, m_renderer);
+	image_new (&kiss_normal, "button_normal.png", a, m_renderer);
+	image_new (&kiss_prelight, "button_prelight.png", a, m_renderer);
+	image_new (&kiss_active, "button_active.png", a, m_renderer);
 	
 	return 0;
 }
