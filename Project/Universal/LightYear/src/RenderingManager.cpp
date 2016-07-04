@@ -4,8 +4,73 @@
 int RenderingManager::InitializeKISS ()
 {
 	
-	kiss_array_new (&objects);
+	//kiss_array_new (&objects);
 	m_renderer = kiss_init ("LightYear", &objects, 1024, 576);
+	
+	m_AddExternalAssets (&objects, m_IsRetinaDisplay ());
+	
+	return 0;
+}
+
+
+bool RenderingManager::m_IsRetinaDisplay ()
+{
+
+	/*
+		iMac (non retina)
+			DDPI: 1.4013e-45
+			HDPI: 6.35875e-30
+		->	VDPI: 1.79417e+19
+		
+		MacBook Pro (retina)
+			DDPI: 1.4013e-45
+			HDPI: 6.35875e-30
+		->	VDPI: 8.24955e+13
+	
+	*/
+	
+	float *ddpi;
+	float *hdpi;
+	float *vdpi;
+	
+	SDL_GetDisplayDPI (0, ddpi, hdpi, vdpi);
+	
+	if (*vdpi > 1.79417e+19)
+		return true;
+	
+	return false;
+}
+
+
+int RenderingManager::m_AddExternalAssets (kiss_array *a, bool highDPI = false)
+{
+	
+	std::cout << highDPI << std::endl;
+	
+	SDL_Renderer *renderer = (SDL_Renderer*) kiss_array_data (a, 1);
+	
+	/*Default Assets*/
+	image_new(&kiss_bar, "kiss_bar.png", a, renderer);
+	image_new(&kiss_vslider, "kiss_vslider.png", a, renderer);
+	image_new(&kiss_hslider, "kiss_hslider.png", a, renderer);
+	image_new(&kiss_up, "kiss_up.png", a, renderer);
+	image_new(&kiss_down, "kiss_down.png", a, renderer);
+	image_new(&kiss_left, "kiss_left.png", a, renderer);
+	image_new(&kiss_right, "kiss_right.png", a, renderer);
+	image_new(&kiss_selected, "kiss_selected.png", a, renderer);
+	image_new(&kiss_unselected, "kiss_unselected.png", a, renderer);
+	
+	/*Custom Assets*/
+	font_new(&kiss_textfont, "font_anson_regular.ttf", a, kiss_textfont_size);
+	font_new(&kiss_buttonfont, "font_anson_regular.ttf", a, kiss_buttonfont_size);
+	font_new (&font_title, "font_anson_regular.ttf", a, font_title_size);
+	font_new (&font_subtitle, "font_anson_regular.ttf", a, font_subtitle_size);
+	
+	image_new (&background, "background.png", a, renderer);
+	image_new (&horizontal_bar, "horizontal_bar.png", a, renderer);
+	image_new (&kiss_normal, "button_normal.png", a, renderer);
+	image_new (&kiss_prelight, "button_prelight.png", a, renderer);
+	image_new (&kiss_active, "button_active.png", a, renderer);
 	
 	return 0;
 }

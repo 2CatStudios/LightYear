@@ -136,8 +136,7 @@ int kiss_decorate(SDL_Renderer *renderer, SDL_Rect *rect, SDL_Color color,
 	return 0;
 }
 
-static int image_new(kiss_image *image, char *fname, kiss_array *a,
-	SDL_Renderer* renderer)
+int image_new(kiss_image *image, char *fname, kiss_array *a, SDL_Renderer* renderer)
 {
 	char buf[KISS_MAX_LENGTH];
 
@@ -152,7 +151,7 @@ static int image_new(kiss_image *image, char *fname, kiss_array *a,
 	return 0;
 }
 
-static int font_new(kiss_font *font, char *fname, kiss_array *a, int size)
+int font_new(kiss_font *font, char *fname, kiss_array *a, int size)
 {
 	char buf[KISS_MAX_LENGTH];
 
@@ -204,6 +203,7 @@ SDL_Renderer* kiss_init(char* title, kiss_array *a, int w, int h)
 		kiss_array_append(a, RENDERER_TYPE, renderer);
 	
 	/*Default Assets*/
+	/*
 	r += image_new(&kiss_bar, "kiss_bar.png", a, renderer);
 	r += image_new(&kiss_vslider, "kiss_vslider.png", a, renderer);
 	r += image_new(&kiss_hslider, "kiss_hslider.png", a, renderer);
@@ -213,8 +213,10 @@ SDL_Renderer* kiss_init(char* title, kiss_array *a, int w, int h)
 	r += image_new(&kiss_right, "kiss_right.png", a, renderer);
 	r += image_new(&kiss_selected, "kiss_selected.png", a, renderer);
 	r += image_new(&kiss_unselected, "kiss_unselected.png", a, renderer);
+	*/
 	
 	/*Custom Assets*/
+	/*
 	r += font_new(&kiss_textfont, "font_anson_regular.ttf", a, kiss_textfont_size);
 	r += font_new(&kiss_buttonfont, "font_anson_regular.ttf", a, kiss_buttonfont_size);
 	r += font_new (&font_title, "font_anson_regular.ttf", a, font_title_size);
@@ -225,7 +227,7 @@ SDL_Renderer* kiss_init(char* title, kiss_array *a, int w, int h)
 	r += image_new (&kiss_normal, "button_normal.png", a, renderer);
 	r += image_new (&kiss_prelight, "button_prelight.png", a, renderer);
 	r += image_new (&kiss_active, "button_active.png", a, renderer);
-	
+	*/
 	if (r) {
 		
 		kiss_clean(a);

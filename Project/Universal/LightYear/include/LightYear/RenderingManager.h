@@ -86,6 +86,11 @@ public:
 
 private:
 	SDL_Renderer *m_renderer;
+	char *assets;
+	
+	bool m_IsRetinaDisplay ();
+	
+	int m_AddExternalAssets (kiss_array *a, bool high_dpi);
 	
 	void m_DrawMainMenu ();
 	void m_DrawOptionsMenu ();
