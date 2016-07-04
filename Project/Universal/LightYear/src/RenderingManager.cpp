@@ -35,17 +35,26 @@ bool RenderingManager::m_IsRetinaDisplay ()
 	
 	SDL_GetDisplayDPI (0, ddpi, hdpi, vdpi);
 	
-	if (*vdpi > 1.79417e+19)
+	if (fabs (*vdpi - 1.79417e+19) > 0.1)
+	{
+		
+		//std::cout << "Is Retina" << std::endl;
 		return true;
-	
-	return false;
+	} else {
+		
+		//std::cout << "Not Retina" << std::endl;
+		return false;
+	}
 }
 
 
-int RenderingManager::m_AddExternalAssets (kiss_array *a, bool highDPI = false)
+int RenderingManager::m_AddExternalAssets (kiss_array *a, bool highDPI)
 {
 	
-	std::cout << highDPI << std::endl;
+	if (highDPI == true)
+		std::cout << "Is Retina" << std::endl;
+	else
+		std::cout << "Not Retina" << std::endl;
 	
 	SDL_Renderer *renderer = (SDL_Renderer*) kiss_array_data (a, 1);
 	
