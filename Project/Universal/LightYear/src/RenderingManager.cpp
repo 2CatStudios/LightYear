@@ -5,7 +5,6 @@ int RenderingManager::InitializeKISS ()
 {
 	
 	m_renderer = kiss_init ("LightYear", &objects, 1024, 576);
-	
 	m_AddExternalAssets (&objects, m_IsRetinaDisplay ());
 	
 	return 0;
@@ -15,33 +14,34 @@ int RenderingManager::InitializeKISS ()
 bool RenderingManager::m_IsRetinaDisplay ()
 {
 	
-	float ddpi;
-	float hdpi;
-	float vdpi;
+	float diagDPI;
+	float horiDPI;
+	float vertDPI;
 	
-	if (SDL_GetDisplayDPI (0, &ddpi, &hdpi, &vdpi) != 0)
-	{
-		
+	//SDL_GetRenderer ((SDL_Window*) kiss_array_data (&objects, WINDOW_TYPE))
+	
+	if (SDL_GetDisplayDPI (0, &diagDPI, &horiDPI, &vertDPI) != 0)
 		std::cout << "Error: " << SDL_GetError () << std::endl;
-	}
-
-	std::cout << "DDPI: " << ddpi << std::endl << "HDPI: " << hdpi << std::endl << "VDPI: " << vdpi << std::endl;
+	else
+		std::cout << "DDPI: " << diagDPI << std::endl << "HDPI: " << horiDPI << std::endl << "VDPI: " << vertDPI << std::endl;
 	
 	
-	/*int gl_w;
+	/*SDL_Window *window = (SDL_Window*) kiss_array_data (&objects, WINDOW_TYPE);
+	
+	int gl_w;
 	int gl_h;
 	
-	SDL_GL_GetDrawableSize ((SDL_Window*) kiss_array_data (&objects, WINDOW_TYPE), &gl_w, &gl_h);
-	std::cout << "GL_W: " << gl_w << " GL_H: " << gl_h << std::endl;
+	SDL_GL_GetDrawableSize (window, &gl_w, &gl_h);
+	std::cout << "GL_W: " << gl_w << std::endl << "GL_H: " << gl_h << std::endl;
 	
 	int sdl_w;
 	int sdl_h;
 	
-	SDL_GetWindowSize ((SDL_Window*) kiss_array_data (&objects, WINDOW_TYPE), &sdl_w, &sdl_h);
-	std::cout << "SDL_W: " << sdl_w << " SDL_H: " << sdl_h << std::endl;
+	SDL_GetWindowSize (window, &sdl_w, &sdl_h);
+	std::cout << "SDL_W: " << sdl_w << std::endl << "SDL_H: " << sdl_h << std::endl;*/
 	
-	if (sdl_w != gl_w && sdl_h != gl_h)
-		return true;*/
+	//if (sdl_w != gl_w && sdl_h != gl_h)
+	//	return true;
 	
 	return false;
 }
@@ -54,8 +54,6 @@ int RenderingManager::m_AddExternalAssets (kiss_array *a, bool highDPI)
 		std::cout << "Is Retina" << std::endl;
 	else
 		std::cout << "Not Retina" << std::endl;
-	
-	//SDL_Renderer *renderer = (SDL_Renderer*) kiss_array_data (a, RETINA_TYPE);
 	
 	/*Default Assets*/
 	image_new(&kiss_bar, "kiss_bar.png", a, m_renderer);
@@ -158,6 +156,8 @@ int RenderingManager::CreateOptionsMenu ()
 		optionsMenu.created = true;
 		draw = 1;
 	}
+	
+	return 0;
 }
 
 

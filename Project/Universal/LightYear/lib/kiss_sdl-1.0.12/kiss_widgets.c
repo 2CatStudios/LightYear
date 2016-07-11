@@ -99,53 +99,51 @@ int kiss_label_draw(kiss_label *label, SDL_Renderer *renderer)
 	return 1;
 }
 
-int kiss_button_new(kiss_button *button, kiss_window *wdw, char *text,
-	int x, int y)
+int kiss_button_new (kiss_button *button, kiss_window *wdw, char *text, int x, int y)
 {
-	if (!button || !text) return -1;
-	kiss_makerect(&button->rect, x, y, kiss_normal.w, kiss_normal.h);
+	
+	if (!button || !text)
+		return -1;
+	
+	kiss_makerect (&button->rect, x, y, kiss_normal.w, kiss_normal.h);
+	
 	button->textcolor = kiss_white;
 	kiss_string_copy(button->text, KISS_MAX_LENGTH, text, NULL);
-	button->textx = x + kiss_normal.w / 2 -
-		kiss_textwidth(kiss_buttonfont, text, NULL) / 2;
-	button->texty = y + kiss_normal.h / 2 -
-		kiss_buttonfont.fontheight / 2;
+	button->textx = x + kiss_normal.w / 2 - kiss_textwidth(kiss_buttonfont, text, NULL) / 2;
+	button->texty = y + kiss_normal.h / 2 - kiss_buttonfont.fontheight / 2;
+	
 	button->active = 0;
 	button->prelight = 0;
 	button->visible = 0;
 	button->focus = 0;
+	
 	button->wdw = wdw;
 	return 0;
 }
 
 int kiss_button_event(kiss_button *button, SDL_Event *event, int *draw)
 {
-	if (!button || !button->visible || !event) return 0;
-	if (event->type == SDL_WINDOWEVENT &&
-		event->window.event == SDL_WINDOWEVENT_EXPOSED)
-		*draw = 1;
-	if (!button->focus && (!button->wdw ||
-		(button->wdw && !button->wdw->focus)))
+	
+	if (!button || !button->visible || !event)
 		return 0;
-	if (event->type == SDL_MOUSEBUTTONDOWN &&
-		kiss_pointinrect(event->button.x, event->button.y,
-		&button->rect)) {
+	
+	if (event->type == SDL_WINDOWEVENT && event->window.event == SDL_WINDOWEVENT_EXPOSED)
+		*draw = 1;
+	
+	if (!button->focus && (!button->wdw || (button->wdw && !button->wdw->focus)))
+		return 0;
+	
+	if (event->type == SDL_MOUSEBUTTONDOWN && kiss_pointinrect(event->button.x, event->button.y, &button->rect)) {
 		button->active = 1;
 		*draw = 1;
-	} else if (event->type == SDL_MOUSEBUTTONUP &&
-		kiss_pointinrect(event->button.x, event->button.y,
-		&button->rect) && button->active) {
+	} else if (event->type == SDL_MOUSEBUTTONUP && kiss_pointinrect(event->button.x, event->button.y, &button->rect) && button->active) {
 		button->active = 0;
 		*draw = 1;
 		return 1;
-	} else if (event->type == SDL_MOUSEMOTION &&
-		kiss_pointinrect(event->motion.x, event->motion.y,
-		&button->rect)) {
+	} else if (event->type == SDL_MOUSEMOTION && kiss_pointinrect(event->motion.x, event->motion.y, &button->rect)) {
 		button->prelight = 1;
 		*draw = 1;
-	} else if (event->type == SDL_MOUSEMOTION &&
-		!kiss_pointinrect(event->motion.x, event->motion.y,
-		&button->rect)) {
+	} else if (event->type == SDL_MOUSEMOTION && !kiss_pointinrect(event->motion.x, event->motion.y, &button->rect)) {
 		button->prelight = 0;
 		*draw = 1;
 		if (button->active) {
@@ -156,21 +154,23 @@ int kiss_button_event(kiss_button *button, SDL_Event *event, int *draw)
 	return 0;
 }
 
-int kiss_button_draw(kiss_button *button, SDL_Renderer *renderer)
+int kiss_button_draw (kiss_button *button, SDL_Renderer *renderer)
 {
-	if (button && button->wdw) button->visible = button->wdw->visible;
-	if (!button || !button->visible || !renderer) return 0;
+	
+	if (button && button->wdw)
+		button->visible = button->wdw->visible;
+	
+	if (!button || !button->visible || !renderer)
+		return 0;
+	
 	if (button->active)
-		kiss_renderimage(renderer, kiss_active, button->rect.x,
-			button->rect.y, NULL);
+		kiss_renderimage (renderer, kiss_active, button->rect.x, button->rect.y, NULL);
 	else if (button->prelight && !button->active)
-		kiss_renderimage(renderer, kiss_prelight, button->rect.x,
-			button->rect.y, NULL);
+		kiss_renderimage (renderer, kiss_prelight, button->rect.x, button->rect.y, NULL);
 	else
-		kiss_renderimage(renderer, kiss_normal, button->rect.x,
-			button->rect.y, NULL);
-	kiss_rendertext(renderer, button->text, button->textx, button->texty,
-		kiss_buttonfont, button->textcolor);
+		kiss_renderimage (renderer, kiss_normal, button->rect.x, button->rect.y, NULL);
+	
+	kiss_rendertext (renderer, button->text, button->textx, button->texty, kiss_buttonfont, button->textcolor);
 	return 1;
 }
 

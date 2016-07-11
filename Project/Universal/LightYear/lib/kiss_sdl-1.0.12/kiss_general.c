@@ -26,7 +26,9 @@
 
 int kiss_makerect(SDL_Rect *rect, int x, int y, int w, int h)
 {
-	if (!rect) return -1;
+	if (!rect)
+		return -1;
+	
 	rect->x = x;
 	rect->y = y;
 	rect->w = w;
@@ -84,7 +86,7 @@ int kiss_utf8fix(char *str)
 	return 0;
 }
 
-char *kiss_string_copy(char *dest, size_t size, char *str1, char *str2)
+char *kiss_string_copy(char *dest, size_t size, const char *str1, const char *str2)
 {
 	unsigned int len;
 	char *p;

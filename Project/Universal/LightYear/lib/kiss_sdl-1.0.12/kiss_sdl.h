@@ -267,7 +267,7 @@ int kiss_pointinrect(int x, int y, SDL_Rect *rect);
 int kiss_utf8next(char *str, int index);
 int kiss_utf8prev(char *str, int index);
 int kiss_utf8fix(char *str);
-char *kiss_string_copy(char *dest, size_t size, char *str1, char *str2);
+char *kiss_string_copy(char *dest, size_t size, const char *str1, const char *str2);
 int kiss_string_compare(const void *a, const void *b);
 char *kiss_backspace(char *str);
 int kiss_array_new(kiss_array *a);
@@ -318,8 +318,8 @@ int kiss_combobox_new(kiss_combobox *combobox, kiss_window *wdw, char *text, kis
 int kiss_combobox_event(kiss_combobox *combobox, SDL_Event *event, int *draw);
 int kiss_combobox_draw(kiss_combobox *combobox, SDL_Renderer *renderer);
 
-int image_new(kiss_image *image, char *fname, kiss_array *a, SDL_Renderer* renderer);
-int font_new(kiss_font *font, char *fname, kiss_array *a, int size);
+int image_new(kiss_image *image, const char *fname, kiss_array *a, SDL_Renderer* renderer);
+int font_new(kiss_font *font, const char *fname, kiss_array *a, int size);
 
 #ifdef __cplusplus
 }

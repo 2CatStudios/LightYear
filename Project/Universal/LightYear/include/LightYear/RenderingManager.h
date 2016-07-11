@@ -2,6 +2,7 @@
 #define RENDERINGMANAGER_H
 
 #include "kiss_sdl.h"
+
 #include <iostream>
 
 
