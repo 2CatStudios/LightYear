@@ -71,3 +71,12 @@ We'd like to thank the following for their help, without them, whether they're a
 [Jet Brains](https://www.jetbrains.com) for your CMake explinations.
 
 [The C++ Reference](http://en.cppreference.com/w/) for... existing.
+
+
+#License
+---
+This software is based on pugixml library (http://pugixml.org).
+pugixml is Copyright (C) 2006-2015 Arseny Kapoulkine.
+
+Also, this software is based on a modified kiss\_sdl library (https://github.com/actsl/kiss_sdl).
+kiss\_sdl is Copyright (c) 2016 Tarvo Korrovits. 
