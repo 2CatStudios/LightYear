@@ -250,12 +250,6 @@ extern kiss_font font_title, font_subtitle;
 extern int font_title_size, font_subtitle_size;
 extern kiss_image background, horizontal_bar;
 
-
-extern char *sdlError;
-extern float horiDPI;
-extern float vertDPI;
-extern float diagDPI;
-
 #ifdef __cplusplus
 extern "C" {
 #endif

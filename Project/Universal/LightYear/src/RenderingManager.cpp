@@ -14,44 +14,64 @@ int RenderingManager::InitializeKISS ()
 bool RenderingManager::m_IsRetinaDisplay ()
 {
 	
-	if (sdlError != 0)
+	std::cout << "Using " << SDL_GetNumVideoDisplays () << " displays." << std::endl;
+	
+	/*if (sdlError != 0)
 	{
 		
+		std::cout << "Return value: " << returnValue << std::endl;
 		std::cout << "Error: " << sdlError << std::endl;
+		std::cout << "DDPI: " << diagDPI << std::endl << "HDPI: " << horiDPI << std::endl << "VDPI: " << vertDPI << std::endl;
 		return false;
 	} else {
 		
 		std::cout << "DDPI: " << diagDPI << std::endl << "HDPI: " << horiDPI << std::endl << "VDPI: " << vertDPI << std::endl;
+	}*/
+	
+	
+	SDL_Rect srect;
+	SDL_GetDisplayBounds(0, &srect);
+	std::cout << "Display 0 Rect: (" << srect.w << ", " << srect.h << ", " << srect.x << ", " << srect.y << ")" << std::endl;
+	
+	
+	float diagDPI = -1;
+	float horiDPI = -1;
+	float vertDPI = -1;
+	
+	int dpiReturn = SDL_GetDisplayDPI (0, &diagDPI, &horiDPI, &vertDPI);
+	std::cout << "GetDisplayDPI returned " << dpiReturn << std::endl;
+	
+	if (dpiReturn != 0)
+	{
+		
+		std::cout << "Error: " << SDL_GetError () << std::endl;
 	}
 	
-	/*float diagDPI;
-	float horiDPI;
-	float vertDPI;
-	
-	//SDL_GetRenderer ((SDL_Window*) kiss_array_data (&objects, WINDOW_TYPE))
-	
-	if (SDL_GetDisplayDPI (0, &diagDPI, &horiDPI, &vertDPI) != 0)
-		std::cout << "Error: " << SDL_GetError () << std::endl;
-	else
-		std::cout << "DDPI: " << diagDPI << std::endl << "HDPI: " << horiDPI << std::endl << "VDPI: " << vertDPI << std::endl;*/
+	std::cout << "DDPI: " << diagDPI << std::endl << "HDPI: " << horiDPI << std::endl << "VDPI: " << vertDPI << std::endl;
 	
 	
 	/*SDL_Window *window = (SDL_Window*) kiss_array_data (&objects, WINDOW_TYPE);
 	
 	int gl_w;
 	int gl_h;
-	
 	SDL_GL_GetDrawableSize (window, &gl_w, &gl_h);
 	std::cout << "GL_W: " << gl_w << std::endl << "GL_H: " << gl_h << std::endl;
 	
 	int sdl_w;
 	int sdl_h;
-	
 	SDL_GetWindowSize (window, &sdl_w, &sdl_h);
-	std::cout << "SDL_W: " << sdl_w << std::endl << "SDL_H: " << sdl_h << std::endl;*/
+	std::cout << "SDL_W: " << sdl_w << std::endl << "SDL_H: " << sdl_h << std::endl;
 	
 	//if (sdl_w != gl_w && sdl_h != gl_h)
 	//	return true;
+	
+	SDL_Renderer *renderer = (SDL_Renderer *) kiss_array_data (&objects, RENDERER_TYPE);
+	
+	int r_w;
+	int r_h;
+	SDL_GetRendererOutputSize (renderer, &r_w, &r_h);
+	std::cout << "R_W: " << r_w << std::endl << "R_H: " << r_h << std::endl;*/
+	
 	
 	return false;
 }
