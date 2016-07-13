@@ -14,7 +14,17 @@ int RenderingManager::InitializeKISS ()
 bool RenderingManager::m_IsRetinaDisplay ()
 {
 	
-	float diagDPI;
+	if (sdlError != 0)
+	{
+		
+		std::cout << "Error: " << sdlError << std::endl;
+		return false;
+	} else {
+		
+		std::cout << "DDPI: " << diagDPI << std::endl << "HDPI: " << horiDPI << std::endl << "VDPI: " << vertDPI << std::endl;
+	}
+	
+	/*float diagDPI;
 	float horiDPI;
 	float vertDPI;
 	
@@ -23,7 +33,7 @@ bool RenderingManager::m_IsRetinaDisplay ()
 	if (SDL_GetDisplayDPI (0, &diagDPI, &horiDPI, &vertDPI) != 0)
 		std::cout << "Error: " << SDL_GetError () << std::endl;
 	else
-		std::cout << "DDPI: " << diagDPI << std::endl << "HDPI: " << horiDPI << std::endl << "VDPI: " << vertDPI << std::endl;
+		std::cout << "DDPI: " << diagDPI << std::endl << "HDPI: " << horiDPI << std::endl << "VDPI: " << vertDPI << std::endl;*/
 	
 	
 	/*SDL_Window *window = (SDL_Window*) kiss_array_data (&objects, WINDOW_TYPE);

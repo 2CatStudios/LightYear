@@ -47,6 +47,15 @@ int font_subtitle_size = 24;
 kiss_image background, horizontal_bar;
 
 
+
+char *sdlError;
+float horiDPI = 0;
+float vertDPI = 0;
+float diagDPI = 0;
+
+
+
+
 unsigned int kiss_getticks(void)
 {
 	return SDL_GetTicks();
@@ -212,13 +221,30 @@ SDL_Renderer* kiss_init(char* title, kiss_array *a, int w, int h)
 	SDL_StartTextInput();
 	kiss_array_new(a);
 	
-	window = SDL_CreateWindow (title, srect.w / 2 - w / 2, srect.h / 2 - h / 2, w, h, SDL_WINDOW_RESIZABLE | SDL_WINDOW_ALLOW_HIGHDPI);
+	window = SDL_CreateWindow (title, srect.w / 2 - w / 2, srect.h / 2 - h / 2, w, h, SDL_WINDOW_ALLOW_HIGHDPI);
 	if (window)
 		kiss_array_append (a, WINDOW_TYPE, window);
 	
 	renderer = SDL_CreateRenderer (window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 	if (renderer)
 		kiss_array_append (a, RENDERER_TYPE, renderer);
+	
+	float dDPI;
+	float hDPI;
+	float vDPI;
+	
+	if (SDL_GetDisplayDPI (0, &diagDPI, &horiDPI, &vertDPI) != 0)
+	{
+		
+		sdlError = SDL_GetError ();
+		//std::cout << "Error: " << SDL_GetError () << std::endl;
+	} else {
+		sdlError = 0;
+		diagDPI = dDPI;
+		horiDPI = hDPI;
+		vertDPI = vDPI;
+		//std::cout << "DDPI: " << diagDPI << std::endl << "HDPI: " << horiDPI << std::endl << "VDPI: " << vertDPI << std::endl;
+	}
 
 	if (r) {
 		

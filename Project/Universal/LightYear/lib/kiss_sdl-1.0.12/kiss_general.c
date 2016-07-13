@@ -38,8 +38,9 @@ int kiss_makerect(SDL_Rect *rect, int x, int y, int w, int h)
 
 int kiss_pointinrect(int x, int y, SDL_Rect *rect)
 {
-	return x >= rect->x && x < rect->x + rect->w &&
-		y >= rect->y && y < rect->y + rect->h;
+	
+	return x >= rect->x && x < (rect->x + rect->w) &&
+		y >= rect->y && y < (rect->y + rect->h);
 }
 
 int kiss_utf8next(char *str, int index)
