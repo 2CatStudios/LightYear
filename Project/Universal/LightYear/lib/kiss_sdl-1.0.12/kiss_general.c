@@ -86,28 +86,39 @@ int kiss_utf8fix(char *str)
 	return 0;
 }
 
-char *kiss_string_copy(char *dest, size_t size, const char *str1, const char *str2)
+char *kiss_string_copy (char *dest, size_t size, const char *str1, const char *str2)
 {
+	
 	unsigned int len;
 	char *p;
 
-	if (!dest) return NULL;
+	if (!dest)
+		return NULL;
+	
 	strcpy(dest, "");
-	if (size < 2) return dest;
-	if (str1) strncpy(dest, str1, size);
+	if (size < 2)
+		return dest;
+	
+	if (str1)
+		strncpy(dest, str1, size);
+	
 	dest[size - 1] = 0;
 	len = strlen(dest);
-	if (!str2 || size - 1 <= len) return dest;
+	if (!str2 || size - 1 <= len)
+		return dest;
+	
 	p = dest;
 	strncpy(p + len, str2, size - len);
 	dest[size - 1] = 0;
 	kiss_utf8fix(dest);
+	
 	return dest;
 }
 
-int kiss_string_compare(const void *a, const void *b)
+int kiss_string_compare (const void *a, const void *b)
 {
-	return strcmp(*((char **) a), *((char **) b));
+	
+	return strcmp (*((char **) a), *((char **) b));
 }
 
 char *kiss_backspace(char *str)
