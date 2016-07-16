@@ -85,6 +85,12 @@ int RenderingManager::m_AddExternalAssets (kiss_array *a, bool highDPI)
 		image_new(&kiss_unselected, "kiss_unselected.png", a, m_renderer);
 		
 		/*Custom Assets*/
+		
+		kiss_textfont_size *= 2;
+		kiss_buttonfont_size *= 2;
+		font_title_size *= 2;
+		font_subtitle_size *= 2;
+		
 		font_new(&kiss_textfont, "font_anson_regular.ttf", a, kiss_textfont_size);
 		font_new(&kiss_buttonfont, "font_anson_regular.ttf", a, kiss_buttonfont_size);
 		font_new (&font_title, "font_anson_regular.ttf", a, font_title_size);
