@@ -4,8 +4,8 @@
 int LocalizationManager::LoadApplicationText ()
 {
 	
-	XMLManager xml;
-	pugi::xml_document doc;
+	//XMLManager xml;
+	//pugi::xml_document doc;
 	
 	/*if (xml.ReadFromFileToVector (doc, (io.PathUpLevels (io.GetApplicationPath (), 2) + ("/resources/" + desiredLanguage + ".localized")).c_str ()) == 0)
 	{

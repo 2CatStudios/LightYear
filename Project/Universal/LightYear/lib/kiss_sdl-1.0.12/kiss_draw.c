@@ -213,7 +213,7 @@ SDL_Renderer* kiss_init(char* title, kiss_array *a, int w, int h)
 	SDL_StartTextInput();
 	
 	kiss_array_new(a);
-	window = SDL_CreateWindow (title, (srect.w / 2) - (w / 2), (srect.h / 2) - (h / 2), w, h, SDL_WINDOW_ALLOW_HIGHDPI);
+	window = SDL_CreateWindow (title, (srect.w / 2) - (w / 2), (srect.h / 2) - (h / 2), w, h, SDL_WINDOW_ALLOW_HIGHDPI | SDL_WINDOW_RESIZABLE);
 	if (window)
 		kiss_array_append (a, WINDOW_TYPE, window);
 	

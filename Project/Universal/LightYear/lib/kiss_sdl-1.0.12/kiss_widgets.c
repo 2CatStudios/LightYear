@@ -81,20 +81,28 @@ int kiss_label_draw(kiss_label *label, SDL_Renderer *renderer)
 	char buf[KISS_MAX_LABEL], *p;
 	int len, y;
 
-	if (label && label->wdw) label->visible = label->wdw->visible;
-	if (!label || !label->visible || !renderer) return 0;
+	if (label && label->wdw)
+		label->visible = label->wdw->visible;
+	
+	if (!label || !label->visible || !renderer)
+		return 0;
+	
 	y = label->rect.y + label->font.spacing / 2;
 	len = strlen(label->text);
+	
 	if (len > KISS_MAX_LABEL - 2)
 		label->text[len - 1] = '\n';
 	else
 		strcat(label->text, "\n");
-	for (p = label->text; *p; p = strchr(p, '\n') + 1) {
+	
+	for (p = label->text; *p; p = strchr(p, '\n') + 1)
+	{
+		
 		kiss_string_copy(buf, strcspn(p, "\n") + 1, p, NULL);
-		kiss_rendertext(renderer, buf, label->rect.x, y,
-			label->font, label->textcolor);
+		kiss_rendertext(renderer, buf, label->rect.x, y, label->font, label->textcolor);
 		y += label->font.lineheight;
 	}
+	
 	label->text[len] = 0;
 	return 1;
 }

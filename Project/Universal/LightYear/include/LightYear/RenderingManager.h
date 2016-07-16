@@ -6,18 +6,27 @@
 #include <iostream>
 
 
-typedef struct menu
+class Menu
 {
-	
+
+public:
 	bool created = false;
 	
 	kiss_array gui_objects;
 	kiss_window window;
+	
+	/*
+	const int RelativeZeroX ();
+	const int RelativeZeroY ();
+	*/
+	
+private: 
+	void m_hideMenu ();
 
-} menu;
+};
 
 
-typedef struct menu_main : menu
+typedef struct menu_main : Menu
 {
 	
 	kiss_label label_version;
@@ -31,7 +40,7 @@ typedef struct menu_main : menu
 } menu_main;
 
 
-typedef struct menu_options : menu
+typedef struct menu_options : Menu
 {
 	
 	kiss_button button_back;
@@ -41,7 +50,7 @@ typedef struct menu_options : menu
 } menu_options;
 
 
-typedef struct menu_about : menu
+typedef struct menu_about : Menu
 {
 	
 	kiss_button button_back;
@@ -87,7 +96,6 @@ public:
 
 private:
 	SDL_Renderer *m_renderer;
-	char *assets;
 	
 	bool m_IsRetinaDisplay ();
 	
