@@ -68,13 +68,22 @@ bool RenderingManager::m_IsRetinaDisplay ()
 int RenderingManager::m_AddExternalAssets (kiss_array *a, bool highDPI)
 {
 	
+	//REMEMBER: Move me!
+	char *assets[18] = {"kiss_bar.png", "kiss_vslider.png", "kiss_hslider.png", "kiss_up.png", "kiss_down.png", "kiss_left.png", "kiss_right.png", "kiss_selected.png", "kiss_unselected.png", "font_anson_regular.ttf", "font_anson_regular.ttf", "font_anson_regular.ttf", "font_anson_regular.ttf", "background.png", "horizontal_bar.png", "button_normal.png", "button_prelight.png", "button_active.png"};
+	
 	if (highDPI == true)
 	{
 		
 		std::cout << "Is Retina" << std::endl;
 		
+		kiss_textfont_size *= 2;
+		kiss_buttonfont_size *= 2;
+		font_title_size *= 2;
+		font_subtitle_size *= 2;
+		m_buttonPadding *= 2;
+		
 		/*Default Assets*/
-		image_new(&kiss_bar, "kiss_bar.png", a, m_renderer);
+		image_new(&kiss_bar, assets[0]/*"kiss_bar.png"*/, a, m_renderer);
 		image_new(&kiss_vslider, "kiss_vslider.png", a, m_renderer);
 		image_new(&kiss_hslider, "kiss_hslider.png", a, m_renderer);
 		image_new(&kiss_up, "kiss_up.png", a, m_renderer);
@@ -85,12 +94,6 @@ int RenderingManager::m_AddExternalAssets (kiss_array *a, bool highDPI)
 		image_new(&kiss_unselected, "kiss_unselected.png", a, m_renderer);
 		
 		/*Custom Assets*/
-		
-		kiss_textfont_size *= 2;
-		kiss_buttonfont_size *= 2;
-		font_title_size *= 2;
-		font_subtitle_size *= 2;
-		
 		font_new(&kiss_textfont, "font_anson_regular.ttf", a, kiss_textfont_size);
 		font_new(&kiss_buttonfont, "font_anson_regular.ttf", a, kiss_buttonfont_size);
 		font_new (&font_title, "font_anson_regular.ttf", a, font_title_size);
@@ -106,34 +109,34 @@ int RenderingManager::m_AddExternalAssets (kiss_array *a, bool highDPI)
 		std::cout << "Not Retina" << std::endl;
 	
 		/*Default Assets*/
-		image_new(&kiss_bar, "kiss_bar.png", a, m_renderer);
-		image_new(&kiss_vslider, "kiss_vslider.png", a, m_renderer);
-		image_new(&kiss_hslider, "kiss_hslider.png", a, m_renderer);
-		image_new(&kiss_up, "kiss_up.png", a, m_renderer);
-		image_new(&kiss_down, "kiss_down.png", a, m_renderer);
-		image_new(&kiss_left, "kiss_left.png", a, m_renderer);
-		image_new(&kiss_right, "kiss_right.png", a, m_renderer);
-		image_new(&kiss_selected, "kiss_selected.png", a, m_renderer);
-		image_new(&kiss_unselected, "kiss_unselected.png", a, m_renderer);
+		image_new(&kiss_bar, assets[0], a, m_renderer);
+		image_new(&kiss_vslider, assets[1], a, m_renderer);
+		image_new(&kiss_hslider, assets[2], a, m_renderer);
+		image_new(&kiss_up, assets[3], a, m_renderer);
+		image_new(&kiss_down, assets[4], a, m_renderer);
+		image_new(&kiss_left, assets[5], a, m_renderer);
+		image_new(&kiss_right, assets[6], a, m_renderer);
+		image_new(&kiss_selected, assets[7], a, m_renderer);
+		image_new(&kiss_unselected, assets[8], a, m_renderer);
 		
 		/*Custom Assets*/
-		font_new(&kiss_textfont, "font_anson_regular.ttf", a, kiss_textfont_size);
-		font_new(&kiss_buttonfont, "font_anson_regular.ttf", a, kiss_buttonfont_size);
-		font_new (&font_title, "font_anson_regular.ttf", a, font_title_size);
-		font_new (&font_subtitle, "font_anson_regular.ttf", a, font_subtitle_size);
+		font_new(&kiss_textfont, assets[9], a, kiss_textfont_size);
+		font_new(&kiss_buttonfont, assets[10], a, kiss_buttonfont_size);
+		font_new (&font_title, assets[11], a, font_title_size);
+		font_new (&font_subtitle, assets[12], a, font_subtitle_size);
 		
-		image_new (&background, "background.png", a, m_renderer);
-		image_new (&horizontal_bar, "horizontal_bar.png", a, m_renderer);
-		image_new (&kiss_normal, "button_normal.png", a, m_renderer);
-		image_new (&kiss_prelight, "button_prelight.png", a, m_renderer);
-		image_new (&kiss_active, "button_active.png", a, m_renderer);
+		image_new (&background, assets[13], a, m_renderer);
+		image_new (&horizontal_bar, assets[14], a, m_renderer);
+		image_new (&kiss_normal, assets[15], a, m_renderer);
+		image_new (&kiss_prelight, assets[16], a, m_renderer);
+		image_new (&kiss_active, assets[17], a, m_renderer);
 	}
 	
 	return 0;
 }
 
 
-int RenderingManager::CreateMainMenu ()
+int RenderingManager::m_CreateMainMenu ()
 {
 	
 	if (mainMenu.created == false)
@@ -141,7 +144,7 @@ int RenderingManager::CreateMainMenu ()
 	
 		kiss_array_new (&mainMenu.gui_objects);
 	
-		kiss_window_new (&mainMenu.window, NULL, 0, 0, 0, kiss_screen_width, kiss_screen_height);
+		kiss_window_new (&mainMenu.window, NULL, 0, 0, 0, 0, kiss_screen_width, kiss_screen_height);
 		kiss_array_append (&mainMenu.gui_objects, 0, &mainMenu.window);
 		
 		kiss_label_new (&mainMenu.label_version, &mainMenu.window, "Version 0.0.0d2", mainMenu.window.rect.x + 4, mainMenu.window.rect.y + 0);
@@ -159,7 +162,7 @@ int RenderingManager::CreateMainMenu ()
 		mainMenu.label_subtitle.font = font_subtitle;
 		kiss_array_append (&mainMenu.gui_objects, 3, &mainMenu.label_subtitle);
 		
-		kiss_button_new (&mainMenu.button_playGame, &mainMenu.window, "Play Game", mainMenu.window.rect.x + ((mainMenu.window.rect.w / 2) - (kiss_normal.w / 2)), mainMenu.label_subtitle.rect.y + kiss_buttonfont.fontheight + m_buttonPadding * 3);
+		kiss_button_new (&mainMenu.button_playGame, &mainMenu.window, "Play Game", mainMenu.window.rect.x + ((mainMenu.window.rect.w / 2) - (kiss_normal.w / 2)), mainMenu.label_subtitle.rect.y + kiss_buttonfont.fontheight + m_buttonPadding * 6);
 		mainMenu.button_playGame.textcolor = kiss_white;
 		kiss_array_append (&mainMenu.gui_objects, 4, &mainMenu.button_playGame);
 		
@@ -177,13 +180,39 @@ int RenderingManager::CreateMainMenu ()
 		
 		mainMenu.created = true;
 		draw = 1;
+		return 0;
+	} else {
+		return 1;
 	}
-
-	return 0;
 }
 
 
-int RenderingManager::CreateOptionsMenu ()
+int RenderingManager::m_CreateSelectGameMenu ()
+{
+	
+	if (selectgameMenu.created == false)
+	{
+		
+		kiss_array_new (&selectgameMenu.gui_objects);
+		
+		kiss_window_new (&selectgameMenu.window, NULL, 0, 0, 0, 0, kiss_screen_width, kiss_screen_height);
+		kiss_array_append (&selectgameMenu.gui_objects, 0, &selectgameMenu.window);
+		
+		kiss_button_new (&selectgameMenu.button_back, &selectgameMenu.window, "Return", selectgameMenu.window.rect.x + m_buttonPadding, selectgameMenu.window.rect.y + m_buttonPadding);
+		selectgameMenu.button_back.textcolor = kiss_white;
+		kiss_array_append (&selectgameMenu.gui_objects, 1, &selectgameMenu.button_back);
+		
+		selectgameMenu.created = true;
+		draw = 1;
+		return 0;
+	} else {
+		
+		return 1;
+	}
+}
+
+
+int RenderingManager::m_CreateOptionsMenu ()
 {
 	
 	if (optionsMenu.created == false)
@@ -191,7 +220,7 @@ int RenderingManager::CreateOptionsMenu ()
 		
 		kiss_array_new (&optionsMenu.gui_objects);
 		
-		kiss_window_new (&optionsMenu.window, NULL, 0, 0, 0, kiss_screen_width, kiss_screen_height);
+		kiss_window_new (&optionsMenu.window, NULL, 0, 0, 0, 0, kiss_screen_width, kiss_screen_height);
 		kiss_array_append (&optionsMenu.gui_objects, 0, &optionsMenu.window);
 		
 		kiss_button_new (&optionsMenu.button_back, &optionsMenu.window, "Return", optionsMenu.window.rect.x + m_buttonPadding, optionsMenu.window.rect.y + m_buttonPadding);
@@ -206,13 +235,14 @@ int RenderingManager::CreateOptionsMenu ()
 		
 		optionsMenu.created = true;
 		draw = 1;
+		return 0;
+	} else {
+		return 1;
 	}
-	
-	return 0;
 }
 
 
-int RenderingManager::CreateAboutMenu ()
+int RenderingManager::m_CreateAboutMenu ()
 {
 	
 	if (aboutMenu.created == false)
@@ -220,7 +250,7 @@ int RenderingManager::CreateAboutMenu ()
 		
 		kiss_array_new (&aboutMenu.gui_objects);
 		
-		kiss_window_new (&aboutMenu.window, NULL, 0, 0, 0, kiss_screen_width, kiss_screen_height);
+		kiss_window_new (&aboutMenu.window, NULL, 0, 0, 0, 0, kiss_screen_width, kiss_screen_height);
 		kiss_array_append (&aboutMenu.gui_objects, 0, &aboutMenu.window);
 		
 		kiss_button_new (&aboutMenu.button_back, &aboutMenu.window, "Return", aboutMenu.window.rect.x + m_buttonPadding, aboutMenu.window.rect.x + m_buttonPadding);
@@ -228,58 +258,67 @@ int RenderingManager::CreateAboutMenu ()
 		kiss_array_append (&aboutMenu.gui_objects, 1, &aboutMenu.button_back);
 		
 		
+		int titleWidth = kiss_textwidth (font_subtitle, "The LightYear Interactive Fiction engine", NULL);
+		kiss_window_new (&aboutMenu.scroll_view, NULL, 1, 1, (aboutMenu.window.rect.w / 2) - (titleWidth / 2), 0, titleWidth, 400);
+		kiss_array_append (&aboutMenu.gui_objects, 2, &aboutMenu.scroll_view);
+		
+		kiss_vscrollbar_new (&aboutMenu.scrollbar, &aboutMenu.window, 100, 50, 200);
+		kiss_array_append (&aboutMenu.gui_objects, 3, &aboutMenu.scrollbar);
+		
+		
 		kiss_label_new (&aboutMenu.label_title, &aboutMenu.window, "About", aboutMenu.window.rect.x + ((aboutMenu.window.rect.w / 2) - (kiss_textwidth (font_title, "About", NULL) / 2)), aboutMenu.window.rect.y + 10);
 		aboutMenu.label_title.textcolor = kiss_white;
 		aboutMenu.label_title.font = font_title;
-		kiss_array_append (&aboutMenu.gui_objects, 2, &aboutMenu.label_title);
+		kiss_array_append (&aboutMenu.gui_objects, 4, &aboutMenu.label_title);
 
-		kiss_label_new (&aboutMenu.label_preamble_top, &aboutMenu.window, "The LightYear Interactive Fiction engine", aboutMenu.window.rect.x + ((aboutMenu.window.rect.w / 2) - (kiss_textwidth (font_subtitle, "The LightYear Interactive Fiction engine", NULL) / 2)), aboutMenu.label_title.rect.y + font_title.fontheight);
+		kiss_label_new (&aboutMenu.label_preamble_top, &aboutMenu.window, "The LightYear Interactive Fiction engine", aboutMenu.window.rect.x + ((aboutMenu.window.rect.w / 2) - (titleWidth / 2)), aboutMenu.label_title.rect.y + font_title.fontheight);
 		aboutMenu.label_preamble_top.textcolor = kiss_white;
 		aboutMenu.label_preamble_top.font = font_subtitle;
-		kiss_array_append (&aboutMenu.gui_objects, 3, &aboutMenu.label_preamble_top);
+		kiss_array_append (&aboutMenu.gui_objects, 5, &aboutMenu.label_preamble_top);
 		
 		kiss_label_new (&aboutMenu.label_preamble_bottom, &aboutMenu.window, "has been lovingly created by", aboutMenu.window.rect.x + ((aboutMenu.window.rect.w / 2) - (kiss_textwidth (font_subtitle, "has been lovingly created by", NULL) / 2)), aboutMenu.label_preamble_top.rect.y + font_subtitle.fontheight);
 		aboutMenu.label_preamble_bottom.textcolor = kiss_white;
 		aboutMenu.label_preamble_bottom.font = font_subtitle;
-		kiss_array_append (&aboutMenu.gui_objects, 4, &aboutMenu.label_preamble_bottom);
+		kiss_array_append (&aboutMenu.gui_objects, 6, &aboutMenu.label_preamble_bottom);
 		
 		kiss_label_new (&aboutMenu.label_twocatstudios, &aboutMenu.window, "2Cat Studios", aboutMenu.window.rect.x + ((aboutMenu.window.rect.w / 2) - (kiss_textwidth (font_subtitle, "2Cat Studios", NULL) / 2)), aboutMenu.label_preamble_bottom.rect.y + font_subtitle.fontheight + m_labelPadding);
 		aboutMenu.label_twocatstudios.textcolor = kiss_white;
 		aboutMenu.label_twocatstudios.font = font_subtitle;
-		kiss_array_append (&aboutMenu.gui_objects, 5, &aboutMenu.label_twocatstudios);
+		kiss_array_append (&aboutMenu.gui_objects, 7, &aboutMenu.label_twocatstudios);
 		
 		
-		kiss_label_new (&aboutMenu.label_team_michaelb, &aboutMenu.window, "Michael Bethke - Programming & Design", aboutMenu.window.rect.x + ((aboutMenu.window.rect.w / 2) - (kiss_textwidth (font_subtitle, "Michael Bethke - Programming & Design", NULL) / 2)), aboutMenu.label_twocatstudios.rect.y + font_subtitle.fontheight + m_labelPadding);
+		kiss_label_new (&aboutMenu.label_team_michaelb, &aboutMenu.window, "Michael Bethke - Lead Developer", aboutMenu.window.rect.x + ((aboutMenu.window.rect.w / 2) - (kiss_textwidth (font_subtitle, "Michael Bethke - Lead Developer", NULL) / 2)), aboutMenu.label_twocatstudios.rect.y + font_subtitle.fontheight + m_labelPadding);
 		aboutMenu.label_team_michaelb.textcolor = kiss_white;
 		aboutMenu.label_team_michaelb.font = font_subtitle;
-		kiss_array_append (&aboutMenu.gui_objects, 6, &aboutMenu.label_team_michaelb);
+		kiss_array_append (&aboutMenu.gui_objects, 8, &aboutMenu.label_team_michaelb);
 		
 		kiss_label_new (&aboutMenu.label_team_janh, &aboutMenu.window, "Jan Heemstra - Feedback & Support", aboutMenu.window.rect.x + ((aboutMenu.window.rect.w / 2) - (kiss_textwidth (font_subtitle, "Jan Heemstra - Feedback & Support", NULL) / 2)), aboutMenu.label_team_michaelb.rect.y + font_subtitle.fontheight);
 		aboutMenu.label_team_janh.textcolor = kiss_white;
 		aboutMenu.label_team_janh.font = font_subtitle;
-		kiss_array_append (&aboutMenu.gui_objects, 7, &aboutMenu.label_team_janh);
+		kiss_array_append (&aboutMenu.gui_objects, 9, &aboutMenu.label_team_janh);
 		
 		
 		kiss_label_new (&aboutMenu.label_thanksto, &aboutMenu.window, "With thanks to", aboutMenu.window.rect.x + ((aboutMenu.window.rect.w / 2) - (kiss_textwidth (font_subtitle, "With thanks to", NULL) / 2)), aboutMenu.label_team_janh.rect.y + (font_subtitle.fontheight * 2));
 		aboutMenu.label_thanksto.textcolor = kiss_white;
 		aboutMenu.label_thanksto.font = font_subtitle;
-		kiss_array_append (&aboutMenu.gui_objects, 8, &aboutMenu.label_thanksto);
+		kiss_array_append (&aboutMenu.gui_objects, 10, &aboutMenu.label_thanksto);
 		
 		kiss_label_new (&aboutMenu.label_supporters_bleikur, &aboutMenu.window, "\"Bleikur\" - Design & Feedback", aboutMenu.window.rect.x + ((aboutMenu.window.rect.w / 2) - (kiss_textwidth (font_subtitle, "\"Bleikur\" - Design & Feedback", NULL) / 2)), aboutMenu.label_thanksto.rect.y + font_subtitle.fontheight);
 		aboutMenu.label_supporters_bleikur.textcolor = kiss_white;
 		aboutMenu.label_supporters_bleikur.font = font_subtitle;
-		kiss_array_append (&aboutMenu.gui_objects, 9, &aboutMenu.label_supporters_bleikur);
+		kiss_array_append (&aboutMenu.gui_objects, 11, &aboutMenu.label_supporters_bleikur);
 		
 		kiss_label_new (&aboutMenu.label_supporters_tarvok, &aboutMenu.window, "Tarvo Korrovits - KISS_SDL Support", aboutMenu.window.rect.x + ((aboutMenu.window.rect.w / 2) - (kiss_textwidth (font_subtitle, "Tarvo Korrovits - KISS_SDL Support", NULL) / 2)), aboutMenu.label_supporters_bleikur.rect.y + font_subtitle.fontheight);
 		aboutMenu.label_supporters_tarvok.textcolor = kiss_white;
 		aboutMenu.label_supporters_tarvok.font = font_subtitle;
-		kiss_array_append (&aboutMenu.gui_objects, 10, &aboutMenu.label_supporters_tarvok);
+		kiss_array_append (&aboutMenu.gui_objects, 12, &aboutMenu.label_supporters_tarvok);
 		
 		aboutMenu.created = true;
 		draw = 1;
+		return 0;
+	} else {
+		return 1;
 	}
-	
-	return 0;
 }
 
 
@@ -287,12 +326,10 @@ void RenderingManager::m_DrawMainMenu ()
 {
 	
 	if (mainMenu.created == false)
-		CreateMainMenu ();
+		m_CreateMainMenu ();
 	
 	mainMenu.window.visible = 1;
-	
 	kiss_window_draw (&mainMenu.window, m_renderer);
-	kiss_renderimage (m_renderer, background, mainMenu.window.rect.x, mainMenu.window.rect.y, NULL);
 	
 	kiss_label_draw (&mainMenu.label_title, m_renderer);
 	kiss_label_draw (&mainMenu.label_subtitle, m_renderer);
@@ -304,16 +341,27 @@ void RenderingManager::m_DrawMainMenu ()
 }
 
 
+void RenderingManager::m_DrawSelectGameMenu ()
+{
+	
+	if (selectgameMenu.created == false)
+		m_CreateSelectGameMenu ();
+	
+	selectgameMenu.window.visible = 1;
+	kiss_window_draw (&selectgameMenu.window, m_renderer);
+	
+	kiss_button_draw (&selectgameMenu.button_back, m_renderer);
+}
+
+
 void RenderingManager::m_DrawOptionsMenu ()
 {
 	
 	if (optionsMenu.created == false)
-		CreateOptionsMenu ();
+		m_CreateOptionsMenu ();
 	
 	optionsMenu.window.visible = 1;
-	
 	kiss_window_draw (&optionsMenu.window, m_renderer);
-	kiss_renderimage (m_renderer, background, optionsMenu.window.rect.x, optionsMenu.window.rect.y, NULL);
 	
 	kiss_button_draw (&optionsMenu.button_back, m_renderer);
 	kiss_label_draw (&optionsMenu.label_title, m_renderer);
@@ -324,14 +372,17 @@ void RenderingManager::m_DrawAboutMenu ()
 {
 	
 	if (aboutMenu.created == false)
-		CreateAboutMenu ();
+		m_CreateAboutMenu ();
 	
 	aboutMenu.window.visible = 1;
-	
 	kiss_window_draw (&aboutMenu.window, m_renderer);
-	kiss_renderimage (m_renderer, background, aboutMenu.window.rect.x, aboutMenu.window.rect.y, NULL);
 	
 	kiss_button_draw (&aboutMenu.button_back, m_renderer);
+	
+	aboutMenu.scroll_view.visible = 1;
+	kiss_window_draw (&aboutMenu.scroll_view, m_renderer);
+	kiss_vscrollbar_draw (&aboutMenu.scrollbar, m_renderer);
+	
 	kiss_label_draw (&aboutMenu.label_title, m_renderer);
 	kiss_label_draw (&aboutMenu.label_preamble_top, m_renderer);
 	kiss_label_draw (&aboutMenu.label_preamble_bottom, m_renderer);
@@ -356,6 +407,13 @@ void RenderingManager::Update ()
 		return;
 	
 	SDL_RenderClear (m_renderer);
+	mainMenu.window.visible = 0;
+	selectgameMenu.window.visible = 0;
+	optionsMenu.window.visible = 0;
+	aboutMenu.window.visible = 0;
+	aboutMenu.scroll_view.visible = 0;
+	
+	kiss_renderimage (m_renderer, background, 0, 0, NULL);
 	
 	switch (menuState)
 	{
@@ -364,10 +422,12 @@ void RenderingManager::Update ()
 			break;
 		
 		case MAINMENU:
+			
 			m_DrawMainMenu ();
 			break;
 		
 		case SELECTGAME:
+			m_DrawSelectGameMenu ();
 			break;
 		
 		case OPTIONS:
@@ -375,7 +435,6 @@ void RenderingManager::Update ()
 			break;
 		
 		case ABOUT:
-			mainMenu.window.visible = 0;
 			m_DrawAboutMenu ();
 			break;
 		
@@ -392,27 +451,4 @@ void RenderingManager::Stop ()
 {
 	
 	kiss_clean (&objects);
-}
-
-
-/*
-const int Menu::RelativeZeroX ()
-{
-	
-	return (window.rect.x - window.rect.w);
-}
-
-
-const int Menu::RelativeZeroY ()
-{
-	
-	return (window.rect.y - window.rect.h);
-}
-*/
-
-
-void Menu::m_hideMenu ()
-{
-	
-	
 }

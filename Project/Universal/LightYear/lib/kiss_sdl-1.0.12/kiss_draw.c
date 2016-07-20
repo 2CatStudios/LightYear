@@ -42,8 +42,8 @@ SDL_Color kiss_blue = {0, 0, 255, 255};
 SDL_Color kiss_lightblue = {200, 225, 255, 255};
 
 kiss_font font_title, font_subtitle;
-int font_title_size = 128;
-int font_subtitle_size = 24;
+int font_title_size = 200; /*128;*/
+int font_subtitle_size = 48; /*24;*/
 kiss_image background, horizontal_bar;
 
 
@@ -123,8 +123,7 @@ int kiss_fillrect(SDL_Renderer *renderer, SDL_Rect *rect, SDL_Color color)
 	return 0;
 }
 
-int kiss_decorate(SDL_Renderer *renderer, SDL_Rect *rect, SDL_Color color,
-	int edge)
+int kiss_decorate(SDL_Renderer *renderer, SDL_Rect *rect, SDL_Color color, int edge)
 {
 	SDL_Rect outlinerect;
 	int d, i;
@@ -132,13 +131,14 @@ int kiss_decorate(SDL_Renderer *renderer, SDL_Rect *rect, SDL_Color color,
 	d = 2 * edge;
 	if (!renderer || !rect || rect->w < d + 6 || rect->h < d + 6)
 		return -1;
+	
 	SDL_SetRenderDrawColor(renderer, color.r, color.g, color.b, color.a);
+	
 	for (i = 0; i < 2; i++) {
-		kiss_makerect(&outlinerect, rect->x + edge + i,
-			rect->y + edge + i, rect->w - d - i - i,
-			rect->h - d - i - i);
+		kiss_makerect(&outlinerect, rect->x + edge + i, rect->y + edge + i, rect->w - d - i - i, rect->h - d - i - i);
 		SDL_RenderDrawRect(renderer, &outlinerect);
 	}
+	
 	return 0;
 }
 

@@ -15,11 +15,6 @@ public:
 	kiss_array gui_objects;
 	kiss_window window;
 	
-	/*
-	const int RelativeZeroX ();
-	const int RelativeZeroY ();
-	*/
-	
 private: 
 	void m_hideMenu ();
 
@@ -40,6 +35,16 @@ typedef struct menu_main : Menu
 } menu_main;
 
 
+typedef struct menu_selectgame : Menu
+{
+	
+	kiss_button button_back;
+	
+	kiss_label label_title;
+
+} menu_selectgame;
+
+
 typedef struct menu_options : Menu
 {
 	
@@ -54,6 +59,9 @@ typedef struct menu_about : Menu
 {
 	
 	kiss_button button_back;
+	
+	kiss_window scroll_view;
+	kiss_vscrollbar scrollbar;
 	
 	kiss_label label_title;
 	kiss_label label_preamble_top;
@@ -80,16 +88,13 @@ public:
 	MenuState menuState = NONE;
 	
 	menu_main mainMenu;
+	menu_selectgame selectgameMenu;
 	menu_options optionsMenu;
 	menu_about aboutMenu;
 	
 	int draw = 1;
 	
 	int InitializeKISS ();
-	
-	int CreateMainMenu ();
-	int CreateOptionsMenu ();
-	int CreateAboutMenu ();
 	
 	void Update ();
 	void Stop ();
@@ -101,12 +106,18 @@ private:
 	
 	int m_AddExternalAssets (kiss_array *a, bool high_dpi);
 	
+	int m_CreateMainMenu ();
+	int m_CreateSelectGameMenu ();
+	int m_CreateOptionsMenu ();
+	int m_CreateAboutMenu ();
+	
 	void m_DrawMainMenu ();
+	void m_DrawSelectGameMenu ();
 	void m_DrawOptionsMenu ();
 	void m_DrawAboutMenu ();
 	
-	const int m_buttonPadding = 18;
-	const int m_labelPadding = 15;
+	int m_buttonPadding = 10;
+	int m_labelPadding = 15;
 };
 
 #endif /* end of include guard: RENDERINGMANAGER_H */

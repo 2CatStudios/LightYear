@@ -7,8 +7,8 @@ int CoreLoopDelegate::Run ()
 	if (renderingManager.InitializeKISS () != 0)
 		return 1;
 	
-	renderingManager.CreateMainMenu ();
 	renderingManager.menuState = RenderingManager::MAINMENU;
+	renderingManager.Update ();
 	
 	inputManager.renderingManager = &renderingManager;
 	

@@ -109,6 +109,7 @@ typedef struct kiss_window {
 	int visible;
 	int focus;
 	int decorate;
+	int fill;
 	SDL_Color bg;
 	struct kiss_window *wdw;
 } kiss_window;
@@ -288,7 +289,7 @@ int kiss_fillrect(SDL_Renderer *renderer, SDL_Rect *rect, SDL_Color color);
 int kiss_decorate(SDL_Renderer *renderer, SDL_Rect *rect, SDL_Color color, int edge);
 SDL_Renderer* kiss_init(char* title, kiss_array *a, int w, int h);
 int kiss_clean(kiss_array *a);
-int kiss_window_new(kiss_window *window, kiss_window *wdw, int decorate, int x, int y, int w, int h);
+int kiss_window_new(kiss_window *window, kiss_window *wdw, int decorate, int fill, int x, int y, int w, int h);
 int kiss_window_event(kiss_window *window, SDL_Event *event, int *draw);
 int kiss_window_draw(kiss_window *window, SDL_Renderer *renderer);
 int kiss_label_new(kiss_label *label, kiss_window *wdw, char *text, int x, int y);

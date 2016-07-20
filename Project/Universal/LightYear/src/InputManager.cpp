@@ -24,6 +24,7 @@ int InputManager::GetInput (int &quit)
 				break;
 		
 			case RenderingManager::SELECTGAME:
+				m_SelectGameWindowInput ();
 				break;
 		
 			case RenderingManager::OPTIONS:
@@ -54,6 +55,14 @@ void InputManager::m_MainMenuWindowInput (int &quit)
 }
 
 
+void InputManager::m_SelectGameWindowInput ()
+{
+	
+	kiss_window_event ((kiss_window*) kiss_array_data (&renderingManager->selectgameMenu.gui_objects, 0), &m_event, &renderingManager->draw);
+	m_optionsmenu_button_back_event ((kiss_button*) kiss_array_data (&renderingManager->selectgameMenu.gui_objects, 1), &m_event, &renderingManager->draw);
+}
+
+
 void InputManager::m_OptionsWindowInput ()
 {
 	
@@ -67,13 +76,18 @@ void InputManager::m_AboutWindowInput ()
 	
 	kiss_window_event ((kiss_window*) kiss_array_data (&renderingManager->aboutMenu.gui_objects, 0), &m_event, &renderingManager->draw);
 	m_aboutmenu_button_back_event ((kiss_button*) kiss_array_data (&renderingManager->aboutMenu.gui_objects, 1), &m_event, &renderingManager->draw);
+	kiss_window_event ((kiss_window*) kiss_array_data (&renderingManager->aboutMenu.gui_objects, 2), &m_event, &renderingManager->draw);
 }
 
 
 void InputManager::m_mainmenu_button_playGame_event (kiss_button *button, SDL_Event *e, int *draw)
 {
 	
-	kiss_button_event (button, e, draw);
+	if (kiss_button_event (button, e, draw))
+	{
+		
+		renderingManager->menuState = RenderingManager::SELECTGAME;
+	}
 }
 
 

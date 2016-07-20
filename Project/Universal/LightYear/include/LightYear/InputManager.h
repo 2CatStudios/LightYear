@@ -16,6 +16,7 @@ private:
 	SDL_Event m_event;
 	
 	void m_MainMenuWindowInput (int &quit);
+	void m_SelectGameWindowInput ();
 	void m_OptionsWindowInput ();
 	void m_AboutWindowInput ();
 	
@@ -23,6 +24,8 @@ private:
 	void m_mainmenu_button_options_event (kiss_button *button, SDL_Event *e, int *draw);
 	void m_mainmenu_button_about_event (kiss_button *button, SDL_Event *e, int *draw);
 	void m_mainmenu_button_quit_event (kiss_button *button, SDL_Event *e, int *quit, int *draw);
+	
+	void m_selectgamemenu_button_back_evenet (kiss_button *button, SDL_Event *e, int *draw);
 	
 	void m_optionsmenu_button_back_event (kiss_button *button, SDL_Event *e, int *draw);
 	

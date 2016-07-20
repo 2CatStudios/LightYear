@@ -169,20 +169,27 @@ int kiss_array_append(kiss_array *a, int id, void *data)
 {
 	int i;
 
-	if (!a) return -1;
-	if (a->length >= a->size) {
+	if (!a)
+		return -1;
+	
+	if (a->length >= a->size)
+	{
+		
 		a->size *= 2;
-		a->data = (void **) realloc(a->data,
-			a->size * sizeof(void *));
+		a->data = (void **) realloc(a->data, a->size * sizeof(void *));
 		a->id = (int *) realloc(a->id, a->size * sizeof(int));
-		for (i = a->length; i < a->size; i++) {
+		for (i = a->length; i < a->size; i++)
+		{
+			
 			a->data[i] = NULL;
 			a->id[i] = 0;
 		}
 	}
+	
 	a->data[a->length] = data;
 	a->id[a->length] = id;
 	++a->length;
+	
 	return 0;
 }
 
