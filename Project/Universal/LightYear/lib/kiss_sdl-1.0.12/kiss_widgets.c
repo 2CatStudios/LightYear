@@ -239,22 +239,16 @@ int kiss_selectbutton_draw(kiss_selectbutton *selectbutton,
 	return 1;
 }
 
-int kiss_vscrollbar_new(kiss_vscrollbar *vscrollbar, kiss_window *wdw,
-	int x, int y, int h)
+int kiss_vscrollbar_new(kiss_vscrollbar *vscrollbar, kiss_window *wdw, int x, int y, int h)
 {
-	if (!vscrollbar || kiss_up.h + kiss_down.h + 2 * kiss_edge +
-		2 * kiss_slider_padding + kiss_vslider.h > h)
+	if (!vscrollbar || kiss_up.h + kiss_down.h + 2 * kiss_edge + 2 * kiss_slider_padding + kiss_vslider.h > h)
 		return -1;
-	kiss_makerect(&vscrollbar->uprect, x, y + kiss_edge,
-		kiss_up.w, kiss_up.h + kiss_slider_padding);
-	kiss_makerect(&vscrollbar->downrect, x, y + h - kiss_down.h -
-		kiss_slider_padding - kiss_edge, kiss_down.w,
-		kiss_down.h + kiss_slider_padding);
-	kiss_makerect(&vscrollbar->sliderrect, x, y + vscrollbar->uprect.h +
-		kiss_edge, kiss_vslider.w, kiss_vslider.h);
-	vscrollbar->maxpos = h - 2 * kiss_slider_padding - 2 * kiss_edge -
-		kiss_up.h - kiss_down.h - kiss_vslider.h;
-	vscrollbar->fraction = 0.;
+	
+	kiss_makerect(&vscrollbar->uprect, x, y + kiss_edge, kiss_up.w, kiss_up.h + kiss_slider_padding);
+	kiss_makerect(&vscrollbar->downrect, x, y + h - kiss_down.h - kiss_slider_padding - kiss_edge, kiss_down.w, kiss_down.h + kiss_slider_padding);
+	kiss_makerect(&vscrollbar->sliderrect, x, y + vscrollbar->uprect.h + kiss_edge, kiss_vslider.w, kiss_vslider.h);
+	vscrollbar->maxpos = h - 2 * kiss_slider_padding - 2 * kiss_edge - kiss_up.h - kiss_down.h - kiss_vslider.h;
+	vscrollbar->fraction = 0.0;
 	vscrollbar->step = 0.1;
 	vscrollbar->upclicked = 0;
 	vscrollbar->downclicked = 0;
@@ -271,14 +265,17 @@ static void vnewpos(kiss_vscrollbar *vscrollbar, double step, int *draw)
 	*draw = 1;
 	vscrollbar->fraction += step;
 	vscrollbar->lasttick = kiss_getticks();
-	if (vscrollbar->fraction < -0.000001) vscrollbar->fraction = 0.;
-	if (vscrollbar->fraction > 0.999999) vscrollbar->fraction = 1.;
-	vscrollbar->sliderrect.y = vscrollbar->uprect.y +
-		vscrollbar->uprect.h + (int) (vscrollbar->fraction *
-		vscrollbar->maxpos + 0.5);
-	if (vscrollbar->fraction > 0.000001 &&
-		vscrollbar->fraction < 0.999999)
+	
+	if (vscrollbar->fraction < -0.000001)
+		vscrollbar->fraction = 0.;
+	
+	if (vscrollbar->fraction > 0.999999)
+		vscrollbar->fraction = 1.;
+	
+	vscrollbar->sliderrect.y = vscrollbar->uprect.y + vscrollbar->uprect.h + (int) (vscrollbar->fraction * vscrollbar->maxpos + 0.5);
+	if (vscrollbar->fraction > 0.000001 && vscrollbar->fraction < 0.999999)
 		return;
+	
 	vscrollbar->upclicked = 0;
 	vscrollbar->downclicked = 0;
 }
@@ -286,65 +283,58 @@ static void vnewpos(kiss_vscrollbar *vscrollbar, double step, int *draw)
 int kiss_vscrollbar_event(kiss_vscrollbar *vscrollbar, SDL_Event *event,
 	int *draw)
 {
-	if (!vscrollbar || !vscrollbar->visible) return 0;
+	if (!vscrollbar || !vscrollbar->visible)
+		return 0;
+	
 	if (!(SDL_GetMouseState(NULL, NULL) & SDL_BUTTON(SDL_BUTTON_LEFT))) {
 		vscrollbar->upclicked = 0;
 		vscrollbar->downclicked = 0;
 		vscrollbar->lasttick = 0;
-	} else if (vscrollbar->upclicked && kiss_getticks() >
-		vscrollbar->lasttick + kiss_click_interval) {
+	} else if (vscrollbar->upclicked && kiss_getticks() > vscrollbar->lasttick + kiss_click_interval) {
 		vnewpos(vscrollbar, -vscrollbar->step, draw);
 		return 1;
-	} else if (vscrollbar->downclicked && kiss_getticks() >
-		vscrollbar->lasttick + kiss_click_interval) {
+	} else if (vscrollbar->downclicked && kiss_getticks() > vscrollbar->lasttick + kiss_click_interval) {
 		vnewpos(vscrollbar, vscrollbar->step, draw);
 		return 1;
 	}
-	if (!event) return 0;
-	if (event->type == SDL_WINDOWEVENT &&
-		event->window.event == SDL_WINDOWEVENT_EXPOSED)
-		*draw = 1;
-	if (!vscrollbar->focus && (!vscrollbar->wdw ||
-		(vscrollbar->wdw && !vscrollbar->wdw->focus)))
+	if (!event)
 		return 0;
-	if (event->type == SDL_MOUSEBUTTONDOWN &&
-		kiss_pointinrect(event->button.x, event->button.y,
-		&vscrollbar->uprect) && vscrollbar->step > 0.000001) {
+	
+	if (event->type == SDL_WINDOWEVENT && event->window.event == SDL_WINDOWEVENT_EXPOSED)
+		*draw = 1;
+	if (!vscrollbar->focus && (!vscrollbar->wdw || (vscrollbar->wdw && !vscrollbar->wdw->focus)))
+		return 0;
+	if (event->type == SDL_MOUSEBUTTONDOWN && kiss_pointinrect(event->button.x, event->button.y, &vscrollbar->uprect) && vscrollbar->step > 0.000001) {
 		if (vscrollbar->fraction > 0.000001) {
 			vscrollbar->upclicked = 1;
-			if (vscrollbar->wdw) vscrollbar->wdw->focus = 0;
+			if (vscrollbar->wdw)
+				vscrollbar->wdw->focus = 0;
 			vscrollbar->focus = 1;
 		}
-		vscrollbar->lasttick = kiss_getticks() -
-			kiss_click_interval - 1;
-	} else if (event->type == SDL_MOUSEBUTTONDOWN &&
-		kiss_pointinrect(event->button.x, event->button.y,
-		&vscrollbar->downrect) && vscrollbar->step > 0.000001) {
+		vscrollbar->lasttick = kiss_getticks() - kiss_click_interval - 1;
+	} else if (event->type == SDL_MOUSEBUTTONDOWN && kiss_pointinrect(event->button.x, event->button.y, &vscrollbar->downrect) && vscrollbar->step > 0.000001) {
 		if (vscrollbar->fraction < 0.999999) {
 			vscrollbar->downclicked = 1;
-			if (vscrollbar->wdw) vscrollbar->wdw->focus = 0;
+			if (vscrollbar->wdw)
+				vscrollbar->wdw->focus = 0;
 			vscrollbar->focus = 1;
 		}
-		vscrollbar->lasttick = kiss_getticks() -
-			kiss_click_interval - 1;
-	} else if (event->type == SDL_MOUSEBUTTONDOWN &&
-		kiss_pointinrect(event->button.x, event->button.y,
-		&vscrollbar->sliderrect) && vscrollbar->step > 0.000001) {
-		if (vscrollbar->wdw) vscrollbar->wdw->focus = 0;
+		vscrollbar->lasttick = kiss_getticks() - kiss_click_interval - 1;
+	} else if (event->type == SDL_MOUSEBUTTONDOWN && kiss_pointinrect(event->button.x, event->button.y, &vscrollbar->sliderrect) && vscrollbar->step > 0.000001) {
+		if (vscrollbar->wdw)
+			vscrollbar->wdw->focus = 0;
 		vscrollbar->focus = 1;
 		vscrollbar->sliderclicked = 1;
 	} else if (event->type == SDL_MOUSEBUTTONUP) {
 		vscrollbar->upclicked = 0;
 		vscrollbar->downclicked = 0;
 		vscrollbar->lasttick = 0;
-		if (vscrollbar->wdw) vscrollbar->wdw->focus = 1;
+		if (vscrollbar->wdw)
+			vscrollbar->wdw->focus = 1;
 		vscrollbar->focus = 0;
 		vscrollbar->sliderclicked = 0;
-	} else if (event->type == SDL_MOUSEMOTION &&
-		(event->motion.state & SDL_BUTTON(SDL_BUTTON_LEFT)) &&
-		vscrollbar->sliderclicked) {
-		vnewpos(vscrollbar, 1. * event->motion.yrel /
-			vscrollbar->maxpos, draw);
+	} else if (event->type == SDL_MOUSEMOTION && (event->motion.state & SDL_BUTTON(SDL_BUTTON_LEFT)) && vscrollbar->sliderclicked) {
+		vnewpos(vscrollbar, 1. * event->motion.yrel / vscrollbar->maxpos, draw);
 		return 1;
 	}
 	return 0;

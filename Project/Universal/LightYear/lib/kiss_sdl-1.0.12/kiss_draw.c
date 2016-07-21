@@ -44,7 +44,7 @@ SDL_Color kiss_lightblue = {200, 225, 255, 255};
 kiss_font font_title, font_subtitle;
 int font_title_size = 200; /*128;*/
 int font_subtitle_size = 48; /*24;*/
-kiss_image background, horizontal_bar;
+kiss_image background, globe_slice, horizontal_bar;
 
 
 unsigned int kiss_getticks(void)
@@ -125,6 +125,7 @@ int kiss_fillrect(SDL_Renderer *renderer, SDL_Rect *rect, SDL_Color color)
 
 int kiss_decorate(SDL_Renderer *renderer, SDL_Rect *rect, SDL_Color color, int edge)
 {
+	
 	SDL_Rect outlinerect;
 	int d, i;
 

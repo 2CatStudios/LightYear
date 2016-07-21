@@ -69,7 +69,27 @@ int RenderingManager::m_AddExternalAssets (kiss_array *a, bool highDPI)
 {
 	
 	//REMEMBER: Move me!
-	char *assets[18] = {"kiss_bar.png", "kiss_vslider.png", "kiss_hslider.png", "kiss_up.png", "kiss_down.png", "kiss_left.png", "kiss_right.png", "kiss_selected.png", "kiss_unselected.png", "font_anson_regular.ttf", "font_anson_regular.ttf", "font_anson_regular.ttf", "font_anson_regular.ttf", "background.png", "horizontal_bar.png", "button_normal.png", "button_prelight.png", "button_active.png"};
+	char *assets[19] = {
+		"kiss_bar.png",
+		"vslider_handle.png",
+		"kiss_hslider.png",
+		"vslider_up.png",
+		"vslider_down.png",
+		"kiss_left.png",
+		"kiss_right.png",
+		"kiss_selected.png",
+		"kiss_unselected.png",
+		"font_anson_regular.ttf",
+		"font_anson_regular.ttf",
+		"font_anson_regular.ttf",
+		"font_anson_regular.ttf",
+		"background.png",
+		"horizontal_bar.png",
+		"button_normal.png",
+		"button_prelight.png",
+		"button_active.png",
+		"globe_slice.png"
+	};
 	
 	if (highDPI == true)
 	{
@@ -83,11 +103,8 @@ int RenderingManager::m_AddExternalAssets (kiss_array *a, bool highDPI)
 		m_buttonPadding *= 2;
 		
 		/*Default Assets*/
-		image_new(&kiss_bar, assets[0]/*"kiss_bar.png"*/, a, m_renderer);
-		image_new(&kiss_vslider, "kiss_vslider.png", a, m_renderer);
+		image_new(&kiss_bar, "kiss_bar.png", a, m_renderer);
 		image_new(&kiss_hslider, "kiss_hslider.png", a, m_renderer);
-		image_new(&kiss_up, "kiss_up.png", a, m_renderer);
-		image_new(&kiss_down, "kiss_down.png", a, m_renderer);
 		image_new(&kiss_left, "kiss_left.png", a, m_renderer);
 		image_new(&kiss_right, "kiss_right.png", a, m_renderer);
 		image_new(&kiss_selected, "kiss_selected.png", a, m_renderer);
@@ -99,7 +116,11 @@ int RenderingManager::m_AddExternalAssets (kiss_array *a, bool highDPI)
 		font_new (&font_title, "font_anson_regular.ttf", a, font_title_size);
 		font_new (&font_subtitle, "font_anson_regular.ttf", a, font_subtitle_size);
 		
+		image_new(&kiss_vslider, "vslider_handle@2x.png", a, m_renderer);
+		image_new(&kiss_up, "vslider_up@2x.png", a, m_renderer);
+		image_new(&kiss_down, "vslider_down@2x.png", a, m_renderer);
 		image_new (&background, "background@2x.png", a, m_renderer);
+		image_new (&globe_slice, "globe_slice@2x.png", a, m_renderer);
 		image_new (&horizontal_bar, "horizontal_bar@2x.png", a, m_renderer);
 		image_new (&kiss_normal, "button_normal@2x.png", a, m_renderer);
 		image_new (&kiss_prelight, "button_prelight@2x.png", a, m_renderer);
@@ -110,10 +131,7 @@ int RenderingManager::m_AddExternalAssets (kiss_array *a, bool highDPI)
 	
 		/*Default Assets*/
 		image_new(&kiss_bar, assets[0], a, m_renderer);
-		image_new(&kiss_vslider, assets[1], a, m_renderer);
 		image_new(&kiss_hslider, assets[2], a, m_renderer);
-		image_new(&kiss_up, assets[3], a, m_renderer);
-		image_new(&kiss_down, assets[4], a, m_renderer);
 		image_new(&kiss_left, assets[5], a, m_renderer);
 		image_new(&kiss_right, assets[6], a, m_renderer);
 		image_new(&kiss_selected, assets[7], a, m_renderer);
@@ -125,11 +143,15 @@ int RenderingManager::m_AddExternalAssets (kiss_array *a, bool highDPI)
 		font_new (&font_title, assets[11], a, font_title_size);
 		font_new (&font_subtitle, assets[12], a, font_subtitle_size);
 		
+		image_new (&kiss_vslider, assets[1], a, m_renderer);
+		image_new (&kiss_up, assets[3], a, m_renderer);
+		image_new (&kiss_down, assets[4], a, m_renderer);
 		image_new (&background, assets[13], a, m_renderer);
 		image_new (&horizontal_bar, assets[14], a, m_renderer);
 		image_new (&kiss_normal, assets[15], a, m_renderer);
 		image_new (&kiss_prelight, assets[16], a, m_renderer);
 		image_new (&kiss_active, assets[17], a, m_renderer);
+		image_new (&globe_slice, assets[18], a, m_renderer);
 	}
 	
 	return 0;
@@ -259,56 +281,56 @@ int RenderingManager::m_CreateAboutMenu ()
 		
 		
 		int titleWidth = kiss_textwidth (font_subtitle, "The LightYear Interactive Fiction engine", NULL);
-		kiss_window_new (&aboutMenu.scroll_view, NULL, 1, 1, (aboutMenu.window.rect.w / 2) - (titleWidth / 2), 0, titleWidth, 400);
+		kiss_window_new (&aboutMenu.scroll_view, NULL, 0, 0, (aboutMenu.window.rect.w / 2) - (titleWidth / 2) - 10, 0, titleWidth + 20, 770);
 		kiss_array_append (&aboutMenu.gui_objects, 2, &aboutMenu.scroll_view);
 		
-		kiss_vscrollbar_new (&aboutMenu.scrollbar, &aboutMenu.window, 100, 50, 200);
+		kiss_vscrollbar_new (&aboutMenu.scrollbar, &aboutMenu.window, (aboutMenu.window.rect.w / 2) + (titleWidth / 2) + 20, (aboutMenu.window.rect.h / 2) - 175, 350);
 		kiss_array_append (&aboutMenu.gui_objects, 3, &aboutMenu.scrollbar);
 		
 		
-		kiss_label_new (&aboutMenu.label_title, &aboutMenu.window, "About", aboutMenu.window.rect.x + ((aboutMenu.window.rect.w / 2) - (kiss_textwidth (font_title, "About", NULL) / 2)), aboutMenu.window.rect.y + 10);
+		kiss_label_new (&aboutMenu.label_title, &aboutMenu.scroll_view, "About", aboutMenu.scroll_view.rect.x + ((aboutMenu.scroll_view.rect.w / 2) - (kiss_textwidth (font_title, "About", NULL) / 2)), aboutMenu.scroll_view.rect.y + 10);
 		aboutMenu.label_title.textcolor = kiss_white;
 		aboutMenu.label_title.font = font_title;
 		kiss_array_append (&aboutMenu.gui_objects, 4, &aboutMenu.label_title);
 
-		kiss_label_new (&aboutMenu.label_preamble_top, &aboutMenu.window, "The LightYear Interactive Fiction engine", aboutMenu.window.rect.x + ((aboutMenu.window.rect.w / 2) - (titleWidth / 2)), aboutMenu.label_title.rect.y + font_title.fontheight);
+		kiss_label_new (&aboutMenu.label_preamble_top, &aboutMenu.scroll_view, "The LightYear Interactive Fiction engine", aboutMenu.scroll_view.rect.x + ((aboutMenu.scroll_view.rect.w / 2) - (titleWidth / 2)), aboutMenu.label_title.rect.y + font_title.fontheight);
 		aboutMenu.label_preamble_top.textcolor = kiss_white;
 		aboutMenu.label_preamble_top.font = font_subtitle;
 		kiss_array_append (&aboutMenu.gui_objects, 5, &aboutMenu.label_preamble_top);
 		
-		kiss_label_new (&aboutMenu.label_preamble_bottom, &aboutMenu.window, "has been lovingly created by", aboutMenu.window.rect.x + ((aboutMenu.window.rect.w / 2) - (kiss_textwidth (font_subtitle, "has been lovingly created by", NULL) / 2)), aboutMenu.label_preamble_top.rect.y + font_subtitle.fontheight);
+		kiss_label_new (&aboutMenu.label_preamble_bottom, &aboutMenu.scroll_view, "has been lovingly created by", aboutMenu.scroll_view.rect.x + ((aboutMenu.scroll_view.rect.w / 2) - (kiss_textwidth (font_subtitle, "has been lovingly created by", NULL) / 2)), aboutMenu.label_preamble_top.rect.y + font_subtitle.fontheight);
 		aboutMenu.label_preamble_bottom.textcolor = kiss_white;
 		aboutMenu.label_preamble_bottom.font = font_subtitle;
 		kiss_array_append (&aboutMenu.gui_objects, 6, &aboutMenu.label_preamble_bottom);
 		
-		kiss_label_new (&aboutMenu.label_twocatstudios, &aboutMenu.window, "2Cat Studios", aboutMenu.window.rect.x + ((aboutMenu.window.rect.w / 2) - (kiss_textwidth (font_subtitle, "2Cat Studios", NULL) / 2)), aboutMenu.label_preamble_bottom.rect.y + font_subtitle.fontheight + m_labelPadding);
+		kiss_label_new (&aboutMenu.label_twocatstudios, &aboutMenu.scroll_view, "2Cat Studios", aboutMenu.scroll_view.rect.x + ((aboutMenu.scroll_view.rect.w / 2) - (kiss_textwidth (font_subtitle, "2Cat Studios", NULL) / 2)), aboutMenu.label_preamble_bottom.rect.y + font_subtitle.fontheight + m_labelPadding);
 		aboutMenu.label_twocatstudios.textcolor = kiss_white;
 		aboutMenu.label_twocatstudios.font = font_subtitle;
 		kiss_array_append (&aboutMenu.gui_objects, 7, &aboutMenu.label_twocatstudios);
 		
 		
-		kiss_label_new (&aboutMenu.label_team_michaelb, &aboutMenu.window, "Michael Bethke - Lead Developer", aboutMenu.window.rect.x + ((aboutMenu.window.rect.w / 2) - (kiss_textwidth (font_subtitle, "Michael Bethke - Lead Developer", NULL) / 2)), aboutMenu.label_twocatstudios.rect.y + font_subtitle.fontheight + m_labelPadding);
+		kiss_label_new (&aboutMenu.label_team_michaelb, &aboutMenu.scroll_view, "Michael Bethke - Lead Developer", aboutMenu.scroll_view.rect.x + ((aboutMenu.scroll_view.rect.w / 2) - (kiss_textwidth (font_subtitle, "Michael Bethke - Lead Developer", NULL) / 2)), aboutMenu.label_twocatstudios.rect.y + font_subtitle.fontheight + m_labelPadding);
 		aboutMenu.label_team_michaelb.textcolor = kiss_white;
 		aboutMenu.label_team_michaelb.font = font_subtitle;
 		kiss_array_append (&aboutMenu.gui_objects, 8, &aboutMenu.label_team_michaelb);
 		
-		kiss_label_new (&aboutMenu.label_team_janh, &aboutMenu.window, "Jan Heemstra - Feedback & Support", aboutMenu.window.rect.x + ((aboutMenu.window.rect.w / 2) - (kiss_textwidth (font_subtitle, "Jan Heemstra - Feedback & Support", NULL) / 2)), aboutMenu.label_team_michaelb.rect.y + font_subtitle.fontheight);
+		kiss_label_new (&aboutMenu.label_team_janh, &aboutMenu.scroll_view, "Jan Heemstra - Feedback & Support", aboutMenu.scroll_view.rect.x + ((aboutMenu.scroll_view.rect.w / 2) - (kiss_textwidth (font_subtitle, "Jan Heemstra - Feedback & Support", NULL) / 2)), aboutMenu.label_team_michaelb.rect.y + font_subtitle.fontheight);
 		aboutMenu.label_team_janh.textcolor = kiss_white;
 		aboutMenu.label_team_janh.font = font_subtitle;
 		kiss_array_append (&aboutMenu.gui_objects, 9, &aboutMenu.label_team_janh);
 		
 		
-		kiss_label_new (&aboutMenu.label_thanksto, &aboutMenu.window, "With thanks to", aboutMenu.window.rect.x + ((aboutMenu.window.rect.w / 2) - (kiss_textwidth (font_subtitle, "With thanks to", NULL) / 2)), aboutMenu.label_team_janh.rect.y + (font_subtitle.fontheight * 2));
+		kiss_label_new (&aboutMenu.label_thanksto, &aboutMenu.scroll_view, "With thanks to", aboutMenu.scroll_view.rect.x + ((aboutMenu.scroll_view.rect.w / 2) - (kiss_textwidth (font_subtitle, "With thanks to", NULL) / 2)), aboutMenu.label_team_janh.rect.y + (font_subtitle.fontheight * 2));
 		aboutMenu.label_thanksto.textcolor = kiss_white;
 		aboutMenu.label_thanksto.font = font_subtitle;
 		kiss_array_append (&aboutMenu.gui_objects, 10, &aboutMenu.label_thanksto);
 		
-		kiss_label_new (&aboutMenu.label_supporters_bleikur, &aboutMenu.window, "\"Bleikur\" - Design & Feedback", aboutMenu.window.rect.x + ((aboutMenu.window.rect.w / 2) - (kiss_textwidth (font_subtitle, "\"Bleikur\" - Design & Feedback", NULL) / 2)), aboutMenu.label_thanksto.rect.y + font_subtitle.fontheight);
+		kiss_label_new (&aboutMenu.label_supporters_bleikur, &aboutMenu.scroll_view, "\"Bleikur\" - Design & Feedback", aboutMenu.scroll_view.rect.x + ((aboutMenu.scroll_view.rect.w / 2) - (kiss_textwidth (font_subtitle, "\"Bleikur\" - Design & Feedback", NULL) / 2)), aboutMenu.label_thanksto.rect.y + font_subtitle.fontheight);
 		aboutMenu.label_supporters_bleikur.textcolor = kiss_white;
 		aboutMenu.label_supporters_bleikur.font = font_subtitle;
 		kiss_array_append (&aboutMenu.gui_objects, 11, &aboutMenu.label_supporters_bleikur);
 		
-		kiss_label_new (&aboutMenu.label_supporters_tarvok, &aboutMenu.window, "Tarvo Korrovits - KISS_SDL Support", aboutMenu.window.rect.x + ((aboutMenu.window.rect.w / 2) - (kiss_textwidth (font_subtitle, "Tarvo Korrovits - KISS_SDL Support", NULL) / 2)), aboutMenu.label_supporters_bleikur.rect.y + font_subtitle.fontheight);
+		kiss_label_new (&aboutMenu.label_supporters_tarvok, &aboutMenu.scroll_view, "Tarvo Korrovits - KISS_SDL Support", aboutMenu.scroll_view.rect.x + ((aboutMenu.scroll_view.rect.w / 2) - (kiss_textwidth (font_subtitle, "Tarvo Korrovits - KISS_SDL Support", NULL) / 2)), aboutMenu.label_supporters_bleikur.rect.y + font_subtitle.fontheight);
 		aboutMenu.label_supporters_tarvok.textcolor = kiss_white;
 		aboutMenu.label_supporters_tarvok.font = font_subtitle;
 		kiss_array_append (&aboutMenu.gui_objects, 12, &aboutMenu.label_supporters_tarvok);
@@ -319,6 +341,38 @@ int RenderingManager::m_CreateAboutMenu ()
 	} else {
 		return 1;
 	}
+}
+
+
+void RenderingManager::CalculateAboutMenuPositionsY ()
+{
+	
+	//aboutMenu.label_title.rect.x = aboutMenu.scroll_view.rect.x + ((aboutMenu.scroll_view.rect.w / 2) - (kiss_textwidth (font_title, "About", NULL) / 2));
+	aboutMenu.label_title.rect.y = aboutMenu.scroll_view.rect.y + 10;
+	
+	//aboutMenu.label_preamble_top.rect.x = aboutMenu.scroll_view.rect.x + ((aboutMenu.scroll_view.rect.w / 2) - (titleWidth / 2));
+	aboutMenu.label_preamble_top.rect.y = aboutMenu.label_title.rect.y + font_title.fontheight;
+	
+	//aboutMenu.label_preamble_bottom.rect.x = aboutMenu.scroll_view.rect.x + ((aboutMenu.scroll_view.rect.w / 2) - (kiss_textwidth (font_subtitle, "has been lovingly created by", NULL) / 2)); 
+	aboutMenu.label_preamble_bottom.rect.y = aboutMenu.label_preamble_top.rect.y + font_subtitle.fontheight;
+	
+	//aboutMenu.label_twocatstudios.rect.x = aboutMenu.scroll_view.rect.x + ((aboutMenu.scroll_view.rect.w / 2) - (kiss_textwidth (font_subtitle, "2Cat Studios", NULL) / 2));
+	aboutMenu.label_twocatstudios.rect.y = aboutMenu.label_preamble_bottom.rect.y + font_subtitle.fontheight + m_labelPadding;
+	
+	//aboutMenu.label_team_michaelb.rect.x = aboutMenu.scroll_view.rect.x + ((aboutMenu.scroll_view.rect.w / 2) - (kiss_textwidth (font_subtitle, "Michael Bethke - Lead Developer", NULL) / 2));
+	aboutMenu.label_team_michaelb.rect.y = aboutMenu.label_twocatstudios.rect.y + font_subtitle.fontheight + m_labelPadding;
+	
+	//aboutMenu.label_team_janh.rect.x = aboutMenu.scroll_view.rect.x + ((aboutMenu.scroll_view.rect.w / 2) - (kiss_textwidth (font_subtitle, "Jan Heemstra - Feedback & Support", NULL) / 2));
+	aboutMenu.label_team_janh.rect.y = aboutMenu.label_team_michaelb.rect.y + font_subtitle.fontheight;
+	
+	//aboutMenu.label_thanksto.rect.x = aboutMenu.scroll_view.rect.x + ((aboutMenu.scroll_view.rect.w / 2) - (kiss_textwidth (font_subtitle, "With thanks to", NULL) / 2));
+	aboutMenu.label_thanksto.rect.y = aboutMenu.label_team_janh.rect.y + (font_subtitle.fontheight * 2);
+	
+	//aboutMenu.label_supporters_bleikur.rect.x = aboutMenu.scroll_view.rect.x + ((aboutMenu.scroll_view.rect.w / 2) - (kiss_textwidth (font_subtitle, "\"Bleikur\" - Design & Feedback", NULL) / 2));
+	aboutMenu.label_supporters_bleikur.rect.y = aboutMenu.label_thanksto.rect.y + font_subtitle.fontheight;
+	
+	//aboutMenu.label_supporters_tarvok.rect.x = aboutMenu.scroll_view.rect.x + ((aboutMenu.scroll_view.rect.w / 2) - (kiss_textwidth (font_subtitle, "Tarvo Korrovits - KISS_SDL Support", NULL) / 2));
+	aboutMenu.label_supporters_tarvok.rect.y = aboutMenu.label_supporters_bleikur.rect.y + font_subtitle.fontheight;
 }
 
 
@@ -388,12 +442,12 @@ void RenderingManager::m_DrawAboutMenu ()
 	kiss_label_draw (&aboutMenu.label_preamble_bottom, m_renderer);
 	
 	kiss_label_draw (&aboutMenu.label_twocatstudios, m_renderer);
-	kiss_renderimage (m_renderer, horizontal_bar, (aboutMenu.window.rect.w / 2) - (284 / 2), aboutMenu.label_twocatstudios.rect.y + font_subtitle.fontheight, NULL);
+	kiss_renderimage (m_renderer, horizontal_bar, aboutMenu.scroll_view.rect.x + ((aboutMenu.scroll_view.rect.w / 2) - (284 / 2)), aboutMenu.label_twocatstudios.rect.y + font_subtitle.fontheight, NULL);
 	kiss_label_draw (&aboutMenu.label_team_michaelb, m_renderer);
 	kiss_label_draw (&aboutMenu.label_team_janh, m_renderer);
 	
 	kiss_label_draw (&aboutMenu.label_thanksto, m_renderer);
-	kiss_renderimage (m_renderer, horizontal_bar, (aboutMenu.window.rect.w / 2) - (284 / 2), aboutMenu.label_thanksto.rect.y + font_subtitle.fontheight, NULL);
+	kiss_renderimage (m_renderer, horizontal_bar, aboutMenu.scroll_view.rect.x + ((aboutMenu.scroll_view.rect.w / 2) - (284 / 2)), aboutMenu.label_thanksto.rect.y + font_subtitle.fontheight, NULL);
 	kiss_label_draw (&aboutMenu.label_supporters_bleikur, m_renderer);
 	kiss_label_draw (&aboutMenu.label_supporters_tarvok, m_renderer);
 	
@@ -441,6 +495,8 @@ void RenderingManager::Update ()
 		default:
 			break;
 	}
+	
+	kiss_renderimage (m_renderer, globe_slice, 0, 0, NULL);
 	
 	SDL_RenderPresent (m_renderer);
 	draw = 0;

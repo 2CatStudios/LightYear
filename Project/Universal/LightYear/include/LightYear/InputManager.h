@@ -4,6 +4,8 @@
 #include "kiss_sdl.h"
 #include "RenderingManager.h"
 
+#include <iostream>
+
 
 class InputManager
 {
@@ -30,6 +32,8 @@ private:
 	void m_optionsmenu_button_back_event (kiss_button *button, SDL_Event *e, int *draw);
 	
 	void m_aboutmenu_button_back_event (kiss_button *button, SDL_Event *e, int *draw);
+	void m_aboutmenu_window_event (kiss_vscrollbar *vscrollbar, SDL_Event *e, int *draw);
+	void m_aboutmenu_vscrollbar_event (kiss_vscrollbar *vscrollbar, SDL_Event *e, int *draw);
 };
 
 

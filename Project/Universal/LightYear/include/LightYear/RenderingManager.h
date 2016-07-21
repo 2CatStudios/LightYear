@@ -96,6 +96,8 @@ public:
 	
 	int InitializeKISS ();
 	
+	void CalculateAboutMenuPositionsY ();
+	
 	void Update ();
 	void Stop ();
 

@@ -249,7 +249,7 @@ extern int kiss_screen_width, kiss_screen_height;
 
 extern kiss_font font_title, font_subtitle;
 extern int font_title_size, font_subtitle_size;
-extern kiss_image background, horizontal_bar;
+extern kiss_image background, globe_slice, horizontal_bar;
 
 #ifdef __cplusplus
 extern "C" {
