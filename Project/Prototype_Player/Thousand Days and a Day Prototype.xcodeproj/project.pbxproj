@@ -1,0 +1,515 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7B8F80C31CEC1C62002D9D96 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B8F80C21CEC1C62002D9D96 /* AppDelegate.m */; };
+		7B8F80C61CEC1C62002D9D96 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B8F80C51CEC1C62002D9D96 /* main.m */; };
+		7B8F80C91CEC1C62002D9D96 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B8F80C81CEC1C62002D9D96 /* ViewController.m */; };
+		7B8F80CB1CEC1C62002D9D96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B8F80CA1CEC1C62002D9D96 /* Assets.xcassets */; };
+		7B8F80CE1CEC1C62002D9D96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B8F80CC1CEC1C62002D9D96 /* Main.storyboard */; };
+		7B8F80D91CEC1C62002D9D96 /* Thousand_Days_and_a_Day_PrototypeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B8F80D81CEC1C62002D9D96 /* Thousand_Days_and_a_Day_PrototypeTests.m */; };
+		7B8F80E41CEC1C62002D9D96 /* Thousand_Days_and_a_Day_PrototypeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B8F80E31CEC1C62002D9D96 /* Thousand_Days_and_a_Day_PrototypeUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7B8F80D51CEC1C62002D9D96 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7B8F80B61CEC1C62002D9D96 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7B8F80BD1CEC1C62002D9D96;
+			remoteInfo = "Thousand Days and a Day Prototype";
+		};
+		7B8F80E01CEC1C62002D9D96 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7B8F80B61CEC1C62002D9D96 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7B8F80BD1CEC1C62002D9D96;
+			remoteInfo = "Thousand Days and a Day Prototype";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7B8F80BE1CEC1C62002D9D96 /* Thousand Days and a Day Prototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Thousand Days and a Day Prototype.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B8F80C11CEC1C62002D9D96 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		7B8F80C21CEC1C62002D9D96 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		7B8F80C51CEC1C62002D9D96 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7B8F80C71CEC1C62002D9D96 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		7B8F80C81CEC1C62002D9D96 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		7B8F80CA1CEC1C62002D9D96 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7B8F80CD1CEC1C62002D9D96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7B8F80CF1CEC1C62002D9D96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7B8F80D41CEC1C62002D9D96 /* Thousand Days and a Day PrototypeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Thousand Days and a Day PrototypeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B8F80D81CEC1C62002D9D96 /* Thousand_Days_and_a_Day_PrototypeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Thousand_Days_and_a_Day_PrototypeTests.m; sourceTree = "<group>"; };
+		7B8F80DA1CEC1C62002D9D96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7B8F80DF1CEC1C62002D9D96 /* Thousand Days and a Day PrototypeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Thousand Days and a Day PrototypeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B8F80E31CEC1C62002D9D96 /* Thousand_Days_and_a_Day_PrototypeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Thousand_Days_and_a_Day_PrototypeUITests.m; sourceTree = "<group>"; };
+		7B8F80E51CEC1C62002D9D96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7B8F80BB1CEC1C62002D9D96 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B8F80D11CEC1C62002D9D96 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B8F80DC1CEC1C62002D9D96 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7B8F80B51CEC1C62002D9D96 = {
+			isa = PBXGroup;
+			children = (
+				7B8F80C01CEC1C62002D9D96 /* Thousand Days and a Day Prototype */,
+				7B8F80D71CEC1C62002D9D96 /* Thousand Days and a Day PrototypeTests */,
+				7B8F80E21CEC1C62002D9D96 /* Thousand Days and a Day PrototypeUITests */,
+				7B8F80BF1CEC1C62002D9D96 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7B8F80BF1CEC1C62002D9D96 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7B8F80BE1CEC1C62002D9D96 /* Thousand Days and a Day Prototype.app */,
+				7B8F80D41CEC1C62002D9D96 /* Thousand Days and a Day PrototypeTests.xctest */,
+				7B8F80DF1CEC1C62002D9D96 /* Thousand Days and a Day PrototypeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7B8F80C01CEC1C62002D9D96 /* Thousand Days and a Day Prototype */ = {
+			isa = PBXGroup;
+			children = (
+				7B8F80C11CEC1C62002D9D96 /* AppDelegate.h */,
+				7B8F80C21CEC1C62002D9D96 /* AppDelegate.m */,
+				7B8F80C71CEC1C62002D9D96 /* ViewController.h */,
+				7B8F80C81CEC1C62002D9D96 /* ViewController.m */,
+				7B8F80CA1CEC1C62002D9D96 /* Assets.xcassets */,
+				7B8F80CC1CEC1C62002D9D96 /* Main.storyboard */,
+				7B8F80CF1CEC1C62002D9D96 /* Info.plist */,
+				7B8F80C41CEC1C62002D9D96 /* Supporting Files */,
+			);
+			path = "Thousand Days and a Day Prototype";
+			sourceTree = "<group>";
+		};
+		7B8F80C41CEC1C62002D9D96 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7B8F80C51CEC1C62002D9D96 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7B8F80D71CEC1C62002D9D96 /* Thousand Days and a Day PrototypeTests */ = {
+			isa = PBXGroup;
+			children = (
+				7B8F80D81CEC1C62002D9D96 /* Thousand_Days_and_a_Day_PrototypeTests.m */,
+				7B8F80DA1CEC1C62002D9D96 /* Info.plist */,
+			);
+			path = "Thousand Days and a Day PrototypeTests";
+			sourceTree = "<group>";
+		};
+		7B8F80E21CEC1C62002D9D96 /* Thousand Days and a Day PrototypeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				7B8F80E31CEC1C62002D9D96 /* Thousand_Days_and_a_Day_PrototypeUITests.m */,
+				7B8F80E51CEC1C62002D9D96 /* Info.plist */,
+			);
+			path = "Thousand Days and a Day PrototypeUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7B8F80BD1CEC1C62002D9D96 /* Thousand Days and a Day Prototype */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7B8F80E81CEC1C62002D9D96 /* Build configuration list for PBXNativeTarget "Thousand Days and a Day Prototype" */;
+			buildPhases = (
+				7B8F80BA1CEC1C62002D9D96 /* Sources */,
+				7B8F80BB1CEC1C62002D9D96 /* Frameworks */,
+				7B8F80BC1CEC1C62002D9D96 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Thousand Days and a Day Prototype";
+			productName = "Thousand Days and a Day Prototype";
+			productReference = 7B8F80BE1CEC1C62002D9D96 /* Thousand Days and a Day Prototype.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7B8F80D31CEC1C62002D9D96 /* Thousand Days and a Day PrototypeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7B8F80EB1CEC1C62002D9D96 /* Build configuration list for PBXNativeTarget "Thousand Days and a Day PrototypeTests" */;
+			buildPhases = (
+				7B8F80D01CEC1C62002D9D96 /* Sources */,
+				7B8F80D11CEC1C62002D9D96 /* Frameworks */,
+				7B8F80D21CEC1C62002D9D96 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7B8F80D61CEC1C62002D9D96 /* PBXTargetDependency */,
+			);
+			name = "Thousand Days and a Day PrototypeTests";
+			productName = "Thousand Days and a Day PrototypeTests";
+			productReference = 7B8F80D41CEC1C62002D9D96 /* Thousand Days and a Day PrototypeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7B8F80DE1CEC1C62002D9D96 /* Thousand Days and a Day PrototypeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7B8F80EE1CEC1C62002D9D96 /* Build configuration list for PBXNativeTarget "Thousand Days and a Day PrototypeUITests" */;
+			buildPhases = (
+				7B8F80DB1CEC1C62002D9D96 /* Sources */,
+				7B8F80DC1CEC1C62002D9D96 /* Frameworks */,
+				7B8F80DD1CEC1C62002D9D96 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7B8F80E11CEC1C62002D9D96 /* PBXTargetDependency */,
+			);
+			name = "Thousand Days and a Day PrototypeUITests";
+			productName = "Thousand Days and a Day PrototypeUITests";
+			productReference = 7B8F80DF1CEC1C62002D9D96 /* Thousand Days and a Day PrototypeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7B8F80B61CEC1C62002D9D96 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Michael Bethke";
+				TargetAttributes = {
+					7B8F80BD1CEC1C62002D9D96 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					7B8F80D31CEC1C62002D9D96 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 7B8F80BD1CEC1C62002D9D96;
+					};
+					7B8F80DE1CEC1C62002D9D96 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 7B8F80BD1CEC1C62002D9D96;
+					};
+				};
+			};
+			buildConfigurationList = 7B8F80B91CEC1C62002D9D96 /* Build configuration list for PBXProject "Thousand Days and a Day Prototype" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7B8F80B51CEC1C62002D9D96;
+			productRefGroup = 7B8F80BF1CEC1C62002D9D96 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7B8F80BD1CEC1C62002D9D96 /* Thousand Days and a Day Prototype */,
+				7B8F80D31CEC1C62002D9D96 /* Thousand Days and a Day PrototypeTests */,
+				7B8F80DE1CEC1C62002D9D96 /* Thousand Days and a Day PrototypeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7B8F80BC1CEC1C62002D9D96 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B8F80CB1CEC1C62002D9D96 /* Assets.xcassets in Resources */,
+				7B8F80CE1CEC1C62002D9D96 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B8F80D21CEC1C62002D9D96 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B8F80DD1CEC1C62002D9D96 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7B8F80BA1CEC1C62002D9D96 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B8F80C91CEC1C62002D9D96 /* ViewController.m in Sources */,
+				7B8F80C61CEC1C62002D9D96 /* main.m in Sources */,
+				7B8F80C31CEC1C62002D9D96 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B8F80D01CEC1C62002D9D96 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B8F80D91CEC1C62002D9D96 /* Thousand_Days_and_a_Day_PrototypeTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B8F80DB1CEC1C62002D9D96 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B8F80E41CEC1C62002D9D96 /* Thousand_Days_and_a_Day_PrototypeUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7B8F80D61CEC1C62002D9D96 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7B8F80BD1CEC1C62002D9D96 /* Thousand Days and a Day Prototype */;
+			targetProxy = 7B8F80D51CEC1C62002D9D96 /* PBXContainerItemProxy */;
+		};
+		7B8F80E11CEC1C62002D9D96 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7B8F80BD1CEC1C62002D9D96 /* Thousand Days and a Day Prototype */;
+			targetProxy = 7B8F80E01CEC1C62002D9D96 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7B8F80CC1CEC1C62002D9D96 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7B8F80CD1CEC1C62002D9D96 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7B8F80E61CEC1C62002D9D96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		7B8F80E71CEC1C62002D9D96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		7B8F80E91CEC1C62002D9D96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Thousand Days and a Day Prototype/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.michaelbethke.Thousand-Days-and-a-Day-Prototype";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		7B8F80EA1CEC1C62002D9D96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Thousand Days and a Day Prototype/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.michaelbethke.Thousand-Days-and-a-Day-Prototype";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		7B8F80EC1CEC1C62002D9D96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Thousand Days and a Day PrototypeTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.michaelbethke.Thousand-Days-and-a-Day-PrototypeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Thousand Days and a Day Prototype.app/Contents/MacOS/Thousand Days and a Day Prototype";
+			};
+			name = Debug;
+		};
+		7B8F80ED1CEC1C62002D9D96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Thousand Days and a Day PrototypeTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.michaelbethke.Thousand-Days-and-a-Day-PrototypeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Thousand Days and a Day Prototype.app/Contents/MacOS/Thousand Days and a Day Prototype";
+			};
+			name = Release;
+		};
+		7B8F80EF1CEC1C62002D9D96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Thousand Days and a Day PrototypeUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.michaelbethke.Thousand-Days-and-a-Day-PrototypeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Thousand Days and a Day Prototype";
+			};
+			name = Debug;
+		};
+		7B8F80F01CEC1C62002D9D96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Thousand Days and a Day PrototypeUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.michaelbethke.Thousand-Days-and-a-Day-PrototypeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Thousand Days and a Day Prototype";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7B8F80B91CEC1C62002D9D96 /* Build configuration list for PBXProject "Thousand Days and a Day Prototype" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B8F80E61CEC1C62002D9D96 /* Debug */,
+				7B8F80E71CEC1C62002D9D96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7B8F80E81CEC1C62002D9D96 /* Build configuration list for PBXNativeTarget "Thousand Days and a Day Prototype" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B8F80E91CEC1C62002D9D96 /* Debug */,
+				7B8F80EA1CEC1C62002D9D96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7B8F80EB1CEC1C62002D9D96 /* Build configuration list for PBXNativeTarget "Thousand Days and a Day PrototypeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B8F80EC1CEC1C62002D9D96 /* Debug */,
+				7B8F80ED1CEC1C62002D9D96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7B8F80EE1CEC1C62002D9D96 /* Build configuration list for PBXNativeTarget "Thousand Days and a Day PrototypeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B8F80EF1CEC1C62002D9D96 /* Debug */,
+				7B8F80F01CEC1C62002D9D96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7B8F80B61CEC1C62002D9D96 /* Project object */;
+}
