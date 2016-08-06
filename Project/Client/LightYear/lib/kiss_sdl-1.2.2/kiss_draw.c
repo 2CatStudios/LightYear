@@ -19,16 +19,18 @@
   3. This notice may not be removed or altered from any source
      distribution.
 
-  kiss_sdl version 1.0.12
+  kiss_sdl version 1.2.0
 */
 
 #include "kiss_sdl.h"
 
 kiss_font kiss_textfont, kiss_buttonfont;
-kiss_image kiss_normal, kiss_prelight, kiss_active, kiss_bar, kiss_up, kiss_down, kiss_left, kiss_right, kiss_vslider, kiss_hslider, kiss_selected, kiss_unselected;
+kiss_image kiss_normal, kiss_prelight, kiss_active, kiss_bar,
+	kiss_up, kiss_down, kiss_left, kiss_right, kiss_vslider,
+	kiss_hslider, kiss_selected, kiss_unselected, kiss_combo;
 int kiss_screen_width, kiss_screen_height;
-int kiss_textfont_size = 16;
-int kiss_buttonfont_size = 14;
+int kiss_textfont_size = 15;
+int kiss_buttonfont_size = 12;
 int kiss_click_interval = 140;
 int kiss_progress_interval = 50;
 int kiss_slider_padding = 2;
@@ -40,12 +42,6 @@ SDL_Color kiss_black = {0, 0, 0, 255};
 SDL_Color kiss_green = {0, 150, 0, 255};
 SDL_Color kiss_blue = {0, 0, 255, 255};
 SDL_Color kiss_lightblue = {200, 225, 255, 255};
-
-kiss_font font_title, font_subtitle;
-int font_title_size = 200; /*128;*/
-int font_subtitle_size = 48; /*24;*/
-kiss_image background, globe_slice, horizontal_bar;
-
 
 unsigned int kiss_getticks(void)
 {
@@ -80,22 +76,16 @@ int kiss_textwidth(kiss_font font, char *str1, char *str2)
 	return width;
 }
 
-int kiss_renderimage(SDL_Renderer *renderer, kiss_image image, int x, int y, SDL_Rect *clip)
+int kiss_renderimage(SDL_Renderer *renderer, kiss_image image,
+	int x, int y, SDL_Rect *clip)
 {
 	SDL_Rect dst;
 
-	if (!renderer || !image.image)
-		return -1;
-	
-	kiss_makerect (&dst, x, y, image.w, image.h);
-	
-	if (clip)
-		dst.w = clip->w;
-	
-	if (clip)
-		dst.h = clip->h;
-	
-	SDL_RenderCopy (renderer, image.image, clip, &dst);
+	if (!renderer || !image.image) return -1;
+	kiss_makerect(&dst, x, y, image.w, image.h);
+	if (clip) dst.w = clip->w;
+	if (clip) dst.h = clip->h;
+	SDL_RenderCopy(renderer, image.image, clip, &dst);
 	return 0;
 }
 
@@ -123,70 +113,60 @@ int kiss_fillrect(SDL_Renderer *renderer, SDL_Rect *rect, SDL_Color color)
 	return 0;
 }
 
-int kiss_decorate(SDL_Renderer *renderer, SDL_Rect *rect, SDL_Color color, int edge)
+int kiss_decorate(SDL_Renderer *renderer, SDL_Rect *rect, SDL_Color color,
+	int edge)
 {
-	
 	SDL_Rect outlinerect;
 	int d, i;
 
 	d = 2 * edge;
 	if (!renderer || !rect || rect->w < d + 6 || rect->h < d + 6)
 		return -1;
-	
 	SDL_SetRenderDrawColor(renderer, color.r, color.g, color.b, color.a);
-	
 	for (i = 0; i < 2; i++) {
-		kiss_makerect(&outlinerect, rect->x + edge + i, rect->y + edge + i, rect->w - d - i - i, rect->h - d - i - i);
+		kiss_makerect(&outlinerect, rect->x + edge + i,
+			rect->y + edge + i, rect->w - d - i - i,
+			rect->h - d - i - i);
 		SDL_RenderDrawRect(renderer, &outlinerect);
 	}
-	
 	return 0;
 }
 
-int image_new (kiss_image *image, const char *fname, kiss_array *a, SDL_Renderer* renderer)
+int kiss_image_new(kiss_image *image, char *fname, kiss_array *a,
+	SDL_Renderer* renderer)
 {
 	char buf[KISS_MAX_LENGTH];
 
-	if (!image || !fname)
-		return -1;
-	
+	if (!image || !fname) return -1;
 	kiss_string_copy(buf, KISS_MAX_LENGTH, RESDIR, fname);
-	if (!(image->image = IMG_LoadTexture(renderer, buf)))
-	{
-		
+	if (!(image->image = IMG_LoadTexture(renderer, buf))) {
 		fprintf(stderr, "Cannot load image %s\n", fname);
 		return -1;
 	}
-	
-	if (a)
-		kiss_array_append(a, TEXTURE_TYPE, image->image);
-	
+	if (a) kiss_array_append(a, TEXTURE_TYPE, image->image);
 	SDL_QueryTexture(image->image, NULL, NULL, &image->w, &image->h);
+	image->magic = KISS_MAGIC;
 	return 0;
 }
 
-int font_new(kiss_font *font, const char *fname, kiss_array *a, int size)
+int kiss_font_new(kiss_font *font, char *fname, kiss_array *a, int size)
 {
 	char buf[KISS_MAX_LENGTH];
 
 	if (!font || !fname) return -1;
 	kiss_string_copy(buf, KISS_MAX_LENGTH, RESDIR, fname);
-	if (!(font->font = TTF_OpenFont(buf, size)))
-	{
-		
+	if (!(font->font = TTF_OpenFont(buf, size))) {
 		fprintf(stderr, "Cannot load font %s\n", fname);
 		return -1;
 	}
-	
-	if (a)
-		kiss_array_append(a, FONT_TYPE, font->font);
-	
+	if (a) kiss_array_append(a, FONT_TYPE, font->font);
 	font->fontheight = TTF_FontHeight(font->font);
 	font->spacing = (int) kiss_spacing * font->fontheight;
 	font->lineheight = font->fontheight + font->spacing;
 	font->ascent = TTF_FontAscent(font->font);
-	
-	TTF_GlyphMetrics(font->font, 'W', NULL, NULL, NULL, NULL, &(font->advance));
+	TTF_GlyphMetrics(font->font, 'W', NULL, NULL, NULL, NULL,
+		&(font->advance));
+	font->magic = KISS_MAGIC;
 	return 0;
 }
 
@@ -199,35 +179,45 @@ SDL_Renderer* kiss_init(char* title, kiss_array *a, int w, int h)
 
 	r = 0;
 	SDL_Init(SDL_INIT_EVERYTHING);
-	
 	SDL_GetDisplayBounds(0, &srect);
 	if (!a || w > srect.w || h > srect.h) {
 		SDL_Quit();
 		return NULL;
 	}
-	
 	kiss_screen_width = w;
 	kiss_screen_height = h;
-	
 	IMG_Init(IMG_INIT_PNG);
 	TTF_Init();
 	SDL_StartTextInput();
-	
 	kiss_array_new(a);
-	window = SDL_CreateWindow (title, (srect.w / 2) - (w / 2), (srect.h / 2) - (h / 2), w, h, SDL_WINDOW_ALLOW_HIGHDPI | SDL_WINDOW_RESIZABLE);
-	if (window)
-		kiss_array_append (a, WINDOW_TYPE, window);
-	
-	renderer = SDL_CreateRenderer (window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
-	if (renderer)
-		kiss_array_append (a, RENDERER_TYPE, renderer);
-
+	window = SDL_CreateWindow(title, srect.w / 2 - w / 2,
+		srect.h / 2 - h / 2, w, h, SDL_WINDOW_SHOWN);
+	if (window) kiss_array_append(a, WINDOW_TYPE, window);
+	renderer = SDL_CreateRenderer(window, -1,
+		SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
+	if (renderer) kiss_array_append(a, RENDERER_TYPE, renderer);
+	r += kiss_font_new(&kiss_textfont, "kiss_font.ttf", a,
+		kiss_textfont_size);
+	r += kiss_font_new(&kiss_buttonfont, "kiss_font.ttf", a,
+		kiss_buttonfont_size);
+	r += kiss_image_new(&kiss_normal, "kiss_normal.png", a, renderer);
+	r += kiss_image_new(&kiss_prelight, "kiss_prelight.png", a, renderer);
+	r += kiss_image_new(&kiss_active, "kiss_active.png", a, renderer);
+	r += kiss_image_new(&kiss_bar, "kiss_bar.png", a, renderer);
+	r += kiss_image_new(&kiss_vslider, "kiss_vslider.png", a, renderer);
+	r += kiss_image_new(&kiss_hslider, "kiss_hslider.png", a, renderer);
+	r += kiss_image_new(&kiss_up, "kiss_up.png", a, renderer);
+	r += kiss_image_new(&kiss_down, "kiss_down.png", a, renderer);
+	r += kiss_image_new(&kiss_left, "kiss_left.png", a, renderer);
+	r += kiss_image_new(&kiss_right, "kiss_right.png", a, renderer);
+	r += kiss_image_new(&kiss_combo, "kiss_combo.png", a, renderer);
+	r += kiss_image_new(&kiss_selected, "kiss_selected.png", a, renderer);
+	r += kiss_image_new(&kiss_unselected, "kiss_unselected.png", a,
+		renderer);
 	if (r) {
-		
-		kiss_clean (a);
+		kiss_clean(a);
 		return NULL;
 	}
-	
 	return renderer;	
 }
 
