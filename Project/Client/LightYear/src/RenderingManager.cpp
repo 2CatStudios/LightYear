@@ -7,20 +7,8 @@ int RenderingManager::InitializeKISS ()
 	m_renderer = kiss_init ("LightYear", &objects, 1024, 576);
 	m_AddExternalAssets (&objects, m_IsRetinaDisplay ());
 	
-	/*char *base_path = SDL_GetBasePath();
-	if (base_path)
-	{
-		
-		//fprintf (stderr, "Success: running in %c\n", *base_path);
-		std::cout << "Success: running in " << *base_path << std::endl;
-	} else {
-		
-		base_path = SDL_strdup("./");
-		//fprintf (stderr, "Failure: running in %c\n", *base_path);
-		std::cout << "Failure: running in " << *base_path << std::endl;
-	}
-	SDL_free (base_path);*/
 	
+	//TODO: (re)Move me!
 	char *base_path = SDL_GetPrefPath("2Cat Studios", "LightYear IF");
 	if (base_path)
 	{
@@ -39,61 +27,37 @@ int RenderingManager::InitializeKISS ()
 bool RenderingManager::m_IsRetinaDisplay ()
 {
 	
-	std::cout << "Using " << SDL_GetNumVideoDisplays () << " displays." << std::endl;
-	
-	
-	SDL_Rect srect;
-	SDL_GetDisplayBounds(0, &srect);
-	std::cout << "Display 0 Rect: (" << srect.w << ", " << srect.h << ", " << srect.x << ", " << srect.y << ")" << std::endl;
-	
-	
 	float diagDPI = -1;
 	float horiDPI = -1;
 	float vertDPI = -1;
 	
-	int dpiReturn = SDL_GetDisplayDPI (0, &diagDPI, &horiDPI, &vertDPI);
-	std::cout << "GetDisplayDPI returned " << dpiReturn << std::endl;
-	
-	if (dpiReturn != 0)
+	if (SDL_GetDisplayDPI (0, &diagDPI, &horiDPI, &vertDPI) != 0)
 	{
 		
 		std::cout << "Error: " << SDL_GetError () << std::endl;
+		return false;
 	}
 	
-	std::cout << "DDPI: " << diagDPI << std::endl << "HDPI: " << horiDPI << std::endl << "VDPI: " << vertDPI << std::endl;
-	
-	
-	/*SDL_Window *window = (SDL_Window*) kiss_array_data (&objects, WINDOW_TYPE);
-	
-	int gl_w;
-	int gl_h;
-	SDL_GL_GetDrawableSize (window, &gl_w, &gl_h);
-	std::cout << "GL_W: " << gl_w << std::endl << "GL_H: " << gl_h << std::endl;
-	
-	int sdl_w;
-	int sdl_h;
-	SDL_GetWindowSize (window, &sdl_w, &sdl_h);
-	std::cout << "SDL_W: " << sdl_w << std::endl << "SDL_H: " << sdl_h << std::endl;
-	
-	//if (sdl_w != gl_w && sdl_h != gl_h)
-	//	return true;
-	
-	SDL_Renderer *renderer = (SDL_Renderer *) kiss_array_data (&objects, RENDERER_TYPE);
-	
-	int r_w;
-	int r_h;
-	SDL_GetRendererOutputSize (renderer, &r_w, &r_h);
-	std::cout << "R_W: " << r_w << std::endl << "R_H: " << r_h << std::endl;*/
-	
-	
-	return false;
+	if (diagDPI == 113.5)
+	{
+		
+		return true;
+	} else if (diagDPI == 109)
+	{
+		
+		return false;
+	} else {
+		
+		std::cout << "Unknown DDPI, " << diagDPI << std::endl;
+		return false;
+	}
 }
 
 
 int RenderingManager::m_AddExternalAssets (kiss_array *a, bool highDPI)
 {
 	
-	//REMEMBER: Move me!
+	//TODO: (re)Move me!
 	char *assets[19] = {
 		"kiss_bar.png",
 		"vslider_handle.png",
@@ -118,8 +82,6 @@ int RenderingManager::m_AddExternalAssets (kiss_array *a, bool highDPI)
 	
 	if (highDPI == true)
 	{
-		
-		std::cout << "Is Retina" << std::endl;
 		
 		kiss_textfont_size *= 2;
 		kiss_buttonfont_size *= 2;
@@ -151,8 +113,6 @@ int RenderingManager::m_AddExternalAssets (kiss_array *a, bool highDPI)
 		image_new (&kiss_prelight, "button_prelight@2x.png", a, m_renderer);
 		image_new (&kiss_active, "button_active@2x.png", a, m_renderer);
 	} else {
-		
-		std::cout << "Not Retina" << std::endl;
 	
 		/*Default Assets*/
 		image_new(&kiss_bar, assets[0], a, m_renderer);
