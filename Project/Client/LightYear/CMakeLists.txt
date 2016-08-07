@@ -35,7 +35,7 @@ add_definitions(-DRESDIR=\"../resources/\")
 include_directories(include/LightYear/)
 
 #Define paths for our external libraries (for convenience)
-set (KISSSDL_PATH lib/kiss_sdl-1.0.12/)
+set (KISSSDL_PATH lib/kiss_sdl-1.2.2/)
 set (PUGIXML_PATH lib/pugixml/)
 
 #Include our libraries from /lib (pugixml and kiss_sdl)

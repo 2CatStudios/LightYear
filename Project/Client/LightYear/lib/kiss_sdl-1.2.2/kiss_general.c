@@ -19,16 +19,14 @@
   3. This notice may not be removed or altered from any source
      distribution.
 
-  kiss_sdl version 1.0.12
+  kiss_sdl version 1.2.0
 */
 
 #include "kiss_sdl.h"
 
 int kiss_makerect(SDL_Rect *rect, int x, int y, int w, int h)
 {
-	if (!rect)
-		return -1;
-	
+	if (!rect) return -1;
 	rect->x = x;
 	rect->y = y;
 	rect->w = w;
@@ -38,9 +36,8 @@ int kiss_makerect(SDL_Rect *rect, int x, int y, int w, int h)
 
 int kiss_pointinrect(int x, int y, SDL_Rect *rect)
 {
-	
-	return x >= rect->x && x < (rect->x + rect->w) &&
-		y >= rect->y && y < (rect->y + rect->h);
+	return x >= rect->x && x < rect->x + rect->w &&
+		y >= rect->y && y < rect->y + rect->h;
 }
 
 int kiss_utf8next(char *str, int index)
@@ -87,39 +84,28 @@ int kiss_utf8fix(char *str)
 	return 0;
 }
 
-char *kiss_string_copy (char *dest, size_t size, const char *str1, const char *str2)
+char *kiss_string_copy(char *dest, size_t size, char *str1, char *str2)
 {
-	
 	unsigned int len;
 	char *p;
 
-	if (!dest)
-		return NULL;
-	
+	if (!dest) return NULL;
 	strcpy(dest, "");
-	if (size < 2)
-		return dest;
-	
-	if (str1)
-		strncpy(dest, str1, size);
-	
+	if (size < 2) return dest;
+	if (str1) strncpy(dest, str1, size);
 	dest[size - 1] = 0;
 	len = strlen(dest);
-	if (!str2 || size - 1 <= len)
-		return dest;
-	
+	if (!str2 || size - 1 <= len) return dest;
 	p = dest;
 	strncpy(p + len, str2, size - len);
 	dest[size - 1] = 0;
 	kiss_utf8fix(dest);
-	
 	return dest;
 }
 
-int kiss_string_compare (const void *a, const void *b)
+int kiss_string_compare(const void *a, const void *b)
 {
-	
-	return strcmp (*((char **) a), *((char **) b));
+	return strcmp(*((char **) a), *((char **) b));
 }
 
 char *kiss_backspace(char *str)
@@ -135,10 +121,7 @@ char *kiss_backspace(char *str)
 
 int kiss_array_new(kiss_array *a)
 {
-	
-	if (!a)
-		return -1;
-	
+	if (!a) return -1;
 	a->size = KISS_MIN_LENGTH;
 	a->length = 0;
 	a->ref = 1;
@@ -172,27 +155,20 @@ int kiss_array_append(kiss_array *a, int id, void *data)
 {
 	int i;
 
-	if (!a)
-		return -1;
-	
-	if (a->length >= a->size)
-	{
-		
+	if (!a) return -1;
+	if (a->length >= a->size) {
 		a->size *= 2;
-		a->data = (void **) realloc(a->data, a->size * sizeof(void *));
+		a->data = (void **) realloc(a->data,
+			a->size * sizeof(void *));
 		a->id = (int *) realloc(a->id, a->size * sizeof(int));
-		for (i = a->length; i < a->size; i++)
-		{
-			
+		for (i = a->length; i < a->size; i++) {
 			a->data[i] = NULL;
 			a->id[i] = 0;
 		}
 	}
-	
 	a->data[a->length] = data;
 	a->id[a->length] = id;
 	++a->length;
-	
 	return 0;
 }
 

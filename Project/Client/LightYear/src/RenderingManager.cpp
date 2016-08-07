@@ -79,6 +79,7 @@ int RenderingManager::m_AddExternalAssets (kiss_array *a, bool highDPI)
 		"button_active.png",
 		"globe_slice.png"
 	};
+
 	
 	if (highDPI == true)
 	{
@@ -90,53 +91,53 @@ int RenderingManager::m_AddExternalAssets (kiss_array *a, bool highDPI)
 		m_buttonPadding *= 2;
 		
 		/*Default Assets*/
-		image_new(&kiss_bar, "kiss_bar.png", a, m_renderer);
-		image_new(&kiss_hslider, "kiss_hslider.png", a, m_renderer);
-		image_new(&kiss_left, "kiss_left.png", a, m_renderer);
-		image_new(&kiss_right, "kiss_right.png", a, m_renderer);
-		image_new(&kiss_selected, "kiss_selected.png", a, m_renderer);
-		image_new(&kiss_unselected, "kiss_unselected.png", a, m_renderer);
+		kiss_image_new(&kiss_bar, "kiss_bar.png", a, m_renderer);
+		kiss_image_new(&kiss_hslider, "kiss_hslider.png", a, m_renderer);
+		kiss_image_new(&kiss_left, "kiss_left.png", a, m_renderer);
+		kiss_image_new(&kiss_right, "kiss_right.png", a, m_renderer);
+		kiss_image_new(&kiss_selected, "kiss_selected.png", a, m_renderer);
+		kiss_image_new(&kiss_unselected, "kiss_unselected.png", a, m_renderer);
 		
 		/*Custom Assets*/
-		font_new(&kiss_textfont, "font_anson_regular.ttf", a, kiss_textfont_size);
-		font_new(&kiss_buttonfont, "font_anson_regular.ttf", a, kiss_buttonfont_size);
-		font_new (&font_title, "font_anson_regular.ttf", a, font_title_size);
-		font_new (&font_subtitle, "font_anson_regular.ttf", a, font_subtitle_size);
+		kiss_font_new(&kiss_textfont, "font_anson_regular.ttf", a, kiss_textfont_size);
+		kiss_font_new(&kiss_buttonfont, "font_anson_regular.ttf", a, kiss_buttonfont_size);
+		kiss_font_new (&font_title, "font_anson_regular.ttf", a, font_title_size);
+		kiss_font_new (&font_subtitle, "font_anson_regular.ttf", a, font_subtitle_size);
 		
-		image_new(&kiss_vslider, "vslider_handle@2x.png", a, m_renderer);
-		image_new(&kiss_up, "vslider_up@2x.png", a, m_renderer);
-		image_new(&kiss_down, "vslider_down@2x.png", a, m_renderer);
-		image_new (&background, "background@2x.png", a, m_renderer);
-		image_new (&globe_slice, "globe_slice@2x.png", a, m_renderer);
-		image_new (&horizontal_bar, "horizontal_bar@2x.png", a, m_renderer);
-		image_new (&kiss_normal, "button_normal@2x.png", a, m_renderer);
-		image_new (&kiss_prelight, "button_prelight@2x.png", a, m_renderer);
-		image_new (&kiss_active, "button_active@2x.png", a, m_renderer);
+		kiss_image_new(&kiss_vslider, "vslider_handle@2x.png", a, m_renderer);
+		kiss_image_new(&kiss_up, "vslider_up@2x.png", a, m_renderer);
+		kiss_image_new(&kiss_down, "vslider_down@2x.png", a, m_renderer);
+		kiss_image_new (&background, "background@2x.png", a, m_renderer);
+		kiss_image_new (&globe_slice, "globe_slice@2x.png", a, m_renderer);
+		kiss_image_new (&horizontal_bar, "horizontal_bar@2x.png", a, m_renderer);
+		kiss_image_new (&kiss_normal, "button_normal@2x.png", a, m_renderer);
+		kiss_image_new (&kiss_prelight, "button_prelight@2x.png", a, m_renderer);
+		kiss_image_new (&kiss_active, "button_active@2x.png", a, m_renderer);
 	} else {
 	
 		/*Default Assets*/
-		image_new(&kiss_bar, assets[0], a, m_renderer);
-		image_new(&kiss_hslider, assets[2], a, m_renderer);
-		image_new(&kiss_left, assets[5], a, m_renderer);
-		image_new(&kiss_right, assets[6], a, m_renderer);
-		image_new(&kiss_selected, assets[7], a, m_renderer);
-		image_new(&kiss_unselected, assets[8], a, m_renderer);
+		kiss_image_new(&kiss_bar, assets[0], a, m_renderer);
+		kiss_image_new(&kiss_hslider, assets[2], a, m_renderer);
+		kiss_image_new(&kiss_left, assets[5], a, m_renderer);
+		kiss_image_new(&kiss_right, assets[6], a, m_renderer);
+		kiss_image_new(&kiss_selected, assets[7], a, m_renderer);
+		kiss_image_new(&kiss_unselected, assets[8], a, m_renderer);
 		
 		/*Custom Assets*/
-		font_new(&kiss_textfont, assets[9], a, kiss_textfont_size);
-		font_new(&kiss_buttonfont, assets[10], a, kiss_buttonfont_size);
-		font_new (&font_title, assets[11], a, font_title_size);
-		font_new (&font_subtitle, assets[12], a, font_subtitle_size);
+		kiss_font_new(&kiss_textfont, assets[9], a, kiss_textfont_size);
+		kiss_font_new(&kiss_buttonfont, assets[10], a, kiss_buttonfont_size);
+		kiss_font_new (&font_title, assets[11], a, font_title_size);
+		kiss_font_new (&font_subtitle, assets[12], a, font_subtitle_size);
 		
-		image_new (&kiss_vslider, assets[1], a, m_renderer);
-		image_new (&kiss_up, assets[3], a, m_renderer);
-		image_new (&kiss_down, assets[4], a, m_renderer);
-		image_new (&background, assets[13], a, m_renderer);
-		image_new (&horizontal_bar, assets[14], a, m_renderer);
-		image_new (&kiss_normal, assets[15], a, m_renderer);
-		image_new (&kiss_prelight, assets[16], a, m_renderer);
-		image_new (&kiss_active, assets[17], a, m_renderer);
-		image_new (&globe_slice, assets[18], a, m_renderer);
+		kiss_image_new (&kiss_vslider, assets[1], a, m_renderer);
+		kiss_image_new (&kiss_up, assets[3], a, m_renderer);
+		kiss_image_new (&kiss_down, assets[4], a, m_renderer);
+		kiss_image_new (&background, assets[13], a, m_renderer);
+		kiss_image_new (&horizontal_bar, assets[14], a, m_renderer);
+		kiss_image_new (&kiss_normal, assets[15], a, m_renderer);
+		kiss_image_new (&kiss_prelight, assets[16], a, m_renderer);
+		kiss_image_new (&kiss_active, assets[17], a, m_renderer);
+		kiss_image_new (&globe_slice, assets[18], a, m_renderer);
 	}
 	
 	return 0;
