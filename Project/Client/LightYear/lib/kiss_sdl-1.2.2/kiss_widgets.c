@@ -24,13 +24,32 @@
 
 #include "kiss_sdl.h"
 
-int kiss_window_new(kiss_window *window, kiss_window *wdw, int decorate,
-	int x, int y, int w, int h)
+/*
+int kiss_window_new(kiss_window *window, kiss_window *wdw, int decorate, int x, int y, int w, int h)
 {
-	if (!window) return -1;
+	if (!window)
+		return -1;
+
 	window->bg = kiss_white;
 	kiss_makerect(&window->rect, x, y, w, h);
 	window->decorate = decorate;
+	window->visible = 0;
+	window->focus = 1;
+	window->wdw = wdw;
+	return 0;
+}
+*/
+
+int kiss_window_new(kiss_window *window, kiss_window *wdw, int decorate, int fill, int x, int y, int w, int h)
+{
+	
+	if (!window)
+		return -1;
+	
+	window->bg = kiss_white;
+	kiss_makerect(&window->rect, x, y, w, h);
+	window->decorate = decorate;
+	window->fill = fill;
 	window->visible = 0;
 	window->focus = 1;
 	window->wdw = wdw;
@@ -53,13 +72,37 @@ int kiss_window_event(kiss_window *window, SDL_Event *event, int *draw)
 	return 0;
 }
 
+/*
 int kiss_window_draw(kiss_window *window, SDL_Renderer *renderer)
 {
-	if (window && window->wdw) window->visible = window->wdw->visible;
-	if (!window || !window->visible || !renderer) return 0;
+	if (window && window->wdw)
+		window->visible = window->wdw->visible;
+
+	if (!window || !window->visible || !renderer)
+		return 0;
+
 	kiss_fillrect(renderer, &window->rect, window->bg);
+
 	if (window->decorate)
 		kiss_decorate(renderer, &window->rect, kiss_blue, kiss_edge);
+
+	return 1;
+}
+*/
+
+int kiss_window_draw(kiss_window *window, SDL_Renderer *renderer)
+{
+	if (window && window->wdw)
+		window->visible = window->wdw->visible;
+	
+	if (!window || !window->visible || !renderer)
+		return 0;
+	
+	if (window->fill)
+		kiss_fillrect(renderer, &window->rect, window->bg);
+	if (window->decorate)
+		kiss_decorate(renderer, &window->rect, kiss_blue, kiss_edge);
+	
 	return 1;
 }
 
@@ -775,7 +818,7 @@ int kiss_combobox_new(kiss_combobox *combobox, kiss_window *wdw,
 		combobox->combo = kiss_combo;
 	kiss_entry_new(&combobox->entry, wdw, 1, text, x, y, w);
 	strcpy(combobox->text, combobox->entry.text);
-	kiss_window_new(&combobox->window, NULL, 0, x,
+	kiss_window_new(&combobox->window, NULL, 0, 0, x,
 		y + combobox->entry.rect.h, w +
 		combobox->vscrollbar.up.w, h);
 	if (kiss_textbox_new(&combobox->textbox, &combobox->window, 1,

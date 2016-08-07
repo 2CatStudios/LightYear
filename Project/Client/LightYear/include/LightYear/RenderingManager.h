@@ -100,6 +100,11 @@ public:
 	
 	void Update ();
 	void Stop ();
+	
+	kiss_font font_title, font_subtitle;
+	int font_title_size = 200; /*128;*/
+	int font_subtitle_size = 48; /*24;*/
+	kiss_image background, globe_slice, horizontal_bar;
 
 private:
 	SDL_Renderer *m_renderer;
