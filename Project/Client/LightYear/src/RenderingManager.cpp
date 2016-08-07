@@ -7,20 +7,51 @@ int RenderingManager::InitializeKISS ()
 	m_renderer = kiss_init ("LightYear", &objects, 1024, 576);
 	m_AddExternalAssets (&objects, m_IsRetinaDisplay ());
 	
+	return 0;
+}
+
+
+char* RenderingManager::GetApplicationPath ()
+{
 	
-	//TODO: (re)Move me!
-	char *base_path = SDL_GetPrefPath("2Cat Studios", "LightYear IF");
-	if (base_path)
+	if (m_absolutePath == NULL)
+	{
+	
+		char *data_path = NULL;
+		char *base_data_path = SDL_GetBasePath();
+		
+		if (base_data_path)
+		{
+			data_path = base_data_path;
+		} else {
+			data_path = SDL_strdup("./");
+		}
+		
+		m_absolutePath = data_path;
+	}
+	
+	return m_absolutePath;
+}
+
+
+char* RenderingManager::GetPreferencesPath ()
+{
+	
+	if (m_preferencesPath == NULL)
 	{
 		
-		std::cout << "Success: running in " << *base_path << std::endl;
-	} else {
+		char *prefs_path = NULL;
+		char *base_path = SDL_GetPrefPath ("2Cat Studios", "LightYear IF");
+		if (base_path) {
+			prefs_path = base_path;
+		} else {
+		    std::cout << "failure getting prefs path" << std::endl;
+		}
 		
-		std::cout << "Failure" << std::endl;
+		m_preferencesPath = prefs_path;
 	}
-	SDL_free (base_path);
 	
-	return 0;
+	return m_preferencesPath;
 }
 
 
@@ -58,7 +89,7 @@ int RenderingManager::m_AddExternalAssets (kiss_array *a, bool highDPI)
 {
 	
 	//TODO: (re)Move me!
-	char *assets[19] = {
+	char *assets[16] = {
 		"kiss_bar.png",
 		"vslider_handle.png",
 		"kiss_hslider.png",
@@ -69,49 +100,38 @@ int RenderingManager::m_AddExternalAssets (kiss_array *a, bool highDPI)
 		"kiss_selected.png",
 		"kiss_unselected.png",
 		"font_anson_regular.ttf",
-		"font_anson_regular.ttf",
-		"font_anson_regular.ttf",
-		"font_anson_regular.ttf",
 		"background.png",
+		"globe_slice.png",
 		"horizontal_bar.png",
 		"button_normal.png",
 		"button_prelight.png",
-		"button_active.png",
-		"globe_slice.png"
+		"button_active.png"
 	};
 	
 	
 	/*Default Assets*/
-	kiss_image_new(&kiss_bar, assets[0], a, m_renderer);
-	kiss_image_new(&kiss_hslider, assets[2], a, m_renderer);
-	kiss_image_new(&kiss_left, assets[5], a, m_renderer);
-	kiss_image_new(&kiss_right, assets[6], a, m_renderer);
-	kiss_image_new(&kiss_selected, assets[7], a, m_renderer);
-	kiss_image_new(&kiss_unselected, assets[8], a, m_renderer);
+	kiss_image_new(&kiss_bar, assets[EA_KISS_BAR], a, m_renderer);
+	kiss_image_new(&kiss_hslider, assets[EA_KISS_HSLIDER], a, m_renderer);
+	kiss_image_new(&kiss_left, assets[EA_KISS_LEFT], a, m_renderer);
+	kiss_image_new(&kiss_right, assets[EA_KISS_RIGHT], a, m_renderer);
+	kiss_image_new(&kiss_selected, assets[EA_KISS_SELECTED], a, m_renderer);
+	kiss_image_new(&kiss_unselected, assets[EA_KISS_UNSELECTED], a, m_renderer);
+	
+	/*Custom Assets*/
+	kiss_font_new(&kiss_textfont, assets[EA_FONT_ANSON_REGULAR], a, kiss_textfont_size);
+	kiss_font_new(&kiss_buttonfont, assets[EA_FONT_ANSON_REGULAR], a, kiss_buttonfont_size);
+	kiss_font_new (&m_font_title, assets[EA_FONT_ANSON_REGULAR], a, m_font_title_size);
+	kiss_font_new (&m_font_subtitle, assets[EA_FONT_ANSON_REGULAR], a, m_font_subtitle_size);
 
 	
 	if (highDPI == true)
 	{
-		
+
 		kiss_textfont_size *= 2;
 		kiss_buttonfont_size *= 2;
 		m_font_title_size *= 2;
 		m_font_subtitle_size *= 2;
 		m_buttonPadding *= 2;
-		
-		/*Default Assets*/
-		/*kiss_image_new(&kiss_bar, "kiss_bar.png", a, m_renderer);
-		kiss_image_new(&kiss_hslider, "kiss_hslider.png", a, m_renderer);
-		kiss_image_new(&kiss_left, "kiss_left.png", a, m_renderer);
-		kiss_image_new(&kiss_right, "kiss_right.png", a, m_renderer);
-		kiss_image_new(&kiss_selected, "kiss_selected.png", a, m_renderer);
-		kiss_image_new(&kiss_unselected, "kiss_unselected.png", a, m_renderer);*/
-		
-		/*Custom Assets*/
-		kiss_font_new(&kiss_textfont, "font_anson_regular.ttf", a, kiss_textfont_size);
-		kiss_font_new(&kiss_buttonfont, "font_anson_regular.ttf", a, kiss_buttonfont_size);
-		kiss_font_new (&m_font_title, "font_anson_regular.ttf", a, m_font_title_size);
-		kiss_font_new (&m_font_subtitle, "font_anson_regular.ttf", a, m_font_subtitle_size);
 		
 		kiss_image_new(&kiss_vslider, "vslider_handle@2x.png", a, m_renderer);
 		kiss_image_new(&kiss_up, "vslider_up@2x.png", a, m_renderer);
@@ -124,20 +144,15 @@ int RenderingManager::m_AddExternalAssets (kiss_array *a, bool highDPI)
 		kiss_image_new (&kiss_active, "button_active@2x.png", a, m_renderer);
 	} else {
 		
-		kiss_font_new(&kiss_textfont, assets[9], a, kiss_textfont_size);
-		kiss_font_new(&kiss_buttonfont, assets[10], a, kiss_buttonfont_size);
-		kiss_font_new (&m_font_title, assets[11], a, m_font_title_size);
-		kiss_font_new (&m_font_subtitle, assets[12], a, m_font_subtitle_size);
-		
-		kiss_image_new (&kiss_vslider, assets[1], a, m_renderer);
-		kiss_image_new (&kiss_up, assets[3], a, m_renderer);
-		kiss_image_new (&kiss_down, assets[4], a, m_renderer);
-		kiss_image_new (&m_background, assets[13], a, m_renderer);
-		kiss_image_new (&m_horizontal_bar, assets[14], a, m_renderer);
-		kiss_image_new (&kiss_normal, assets[15], a, m_renderer);
-		kiss_image_new (&kiss_prelight, assets[16], a, m_renderer);
-		kiss_image_new (&kiss_active, assets[17], a, m_renderer);
-		kiss_image_new (&m_globe_slice, assets[18], a, m_renderer);
+		kiss_image_new (&kiss_vslider, assets[EA_VSLIDER_HANDLE], a, m_renderer);
+		kiss_image_new (&kiss_up, assets[EA_VSLIDER_UP], a, m_renderer);
+		kiss_image_new (&kiss_down, assets[EA_VSLIDER_DOWN], a, m_renderer);
+		kiss_image_new (&m_background, assets[EA_BACKGROUND], a, m_renderer);
+		kiss_image_new (&m_horizontal_bar, assets[EA_HORIZONTAL_BAR], a, m_renderer);
+		kiss_image_new (&kiss_normal, assets[EA_BUTTON_NORMAL], a, m_renderer);
+		kiss_image_new (&kiss_prelight, assets[EA_BUTTON_PRELIGHT], a, m_renderer);
+		kiss_image_new (&kiss_active, assets[EA_BUTTON_ACTIVE], a, m_renderer);
+		kiss_image_new (&m_globe_slice, assets[EA_GLOBE_SLICE], a, m_renderer);
 	}
 	
 	return 0;

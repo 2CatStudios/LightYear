@@ -2,7 +2,9 @@
 #define LOCALIZATIONMANAGER_H
 
 #include "XMLManager.h"
-#include "pugixml.hpp"
+#include "kiss_sdl.h"
+#include <iostream>
+#include <string>
 #include <map>
 
 

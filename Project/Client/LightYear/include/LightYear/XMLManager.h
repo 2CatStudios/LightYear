@@ -8,7 +8,7 @@ class XMLManager
 {
 	
 public:
-	int ReadFromFileToVector (pugi::xml_document& doc, const char* filePath);
+	int ReadFromFileToDoc (const char *filePath, pugi::xml_document &doc);
 
 private:
 	

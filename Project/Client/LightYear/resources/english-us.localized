@@ -7,15 +7,15 @@
 		<Complete>false</Complete>
 	</Meta>
 	
+	<General>
+		<string index="0">LightYear</string>
+		<string index="1">A hybrid IF engine, lightyears ahead.</string>
+		<string index="2">Version</string>
+		<string index="3">2Cat Studios</string>
+		<string index="4">Return</string>
+	</General>
+	
 	<Windows>
-		<General>
-			<string index="0">LightYear</string>
-			<string index="1">A hybrid IF engine, lightyears ahead.</string>
-			<string index="2">Version</string>
-			<string index="3">2Cat Studios</string>
-			<string index="4">Return</string>
-		</General>
-		
 		<MainMenu>
 			<string index="0">PlayGame</string>
 			<string index="1">Options</string>

@@ -1,9 +1,8 @@
 #ifndef RENDERINGMANAGER_H
 #define RENDERINGMANAGER_H
 
-#include "kiss_sdl.h"
-
 #include <iostream>
+#include "kiss_sdl.h"
 
 
 class Menu
@@ -95,6 +94,8 @@ public:
 	int draw = 1;
 	
 	int InitializeKISS ();
+	char* GetApplicationPath ();
+	char* GetPreferencesPath ();
 	
 	void CalculateAboutMenuPositionsY ();
 	
@@ -103,6 +104,9 @@ public:
 
 private:
 	SDL_Renderer *m_renderer;
+	
+	char *m_absolutePath = NULL;
+	char *m_preferencesPath = NULL;
 	
 	bool m_IsRetinaDisplay ();
 	
@@ -118,7 +122,28 @@ private:
 	void m_DrawOptionsMenu ();
 	void m_DrawAboutMenu ();
 	
-	int m_buttonPadding = 10;
+	
+	enum ExternalImageAssets {
+		EA_KISS_BAR = 0,
+		EA_VSLIDER_HANDLE = 1,
+		EA_KISS_HSLIDER = 2,
+		EA_VSLIDER_UP = 3,
+		EA_VSLIDER_DOWN = 4,
+		EA_KISS_LEFT = 5,
+		EA_KISS_RIGHT = 6,
+		EA_KISS_SELECTED = 7,
+		EA_KISS_UNSELECTED = 8,
+		EA_FONT_ANSON_REGULAR = 9,
+		EA_BACKGROUND = 10,
+		EA_GLOBE_SLICE = 11,
+		EA_HORIZONTAL_BAR = 12,
+		EA_BUTTON_NORMAL = 13,
+		EA_BUTTON_PRELIGHT = 14,
+		EA_BUTTON_ACTIVE = 15
+	};
+	
+	
+	int m_buttonPadding = 12;
 	int m_labelPadding = 15;
 	
 	kiss_font m_font_title, m_font_subtitle;

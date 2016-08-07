@@ -4,6 +4,9 @@
 int CoreLoopDelegate::Run ()
 {
 	
+	if (localizationManager.LoadApplicationText () != 0)
+		return 1;
+	
 	if (renderingManager.InitializeKISS () != 0)
 		return 1;
 	
@@ -22,7 +25,7 @@ int CoreLoopDelegate::Run ()
 int CoreLoopDelegate::Loop ()
 {
 	
-	while (quit == 0)
+	while (quit == NO)
 	{
 		
 		SDL_Delay (m_millisecondLoopDelay);
