@@ -74,7 +74,9 @@ int kiss_utf8fix(char *str)
 {
 	int len, i;
 
-	if (!str || !str[0]) return -1;
+	if (!str || !str[0])
+		return -1;
+	
 	len = strlen(str);
 	for (i = len - 1; i >= 0 && len - 1 - i < 3; i--) {
 		if ((str[i] & 224) == 192 && len - 1 - i < 1) str[i] = 0;
@@ -89,17 +91,26 @@ char *kiss_string_copy(char *dest, size_t size, char *str1, char *str2)
 	unsigned int len;
 	char *p;
 
-	if (!dest) return NULL;
+	if (!dest)
+		return NULL;
+	
 	strcpy(dest, "");
-	if (size < 2) return dest;
-	if (str1) strncpy(dest, str1, size);
+	if (size < 2)
+		return dest;
+	
+	if (str1)
+		strncpy(dest, str1, size);
+	
 	dest[size - 1] = 0;
 	len = strlen(dest);
-	if (!str2 || size - 1 <= len) return dest;
+	if (!str2 || size - 1 <= len)
+		return dest;
+	
 	p = dest;
 	strncpy(p + len, str2, size - len);
 	dest[size - 1] = 0;
 	kiss_utf8fix(dest);
+	
 	return dest;
 }
 

@@ -4,6 +4,15 @@
 int CoreLoopDelegate::Run ()
 {
 	
+	//std::cout << std::endl << "GetApplicationPath () : " << renderingManager.GetApplicationPath () << std::endl;
+	//std::cout << std::endl << "GetResourcesPath () : " << renderingManager.GetResourcesPath () << std::endl;
+	//std::cout << std::endl << "GetPreferencesPath () : " << renderingManager.GetPreferencesPath () << std::endl;
+	
+	if (localizationManager.LoadApplicationText (renderingManager.GetResourcesPath ()) != 0)
+		return 1;
+	
+	renderingManager.localizationManager = &localizationManager;
+	
 	if (renderingManager.InitializeKISS () != 0)
 		return 1;
 	
@@ -22,7 +31,7 @@ int CoreLoopDelegate::Run ()
 int CoreLoopDelegate::Loop ()
 {
 	
-	while (quit == 0)
+	while (quit == NO)
 	{
 		
 		SDL_Delay (m_millisecondLoopDelay);

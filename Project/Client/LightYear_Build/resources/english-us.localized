@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Localization>
 	<Meta>
-		<Language>English-US</Language>
-		<Translator>Michael Bethke</Translator>
-		<TranslatorContact>gibsonbethke@gmail.com</TranslatorContact>
-		<Complete>false</Complete>
+		<language index="0">English-US</language>
+		<translator index="1">Michael Bethke</translator>
+		<translatorContact index="2">gibsonbethke@gmail.com</translatorContact>
+		<complete index="3">false</complete>
 	</Meta>
 	
+	<General>
+		<string index="0">LightYear</string>
+		<string index="1">A hybrid IF engine, lightyears ahead.</string>
+		<string index="2">Version</string>
+		<string index="3">2Cat Studios</string>
+		<string index="4">Return</string>
+	</General>
+	
 	<Windows>
-		<General>
-			<string index="0">LightYear</string>
-			<string index="1">A hybrid IF engine, lightyears ahead.</string>
-			<string index="2">Version</string>
-			<string index="3">2Cat Studios</string>
-			<string index="4">Return</string>
-		</General>
-		
 		<MainMenu>
 			<string index="0">PlayGame</string>
 			<string index="1">Options</string>

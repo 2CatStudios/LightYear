@@ -1,9 +1,20 @@
 #ifndef RENDERINGMANAGER_H
 #define RENDERINGMANAGER_H
 
-#include "kiss_sdl.h"
-
 #include <iostream>
+
+#include <string>
+#include "kiss_sdl.h"
+#include "LocalizationManager.h"
+
+#if defined (WIN32) || defined (_WIN32)
+#define PATH_SEPARATOR '\\'
+#else
+#define PATH_SEPARATOR '/'
+#endif
+
+#define YES 1
+#define NO 0
 
 
 class Menu
@@ -82,6 +93,8 @@ class RenderingManager
 {
 
 public:
+	LocalizationManager *localizationManager;
+	
 	kiss_array objects;
 	
 	enum MenuState {NONE = 0, MAINMENU = 1, SELECTGAME = 2, OPTIONS = 3, ABOUT = 4};
@@ -95,6 +108,11 @@ public:
 	int draw = 1;
 	
 	int InitializeKISS ();
+	std::string GetApplicationPath ();
+	std::string GetResourcesPath ();
+	std::string GetPreferencesPath ();
+	
+	bool IsRetinaDisplay ();
 	
 	void CalculateAboutMenuPositionsY ();
 	
@@ -104,7 +122,11 @@ public:
 private:
 	SDL_Renderer *m_renderer;
 	
-	bool m_IsRetinaDisplay ();
+	std::string m_applicationPath;
+	std::string m_resourcesPath;
+	std::string m_preferencesPath;
+	
+	unsigned int m_retinaDisplay = -1;
 	
 	int m_AddExternalAssets (kiss_array *a, bool high_dpi);
 	
@@ -118,7 +140,28 @@ private:
 	void m_DrawOptionsMenu ();
 	void m_DrawAboutMenu ();
 	
-	int m_buttonPadding = 10;
+	
+	enum ExternalImageAssets {
+		EA_KISS_BAR = 0,
+		EA_VSLIDER_HANDLE = 1,
+		EA_KISS_HSLIDER = 2,
+		EA_VSLIDER_UP = 3,
+		EA_VSLIDER_DOWN = 4,
+		EA_KISS_LEFT = 5,
+		EA_KISS_RIGHT = 6,
+		EA_KISS_SELECTED = 7,
+		EA_KISS_UNSELECTED = 8,
+		EA_FONT_ANSON_REGULAR = 9,
+		EA_BACKGROUND = 10,
+		EA_GLOBE_SLICE = 11,
+		EA_HORIZONTAL_BAR = 12,
+		EA_BUTTON_NORMAL = 13,
+		EA_BUTTON_PRELIGHT = 14,
+		EA_BUTTON_ACTIVE = 15
+	};
+	
+	
+	int m_buttonPadding = 12;
 	int m_labelPadding = 15;
 	
 	kiss_font m_font_title, m_font_subtitle;

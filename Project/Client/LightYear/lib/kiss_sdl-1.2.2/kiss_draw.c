@@ -27,8 +27,8 @@
 kiss_font kiss_textfont, kiss_buttonfont;
 kiss_image kiss_normal, kiss_prelight, kiss_active, kiss_bar, kiss_up, kiss_down, kiss_left, kiss_right, kiss_vslider, kiss_hslider, kiss_selected, kiss_unselected, kiss_combo;
 int kiss_screen_width, kiss_screen_height;
-int kiss_textfont_size = 15;
-int kiss_buttonfont_size = 12;
+int kiss_textfont_size = 16;
+int kiss_buttonfont_size = 14;
 int kiss_click_interval = 140;
 int kiss_progress_interval = 50;
 int kiss_slider_padding = 2;
@@ -168,7 +168,7 @@ int kiss_font_new(kiss_font *font, char *fname, kiss_array *a, int size)
 	return 0;
 }
 
-SDL_Renderer* kiss_init(char* title, kiss_array *a, int w, int h)
+SDL_Renderer* kiss_init(const char* title, kiss_array *a, int w, int h)
 {
 	SDL_Window *window;
 	SDL_Renderer *renderer;
@@ -198,6 +198,7 @@ SDL_Renderer* kiss_init(char* title, kiss_array *a, int w, int h)
 	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 	if (renderer)
 		kiss_array_append(a, RENDERER_TYPE, renderer);
+	
 	/*
 	r += kiss_font_new(&kiss_textfont, "kiss_font.ttf", a,
 		kiss_textfont_size);
@@ -217,6 +218,7 @@ SDL_Renderer* kiss_init(char* title, kiss_array *a, int w, int h)
 	r += kiss_image_new(&kiss_selected, "kiss_selected.png", a, renderer);
 	r += kiss_image_new(&kiss_unselected, "kiss_unselected.png", a, renderer);
 	*/
+	
 	if (r) {
 		kiss_clean(a);
 		return NULL;

@@ -1,63 +1,125 @@
 #include "LocalizationManager.h"
 
 
-int LocalizationManager::LoadApplicationText ()
+int LocalizationManager::LoadApplicationText (const std::string fileLocation)
 {
+
+	XMLManager xml;
+	pugi::xml_document doc;
 	
-	//XMLManager xml;
-	//pugi::xml_document doc;
+	//TODO: Get desired language name, check for existance, use or default to english.
+	std::string filePath = fileLocation + "english-us.localized";
 	
-	/*if (xml.ReadFromFileToVector (doc, (io.PathUpLevels (io.GetApplicationPath (), 2) + ("/resources/" + desiredLanguage + ".localized")).c_str ()) == 0)
+	if (xml.ReadFromFileToDoc (filePath, doc) == 0)
 	{
 		
-		pugi::xml_node text = doc.child ("Localization").child ("Strings");
+		pugi::xml_node localizationHeaders [5] = {
+			doc.child ("Localization").child ("Meta"),
+			doc.child ("Localization").child ("General"),
+			doc.child ("Localization").child ("Windows").child ("MainMenu"),
+			doc.child ("Localization").child ("Windows").child ("Options"),
+			doc.child ("Localization").child ("Windows").child ("About")
+		};
 		
-		for (pugi::xml_node locText = text.first_child (); locText; locText = locText.next_sibling ())
+		
+		int headerIndex = 0;
+		while (headerIndex < ALL_HEADERS)
 		{
-
-			for (pugi::xml_attribute attr = locText.first_attribute (); attr; attr = attr.next_attribute ())
+			
+			for (pugi::xml_node langString = localizationHeaders[headerIndex].first_child (); langString; langString = langString.next_sibling ())
 			{
-
-				m_applicationLocalization.insert (std::map<int, char *>::value_type (attr.as_int (), locText.child_value ()));
+				
+				for (pugi::xml_attribute attr = langString.first_attribute (); attr; attr = attr.next_attribute ())
+				{
+					
+					
+					//std::cout << "Header: " << headerIndex << " ... Index: " << attr.as_int () << " ... String: " << langString.child_value () << std::endl;
+					m_PopulateApplicationLocalizationMap (headerIndex, attr.as_int (), langString.child_value ());
+					//std::cout << GetLocalizedApplicationText (headerIndex, attr.as_int ()) << std::endl;
+				}
 			}
+			
+			headerIndex += 1;
 		}
-	} else return 1;*/
+	} else {
+		
+		return 1;
+	}
 	
 	return 0;
 }
 
 
-char *LocalizationManager::GetLocalizedApplicationText (unsigned int textAtIndex)
+void LocalizationManager::m_PopulateApplicationLocalizationMap (const unsigned int menu, const unsigned int index, const std::string string)
 {
 	
-	char *errorText = "Error: ";
+	std::map <int, std::string> *localizationMap;
 	
-	if (m_applicationLocalization.empty ())
+	switch (menu)
 	{
 		
-		strcat (errorText, "Application localization empty");
-		return errorText;
+		case META:
+			localizationMap = &m_metaLocalization;
+			break;
+			
+		case GENERAL:
+			localizationMap = &m_generalLocalization;
+			break;
+		
+		case MAINMENU:
+			localizationMap = &m_mainMenuLocalization;
+			break;
+			
+		case OPTIONS:
+			localizationMap = &m_optionsLocalization;
+			break;
+	
+		case ABOUT:
+			localizationMap = &m_aboutLocalization;
+			break;
 	}
 	
-	if (textAtIndex > m_applicationLocalization.size ())
+	localizationMap->insert (std::map<int, std::string>::value_type (index, string));
+}
+
+
+std::string LocalizationManager::GetLocalizedApplicationText (const unsigned int menu, const unsigned int index)
+{
+	
+	std::map <int, std::string> *localization;
+	
+	switch (menu)
 	{
 		
-		strcat (errorText, "Index out of bounds");
-		return errorText;
+		case META:
+			localization = &m_metaLocalization;
+			break;
+			
+		case GENERAL:
+			localization = &m_generalLocalization;
+			break;
+		
+		case MAINMENU:
+			localization = &m_mainMenuLocalization;
+			break;
+			
+		case OPTIONS:
+			localization = &m_optionsLocalization;
+			break;
+	
+		case ABOUT:
+			localization = &m_aboutLocalization;
+			break;
 	}
 	
-	m_localizationSearch = m_applicationLocalization.find (textAtIndex);
-	if (m_localizationSearch != m_applicationLocalization.end())
+	m_localizationSearch = localization->find (index);
+	
+	if (m_localizationSearch != localization->end ())
 	{
 		
 		return m_localizationSearch->second;
 	} else {
 		
-		strcat (errorText, "in localization at ");
-		
-		const char indexText = (char) textAtIndex;
-		strcat (errorText, &indexText);
-		
-		return errorText;
+		return ("Localization index " + std::to_string (index) + " invalid");
 	}
 }

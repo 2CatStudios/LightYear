@@ -1,10 +1,15 @@
 #ifndef CORELOOPDELEGATE_H
 #define CORELOOPDELEGATE_H
 
+#include <iostream>
+
 #include "LocalizationManager.h"
 #include "InputManager.h"
 #include "RenderingManager.h"
 #include "kiss_sdl.h"
+
+#define YES 1
+#define NO 0
 
 
 class CoreLoopDelegate
@@ -15,7 +20,7 @@ public:
 	InputManager inputManager;
 	RenderingManager renderingManager;
 	
-	int quit = 0;
+	int quit = NO;
 	
 	int Run ();
 

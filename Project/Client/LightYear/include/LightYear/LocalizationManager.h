@@ -1,17 +1,20 @@
 #ifndef LOCALIZATIONMANAGER_H
 #define LOCALIZATIONMANAGER_H
 
-#include "XMLManager.h"
-#include "pugixml.hpp"
+#include <iostream>
+#include <string>
 #include <map>
+
+#include "kiss_sdl.h"
+#include "XMLManager.h"
 
 
 class LocalizationManager
 {
 	
 public:
-	int LoadApplicationText ();
-	char *GetLocalizedApplicationText (unsigned int textAtIndex);
+	int LoadApplicationText (const std::string fileLocation);
+	std::string GetLocalizedApplicationText (unsigned int menu, unsigned int index);
 	
 	enum LocalizationGeneral {
 		G_LIGHTYEAR = 0,
@@ -44,10 +47,26 @@ public:
 		A_TARVO_KORROVITS_KISS_SDL = 8
 	};
 	
-private:
-	std::map <int, char*> m_applicationLocalization;
-	std::map <int, char*>::iterator m_localizationSearch;
+	const int ALL_HEADERS = 5;
+	enum LocalizationApplicationHeaders {
+		META = 0,
+		GENERAL = 1,
+		MAINMENU = 2,
+		OPTIONS = 3,
+		ABOUT = 4
+	};
 	
+private:
+	
+	std::map <int, std::string> m_metaLocalization;
+	std::map <int, std::string> m_generalLocalization;
+	std::map <int, std::string> m_mainMenuLocalization;
+	std::map <int, std::string> m_optionsLocalization;
+	std::map <int, std::string> m_aboutLocalization;
+	
+	std::map <int, std::string>::iterator m_localizationSearch;
+	
+	void m_PopulateApplicationLocalizationMap (const unsigned int menu, const unsigned int index, const std::string string);
 	void m_AddApplicationLocalizedText (int localizedTextIndex, char *localizedText);
 };
 
