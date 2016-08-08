@@ -305,7 +305,7 @@ int kiss_fillrect(SDL_Renderer *renderer, SDL_Rect *rect, SDL_Color color);
 int kiss_decorate(SDL_Renderer *renderer, SDL_Rect *rect, SDL_Color color, int edge);
 int kiss_image_new(kiss_image *image, char *fname, kiss_array *a, SDL_Renderer* renderer);
 int kiss_font_new(kiss_font *font, char *fname, kiss_array *a, int size);
-SDL_Renderer* kiss_init(char* title, kiss_array *a, int w, int h);
+SDL_Renderer* kiss_init(const char* title, kiss_array *a, int w, int h);
 int kiss_clean(kiss_array *a);
 int kiss_window_new(kiss_window *window, kiss_window *wdw, int decorate, /* NEW */ int fill, int x, int y, int w, int h);
 int kiss_window_event(kiss_window *window, SDL_Event *event, int *draw);

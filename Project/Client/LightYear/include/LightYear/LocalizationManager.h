@@ -1,11 +1,12 @@
 #ifndef LOCALIZATIONMANAGER_H
 #define LOCALIZATIONMANAGER_H
 
-#include "XMLManager.h"
-#include "kiss_sdl.h"
 #include <iostream>
 #include <string>
 #include <map>
+
+#include "kiss_sdl.h"
+#include "XMLManager.h"
 
 
 class LocalizationManager

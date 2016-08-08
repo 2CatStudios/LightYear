@@ -5,6 +5,7 @@
 
 #include <string>
 #include "kiss_sdl.h"
+#include "LocalizationManager.h"
 
 #if defined (WIN32) || defined (_WIN32)
 #define PATH_SEPARATOR '\\'
@@ -92,6 +93,8 @@ class RenderingManager
 {
 
 public:
+	LocalizationManager *localizationManager;
+	
 	kiss_array objects;
 	
 	enum MenuState {NONE = 0, MAINMENU = 1, SELECTGAME = 2, OPTIONS = 3, ABOUT = 4};

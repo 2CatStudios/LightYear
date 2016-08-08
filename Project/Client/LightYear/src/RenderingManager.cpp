@@ -4,7 +4,7 @@
 int RenderingManager::InitializeKISS ()
 {
 	
-	m_renderer = kiss_init ("LightYear", &objects, 1024, 576);
+	m_renderer = kiss_init (localizationManager->GetLocalizedApplicationText (LocalizationManager::GENERAL, LocalizationManager::G_LIGHTYEAR).c_str (), &objects, 1024, 576);
 	m_AddExternalAssets (&objects, IsRetinaDisplay ());
 	
 	return 0;
@@ -45,9 +45,9 @@ std::string RenderingManager::GetResourcesPath ()
 			appendedString = appendedString.substr (0, appendedString.find_last_of (PATH_SEPARATOR) + 1);
 			appendedString += "resources";
 			appendedString += PATH_SEPARATOR;
-			
-			m_resourcesPath = appendedString;
 		}
+		
+		m_resourcesPath = appendedString;
 	}
 	
 	return m_resourcesPath;
@@ -198,29 +198,64 @@ int RenderingManager::m_CreateMainMenu ()
 		mainMenu.label_version.font = kiss_textfont;
 		kiss_array_append (&mainMenu.gui_objects, 1, &mainMenu.label_version);
 		
-		kiss_label_new (&mainMenu.label_title, &mainMenu.window, "LightYear", mainMenu.window.rect.x + ((mainMenu.window.rect.w / 2) - (kiss_textwidth (m_font_title, "LightYear", NULL) / 2)), mainMenu.window.rect.y + 10);
+		kiss_label_new (
+			&mainMenu.label_title,
+			&mainMenu.window, const_cast<char*> (localizationManager->GetLocalizedApplicationText (LocalizationManager::GENERAL, LocalizationManager::G_LIGHTYEAR).c_str ()),
+			mainMenu.window.rect.x + ((mainMenu.window.rect.w / 2) - (kiss_textwidth (m_font_title, const_cast<char*> (localizationManager->GetLocalizedApplicationText (LocalizationManager::GENERAL, LocalizationManager::G_LIGHTYEAR).c_str ()), NULL) / 2)),
+			mainMenu.window.rect.y + 10
+				);
 		mainMenu.label_title.textcolor = kiss_white;
 		mainMenu.label_title.font = m_font_title;
 		kiss_array_append (&mainMenu.gui_objects, 2, &mainMenu.label_title);
 		
-		kiss_label_new (&mainMenu.label_subtitle, &mainMenu.window, "A hybrid IF engine, lightyears ahead.", mainMenu.window.rect.x + ((mainMenu.window.rect.w / 2) - (kiss_textwidth (m_font_subtitle, "A hybrid IF engine, lightyears ahead.", NULL) / 2)), mainMenu.label_title.rect.y + m_font_title.fontheight);
+		kiss_label_new (
+			&mainMenu.label_subtitle,
+			&mainMenu.window,
+			const_cast<char*> (localizationManager->GetLocalizedApplicationText (LocalizationManager::GENERAL, LocalizationManager::G_A_HYBIRD_IF_ENGINE_LIGHTYEARS_AHEAD).c_str ()),
+			mainMenu.window.rect.x + ((mainMenu.window.rect.w / 2) - (kiss_textwidth (m_font_subtitle, const_cast<char*> (localizationManager->GetLocalizedApplicationText (LocalizationManager::GENERAL, LocalizationManager::G_A_HYBIRD_IF_ENGINE_LIGHTYEARS_AHEAD).c_str ()), NULL) / 2)),
+			mainMenu.label_title.rect.y + m_font_title.fontheight
+				);
 		mainMenu.label_subtitle.textcolor = kiss_white;
 		mainMenu.label_subtitle.font = m_font_subtitle;
 		kiss_array_append (&mainMenu.gui_objects, 3, &mainMenu.label_subtitle);
 		
-		kiss_button_new (&mainMenu.button_playGame, &mainMenu.window, "Play Game", mainMenu.window.rect.x + ((mainMenu.window.rect.w / 2) - (kiss_normal.w / 2)), mainMenu.label_subtitle.rect.y + kiss_buttonfont.fontheight + m_buttonPadding * 6);
+		kiss_button_new (
+			&mainMenu.button_playGame,
+			&mainMenu.window,
+			const_cast<char*> (localizationManager->GetLocalizedApplicationText (LocalizationManager::MAINMENU, LocalizationManager::MM_PLAY).c_str ()),
+			mainMenu.window.rect.x + ((mainMenu.window.rect.w / 2) - (kiss_normal.w / 2)),
+			mainMenu.label_subtitle.rect.y + kiss_buttonfont.fontheight + m_buttonPadding * 6
+				);
 		mainMenu.button_playGame.textcolor = kiss_white;
 		kiss_array_append (&mainMenu.gui_objects, 4, &mainMenu.button_playGame);
 		
-		kiss_button_new (&mainMenu.button_options, &mainMenu.window, "Options", mainMenu.window.rect.x + ((mainMenu.window.rect.w / 2) - (kiss_normal.w / 2)), mainMenu.button_playGame.rect.y + kiss_buttonfont.fontheight + m_buttonPadding);
+		kiss_button_new (
+			&mainMenu.button_options,
+			&mainMenu.window,
+			const_cast<char*> (localizationManager->GetLocalizedApplicationText (LocalizationManager::MAINMENU, LocalizationManager::MM_OPTIONS).c_str ()),
+			mainMenu.window.rect.x + ((mainMenu.window.rect.w / 2) - (kiss_normal.w / 2)),
+			mainMenu.button_playGame.rect.y + kiss_buttonfont.fontheight + m_buttonPadding
+				);
 		mainMenu.button_options.textcolor = kiss_white;
 		kiss_array_append (&mainMenu.gui_objects, 5, &mainMenu.button_options);
 		
-		kiss_button_new (&mainMenu.button_about, &mainMenu.window, "About", mainMenu.window.rect.x + ((mainMenu.window.rect.w / 2) - (kiss_normal.w / 2)), mainMenu.button_options.rect.y + kiss_buttonfont.fontheight + m_buttonPadding);
+		kiss_button_new (
+			&mainMenu.button_about,
+			&mainMenu.window,
+			const_cast<char*> (localizationManager->GetLocalizedApplicationText (LocalizationManager::MAINMENU, LocalizationManager::MM_ABOUT).c_str ()),
+			mainMenu.window.rect.x + ((mainMenu.window.rect.w / 2) - (kiss_normal.w / 2)),
+			mainMenu.button_options.rect.y + kiss_buttonfont.fontheight + m_buttonPadding
+				);
 		mainMenu.button_about.textcolor = kiss_white;
 		kiss_array_append (&mainMenu.gui_objects, 6, &mainMenu.button_about);
 		
-		kiss_button_new (&mainMenu.button_quit, &mainMenu.window, "Quit", mainMenu.window.rect.x + ((mainMenu.window.rect.w / 2) - (kiss_normal.w / 2)), mainMenu.button_about.rect.y + kiss_buttonfont.fontheight + m_buttonPadding);
+		kiss_button_new (
+			&mainMenu.button_quit,
+			&mainMenu.window,
+			const_cast<char*> (localizationManager->GetLocalizedApplicationText (LocalizationManager::MAINMENU, LocalizationManager::MM_QUIT).c_str ()),
+			mainMenu.window.rect.x + ((mainMenu.window.rect.w / 2) - (kiss_normal.w / 2)),
+			mainMenu.button_about.rect.y + kiss_buttonfont.fontheight + m_buttonPadding
+				);
 		mainMenu.button_quit.textcolor = kiss_white;
 		kiss_array_append (&mainMenu.gui_objects, 7, &mainMenu.button_quit);
 		
@@ -244,7 +279,13 @@ int RenderingManager::m_CreateSelectGameMenu ()
 		kiss_window_new (&selectgameMenu.window, NULL, 0, 0, 0, 0, kiss_screen_width, kiss_screen_height);
 		kiss_array_append (&selectgameMenu.gui_objects, 0, &selectgameMenu.window);
 		
-		kiss_button_new (&selectgameMenu.button_back, &selectgameMenu.window, "Return", selectgameMenu.window.rect.x + m_buttonPadding, selectgameMenu.window.rect.y + m_buttonPadding);
+		kiss_button_new (
+			&selectgameMenu.button_back,
+			&selectgameMenu.window,
+			const_cast<char*> (localizationManager->GetLocalizedApplicationText (LocalizationManager::GENERAL, LocalizationManager::G_RETURN).c_str ()),
+			selectgameMenu.window.rect.x + m_buttonPadding,
+			selectgameMenu.window.rect.y + m_buttonPadding
+				);
 		selectgameMenu.button_back.textcolor = kiss_white;
 		kiss_array_append (&selectgameMenu.gui_objects, 1, &selectgameMenu.button_back);
 		
@@ -268,12 +309,24 @@ int RenderingManager::m_CreateOptionsMenu ()
 		kiss_window_new (&optionsMenu.window, NULL, 0, 0, 0, 0, kiss_screen_width, kiss_screen_height);
 		kiss_array_append (&optionsMenu.gui_objects, 0, &optionsMenu.window);
 		
-		kiss_button_new (&optionsMenu.button_back, &optionsMenu.window, "Return", optionsMenu.window.rect.x + m_buttonPadding, optionsMenu.window.rect.y + m_buttonPadding);
+		kiss_button_new (
+			&optionsMenu.button_back,
+			&optionsMenu.window,
+			const_cast<char*> (localizationManager->GetLocalizedApplicationText (LocalizationManager::GENERAL, LocalizationManager::G_RETURN).c_str ()),
+			optionsMenu.window.rect.x + m_buttonPadding,
+			optionsMenu.window.rect.y + m_buttonPadding
+				);
 		optionsMenu.button_back.textcolor = kiss_white;
 		kiss_array_append (&optionsMenu.gui_objects, 1, &optionsMenu.button_back);
 		
 		
-		kiss_label_new (&optionsMenu.label_title, &optionsMenu.window, "Options", optionsMenu.window.rect.x + ((optionsMenu.window.rect.w / 2) - (kiss_textwidth (m_font_title, "Options", NULL) / 2)), optionsMenu.window.rect.y + 10);
+		kiss_label_new (
+			&optionsMenu.label_title,
+			&optionsMenu.window,
+			const_cast<char*> (localizationManager->GetLocalizedApplicationText (LocalizationManager::OPTIONS, LocalizationManager::O_OPTIONS).c_str ()),
+			optionsMenu.window.rect.x + ((optionsMenu.window.rect.w / 2) - (kiss_textwidth (m_font_title, const_cast<char*> (localizationManager->GetLocalizedApplicationText (LocalizationManager::OPTIONS, LocalizationManager::O_OPTIONS).c_str ()), NULL) / 2)),
+			optionsMenu.window.rect.y + 10
+				);
 		optionsMenu.label_title.textcolor = kiss_white;
 		optionsMenu.label_title.font = m_font_title;
 		kiss_array_append (&optionsMenu.gui_objects, 2, &optionsMenu.label_title);
@@ -298,12 +351,18 @@ int RenderingManager::m_CreateAboutMenu ()
 		kiss_window_new (&aboutMenu.window, NULL, 0, 0, 0, 0, kiss_screen_width, kiss_screen_height);
 		kiss_array_append (&aboutMenu.gui_objects, 0, &aboutMenu.window);
 		
-		kiss_button_new (&aboutMenu.button_back, &aboutMenu.window, "Return", aboutMenu.window.rect.x + m_buttonPadding, aboutMenu.window.rect.x + m_buttonPadding);
+		kiss_button_new (
+			&aboutMenu.button_back,
+			&aboutMenu.window,
+			const_cast<char*> (localizationManager->GetLocalizedApplicationText (LocalizationManager::GENERAL, LocalizationManager::G_RETURN).c_str ()),
+			aboutMenu.window.rect.x + m_buttonPadding,
+			aboutMenu.window.rect.x + m_buttonPadding
+				);
 		aboutMenu.button_back.textcolor = kiss_white;
 		kiss_array_append (&aboutMenu.gui_objects, 1, &aboutMenu.button_back);
 		
 		
-		int titleWidth = kiss_textwidth (m_font_subtitle, "The LightYear Interactive Fiction engine", NULL);
+		int titleWidth = kiss_textwidth (m_font_subtitle, const_cast<char*> (localizationManager->GetLocalizedApplicationText (LocalizationManager::ABOUT, LocalizationManager::A_THE_LIGHTYEAR_INTERACTIVE_FICTION_ENGINE).c_str ()), NULL);
 		kiss_window_new (&aboutMenu.scroll_view, NULL, 0, 0, (aboutMenu.window.rect.w / 2) - (titleWidth / 2) - 10, 0, titleWidth + 20, 770);
 		kiss_array_append (&aboutMenu.gui_objects, 2, &aboutMenu.scroll_view);
 		
@@ -311,49 +370,103 @@ int RenderingManager::m_CreateAboutMenu ()
 		kiss_array_append (&aboutMenu.gui_objects, 3, &aboutMenu.scrollbar);
 		
 		
-		kiss_label_new (&aboutMenu.label_title, &aboutMenu.scroll_view, "About", aboutMenu.scroll_view.rect.x + ((aboutMenu.scroll_view.rect.w / 2) - (kiss_textwidth (m_font_title, "About", NULL) / 2)), aboutMenu.scroll_view.rect.y + 10);
+		kiss_label_new (
+			&aboutMenu.label_title,
+			&aboutMenu.scroll_view,
+			const_cast<char*> (localizationManager->GetLocalizedApplicationText (LocalizationManager::ABOUT, LocalizationManager::A_ABOUT).c_str ()),
+			aboutMenu.scroll_view.rect.x + ((aboutMenu.scroll_view.rect.w / 2) - (kiss_textwidth (m_font_title, const_cast<char*> (localizationManager->GetLocalizedApplicationText (LocalizationManager::ABOUT, LocalizationManager::A_ABOUT).c_str ()), NULL) / 2)),
+			aboutMenu.scroll_view.rect.y + 10
+				);
 		aboutMenu.label_title.textcolor = kiss_white;
 		aboutMenu.label_title.font = m_font_title;
 		kiss_array_append (&aboutMenu.gui_objects, 4, &aboutMenu.label_title);
 
-		kiss_label_new (&aboutMenu.label_preamble_top, &aboutMenu.scroll_view, "The LightYear Interactive Fiction engine", aboutMenu.scroll_view.rect.x + ((aboutMenu.scroll_view.rect.w / 2) - (titleWidth / 2)), aboutMenu.label_title.rect.y + m_font_title.fontheight);
+		kiss_label_new (
+			&aboutMenu.label_preamble_top,
+			&aboutMenu.scroll_view,
+			const_cast<char*> (localizationManager->GetLocalizedApplicationText (LocalizationManager::ABOUT, LocalizationManager::A_THE_LIGHTYEAR_INTERACTIVE_FICTION_ENGINE).c_str ()),
+			aboutMenu.scroll_view.rect.x + ((aboutMenu.scroll_view.rect.w / 2) - (titleWidth / 2)),
+			aboutMenu.label_title.rect.y + m_font_title.fontheight
+				);
 		aboutMenu.label_preamble_top.textcolor = kiss_white;
 		aboutMenu.label_preamble_top.font = m_font_subtitle;
 		kiss_array_append (&aboutMenu.gui_objects, 5, &aboutMenu.label_preamble_top);
 		
-		kiss_label_new (&aboutMenu.label_preamble_bottom, &aboutMenu.scroll_view, "has been lovingly created by", aboutMenu.scroll_view.rect.x + ((aboutMenu.scroll_view.rect.w / 2) - (kiss_textwidth (m_font_subtitle, "has been lovingly created by", NULL) / 2)), aboutMenu.label_preamble_top.rect.y + m_font_subtitle.fontheight);
+		kiss_label_new (
+			&aboutMenu.label_preamble_bottom,
+			&aboutMenu.scroll_view,
+			const_cast<char*> (localizationManager->GetLocalizedApplicationText (LocalizationManager::ABOUT, LocalizationManager::A_HAS_BEEN_LOVINGLY_CREATED_BY).c_str ()),
+			aboutMenu.scroll_view.rect.x + ((aboutMenu.scroll_view.rect.w / 2) - (kiss_textwidth (m_font_subtitle, const_cast<char*> (localizationManager->GetLocalizedApplicationText (LocalizationManager::ABOUT, LocalizationManager::A_HAS_BEEN_LOVINGLY_CREATED_BY).c_str ()), NULL) / 2)),
+			aboutMenu.label_preamble_top.rect.y + m_font_subtitle.fontheight
+				);
 		aboutMenu.label_preamble_bottom.textcolor = kiss_white;
 		aboutMenu.label_preamble_bottom.font = m_font_subtitle;
 		kiss_array_append (&aboutMenu.gui_objects, 6, &aboutMenu.label_preamble_bottom);
 		
-		kiss_label_new (&aboutMenu.label_twocatstudios, &aboutMenu.scroll_view, "2Cat Studios", aboutMenu.scroll_view.rect.x + ((aboutMenu.scroll_view.rect.w / 2) - (kiss_textwidth (m_font_subtitle, "2Cat Studios", NULL) / 2)), aboutMenu.label_preamble_bottom.rect.y + m_font_subtitle.fontheight + m_labelPadding);
+		kiss_label_new (
+			&aboutMenu.label_twocatstudios,
+			&aboutMenu.scroll_view,
+			const_cast<char*> (localizationManager->GetLocalizedApplicationText (LocalizationManager::ABOUT, LocalizationManager::A_2CATSTUDIOS).c_str ()),
+			aboutMenu.scroll_view.rect.x + ((aboutMenu.scroll_view.rect.w / 2) - (kiss_textwidth (m_font_subtitle, const_cast<char*> (localizationManager->GetLocalizedApplicationText (LocalizationManager::ABOUT, LocalizationManager::A_2CATSTUDIOS).c_str ()), NULL) / 2)),
+			aboutMenu.label_preamble_bottom.rect.y + m_font_subtitle.fontheight + m_labelPadding
+				);
 		aboutMenu.label_twocatstudios.textcolor = kiss_white;
 		aboutMenu.label_twocatstudios.font = m_font_subtitle;
 		kiss_array_append (&aboutMenu.gui_objects, 7, &aboutMenu.label_twocatstudios);
 		
 		
-		kiss_label_new (&aboutMenu.label_team_michaelb, &aboutMenu.scroll_view, "Michael Bethke - Lead Developer", aboutMenu.scroll_view.rect.x + ((aboutMenu.scroll_view.rect.w / 2) - (kiss_textwidth (m_font_subtitle, "Michael Bethke - Lead Developer", NULL) / 2)), aboutMenu.label_twocatstudios.rect.y + m_font_subtitle.fontheight + m_labelPadding);
+		kiss_label_new (
+			&aboutMenu.label_team_michaelb,
+			&aboutMenu.scroll_view,
+			const_cast<char*> (localizationManager->GetLocalizedApplicationText (LocalizationManager::ABOUT, LocalizationManager::A_MICHAEL_BETHKE_LEAD_DEVELOPER).c_str ()),
+			aboutMenu.scroll_view.rect.x + ((aboutMenu.scroll_view.rect.w / 2) - (kiss_textwidth (m_font_subtitle, const_cast<char*> (localizationManager->GetLocalizedApplicationText (LocalizationManager::ABOUT, LocalizationManager::A_MICHAEL_BETHKE_LEAD_DEVELOPER).c_str ()), NULL) / 2)),
+			aboutMenu.label_twocatstudios.rect.y + m_font_subtitle.fontheight + m_labelPadding
+				);
 		aboutMenu.label_team_michaelb.textcolor = kiss_white;
 		aboutMenu.label_team_michaelb.font = m_font_subtitle;
 		kiss_array_append (&aboutMenu.gui_objects, 8, &aboutMenu.label_team_michaelb);
 		
-		kiss_label_new (&aboutMenu.label_team_janh, &aboutMenu.scroll_view, "Jan Heemstra - Feedback & Support", aboutMenu.scroll_view.rect.x + ((aboutMenu.scroll_view.rect.w / 2) - (kiss_textwidth (m_font_subtitle, "Jan Heemstra - Feedback & Support", NULL) / 2)), aboutMenu.label_team_michaelb.rect.y + m_font_subtitle.fontheight);
+		kiss_label_new (
+			&aboutMenu.label_team_janh,
+			&aboutMenu.scroll_view,
+			const_cast<char*> (localizationManager->GetLocalizedApplicationText (LocalizationManager::ABOUT, LocalizationManager::A_JAN_HEEMSTRA_FEEDBACK_AND_SUPPORT).c_str ()),
+			aboutMenu.scroll_view.rect.x + ((aboutMenu.scroll_view.rect.w / 2) - (kiss_textwidth (m_font_subtitle, const_cast<char*> (localizationManager->GetLocalizedApplicationText (LocalizationManager::ABOUT, LocalizationManager::A_JAN_HEEMSTRA_FEEDBACK_AND_SUPPORT).c_str ()), NULL) / 2)),
+			aboutMenu.label_team_michaelb.rect.y + m_font_subtitle.fontheight
+				);
 		aboutMenu.label_team_janh.textcolor = kiss_white;
 		aboutMenu.label_team_janh.font = m_font_subtitle;
 		kiss_array_append (&aboutMenu.gui_objects, 9, &aboutMenu.label_team_janh);
 		
 		
-		kiss_label_new (&aboutMenu.label_thanksto, &aboutMenu.scroll_view, "With thanks to", aboutMenu.scroll_view.rect.x + ((aboutMenu.scroll_view.rect.w / 2) - (kiss_textwidth (m_font_subtitle, "With thanks to", NULL) / 2)), aboutMenu.label_team_janh.rect.y + (m_font_subtitle.fontheight * 2));
+		kiss_label_new (
+			&aboutMenu.label_thanksto,
+			&aboutMenu.scroll_view,
+			const_cast<char*> (localizationManager->GetLocalizedApplicationText (LocalizationManager::ABOUT, LocalizationManager::A_WITH_THANKS_TO).c_str ()),
+			aboutMenu.scroll_view.rect.x + ((aboutMenu.scroll_view.rect.w / 2) - (kiss_textwidth (m_font_subtitle, const_cast<char*> (localizationManager->GetLocalizedApplicationText (LocalizationManager::ABOUT, LocalizationManager::A_WITH_THANKS_TO).c_str ()), NULL) / 2)),
+			aboutMenu.label_team_janh.rect.y + (m_font_subtitle.fontheight * 2)
+				);
 		aboutMenu.label_thanksto.textcolor = kiss_white;
 		aboutMenu.label_thanksto.font = m_font_subtitle;
 		kiss_array_append (&aboutMenu.gui_objects, 10, &aboutMenu.label_thanksto);
 		
-		kiss_label_new (&aboutMenu.label_supporters_bleikur, &aboutMenu.scroll_view, "\"Bleikur\" - Design & Feedback", aboutMenu.scroll_view.rect.x + ((aboutMenu.scroll_view.rect.w / 2) - (kiss_textwidth (m_font_subtitle, "\"Bleikur\" - Design & Feedback", NULL) / 2)), aboutMenu.label_thanksto.rect.y + m_font_subtitle.fontheight);
+		kiss_label_new (
+			&aboutMenu.label_supporters_bleikur,
+			&aboutMenu.scroll_view,
+			const_cast<char*> (localizationManager->GetLocalizedApplicationText (LocalizationManager::ABOUT, LocalizationManager::A_BLEIKUR_DESIGN_AND_FEEDBACK).c_str ()),
+			aboutMenu.scroll_view.rect.x + ((aboutMenu.scroll_view.rect.w / 2) - (kiss_textwidth (m_font_subtitle, const_cast<char*> (localizationManager->GetLocalizedApplicationText (LocalizationManager::ABOUT, LocalizationManager::A_BLEIKUR_DESIGN_AND_FEEDBACK).c_str ()), NULL) / 2)),
+			aboutMenu.label_thanksto.rect.y + m_font_subtitle.fontheight
+				);
 		aboutMenu.label_supporters_bleikur.textcolor = kiss_white;
 		aboutMenu.label_supporters_bleikur.font = m_font_subtitle;
 		kiss_array_append (&aboutMenu.gui_objects, 11, &aboutMenu.label_supporters_bleikur);
 		
-		kiss_label_new (&aboutMenu.label_supporters_tarvok, &aboutMenu.scroll_view, "Tarvo Korrovits - KISS_SDL Support", aboutMenu.scroll_view.rect.x + ((aboutMenu.scroll_view.rect.w / 2) - (kiss_textwidth (m_font_subtitle, "Tarvo Korrovits - KISS_SDL Support", NULL) / 2)), aboutMenu.label_supporters_bleikur.rect.y + m_font_subtitle.fontheight);
+		kiss_label_new (
+			&aboutMenu.label_supporters_tarvok,
+			&aboutMenu.scroll_view,
+			const_cast<char*> (localizationManager->GetLocalizedApplicationText (LocalizationManager::ABOUT, LocalizationManager::A_TARVO_KORROVITS_KISS_SDL).c_str ()),
+			aboutMenu.scroll_view.rect.x + ((aboutMenu.scroll_view.rect.w / 2) - (kiss_textwidth (m_font_subtitle, const_cast<char*> (localizationManager->GetLocalizedApplicationText (LocalizationManager::ABOUT, LocalizationManager::A_TARVO_KORROVITS_KISS_SDL).c_str ()), NULL) / 2)),
+			aboutMenu.label_supporters_bleikur.rect.y + m_font_subtitle.fontheight
+				);
 		aboutMenu.label_supporters_tarvok.textcolor = kiss_white;
 		aboutMenu.label_supporters_tarvok.font = m_font_subtitle;
 		kiss_array_append (&aboutMenu.gui_objects, 12, &aboutMenu.label_supporters_tarvok);

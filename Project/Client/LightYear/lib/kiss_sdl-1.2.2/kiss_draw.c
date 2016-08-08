@@ -168,7 +168,7 @@ int kiss_font_new(kiss_font *font, char *fname, kiss_array *a, int size)
 	return 0;
 }
 
-SDL_Renderer* kiss_init(char* title, kiss_array *a, int w, int h)
+SDL_Renderer* kiss_init(const char* title, kiss_array *a, int w, int h)
 {
 	SDL_Window *window;
 	SDL_Renderer *renderer;
