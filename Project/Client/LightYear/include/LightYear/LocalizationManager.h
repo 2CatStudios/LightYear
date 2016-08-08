@@ -12,7 +12,7 @@ class LocalizationManager
 {
 	
 public:
-	int LoadApplicationText (const char *fileLocation);
+	int LoadApplicationText (const std::string fileLocation);
 	char *GetLocalizedApplicationText (unsigned int textAtIndex);
 	
 	enum LocalizationGeneral {

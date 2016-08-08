@@ -1,7 +1,7 @@
 #include "LocalizationManager.h"
 
 
-int LocalizationManager::LoadApplicationText (const char *fileLocation)
+int LocalizationManager::LoadApplicationText (const std::string fileLocation)
 {
 
 	XMLManager xml;

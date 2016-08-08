@@ -2,13 +2,19 @@
 #define RENDERINGMANAGER_H
 
 #include <iostream>
+
+#include <string>
 #include "kiss_sdl.h"
 
-#if defined (WIN32) || defined (_WIN32) 
-#define PATH_SEPARATOR '\\' 
-#else 
-#define PATH_SEPARATOR '/' 
-#endif 
+#if defined (WIN32) || defined (_WIN32)
+#define PATH_SEPARATOR '\\'
+#else
+#define PATH_SEPARATOR '/'
+#endif
+
+#define YES 1
+#define NO 0
+
 
 class Menu
 {
@@ -99,9 +105,11 @@ public:
 	int draw = 1;
 	
 	int InitializeKISS ();
-	char *GetApplicationPath ();
-	char *GetResourcesPath ();
-	char *GetPreferencesPath ();
+	std::string GetApplicationPath ();
+	std::string GetResourcesPath ();
+	std::string GetPreferencesPath ();
+	
+	bool IsRetinaDisplay ();
 	
 	void CalculateAboutMenuPositionsY ();
 	
@@ -111,11 +119,11 @@ public:
 private:
 	SDL_Renderer *m_renderer;
 	
-	char *m_absolutePath = NULL;
-	char *m_resourcesPath = NULL;
-	char *m_preferencesPath = NULL;
+	std::string m_applicationPath;
+	std::string m_resourcesPath;
+	std::string m_preferencesPath;
 	
-	bool m_IsRetinaDisplay ();
+	unsigned int m_retinaDisplay = -1;
 	
 	int m_AddExternalAssets (kiss_array *a, bool high_dpi);
 	
