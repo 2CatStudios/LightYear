@@ -1,6 +1,7 @@
 ﻿#ifndef XMLManager_H
 #define XMLManager_H
 
+#include <string>
 #include "pugixml.hpp"
 
 
@@ -8,7 +9,7 @@ class XMLManager
 {
 	
 public:
-	int ReadFromFileToDoc (const char *filePath, pugi::xml_document &doc);
+	int ReadFromFileToDoc (const std::string filePath, pugi::xml_document &doc);
 
 private:
 	

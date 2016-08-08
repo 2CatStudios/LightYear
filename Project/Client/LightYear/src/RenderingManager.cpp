@@ -5,112 +5,106 @@ int RenderingManager::InitializeKISS ()
 {
 	
 	m_renderer = kiss_init ("LightYear", &objects, 1024, 576);
-	m_AddExternalAssets (&objects, m_IsRetinaDisplay ());
+	m_AddExternalAssets (&objects, IsRetinaDisplay ());
 	
 	return 0;
 }
 
 
-char* RenderingManager::GetApplicationPath ()
+std::string RenderingManager::GetApplicationPath ()
 {
 	
-	if (m_absolutePath == NULL)
+	if (m_applicationPath.empty ())
 	{
-	
-		char *data_path = NULL;
-		char *base_data_path = SDL_GetBasePath();
 		
-		if (base_data_path)
-		{
-			data_path = base_data_path;
-		} else {
-			data_path = SDL_strdup("./");
-		}
+		std::string base_path = SDL_GetBasePath ();
 		
-		m_absolutePath = data_path;
+		if (base_path.empty ())
+			base_path = "./";
+		
+		m_applicationPath = base_path;
 	}
 	
-	return m_absolutePath;
+	return m_applicationPath;
 }
 
 
-char* RenderingManager::GetResourcesPath ()
+std::string RenderingManager::GetResourcesPath ()
 {
 	
-	if (m_resourcesPath == NULL)
+	if (m_resourcesPath.empty ())
 	{
 		
-		/*char *base_path = GetApplicationPath ();
+		std::string fullPath = GetApplicationPath ();
+		std::string appendedString = fullPath;
 		
-		char subbuff[sizeof (base_path)];
-		memcpy (subbuff, &base_path[10], 4);
-		subbuff[4] = '\0';*/
-		
-		
-		//m_resourcesPath = "";
-		
-		char *base_path = GetApplicationPath ();
-		char *parent_path = GetApplicationPath ();
-		
-		strncpy (parent_path, base_path, sizeof(&base_path) - 2);
-		m_resourcesPath = strrchr (parent_path, PATH_SEPARATOR);
-		
-		strcat (m_resourcesPath, "resources");
-		//m_resourcesPath += PATH_SEPARATOR;
+		if (fullPath != "./")
+		{
+			
+			appendedString = appendedString.substr (0, appendedString.length () - 1);
+			appendedString = appendedString.substr (0, appendedString.find_last_of (PATH_SEPARATOR) + 1);
+			appendedString += "resources";
+			appendedString += PATH_SEPARATOR;
+			
+			m_resourcesPath = appendedString;
+		}
 	}
 	
 	return m_resourcesPath;
 }
 
 
-char* RenderingManager::GetPreferencesPath ()
+std::string RenderingManager::GetPreferencesPath ()
 {
 	
-	if (m_preferencesPath == NULL)
+	if (m_preferencesPath.empty ())
 	{
 		
-		char *prefs_path = NULL;
-		char *base_path = SDL_GetPrefPath ("2Cat Studios", "LightYear IF");
-		if (base_path) {
-			prefs_path = base_path;
-		} else {
-		    std::cout << "Failure getting preferences path!" << std::endl;
-		}
+		std::string base_path = SDL_GetPrefPath ("2Cat Studios", "LightYear IF");
 		
-		m_preferencesPath = prefs_path;
+		if (base_path.empty ())
+			base_path = "./";
+		
+		m_preferencesPath = base_path;
 	}
 	
 	return m_preferencesPath;
 }
 
 
-bool RenderingManager::m_IsRetinaDisplay ()
+bool RenderingManager::IsRetinaDisplay ()
 {
 	
-	float diagDPI = -1;
-	float horiDPI = -1;
-	float vertDPI = -1;
-	
-	if (SDL_GetDisplayDPI (0, &diagDPI, &horiDPI, &vertDPI) != 0)
+	if (m_retinaDisplay == -1)
 	{
+	
+		float diagDPI = -1;
+		float horiDPI = -1;
+		float vertDPI = -1;
 		
-		std::cout << "Error: " << SDL_GetError () << std::endl;
-		return false;
+		if (SDL_GetDisplayDPI (0, &diagDPI, &horiDPI, &vertDPI) != 0)
+		{
+			
+			std::cout << "Error: " << SDL_GetError () << std::endl;
+			m_retinaDisplay = NO;
+		}
+		
+		if (diagDPI == 113.5)
+		{
+			
+			m_retinaDisplay = YES;
+		} else if (diagDPI == 109)
+		{
+			
+			m_retinaDisplay = NO;
+		} else {
+			
+			std::cout << "Unknown DDPI, " << diagDPI << std::endl;
+			m_retinaDisplay = NO;
+		}
 	}
 	
-	if (diagDPI == 113.5)
-	{
-		
-		return true;
-	} else if (diagDPI == 109)
-	{
-		
-		return false;
-	} else {
-		
-		std::cout << "Unknown DDPI, " << diagDPI << std::endl;
-		return false;
-	}
+	return m_retinaDisplay;
 }
 
 
