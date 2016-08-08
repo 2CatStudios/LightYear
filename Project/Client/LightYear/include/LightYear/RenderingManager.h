@@ -4,6 +4,11 @@
 #include <iostream>
 #include "kiss_sdl.h"
 
+#if defined (WIN32) || defined (_WIN32) 
+#define PATH_SEPARATOR '\\' 
+#else 
+#define PATH_SEPARATOR '/' 
+#endif 
 
 class Menu
 {
@@ -94,8 +99,9 @@ public:
 	int draw = 1;
 	
 	int InitializeKISS ();
-	char* GetApplicationPath ();
-	char* GetPreferencesPath ();
+	char *GetApplicationPath ();
+	char *GetResourcesPath ();
+	char *GetPreferencesPath ();
 	
 	void CalculateAboutMenuPositionsY ();
 	
@@ -106,6 +112,7 @@ private:
 	SDL_Renderer *m_renderer;
 	
 	char *m_absolutePath = NULL;
+	char *m_resourcesPath = NULL;
 	char *m_preferencesPath = NULL;
 	
 	bool m_IsRetinaDisplay ();

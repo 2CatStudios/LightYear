@@ -4,7 +4,12 @@
 int CoreLoopDelegate::Run ()
 {
 	
-	if (localizationManager.LoadApplicationText () != 0)
+	//std::cout << std::endl << "GetApplicationPath () : " << renderingManager.GetApplicationPath () << std::endl;
+	std::cout << std::endl << "GetResourcesPath () : " << renderingManager.GetResourcesPath () << std::endl;
+	//std::cout << std::endl << "GetPreferencesPath () : " << renderingManager.GetPreferencesPath () << std::endl;
+	
+	
+	if (localizationManager.LoadApplicationText (renderingManager.GetResourcesPath ()) != 0)
 		return 1;
 	
 	if (renderingManager.InitializeKISS () != 0)

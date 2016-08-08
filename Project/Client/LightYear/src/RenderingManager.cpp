@@ -34,6 +34,35 @@ char* RenderingManager::GetApplicationPath ()
 }
 
 
+char* RenderingManager::GetResourcesPath ()
+{
+	
+	if (m_resourcesPath == NULL)
+	{
+		
+		/*char *base_path = GetApplicationPath ();
+		
+		char subbuff[sizeof (base_path)];
+		memcpy (subbuff, &base_path[10], 4);
+		subbuff[4] = '\0';*/
+		
+		
+		//m_resourcesPath = "";
+		
+		char *base_path = GetApplicationPath ();
+		char *parent_path = GetApplicationPath ();
+		
+		strncpy (parent_path, base_path, sizeof(&base_path) - 2);
+		m_resourcesPath = strrchr (parent_path, PATH_SEPARATOR);
+		
+		strcat (m_resourcesPath, "resources");
+		//m_resourcesPath += PATH_SEPARATOR;
+	}
+	
+	return m_resourcesPath;
+}
+
+
 char* RenderingManager::GetPreferencesPath ()
 {
 	
@@ -45,7 +74,7 @@ char* RenderingManager::GetPreferencesPath ()
 		if (base_path) {
 			prefs_path = base_path;
 		} else {
-		    std::cout << "failure getting prefs path" << std::endl;
+		    std::cout << "Failure getting preferences path!" << std::endl;
 		}
 		
 		m_preferencesPath = prefs_path;

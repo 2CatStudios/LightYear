@@ -20,7 +20,7 @@ public:
 	InputManager inputManager;
 	RenderingManager renderingManager;
 	
-	int quit = 0;
+	int quit = NO;
 	
 	int Run ();
 
