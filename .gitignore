@@ -71,4 +71,4 @@ cmake_install.cmake
 install_manifest.txt
 
 ### Project Specifics
-Project/Universal/LightYear_Build/
+Project/Client/LightYear_Build/
