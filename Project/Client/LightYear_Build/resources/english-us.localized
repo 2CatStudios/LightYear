@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Localization>
 	<Meta>
-		<Language>English-US</Language>
-		<Translator>Michael Bethke</Translator>
-		<TranslatorContact>gibsonbethke@gmail.com</TranslatorContact>
-		<Complete>false</Complete>
+		<language index="0">English-US</language>
+		<translator index="1">Michael Bethke</translator>
+		<translatorContact index="2">gibsonbethke@gmail.com</translatorContact>
+		<complete index="3">false</complete>
 	</Meta>
 	
 	<General>
