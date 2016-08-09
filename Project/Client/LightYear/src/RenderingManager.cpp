@@ -5,7 +5,7 @@ int RenderingManager::InitializeKISS ()
 {
 	
 	m_renderer = kiss_init (localizationManager->GetLocalizedApplicationText (LocalizationManager::GENERAL, LocalizationManager::G_LIGHTYEAR).c_str (), &objects, 1024, 576);
-	m_AddExternalAssets (&objects, IsRetinaDisplay ());
+	m_AddExternalAssets (&objects);
 	
 	return 0;
 }
@@ -88,12 +88,12 @@ bool RenderingManager::IsRetinaDisplay ()
 			std::cout << "Error: " << SDL_GetError () << std::endl;
 			m_retinaDisplay = NO;
 		}
-
+		
 		if (diagDPI - 109 > 0.001)
 		{
-
+			
 			m_retinaDisplay = YES;
-		} else if (diagDPI - 109 < 0.001)
+		} else if (diagDPI - 109 < 0.001 && diagDPI - 109 > -0.001)
 		{
 			
 			m_retinaDisplay = NO;
@@ -117,7 +117,7 @@ std::string RenderingManager::m_appendAssetWithAt2X (const std::string original)
 }
 
 
-int RenderingManager::m_AddExternalAssets (kiss_array *a, bool highDPI)
+int RenderingManager::m_AddExternalAssets (kiss_array *a)
 {
 	
 	//TODO: (re)Move me!
@@ -156,7 +156,7 @@ int RenderingManager::m_AddExternalAssets (kiss_array *a, bool highDPI)
 	kiss_font_new (&m_font_subtitle, const_cast<char*> (assets[EA_FONT_ANSON_REGULAR].c_str ()), a, m_font_subtitle_size);
 
 	
-	if (highDPI == true)
+	if (IsRetinaDisplay () == true)
 	{
 
 		kiss_textfont_size *= 2;
@@ -164,18 +164,6 @@ int RenderingManager::m_AddExternalAssets (kiss_array *a, bool highDPI)
 		m_font_title_size *= 2;
 		m_font_subtitle_size *= 2;
 		m_buttonPadding *= 2;
-		
-		/*
-		kiss_image_new(&kiss_vslider, "vslider_handle@2x.png", a, m_renderer);
-		kiss_image_new(&kiss_up, "vslider_up@2x.png", a, m_renderer);
-		kiss_image_new(&kiss_down, "vslider_down@2x.png", a, m_renderer);
-		kiss_image_new (&m_background, "background@2x.png", a, m_renderer);
-		kiss_image_new (&m_globe_slice, "globe_slice@2x.png", a, m_renderer);
-		kiss_image_new (&m_horizontal_bar, "m_horizontal_bar@2x.png", a, m_renderer);
-		kiss_image_new (&kiss_normal, "button_normal@2x.png", a, m_renderer);
-		kiss_image_new (&kiss_prelight, "button_prelight@2x.png", a, m_renderer);
-		kiss_image_new (&kiss_active, "button_active@2x.png", a, m_renderer);
-		*/
 		
 		kiss_image_new (&kiss_vslider, const_cast<char*> (m_appendAssetWithAt2X (assets[EA_VSLIDER_HANDLE]).c_str ()), a, m_renderer);
 		kiss_image_new (&kiss_up, const_cast<char*> (m_appendAssetWithAt2X (assets[EA_VSLIDER_UP]).c_str ()), a, m_renderer);
@@ -218,7 +206,6 @@ int RenderingManager::m_CreateMainMenu ()
 			&mainMenu.label_version,
 			&mainMenu.window,
 			const_cast<char*> (VERSION),
-			//"Version 0.0.0d3",
 			mainMenu.window.rect.x + 4,
 			mainMenu.window.rect.y + 0
 				);

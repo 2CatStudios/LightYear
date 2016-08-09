@@ -130,7 +130,7 @@ private:
 	
 	unsigned int m_retinaDisplay = -1;
 	
-	int m_AddExternalAssets (kiss_array *a, bool high_dpi);
+	int m_AddExternalAssets (kiss_array *a);
 	
 	std::string m_appendAssetWithAt2X (const std::string original);
 	
