@@ -88,12 +88,12 @@ bool RenderingManager::IsRetinaDisplay ()
 			std::cout << "Error: " << SDL_GetError () << std::endl;
 			m_retinaDisplay = NO;
 		}
-		
-		if (diagDPI == 113.5)
+
+		if (diagDPI - 109 > 0.001)
 		{
-			
+
 			m_retinaDisplay = YES;
-		} else if (diagDPI == 109)
+		} else if (diagDPI - 109 < 0.001)
 		{
 			
 			m_retinaDisplay = NO;
