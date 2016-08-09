@@ -200,10 +200,8 @@ SDL_Renderer* kiss_init(const char* title, kiss_array *a, int w, int h)
 		kiss_array_append(a, RENDERER_TYPE, renderer);
 	
 	/*
-	r += kiss_font_new(&kiss_textfont, "kiss_font.ttf", a,
-		kiss_textfont_size);
-	r += kiss_font_new(&kiss_buttonfont, "kiss_font.ttf", a,
-		kiss_buttonfont_size);
+	r += kiss_font_new(&kiss_textfont, "kiss_font.ttf", a, kiss_textfont_size);
+	r += kiss_font_new(&kiss_buttonfont, "kiss_font.ttf", a, kiss_buttonfont_size);
 	r += kiss_image_new(&kiss_normal, "kiss_normal.png", a, renderer);
 	r += kiss_image_new(&kiss_prelight, "kiss_prelight.png", a, renderer);
 	r += kiss_image_new(&kiss_active, "kiss_active.png", a, renderer);

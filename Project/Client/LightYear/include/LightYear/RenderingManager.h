@@ -93,6 +93,8 @@ class RenderingManager
 {
 
 public:
+	const char VERSION[7] = {"0.0.4d"};
+	
 	LocalizationManager *localizationManager;
 	
 	kiss_array objects;
@@ -129,6 +131,8 @@ private:
 	unsigned int m_retinaDisplay = -1;
 	
 	int m_AddExternalAssets (kiss_array *a, bool high_dpi);
+	
+	std::string m_appendAssetWithAt2X (const std::string original);
 	
 	int m_CreateMainMenu ();
 	int m_CreateSelectGameMenu ();
