@@ -4,7 +4,7 @@
 # LightYear
 A hybrid IF engine, lightyears ahead.
 
-We're working on a new class of interactive fiction engine: something modern, sleek, and empowering. Every human being is creative, everyone can tell stories, and technology should enhance their vision, not get in the way. The LightYear engine makes it very easy for *anyone* to create an immersive, enveloping interactive fiction, and provides a comprehensive API for experienced developers to create something truly unique. It is currently in development, please contact us for pre-release testing opportunities.
+We're working on a new class of interactive fiction engine: something modern, sleek, and empowering. Every human being is creative, everyone can tell stories, and technology should enhance their vision, not get in the way. The LightYear engine makes it very easy for *anyone* to create an immersive, enveloping interactive fiction, and provides a comprehensive API for experienced developers to create something truly unique. LightYear is currently in development, please contact us for pre-release testing opportunities, or compile and build yourself.
 
 
 ---
