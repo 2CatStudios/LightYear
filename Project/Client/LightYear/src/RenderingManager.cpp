@@ -121,7 +121,8 @@ int RenderingManager::m_AddExternalAssets (kiss_array *a)
 {
 	
 	//TODO: (re)Move me!
-	std::string assets[16] = {
+	const unsigned int TOTAL_ASSETS = 16;
+	std::string assets[TOTAL_ASSETS] = {
 		"kiss_bar.png",
 		"vslider_handle.png",
 		"kiss_hslider.png",
@@ -140,6 +141,22 @@ int RenderingManager::m_AddExternalAssets (kiss_array *a)
 		"button_active.png"
 	};
 	
+	if (IsRetinaDisplay () == true)
+	{
+		
+		kiss_textfont_size *= 2;
+		kiss_buttonfont_size *= 2;
+		m_font_title_size *= 2;
+		m_font_subtitle_size *= 2;
+		m_buttonPadding *= 2;
+		
+		for (int index = 0; index < TOTAL_ASSETS; index += 1)
+		{
+			
+			assets[index] = m_appendAssetWithAt2X (assets[index]);
+		}
+	}
+	
 	
 	/*Default Assets*/
 	kiss_image_new(&kiss_bar, const_cast<char*> (assets[EA_KISS_BAR].c_str ()), a, m_renderer);
@@ -155,37 +172,15 @@ int RenderingManager::m_AddExternalAssets (kiss_array *a)
 	kiss_font_new (&m_font_title, const_cast<char*> (assets[EA_FONT_ANSON_REGULAR].c_str ()), a, m_font_title_size);
 	kiss_font_new (&m_font_subtitle, const_cast<char*> (assets[EA_FONT_ANSON_REGULAR].c_str ()), a, m_font_subtitle_size);
 
-	
-	if (IsRetinaDisplay () == true)
-	{
-
-		kiss_textfont_size *= 2;
-		kiss_buttonfont_size *= 2;
-		m_font_title_size *= 2;
-		m_font_subtitle_size *= 2;
-		m_buttonPadding *= 2;
-		
-		kiss_image_new (&kiss_vslider, const_cast<char*> (m_appendAssetWithAt2X (assets[EA_VSLIDER_HANDLE]).c_str ()), a, m_renderer);
-		kiss_image_new (&kiss_up, const_cast<char*> (m_appendAssetWithAt2X (assets[EA_VSLIDER_UP]).c_str ()), a, m_renderer);
-		kiss_image_new (&kiss_down, const_cast<char*> (m_appendAssetWithAt2X (assets[EA_VSLIDER_DOWN]).c_str ()), a, m_renderer);
-		kiss_image_new (&m_background, const_cast<char*> (m_appendAssetWithAt2X (assets[EA_BACKGROUND]).c_str ()), a, m_renderer);
-		kiss_image_new (&m_horizontal_bar, const_cast<char*> (m_appendAssetWithAt2X (assets[EA_HORIZONTAL_BAR]).c_str ()), a, m_renderer);
-		kiss_image_new (&kiss_normal, const_cast<char*> (m_appendAssetWithAt2X (assets[EA_BUTTON_NORMAL]).c_str ()), a, m_renderer);
-		kiss_image_new (&kiss_prelight, const_cast<char*> (m_appendAssetWithAt2X (assets[EA_BUTTON_PRELIGHT]).c_str ()), a, m_renderer);
-		kiss_image_new (&kiss_active, const_cast<char*> (m_appendAssetWithAt2X (assets[EA_BUTTON_ACTIVE]).c_str ()), a, m_renderer);
-		kiss_image_new (&m_globe_slice, const_cast<char*> (m_appendAssetWithAt2X (assets[EA_GLOBE_SLICE]).c_str ()), a, m_renderer);
-	} else {
-		
-		kiss_image_new (&kiss_vslider, const_cast<char*> (assets[EA_VSLIDER_HANDLE].c_str ()), a, m_renderer);
-		kiss_image_new (&kiss_up, const_cast<char*> (assets[EA_VSLIDER_UP].c_str ()), a, m_renderer);
-		kiss_image_new (&kiss_down, const_cast<char*> (assets[EA_VSLIDER_DOWN].c_str ()), a, m_renderer);
-		kiss_image_new (&m_background, const_cast<char*> (assets[EA_BACKGROUND].c_str ()), a, m_renderer);
-		kiss_image_new (&m_horizontal_bar, const_cast<char*> (assets[EA_HORIZONTAL_BAR].c_str ()), a, m_renderer);
-		kiss_image_new (&kiss_normal, const_cast<char*> (assets[EA_BUTTON_NORMAL].c_str ()), a, m_renderer);
-		kiss_image_new (&kiss_prelight, const_cast<char*> (assets[EA_BUTTON_PRELIGHT].c_str ()), a, m_renderer);
-		kiss_image_new (&kiss_active, const_cast<char*> (assets[EA_BUTTON_ACTIVE].c_str ()), a, m_renderer);
-		kiss_image_new (&m_globe_slice, const_cast<char*> (assets[EA_GLOBE_SLICE].c_str ()), a, m_renderer);
-	}
+	kiss_image_new (&kiss_vslider, const_cast<char*> (assets[EA_VSLIDER_HANDLE].c_str ()), a, m_renderer);
+	kiss_image_new (&kiss_up, const_cast<char*> (assets[EA_VSLIDER_UP].c_str ()), a, m_renderer);
+	kiss_image_new (&kiss_down, const_cast<char*> (assets[EA_VSLIDER_DOWN].c_str ()), a, m_renderer);
+	kiss_image_new (&m_background, const_cast<char*> (assets[EA_BACKGROUND].c_str ()), a, m_renderer);
+	kiss_image_new (&m_horizontal_bar, const_cast<char*> (assets[EA_HORIZONTAL_BAR].c_str ()), a, m_renderer);
+	kiss_image_new (&kiss_normal, const_cast<char*> (assets[EA_BUTTON_NORMAL].c_str ()), a, m_renderer);
+	kiss_image_new (&kiss_prelight, const_cast<char*> (assets[EA_BUTTON_PRELIGHT].c_str ()), a, m_renderer);
+	kiss_image_new (&kiss_active, const_cast<char*> (assets[EA_BUTTON_ACTIVE].c_str ()), a, m_renderer);
+	kiss_image_new (&m_globe_slice, const_cast<char*> (assets[EA_GLOBE_SLICE].c_str ()), a, m_renderer);
 	
 	return 0;
 }
