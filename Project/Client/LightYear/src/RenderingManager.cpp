@@ -141,6 +141,22 @@ int RenderingManager::m_AddExternalAssets (kiss_array *a)
 		"button_active.png"
 	};
 	
+	
+	/*Default Assets*/
+	kiss_image_new(&kiss_bar, const_cast<char*> (assets[EA_KISS_BAR].c_str ()), a, m_renderer);
+	kiss_image_new(&kiss_hslider, const_cast<char*> (assets[EA_KISS_HSLIDER].c_str ()), a, m_renderer);
+	kiss_image_new(&kiss_left, const_cast<char*> (assets[EA_KISS_LEFT].c_str ()), a, m_renderer);
+	kiss_image_new(&kiss_right, const_cast<char*> (assets[EA_KISS_RIGHT].c_str ()), a, m_renderer);
+	kiss_image_new(&kiss_selected, const_cast<char*> (assets[EA_KISS_SELECTED].c_str ()), a, m_renderer);
+	kiss_image_new(&kiss_unselected, const_cast<char*> (assets[EA_KISS_UNSELECTED].c_str ()), a, m_renderer);
+	
+	/*Custom 1X Assets*/
+	kiss_font_new(&kiss_textfont, const_cast<char*> (assets[EA_FONT_ANSON_REGULAR].c_str ()), a, kiss_textfont_size);
+	kiss_font_new(&kiss_buttonfont, const_cast<char*> (assets[EA_FONT_ANSON_REGULAR].c_str ()), a, kiss_buttonfont_size);
+	kiss_font_new (&m_font_title, const_cast<char*> (assets[EA_FONT_ANSON_REGULAR].c_str ()), a, m_font_title_size);
+	kiss_font_new (&m_font_subtitle, const_cast<char*> (assets[EA_FONT_ANSON_REGULAR].c_str ()), a, m_font_subtitle_size);
+
+	/*Custom 2X Assets*/
 	if (IsRetinaDisplay () == true)
 	{
 		
@@ -156,21 +172,6 @@ int RenderingManager::m_AddExternalAssets (kiss_array *a)
 			assets[index] = m_appendAssetWithAt2X (assets[index]);
 		}
 	}
-	
-	
-	/*Default Assets*/
-	kiss_image_new(&kiss_bar, const_cast<char*> (assets[EA_KISS_BAR].c_str ()), a, m_renderer);
-	kiss_image_new(&kiss_hslider, const_cast<char*> (assets[EA_KISS_HSLIDER].c_str ()), a, m_renderer);
-	kiss_image_new(&kiss_left, const_cast<char*> (assets[EA_KISS_LEFT].c_str ()), a, m_renderer);
-	kiss_image_new(&kiss_right, const_cast<char*> (assets[EA_KISS_RIGHT].c_str ()), a, m_renderer);
-	kiss_image_new(&kiss_selected, const_cast<char*> (assets[EA_KISS_SELECTED].c_str ()), a, m_renderer);
-	kiss_image_new(&kiss_unselected, const_cast<char*> (assets[EA_KISS_UNSELECTED].c_str ()), a, m_renderer);
-	
-	/*Custom Assets*/
-	kiss_font_new(&kiss_textfont, const_cast<char*> (assets[EA_FONT_ANSON_REGULAR].c_str ()), a, kiss_textfont_size);
-	kiss_font_new(&kiss_buttonfont, const_cast<char*> (assets[EA_FONT_ANSON_REGULAR].c_str ()), a, kiss_buttonfont_size);
-	kiss_font_new (&m_font_title, const_cast<char*> (assets[EA_FONT_ANSON_REGULAR].c_str ()), a, m_font_title_size);
-	kiss_font_new (&m_font_subtitle, const_cast<char*> (assets[EA_FONT_ANSON_REGULAR].c_str ()), a, m_font_subtitle_size);
 
 	kiss_image_new (&kiss_vslider, const_cast<char*> (assets[EA_VSLIDER_HANDLE].c_str ()), a, m_renderer);
 	kiss_image_new (&kiss_up, const_cast<char*> (assets[EA_VSLIDER_UP].c_str ()), a, m_renderer);
