@@ -17,7 +17,7 @@
 	
 	<Windows>
 		<MainMenu>
-			<string index="0">PlayGame</string>
+			<string index="0">Play Game</string>
 			<string index="1">Options</string>
 			<string index="2">About</string>
 			<string index="3">Quit</string>

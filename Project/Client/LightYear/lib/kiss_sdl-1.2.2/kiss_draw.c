@@ -27,8 +27,8 @@
 kiss_font kiss_textfont, kiss_buttonfont;
 kiss_image kiss_normal, kiss_prelight, kiss_active, kiss_bar, kiss_up, kiss_down, kiss_left, kiss_right, kiss_vslider, kiss_hslider, kiss_selected, kiss_unselected, kiss_combo;
 int kiss_screen_width, kiss_screen_height;
-int kiss_textfont_size = 16;
-int kiss_buttonfont_size = 14;
+int kiss_textfont_size = 18;
+int kiss_buttonfont_size = 28;
 int kiss_click_interval = 140;
 int kiss_progress_interval = 50;
 int kiss_slider_padding = 2;

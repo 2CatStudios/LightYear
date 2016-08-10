@@ -10,7 +10,9 @@ NOTE: This README (like the project) is under construction. Expect things to cha
 	* [Essentials](#essentials)
 	* [Required Frameworks](#required-frameworks)
 	* [Beginner's Guide](#naught-to-sixty-for-the-novice)
-1. [Thanks](#thanks)
+1. [Contributing](#contributing)
+2. [Thanks](#thanks)
+3. [License](#license)
 
 
 #How to Build
@@ -56,6 +58,11 @@ Click "Generate" once each name has a value, and barring any errors, let's make 
 Open your terminal of choice, change the working directory to your build directory (where you told CMake to build the binaries), which can usually be done with the `cd ` command (Ex: `cd /Users/YOURNAME/Documents/Development/Projects/LightYear/Project/Client/LightYear_Build`). Do note: most terminals support drag-and-drop, so just type 'cd ' (don't forget the trailing space), then drop your build folder in, and press return. We're almost done! Just type 'make' now, and unless the project has any blatant errors, you'll eventually see `[100%] Built target LightYear`. That's a good sign, and means you can navigate to `/bin`, located inside your build directory, to run the program! It'll start up with your terminal, don't let that spook you, and have fun!
 
 Whenever a change is made to the program, whether you edit some code or sync the project with the master branch, you'll need to do this step again. In practice, 'making' can function as your debugger, and keeping a terminal around while you're working on the code is a good idea.
+
+#Contributing
+---
+
+All you need to do is pull the repo, and get to work! We use [Trello](https://trello.com/b/sbkunaPH) to keep track of our TODO list, but it only contains tasks we've narrowed down, and are going to complete; for the overarching plan, and where we'd most appreciate help, please contact us directly.
 
 
 #Thanks

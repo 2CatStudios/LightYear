@@ -169,9 +169,11 @@ private:
 	int m_labelPadding = 15;
 	
 	kiss_font m_font_title, m_font_subtitle;
-	int m_font_title_size = 200; /*128;*/
-	int m_font_subtitle_size = 48; /*24;*/
+	int m_font_title_size = 168;
+	int m_font_subtitle_size = 36;
 	kiss_image m_background, m_globe_slice, m_horizontal_bar;
+	
+	SDL_Color lightYear_black = {25, 33, 39, 255};
 };
 
 #endif /* end of include guard: RENDERINGMANAGER_H */

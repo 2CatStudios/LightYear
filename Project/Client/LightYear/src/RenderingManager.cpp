@@ -143,6 +143,7 @@ int RenderingManager::m_AddExternalAssets (kiss_array *a)
 	
 	
 	/*Default Assets*/
+	//TODO: Replace eventually
 	kiss_image_new(&kiss_bar, const_cast<char*> (assets[EA_KISS_BAR].c_str ()), a, m_renderer);
 	kiss_image_new(&kiss_hslider, const_cast<char*> (assets[EA_KISS_HSLIDER].c_str ()), a, m_renderer);
 	kiss_image_new(&kiss_left, const_cast<char*> (assets[EA_KISS_LEFT].c_str ()), a, m_renderer);
@@ -195,7 +196,8 @@ int RenderingManager::m_CreateMainMenu ()
 	
 		kiss_array_new (&mainMenu.gui_objects);
 	
-		kiss_window_new (&mainMenu.window, NULL, 0, 0, 0, 0, kiss_screen_width, kiss_screen_height);
+		kiss_window_new (&mainMenu.window, NULL, 0, 1, 0, 0, kiss_screen_width, kiss_screen_height);
+		mainMenu.window.bg = lightYear_black;
 		kiss_array_append (&mainMenu.gui_objects, 0, &mainMenu.window);
 		
 		kiss_label_new (
@@ -236,7 +238,7 @@ int RenderingManager::m_CreateMainMenu ()
 			&mainMenu.window,
 			const_cast<char*> (localizationManager->GetLocalizedApplicationText (LocalizationManager::MAINMENU, LocalizationManager::MM_PLAY).c_str ()),
 			mainMenu.window.rect.x + ((mainMenu.window.rect.w / 2) - (kiss_normal.w / 2)),
-			mainMenu.label_subtitle.rect.y + kiss_buttonfont.fontheight + m_buttonPadding * 6
+			mainMenu.label_subtitle.rect.y + m_font_subtitle_size + m_buttonPadding
 				);
 		mainMenu.button_playGame.textcolor = kiss_white;
 		kiss_array_append (&mainMenu.gui_objects, 4, &mainMenu.button_playGame);
@@ -246,7 +248,7 @@ int RenderingManager::m_CreateMainMenu ()
 			&mainMenu.window,
 			const_cast<char*> (localizationManager->GetLocalizedApplicationText (LocalizationManager::MAINMENU, LocalizationManager::MM_OPTIONS).c_str ()),
 			mainMenu.window.rect.x + ((mainMenu.window.rect.w / 2) - (kiss_normal.w / 2)),
-			mainMenu.button_playGame.rect.y + kiss_buttonfont.fontheight + m_buttonPadding
+			mainMenu.button_playGame.rect.y + mainMenu.button_playGame.rect.h + m_buttonPadding
 				);
 		mainMenu.button_options.textcolor = kiss_white;
 		kiss_array_append (&mainMenu.gui_objects, 5, &mainMenu.button_options);
@@ -256,7 +258,7 @@ int RenderingManager::m_CreateMainMenu ()
 			&mainMenu.window,
 			const_cast<char*> (localizationManager->GetLocalizedApplicationText (LocalizationManager::MAINMENU, LocalizationManager::MM_ABOUT).c_str ()),
 			mainMenu.window.rect.x + ((mainMenu.window.rect.w / 2) - (kiss_normal.w / 2)),
-			mainMenu.button_options.rect.y + kiss_buttonfont.fontheight + m_buttonPadding
+			mainMenu.button_options.rect.y + mainMenu.button_options.rect.h + m_buttonPadding
 				);
 		mainMenu.button_about.textcolor = kiss_white;
 		kiss_array_append (&mainMenu.gui_objects, 6, &mainMenu.button_about);
@@ -266,7 +268,7 @@ int RenderingManager::m_CreateMainMenu ()
 			&mainMenu.window,
 			const_cast<char*> (localizationManager->GetLocalizedApplicationText (LocalizationManager::MAINMENU, LocalizationManager::MM_QUIT).c_str ()),
 			mainMenu.window.rect.x + ((mainMenu.window.rect.w / 2) - (kiss_normal.w / 2)),
-			mainMenu.button_about.rect.y + kiss_buttonfont.fontheight + m_buttonPadding
+			mainMenu.button_about.rect.y + mainMenu.button_about.rect.h + m_buttonPadding
 				);
 		mainMenu.button_quit.textcolor = kiss_white;
 		kiss_array_append (&mainMenu.gui_objects, 7, &mainMenu.button_quit);
@@ -288,7 +290,8 @@ int RenderingManager::m_CreateSelectGameMenu ()
 		
 		kiss_array_new (&selectgameMenu.gui_objects);
 		
-		kiss_window_new (&selectgameMenu.window, NULL, 0, 0, 0, 0, kiss_screen_width, kiss_screen_height);
+		kiss_window_new (&selectgameMenu.window, NULL, 0, 1, 0, 0, kiss_screen_width, kiss_screen_height);
+		selectgameMenu.window.bg = lightYear_black;
 		kiss_array_append (&selectgameMenu.gui_objects, 0, &selectgameMenu.window);
 		
 		kiss_button_new (
@@ -318,7 +321,8 @@ int RenderingManager::m_CreateOptionsMenu ()
 		
 		kiss_array_new (&optionsMenu.gui_objects);
 		
-		kiss_window_new (&optionsMenu.window, NULL, 0, 0, 0, 0, kiss_screen_width, kiss_screen_height);
+		kiss_window_new (&optionsMenu.window, NULL, 0, 1, 0, 0, kiss_screen_width, kiss_screen_height);
+		optionsMenu.window.bg = lightYear_black;
 		kiss_array_append (&optionsMenu.gui_objects, 0, &optionsMenu.window);
 		
 		kiss_button_new (
@@ -360,7 +364,8 @@ int RenderingManager::m_CreateAboutMenu ()
 		
 		kiss_array_new (&aboutMenu.gui_objects);
 		
-		kiss_window_new (&aboutMenu.window, NULL, 0, 0, 0, 0, kiss_screen_width, kiss_screen_height);
+		kiss_window_new (&aboutMenu.window, NULL, 0, 1, 0, 0, kiss_screen_width, kiss_screen_height);
+		aboutMenu.window.bg = lightYear_black;
 		kiss_array_append (&aboutMenu.gui_objects, 0, &aboutMenu.window);
 		
 		kiss_button_new (
@@ -492,34 +497,19 @@ int RenderingManager::m_CreateAboutMenu ()
 }
 
 
+//TODO: Make generic
 void RenderingManager::CalculateAboutMenuPositionsY ()
 {
-	
-	//aboutMenu.label_title.rect.x = aboutMenu.scroll_view.rect.x + ((aboutMenu.scroll_view.rect.w / 2) - (kiss_textwidth (m_font_title, "About", NULL) / 2));
+
+	//TODO: DRY
 	aboutMenu.label_title.rect.y = aboutMenu.scroll_view.rect.y + 10;
-	
-	//aboutMenu.label_preamble_top.rect.x = aboutMenu.scroll_view.rect.x + ((aboutMenu.scroll_view.rect.w / 2) - (titleWidth / 2));
 	aboutMenu.label_preamble_top.rect.y = aboutMenu.label_title.rect.y + m_font_title.fontheight;
-	
-	//aboutMenu.label_preamble_bottom.rect.x = aboutMenu.scroll_view.rect.x + ((aboutMenu.scroll_view.rect.w / 2) - (kiss_textwidth (m_font_subtitle, "has been lovingly created by", NULL) / 2)); 
 	aboutMenu.label_preamble_bottom.rect.y = aboutMenu.label_preamble_top.rect.y + m_font_subtitle.fontheight;
-	
-	//aboutMenu.label_twocatstudios.rect.x = aboutMenu.scroll_view.rect.x + ((aboutMenu.scroll_view.rect.w / 2) - (kiss_textwidth (m_font_subtitle, "2Cat Studios", NULL) / 2));
 	aboutMenu.label_twocatstudios.rect.y = aboutMenu.label_preamble_bottom.rect.y + m_font_subtitle.fontheight + m_labelPadding;
-	
-	//aboutMenu.label_team_michaelb.rect.x = aboutMenu.scroll_view.rect.x + ((aboutMenu.scroll_view.rect.w / 2) - (kiss_textwidth (m_font_subtitle, "Michael Bethke - Lead Developer", NULL) / 2));
 	aboutMenu.label_team_michaelb.rect.y = aboutMenu.label_twocatstudios.rect.y + m_font_subtitle.fontheight + m_labelPadding;
-	
-	//aboutMenu.label_team_janh.rect.x = aboutMenu.scroll_view.rect.x + ((aboutMenu.scroll_view.rect.w / 2) - (kiss_textwidth (m_font_subtitle, "Jan Heemstra - Feedback & Support", NULL) / 2));
 	aboutMenu.label_team_janh.rect.y = aboutMenu.label_team_michaelb.rect.y + m_font_subtitle.fontheight;
-	
-	//aboutMenu.label_thanksto.rect.x = aboutMenu.scroll_view.rect.x + ((aboutMenu.scroll_view.rect.w / 2) - (kiss_textwidth (m_font_subtitle, "With thanks to", NULL) / 2));
 	aboutMenu.label_thanksto.rect.y = aboutMenu.label_team_janh.rect.y + (m_font_subtitle.fontheight * 2);
-	
-	//aboutMenu.label_supporters_bleikur.rect.x = aboutMenu.scroll_view.rect.x + ((aboutMenu.scroll_view.rect.w / 2) - (kiss_textwidth (m_font_subtitle, "\"Bleikur\" - Design & Feedback", NULL) / 2));
 	aboutMenu.label_supporters_bleikur.rect.y = aboutMenu.label_thanksto.rect.y + m_font_subtitle.fontheight;
-	
-	//aboutMenu.label_supporters_tarvok.rect.x = aboutMenu.scroll_view.rect.x + ((aboutMenu.scroll_view.rect.w / 2) - (kiss_textwidth (m_font_subtitle, "Tarvo Korrovits - KISS_SDL Support", NULL) / 2));
 	aboutMenu.label_supporters_tarvok.rect.y = aboutMenu.label_supporters_bleikur.rect.y + m_font_subtitle.fontheight;
 }
 
@@ -614,8 +604,6 @@ void RenderingManager::Update ()
 	optionsMenu.window.visible = 0;
 	aboutMenu.window.visible = 0;
 	aboutMenu.scroll_view.visible = 0;
-	
-	kiss_renderimage (m_renderer, m_background, 0, 0, NULL);
 	
 	switch (menuState)
 	{
