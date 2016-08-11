@@ -63,6 +63,7 @@ void InputManager::m_SelectGameWindowInput ()
 }
 
 
+//NOTE: One seg-fault crash
 void InputManager::m_OptionsWindowInput ()
 {
 	
@@ -71,6 +72,7 @@ void InputManager::m_OptionsWindowInput ()
 }
 
 
+//NOTE: Two seg-fault crashs
 void InputManager::m_AboutWindowInput ()
 {
 	
@@ -137,6 +139,7 @@ void InputManager::m_optionsmenu_button_back_event (kiss_button *button, SDL_Eve
 }
 
 
+//NOTE: One seg-fault crash
 void InputManager::m_aboutmenu_button_back_event (kiss_button *button, SDL_Event *e, int *draw)
 {
 	
