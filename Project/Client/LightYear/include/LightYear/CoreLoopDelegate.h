@@ -28,7 +28,8 @@ private:
 	
 	int m_millisecondLoopDelay = 16;
 
-	int Loop ();
+	void m_DebugSDL2Paths ();
+	int m_Loop ();
 	
 };
 

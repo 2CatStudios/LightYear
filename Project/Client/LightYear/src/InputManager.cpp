@@ -24,15 +24,18 @@ int InputManager::GetInput (int &quit)
 				break;
 		
 			case RenderingManager::SELECTGAME:
-				m_SelectGameWindowInput ();
+				if (renderingManager->selectgameMenu.created == true)
+					m_SelectGameWindowInput ();
 				break;
 		
 			case RenderingManager::OPTIONS:
-				m_OptionsWindowInput ();
+				if (renderingManager->optionsMenu.created == true)
+					m_OptionsWindowInput ();
 				break;
 		
 			case RenderingManager::ABOUT:
-				m_AboutWindowInput ();
+				if (renderingManager->aboutMenu.created == true)
+					m_AboutWindowInput ();
 				break;
 		
 			default:
@@ -63,6 +66,7 @@ void InputManager::m_SelectGameWindowInput ()
 }
 
 
+//NOTE: One seg-fault crash
 void InputManager::m_OptionsWindowInput ()
 {
 	
@@ -71,6 +75,7 @@ void InputManager::m_OptionsWindowInput ()
 }
 
 
+//NOTE: Two seg-fault crashs
 void InputManager::m_AboutWindowInput ()
 {
 	
@@ -78,7 +83,7 @@ void InputManager::m_AboutWindowInput ()
 	m_aboutmenu_button_back_event ((kiss_button*) kiss_array_data (&renderingManager->aboutMenu.gui_objects, 1), &m_event, &renderingManager->draw);
 	m_aboutmenu_vscrollbar_event ((kiss_vscrollbar*) kiss_array_data (&renderingManager->aboutMenu.gui_objects, 3), &m_event, &renderingManager->draw);
 	m_aboutmenu_window_event ((kiss_vscrollbar*) kiss_array_data (&renderingManager->aboutMenu.gui_objects, 3), &m_event, &renderingManager->draw);
-	//kiss_window_event ((kiss_window*) kiss_array_data (&renderingManager->aboutMenu.gui_objects, 2), &m_event, &renderingManager->draw);
+	//kiss_window_event ((kiss_window*) kiss_array_data (&renderingManager->aboutMenu.gui_objects, 2), &m_event, &renderingManager->draw); //For tracking scroll-wheel
 }
 
 
@@ -137,6 +142,7 @@ void InputManager::m_optionsmenu_button_back_event (kiss_button *button, SDL_Eve
 }
 
 
+//NOTE: One seg-fault crash
 void InputManager::m_aboutmenu_button_back_event (kiss_button *button, SDL_Event *e, int *draw)
 {
 	
