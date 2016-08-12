@@ -4,10 +4,6 @@
 int CoreLoopDelegate::Run ()
 {
 	
-	//std::cout << std::endl << "GetApplicationPath () : " << renderingManager.GetApplicationPath () << std::endl;
-	//std::cout << std::endl << "GetResourcesPath () : " << renderingManager.GetResourcesPath () << std::endl;
-	//std::cout << std::endl << "GetPreferencesPath () : " << renderingManager.GetPreferencesPath () << std::endl;
-	
 	if (localizationManager.LoadApplicationText (renderingManager.GetResourcesPath ()) != 0)
 		return 1;
 	
@@ -21,14 +17,23 @@ int CoreLoopDelegate::Run ()
 	
 	inputManager.renderingManager = &renderingManager;
 	
-	if (Loop () != 0)
+	if (m_Loop () != 0)
 		return 1;
 	
 	return 0;
 }
 
 
-int CoreLoopDelegate::Loop ()
+void CoreLoopDelegate::m_DebugSDL2Paths ()
+{
+	
+	std::cout << std::endl << "GetApplicationPath () : " << renderingManager.GetApplicationPath () << std::endl;
+	std::cout << std::endl << "GetResourcesPath () : " << renderingManager.GetResourcesPath () << std::endl;
+	std::cout << std::endl << "GetPreferencesPath () : " << renderingManager.GetPreferencesPath () << std::endl;
+}
+
+
+int CoreLoopDelegate::m_Loop ()
 {
 	
 	while (quit == NO)
