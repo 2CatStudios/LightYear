@@ -172,6 +172,8 @@ private:
 	int m_font_subtitle_size = 36;
 	kiss_image m_background, m_globe_slice, m_horizontal_bar;
 	
+	int m_globe_slice_y_position = 0;
+	
 	SDL_Color lightYear_black = {25, 33, 39, 255};
 };
 
