@@ -13,6 +13,7 @@ int InputManager::GetInput (int &quit)
 			break;
 		}
 
+		//TODO: DRY!
 		switch (renderingManager->menuState)
 		{
 		
@@ -24,17 +25,17 @@ int InputManager::GetInput (int &quit)
 				break;
 		
 			case RenderingManager::SELECTGAME:
-				if (renderingManager->selectgameMenu.created == true)
+				if (renderingManager->selectgameMenu.created == true) //TODO: See TD.1
 					m_SelectGameWindowInput ();
 				break;
 		
 			case RenderingManager::OPTIONS:
-				if (renderingManager->optionsMenu.created == true)
+				if (renderingManager->optionsMenu.created == true) //TODO: See TD.1
 					m_OptionsWindowInput ();
 				break;
 		
 			case RenderingManager::ABOUT:
-				if (renderingManager->aboutMenu.created == true)
+				if (renderingManager->aboutMenu.created == true) //TODO: See TD.1
 					m_AboutWindowInput ();
 				break;
 		
@@ -45,6 +46,9 @@ int InputManager::GetInput (int &quit)
 	
 	return 0;
 }
+
+
+//[TD.1](for events, casting from array: ) TODO: Maybe "ask" for array (in receiving function, create menu if non-existant)
 
 
 void InputManager::m_MainMenuWindowInput (int &quit)

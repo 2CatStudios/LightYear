@@ -133,7 +133,6 @@ int RenderingManager::m_AddExternalAssets (kiss_array *a)
 		"kiss_selected.png",
 		"kiss_unselected.png",
 		"font_anson_regular.ttf",
-		//"background.png",
 		"globe_slice.png",
 		"horizontal_bar.png",
 		"button_normal.png",
@@ -177,7 +176,6 @@ int RenderingManager::m_AddExternalAssets (kiss_array *a)
 	kiss_image_new (&kiss_vslider, const_cast<char*> (assets[EA_VSLIDER_HANDLE].c_str ()), a, m_renderer);
 	kiss_image_new (&kiss_up, const_cast<char*> (assets[EA_VSLIDER_UP].c_str ()), a, m_renderer);
 	kiss_image_new (&kiss_down, const_cast<char*> (assets[EA_VSLIDER_DOWN].c_str ()), a, m_renderer);
-	//kiss_image_new (&m_background, const_cast<char*> (assets[EA_BACKGROUND].c_str ()), a, m_renderer);
 	kiss_image_new (&m_horizontal_bar, const_cast<char*> (assets[EA_HORIZONTAL_BAR].c_str ()), a, m_renderer);
 	kiss_image_new (&kiss_normal, const_cast<char*> (assets[EA_BUTTON_NORMAL].c_str ()), a, m_renderer);
 	kiss_image_new (&kiss_prelight, const_cast<char*> (assets[EA_BUTTON_PRELIGHT].c_str ()), a, m_renderer);
