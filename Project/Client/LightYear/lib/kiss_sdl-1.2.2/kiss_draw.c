@@ -195,6 +195,8 @@ SDL_Renderer* kiss_init(const char* title, kiss_array *a, int w, int h)
 	if (window)
 		kiss_array_append(a, WINDOW_TYPE, window);
 	
+	SDL_GL_GetDrawableSize (window, &kiss_screen_width, &kiss_screen_height);
+	
 	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 	if (renderer)
 		kiss_array_append(a, RENDERER_TYPE, renderer);
