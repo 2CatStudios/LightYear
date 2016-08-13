@@ -166,7 +166,8 @@ int RenderingManager::m_AddExternalAssets (kiss_array *a)
 		m_font_subtitle_size *= 2;
 		m_buttonPadding *= 2;
 		
-		for (int index = 0; index < TOTAL_ASSETS; index += 1)
+		const int CUSTOM_2X_ASSET_STARTING_POSITION = 10;
+		for (int index = CUSTOM_2X_ASSET_STARTING_POSITION; index < TOTAL_ASSETS; index += 1)
 		{
 			
 			assets[index] = m_appendAssetWithAt2X (assets[index]);
