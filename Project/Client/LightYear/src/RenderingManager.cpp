@@ -182,7 +182,7 @@ int RenderingManager::m_AddExternalAssets (kiss_array *a)
 	kiss_image_new (&kiss_prelight, const_cast<char*> (assets[EA_BUTTON_PRELIGHT].c_str ()), a, m_renderer);
 	kiss_image_new (&kiss_active, const_cast<char*> (assets[EA_BUTTON_ACTIVE].c_str ()), a, m_renderer);
 	kiss_image_new (&m_globe_slice, const_cast<char*> (assets[EA_GLOBE_SLICE].c_str ()), a, m_renderer);
-	m_globe_slice_y_position = 576 - m_globe_slice.h;
+	m_globe_slice_y_position = kiss_screen_height - m_globe_slice.h;
 	
 	return 0;
 }
