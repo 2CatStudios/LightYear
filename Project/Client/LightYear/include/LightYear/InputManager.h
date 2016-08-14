@@ -22,6 +22,7 @@ private:
 	void m_OptionsWindowInput ();
 	void m_AboutWindowInput ();
 	
+	void m_mainmenu_window_menu_event (SDL_Event *e, int *draw);
 	void m_mainmenu_button_playGame_event (kiss_button *button, SDL_Event *e, int *draw);
 	void m_mainmenu_button_options_event (kiss_button *button, SDL_Event *e, int *draw);
 	void m_mainmenu_button_about_event (kiss_button *button, SDL_Event *e, int *draw);

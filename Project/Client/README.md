@@ -35,7 +35,9 @@ You'll need a compiler that has been updated to at least the C++11 standard. For
 
 #Naught to Sixty for the Novice
 ### You do have a compiler, right?
-If you're on Mac OS X, download the latest stable version of [XCode](https://developer.apple.com/xcode/), for Linux, try [Clang](http://clang.llvm.org) (although you probably have [GCC](https://gcc.gnu.org), and that's fine). Windows users should consider [Clang](http://clang.llvm.org), or [GCC](https://gcc.gnu.org), although [Visual Studio](https://www.visualstudio.com) may be easier to set up. Keep in mind that [VS does not have a full C++ 14/17 feature-set](https://msdn.microsoft.com/en-us/library/hh567368.aspx).
+If you're on macOS, download the latest stable version of [XCode](https://developer.apple.com/xcode/), for Linux, try [Clang](http://clang.llvm.org) (you probably have [GCC](https://gcc.gnu.org), and that's fine). Windows users should consider [Clang](http://clang.llvm.org), or [GCC](https://gcc.gnu.org), although [Visual Studio](https://www.visualstudio.com) may be easier to set up. Keep in mind that [VS does not have a full C++ 14/17 feature-set](https://msdn.microsoft.com/en-us/library/hh567368.aspx).
+
+Whatever you use, make sure it has support for an C++11 feature set.
 
 ### Don't forget CMake!
 Basically, CMake works with your compiler to build the program, and saves us a lot of time. Once you set everything up, you'll only use CMake every once in a while, so don't worry too much about it. If this is your first time building a program without an IDE, just remain calm, and be sure to follow the steps provided.

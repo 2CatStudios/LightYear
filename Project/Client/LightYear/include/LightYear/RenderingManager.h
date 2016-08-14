@@ -26,6 +26,8 @@ public:
 	kiss_array gui_objects;
 	kiss_window window;
 	
+	//enum MenuItems: unsigned int;
+	
 private: 
 	void m_hideMenu ();
 
@@ -38,10 +40,14 @@ typedef struct menu_main : Menu
 	kiss_label label_version;
 	kiss_label label_title;
 	kiss_label label_subtitle;
+	
+	kiss_window scroll_view;
 	kiss_button button_playGame;
 	kiss_button button_options;
 	kiss_button button_about;
 	kiss_button button_quit;
+	
+	float scroll_view_starting_y;
 
 } menu_main;
 
@@ -117,6 +123,7 @@ public:
 	bool IsRetinaDisplay ();
 	
 	void CalculateAboutMenuPositionsY ();
+	void CalculateMainMenuPositionsY ();
 	
 	void Update ();
 	void Stop ();

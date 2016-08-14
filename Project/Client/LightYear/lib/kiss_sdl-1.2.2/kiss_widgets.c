@@ -146,21 +146,19 @@ int kiss_button_new(kiss_button *button, kiss_window *wdw, char *text,
 	int x, int y)
 {
 	if (!button || !text) return -1;
-	if (button->font.magic != KISS_MAGIC) button->font = kiss_buttonfont;
+	if (button->font.magic != KISS_MAGIC)
+		button->font = kiss_buttonfont;
 	if (button->normalimg.magic != KISS_MAGIC)
 		button->normalimg = kiss_normal;
 	if (button->activeimg.magic != KISS_MAGIC)
 		button->activeimg = kiss_active;
 	if (button->prelightimg.magic != KISS_MAGIC)
 		button->prelightimg = kiss_prelight;
-	kiss_makerect(&button->rect, x, y, button->normalimg.w,
-		button->normalimg.h);
+	kiss_makerect(&button->rect, x, y, button->normalimg.w, button->normalimg.h);
 	button->textcolor = kiss_white;
 	kiss_string_copy(button->text, KISS_MAX_LENGTH, text, NULL);
-	button->textx = x + button->normalimg.w / 2 -
-		kiss_textwidth(button->font, text, NULL) / 2;
-	button->texty = y + button->normalimg.h / 2 -
-		button->font.fontheight / 2;
+	button->textx = x + button->normalimg.w / 2 - kiss_textwidth(button->font, text, NULL) / 2;
+	button->texty = y + button->normalimg.h / 2 - button->font.fontheight / 2;
 	button->active = 0;
 	button->prelight = 0;
 	button->visible = 0;

@@ -55,10 +55,12 @@ void InputManager::m_MainMenuWindowInput (int &quit)
 {
 	
 	kiss_window_event ((kiss_window*) kiss_array_data (&renderingManager->mainMenu.gui_objects, 0), &m_event, &renderingManager->draw);
-	m_mainmenu_button_playGame_event ((kiss_button*) kiss_array_data (&renderingManager->mainMenu.gui_objects, 4), &m_event, &renderingManager->draw);
-	m_mainmenu_button_options_event ((kiss_button*) kiss_array_data (&renderingManager->mainMenu.gui_objects, 5), &m_event, &renderingManager->draw);
-	m_mainmenu_button_about_event ((kiss_button*) kiss_array_data (&renderingManager->mainMenu.gui_objects, 6), &m_event, &renderingManager->draw);
-	m_mainmenu_button_quit_event ((kiss_button*) kiss_array_data (&renderingManager->mainMenu.gui_objects, 7), &m_event, &quit, &renderingManager->draw);
+	//kiss_window_event ((kiss_window*) kiss_array_data (&renderingManager->mainMenu.gui_objects, 4), &m_event, &renderingManager->draw);
+	//m_mainmenu_window_menu_event (&m_event, &renderingManager->draw);
+	m_mainmenu_button_playGame_event ((kiss_button*) kiss_array_data (&renderingManager->mainMenu.gui_objects, 5), &m_event, &renderingManager->draw);
+	m_mainmenu_button_options_event ((kiss_button*) kiss_array_data (&renderingManager->mainMenu.gui_objects, 6), &m_event, &renderingManager->draw);
+	m_mainmenu_button_about_event ((kiss_button*) kiss_array_data (&renderingManager->mainMenu.gui_objects, 7), &m_event, &renderingManager->draw);
+	m_mainmenu_button_quit_event ((kiss_button*) kiss_array_data (&renderingManager->mainMenu.gui_objects, 8), &m_event, &quit, &renderingManager->draw);
 }
 
 
@@ -70,7 +72,6 @@ void InputManager::m_SelectGameWindowInput ()
 }
 
 
-//NOTE: One seg-fault crash
 void InputManager::m_OptionsWindowInput ()
 {
 	
@@ -79,7 +80,6 @@ void InputManager::m_OptionsWindowInput ()
 }
 
 
-//NOTE: Two seg-fault crashs
 void InputManager::m_AboutWindowInput ()
 {
 	
@@ -87,7 +87,28 @@ void InputManager::m_AboutWindowInput ()
 	m_aboutmenu_button_back_event ((kiss_button*) kiss_array_data (&renderingManager->aboutMenu.gui_objects, 1), &m_event, &renderingManager->draw);
 	m_aboutmenu_vscrollbar_event ((kiss_vscrollbar*) kiss_array_data (&renderingManager->aboutMenu.gui_objects, 3), &m_event, &renderingManager->draw);
 	m_aboutmenu_window_event ((kiss_vscrollbar*) kiss_array_data (&renderingManager->aboutMenu.gui_objects, 3), &m_event, &renderingManager->draw);
-	//kiss_window_event ((kiss_window*) kiss_array_data (&renderingManager->aboutMenu.gui_objects, 2), &m_event, &renderingManager->draw); //For tracking scroll-wheel
+}
+
+
+void InputManager::m_mainmenu_window_menu_event (SDL_Event *e, int *draw)
+{
+	
+	if (e->type == SDL_MOUSEMOTION)
+	{
+		
+		//INCORRECT! Only true when mouse is above starting position.
+		/*if (e->motion.y - renderingManager->mainMenu.scroll_view_starting_y < 0 )
+		{
+			
+			std::cout << "mouse y - starting y < 0" << std::endl;
+			
+			//int new_position = sqrt (() + ());
+			
+			//renderingManager->mainMenu.scroll_view.rect.y = new_position;
+			//renderingManager->CalculateMainMenuPositionsY ();
+			*draw = 1;
+		}*/
+	}
 }
 
 
@@ -146,7 +167,6 @@ void InputManager::m_optionsmenu_button_back_event (kiss_button *button, SDL_Eve
 }
 
 
-//NOTE: One seg-fault crash
 void InputManager::m_aboutmenu_button_back_event (kiss_button *button, SDL_Event *e, int *draw)
 {
 	
@@ -188,7 +208,7 @@ void InputManager::m_aboutmenu_vscrollbar_event (kiss_vscrollbar *vscrollbar, SD
 	{
 		
 		double movement = renderingManager->aboutMenu.scroll_view.rect.y;
-		movement = -1 * vscrollbar->fraction * 350;
+		movement = -1 * vscrollbar->fraction * 350; //NOTE: 350 is an arbitrary number. //TODO: Calculate this, somehow.
 		
 		renderingManager->aboutMenu.scroll_view.rect.y = movement;
 		renderingManager->CalculateAboutMenuPositionsY ();

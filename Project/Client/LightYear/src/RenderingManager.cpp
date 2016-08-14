@@ -233,15 +233,25 @@ int RenderingManager::m_CreateMainMenu ()
 		mainMenu.label_subtitle.font = m_font_subtitle;
 		kiss_array_append (&mainMenu.gui_objects, 3, &mainMenu.label_subtitle);
 		
+		
+		const int TOTAL_MENU_BUTTONS = 4;
+		const int SCROLLVIEW_WIDTH = (kiss_normal.w + m_buttonPadding);
+		const int SCROLLVIEW_HEIGHT = ((kiss_normal.h * TOTAL_MENU_BUTTONS) + m_buttonPadding * TOTAL_MENU_BUTTONS);
+		mainMenu.scroll_view_starting_y = mainMenu.label_subtitle.rect.y + m_font_subtitle_size + m_buttonPadding;
+		kiss_window_new (&mainMenu.scroll_view, NULL, 0, 1, kiss_screen_width / 2 - SCROLLVIEW_WIDTH / 2, mainMenu.scroll_view_starting_y, SCROLLVIEW_WIDTH, SCROLLVIEW_HEIGHT);
+		mainMenu.scroll_view.bg = kiss_white;
+		kiss_array_append (&mainMenu.gui_objects, 4, &mainMenu.scroll_view);
+		
 		kiss_button_new (
 			&mainMenu.button_playGame,
 			&mainMenu.window,
 			const_cast<char*> (localizationManager->GetLocalizedApplicationText (LocalizationManager::MAINMENU, LocalizationManager::MM_PLAY).c_str ()),
 			mainMenu.window.rect.x + ((mainMenu.window.rect.w / 2) - (kiss_normal.w / 2)),
-			mainMenu.label_subtitle.rect.y + m_font_subtitle_size + m_buttonPadding
+			mainMenu.scroll_view.rect.y + m_buttonPadding / 2
+			//mainMenu.label_subtitle.rect.y + m_font_subtitle_size + m_buttonPadding
 				);
 		mainMenu.button_playGame.textcolor = kiss_white;
-		kiss_array_append (&mainMenu.gui_objects, 4, &mainMenu.button_playGame);
+		kiss_array_append (&mainMenu.gui_objects, 5, &mainMenu.button_playGame);
 		
 		kiss_button_new (
 			&mainMenu.button_options,
@@ -251,7 +261,7 @@ int RenderingManager::m_CreateMainMenu ()
 			mainMenu.button_playGame.rect.y + mainMenu.button_playGame.rect.h + m_buttonPadding
 				);
 		mainMenu.button_options.textcolor = kiss_white;
-		kiss_array_append (&mainMenu.gui_objects, 5, &mainMenu.button_options);
+		kiss_array_append (&mainMenu.gui_objects, 6, &mainMenu.button_options);
 		
 		kiss_button_new (
 			&mainMenu.button_about,
@@ -261,7 +271,7 @@ int RenderingManager::m_CreateMainMenu ()
 			mainMenu.button_options.rect.y + mainMenu.button_options.rect.h + m_buttonPadding
 				);
 		mainMenu.button_about.textcolor = kiss_white;
-		kiss_array_append (&mainMenu.gui_objects, 6, &mainMenu.button_about);
+		kiss_array_append (&mainMenu.gui_objects, 7, &mainMenu.button_about);
 		
 		kiss_button_new (
 			&mainMenu.button_quit,
@@ -271,7 +281,7 @@ int RenderingManager::m_CreateMainMenu ()
 			mainMenu.button_about.rect.y + mainMenu.button_about.rect.h + m_buttonPadding
 				);
 		mainMenu.button_quit.textcolor = kiss_white;
-		kiss_array_append (&mainMenu.gui_objects, 7, &mainMenu.button_quit);
+		kiss_array_append (&mainMenu.gui_objects, 8, &mainMenu.button_quit);
 		
 		mainMenu.created = true;
 		draw = 1;
@@ -514,6 +524,23 @@ void RenderingManager::CalculateAboutMenuPositionsY ()
 }
 
 
+void RenderingManager::CalculateMainMenuPositionsY ()
+{
+	
+	mainMenu.button_playGame.rect.y = mainMenu.scroll_view.rect.y + m_buttonPadding / 2;
+	mainMenu.button_playGame.texty = mainMenu.button_playGame.rect.y + mainMenu.button_playGame.normalimg.h / 2 - mainMenu.button_playGame.font.fontheight / 2;
+	
+	mainMenu.button_options.rect.y = mainMenu.button_playGame.rect.y + mainMenu.button_playGame.rect.h + m_buttonPadding;
+	mainMenu.button_options.texty = mainMenu.button_options.rect.y + mainMenu.button_options.normalimg.h / 2 - mainMenu.button_options.font.fontheight / 2;
+	
+	mainMenu.button_about.rect.y = mainMenu.button_options.rect.y + mainMenu.button_options.rect.h + m_buttonPadding;
+	mainMenu.button_about.texty = mainMenu.button_about.rect.y + mainMenu.button_about.normalimg.h / 2 - mainMenu.button_about.font.fontheight / 2;
+	
+	mainMenu.button_quit.rect.y = mainMenu.button_about.rect.y + mainMenu.button_about.rect.h + m_buttonPadding;
+	mainMenu.button_quit.texty = mainMenu.button_quit.rect.y + mainMenu.button_quit.normalimg.h / 2 - mainMenu.button_quit.font.fontheight / 2;
+}
+
+
 void RenderingManager::m_DrawMainMenu ()
 {
 	
@@ -522,14 +549,16 @@ void RenderingManager::m_DrawMainMenu ()
 	
 	mainMenu.window.visible = 1;
 	kiss_window_draw (&mainMenu.window, m_renderer);
-	
+	kiss_label_draw (&mainMenu.label_version, m_renderer);
 	kiss_label_draw (&mainMenu.label_title, m_renderer);
 	kiss_label_draw (&mainMenu.label_subtitle, m_renderer);
+	
+	mainMenu.scroll_view.visible = 1;
+	kiss_window_draw (&mainMenu.scroll_view, m_renderer);
 	kiss_button_draw (&mainMenu.button_playGame, m_renderer);
 	kiss_button_draw (&mainMenu.button_options, m_renderer);
 	kiss_button_draw (&mainMenu.button_about, m_renderer);
 	kiss_button_draw (&mainMenu.button_quit, m_renderer);
-	kiss_label_draw (&mainMenu.label_version, m_renderer);
 }
 
 

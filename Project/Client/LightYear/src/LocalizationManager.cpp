@@ -32,10 +32,7 @@ int LocalizationManager::LoadApplicationText (const std::string fileLocation)
 				for (pugi::xml_attribute attr = langString.first_attribute (); attr; attr = attr.next_attribute ())
 				{
 					
-					
-					//std::cout << "Header: " << headerIndex << " ... Index: " << attr.as_int () << " ... String: " << langString.child_value () << std::endl;
 					m_PopulateApplicationLocalizationMap (headerIndex, attr.as_int (), langString.child_value ());
-					//std::cout << GetLocalizedApplicationText (headerIndex, attr.as_int ()) << std::endl;
 				}
 			}
 			
