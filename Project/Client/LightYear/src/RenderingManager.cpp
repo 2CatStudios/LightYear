@@ -237,8 +237,11 @@ int RenderingManager::m_CreateMainMenu ()
 		const int TOTAL_MENU_BUTTONS = 4;
 		const int SCROLLVIEW_WIDTH = (kiss_normal.w + m_buttonPadding);
 		const int SCROLLVIEW_HEIGHT = ((kiss_normal.h * TOTAL_MENU_BUTTONS) + m_buttonPadding * TOTAL_MENU_BUTTONS);
+		
+		mainMenu.scroll_view_starting_x = kiss_screen_width / 2 - SCROLLVIEW_WIDTH / 2;
 		mainMenu.scroll_view_starting_y = mainMenu.label_subtitle.rect.y + m_font_subtitle_size + m_buttonPadding;
-		kiss_window_new (&mainMenu.scroll_view, NULL, 0, 1, kiss_screen_width / 2 - SCROLLVIEW_WIDTH / 2, mainMenu.scroll_view_starting_y, SCROLLVIEW_WIDTH, SCROLLVIEW_HEIGHT);
+		
+		kiss_window_new (&mainMenu.scroll_view, NULL, 0, 0, mainMenu.scroll_view_starting_x, mainMenu.scroll_view_starting_y, SCROLLVIEW_WIDTH, SCROLLVIEW_HEIGHT);
 		mainMenu.scroll_view.bg = kiss_white;
 		kiss_array_append (&mainMenu.gui_objects, 4, &mainMenu.scroll_view);
 		

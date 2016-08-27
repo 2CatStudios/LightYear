@@ -55,8 +55,8 @@ void InputManager::m_MainMenuWindowInput (int &quit)
 {
 	
 	kiss_window_event ((kiss_window*) kiss_array_data (&renderingManager->mainMenu.gui_objects, 0), &m_event, &renderingManager->draw);
-	//kiss_window_event ((kiss_window*) kiss_array_data (&renderingManager->mainMenu.gui_objects, 4), &m_event, &renderingManager->draw);
-	//m_mainmenu_window_menu_event (&m_event, &renderingManager->draw);
+	kiss_window_event ((kiss_window*) kiss_array_data (&renderingManager->mainMenu.gui_objects, 4), &m_event, &renderingManager->draw);
+	m_mainmenu_window_menu_event (&m_event, &renderingManager->draw);
 	m_mainmenu_button_playGame_event ((kiss_button*) kiss_array_data (&renderingManager->mainMenu.gui_objects, 5), &m_event, &renderingManager->draw);
 	m_mainmenu_button_options_event ((kiss_button*) kiss_array_data (&renderingManager->mainMenu.gui_objects, 6), &m_event, &renderingManager->draw);
 	m_mainmenu_button_about_event ((kiss_button*) kiss_array_data (&renderingManager->mainMenu.gui_objects, 7), &m_event, &renderingManager->draw);
@@ -90,25 +90,80 @@ void InputManager::m_AboutWindowInput ()
 }
 
 
+/*
+Vector2 screenSize;
+Vector2 center;
+public float yRange;
+public Transform rectangle;
+public float maxDis;
+public float minDis;
+public float dis;
+public float offset;
+
+void Start () {
+	screenSize = new Vector2(Screen.width, Screen.height);
+	center = screenSize / 2;
+}
+
+void Update () {
+ 	
+	Vector2 mousePosV2 = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+	Vector2 dif = mousePosV2 - center;
+	dis = Mathf.Sqrt ( (Mathf.Abs (dif.x) * Mathf.Abs (dif.x)) + (Mathf.Abs(dif.y) * Mathf.Abs(dif.y)));
+ 	
+	if (dis < maxDis && dis > minDis)
+	{
+		Vector3 pos = Vector3.zero;
+		pos.y = offset - (yRange * (dis / maxDis));
+		rectangle.position = pos;
+	}
+}
+*/
+
+
 void InputManager::m_mainmenu_window_menu_event (SDL_Event *e, int *draw)
 {
 	
-	if (e->type == SDL_MOUSEMOTION)
+	if (e->type == SDL_DROPFILE)
 	{
 		
-		//INCORRECT! Only true when mouse is above starting position.
-		/*if (e->motion.y - renderingManager->mainMenu.scroll_view_starting_y < 0 )
+		char *dropped_filedir = e->drop.file;
+		
+		std::cout << *dropped_filedir << std::endl;
+		SDL_free(dropped_filedir);
+	}
+	
+	/*if (e->type == SDL_MOUSEMOTION)
+	{
+		
+		int distance = sqrt (pow (std::abs (e->motion.x - renderingManager->mainMenu.scroll_view_starting_x), 2) + pow (std::abs (e->motion.y - renderingManager->mainMenu.scroll_view_starting_y), 2));
+		
+		if (distance < 200)
 		{
 			
-			std::cout << "mouse y - starting y < 0" << std::endl;
+			std::cout << "in rect" << std::endl;
+		} else {
 			
-			//int new_position = sqrt (() + ());
+			std::cout << "not" << std::endl;
+		}
+		
+		
+		int max_distance = 600;// renderingManager->mainMenu.scroll_view.rect.h;
+		
+		if (distance < max_distance)
+		{
 			
-			//renderingManager->mainMenu.scroll_view.rect.y = new_position;
-			//renderingManager->CalculateMainMenuPositionsY ();
+			float offset = 0.1;
+			float y_range = 2.75; //kiss_screen_height / 2 + renderingManager->mainMenu.scroll_view.rect.h;
+			
+			float new_position = offset - (y_range * (distance / max_distance));
+			
+			renderingManager->mainMenu.scroll_view.rect.y = new_position;
+			renderingManager->CalculateMainMenuPositionsY ();
 			*draw = 1;
-		}*/
-	}
+		}
+		
+	}*/
 }
 
 

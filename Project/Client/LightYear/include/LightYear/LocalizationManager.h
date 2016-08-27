@@ -13,8 +13,17 @@ class LocalizationManager
 {
 	
 public:
-	int LoadApplicationText (const std::string fileLocation);
+	int LoadApplicationText (const std::string fileLocation, const std::string language);
 	std::string GetLocalizedApplicationText (unsigned int menu, unsigned int index);
+	
+	enum LocalizationMeta {
+		M_LANGUAGE = 0,
+		M_TRANSLATOR = 1,
+		M_TRANSLATOR_CONTACT = 2,
+		M_TRANSLATION_VERSION = 3,
+		M_ENGINE_VERSION = 4,
+		M_COMPLETE = 5
+	};
 	
 	enum LocalizationGeneral {
 		G_LIGHTYEAR = 0,

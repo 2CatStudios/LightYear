@@ -47,6 +47,7 @@ typedef struct menu_main : Menu
 	kiss_button button_about;
 	kiss_button button_quit;
 	
+	float scroll_view_starting_x;
 	float scroll_view_starting_y;
 
 } menu_main;

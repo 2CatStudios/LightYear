@@ -5,6 +5,7 @@
 #include "RenderingManager.h"
 
 #include <iostream>
+#include <cmath>
 
 
 class InputManager

@@ -1,14 +1,14 @@
 #include "LocalizationManager.h"
 
 
-int LocalizationManager::LoadApplicationText (const std::string fileLocation)
+int LocalizationManager::LoadApplicationText (const std::string fileLocation, const std::string language)
 {
 
 	XMLManager xml;
 	pugi::xml_document doc;
 	
 	//TODO: Get desired language name, check for existance, use or default to english.
-	std::string filePath = fileLocation + "english-us.localized";
+	std::string filePath = fileLocation + language + ".localized";
 	
 	if (xml.ReadFromFileToDoc (filePath, doc) == 0)
 	{

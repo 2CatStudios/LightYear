@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Localization>
+	<Meta>
+		<language index="0">Dutch-NL</language>
+		<translator index="1">Jan Heemstra</translator>
+		<translatorContact index="2">heemstrajan@gmail.com</translatorContact>
+		<translationVersion index="3">0.4</translationVersion>
+		<engineVersion index="4">0.0.4d</engineVersion>
+		<complete index="5">false</complete>
+	</Meta>
+	
+	<General>
+		<string index="0">LightYear</string>
+		<string index="1">Een hybride IF (Interactieve Fictie) engine, lichtjaren voor zijn tijd.</string>
+		<string index="2">versie</string>
+		<string index="3">2Cat Studios</string>
+		<string index="4">Terug</string>
+	</General>
+	
+	<Windows>
+		<MainMenu>
+			<string index="0">Speel</string>
+			<string index="1">Opties</string>
+			<string index="2">Auteurs</string>
+			<string index="3">Afsluiten</string>
+		</MainMenu>
+		
+		<Options>
+			<string index="0">Opties</string>
+		</Options>
+		
+		<About>
+			<string index="0">Auteurs</string>
+			<string index="1">De LightYear Interactieve Fictie engine</string>
+			<string index="2">is met liefde gemaakt door</string>
+			<string index="3">2Cat Studios</string>
+			<string index="4">Michael Bethke - Lead Developer</string>
+			<string index="5">Jan Heemstra - Feedback and Support</string>
+			<string index="6">met dank aan</string>
+			<string index="7">"Bleikur" - Design and Feedback</string>
+			<string index="8">Tarvo Korrovits - KISS_SDL ondersteuning</string>
+		</About>
+	</Windows>
+</Localization>

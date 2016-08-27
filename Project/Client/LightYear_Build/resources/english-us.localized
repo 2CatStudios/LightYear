@@ -4,7 +4,9 @@
 		<language index="0">English-US</language>
 		<translator index="1">Michael Bethke</translator>
 		<translatorContact index="2">gibsonbethke@gmail.com</translatorContact>
-		<complete index="3">false</complete>
+		<translationVersion index="3">0.4</translationVersion>
+		<engineVersion index="4">0.0.4d</engineVersion>
+		<complete index="5">false</complete>
 	</Meta>
 	
 	<General>
