@@ -1,6 +1,8 @@
 #include "InputManager.h"
 
 
+//[TD.1](for events, casting from array: ) TODO: Maybe "ask" for array (in receiving function, create menu if non-existant)
+
 int InputManager::GetInput (int &quit)
 {
 	
@@ -48,9 +50,6 @@ int InputManager::GetInput (int &quit)
 }
 
 
-//[TD.1](for events, casting from array: ) TODO: Maybe "ask" for array (in receiving function, create menu if non-existant)
-
-
 void InputManager::m_MainMenuWindowInput (int &quit)
 {
 	
@@ -91,37 +90,9 @@ void InputManager::m_AboutWindowInput ()
 }
 
 
-/*
-Vector2 screenSize;
-Vector2 center;
-public float yRange;
-public Transform rectangle;
-public float maxDis;
-public float minDis;
-public float dis;
-public float offset;
-
-void Start () {
-	screenSize = new Vector2(Screen.width, Screen.height);
-	center = screenSize / 2;
-}
-
-void Update () {
- 	
-	Vector2 mousePosV2 = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
-	Vector2 dif = mousePosV2 - center;
-	dis = Mathf.Sqrt ( (Mathf.Abs (dif.x) * Mathf.Abs (dif.x)) + (Mathf.Abs(dif.y) * Mathf.Abs(dif.y)));
- 	
-	if (dis < maxDis && dis > minDis)
-	{
-		Vector3 pos = Vector3.zero;
-		pos.y = offset - (yRange * (dis / maxDis));
-		rectangle.position = pos;
-	}
-}
-*/
 
 /*MAIN MENU*/
+
 void InputManager::m_mainmenu_window_menu_event (SDL_Event *e, int *draw)
 {
 	
@@ -203,7 +174,9 @@ void InputManager::m_mainmenu_button_quit_event (kiss_button *button, SDL_Event 
 }
 
 
+
 /*SELECT GAME MENU*/
+
 void InputManager::m_selectgamemenu_window_menu_event (SDL_Event *e, int *draw)
 {
 	
@@ -228,7 +201,9 @@ void InputManager::m_selectgamemenu_button_back_event (kiss_button *button, SDL_
 }
 
 
+
 /*OPTIONS MENU*/
+
 void InputManager::m_optionsmenu_button_back_event (kiss_button *button, SDL_Event *e, int *draw)
 {
 	
@@ -240,7 +215,9 @@ void InputManager::m_optionsmenu_button_back_event (kiss_button *button, SDL_Eve
 }
 
 
+
 /*ABOUT MENU*/
+
 void InputManager::m_aboutmenu_button_back_event (kiss_button *button, SDL_Event *e, int *draw)
 {
 	
