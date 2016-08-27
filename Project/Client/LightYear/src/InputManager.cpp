@@ -67,8 +67,9 @@ void InputManager::m_MainMenuWindowInput (int &quit)
 void InputManager::m_SelectGameWindowInput ()
 {
 	
-	kiss_window_event ((kiss_window*) kiss_array_data (&renderingManager->selectgameMenu.gui_objects, 0), &m_event, &renderingManager->draw);
-	m_optionsmenu_button_back_event ((kiss_button*) kiss_array_data (&renderingManager->selectgameMenu.gui_objects, 1), &m_event, &renderingManager->draw);
+	//kiss_window_event ((kiss_window*) kiss_array_data (&renderingManager->selectgameMenu.gui_objects, 0), &m_event, &renderingManager->draw);
+	m_selectgamemenu_window_menu_event (&m_event, &renderingManager->draw);
+	m_selectgamemenu_button_back_event ((kiss_button*) kiss_array_data (&renderingManager->selectgameMenu.gui_objects, 1), &m_event, &renderingManager->draw);
 }
 
 
@@ -120,18 +121,9 @@ void Update () {
 }
 */
 
-
+/*MAIN MENU*/
 void InputManager::m_mainmenu_window_menu_event (SDL_Event *e, int *draw)
 {
-	
-	if (e->type == SDL_DROPFILE)
-	{
-		
-		char *dropped_filedir = e->drop.file;
-		
-		std::cout << "Dropped " << *dropped_filedir << std::endl;
-		SDL_free(dropped_filedir);
-	}
 	
 	/*if (e->type == SDL_MOUSEMOTION)
 	{
@@ -211,6 +203,32 @@ void InputManager::m_mainmenu_button_quit_event (kiss_button *button, SDL_Event 
 }
 
 
+/*SELECT GAME MENU*/
+void InputManager::m_selectgamemenu_window_menu_event (SDL_Event *e, int *draw)
+{
+	
+	if (e->type == SDL_DROPFILE)
+	{
+		
+		m_dropped_file_directory = e->drop.file;
+		
+		std::cout << "Dropped " << m_dropped_file_directory << std::endl;
+		SDL_free (m_dropped_file_directory);
+	}
+}
+
+void InputManager::m_selectgamemenu_button_back_event (kiss_button *button, SDL_Event *e, int *draw)
+{
+	
+	if (kiss_button_event (button, e, draw))
+	{
+		
+		renderingManager->menuState = RenderingManager::MAINMENU;
+	}
+}
+
+
+/*OPTIONS MENU*/
 void InputManager::m_optionsmenu_button_back_event (kiss_button *button, SDL_Event *e, int *draw)
 {
 	
@@ -222,6 +240,7 @@ void InputManager::m_optionsmenu_button_back_event (kiss_button *button, SDL_Eve
 }
 
 
+/*ABOUT MENU*/
 void InputManager::m_aboutmenu_button_back_event (kiss_button *button, SDL_Event *e, int *draw)
 {
 	

@@ -17,6 +17,7 @@ public:
 	
 private:
 	SDL_Event m_event;
+	char *m_dropped_file_directory;
 	
 	void m_MainMenuWindowInput (int &quit);
 	void m_SelectGameWindowInput ();
@@ -29,7 +30,8 @@ private:
 	void m_mainmenu_button_about_event (kiss_button *button, SDL_Event *e, int *draw);
 	void m_mainmenu_button_quit_event (kiss_button *button, SDL_Event *e, int *quit, int *draw);
 	
-	void m_selectgamemenu_button_back_evenet (kiss_button *button, SDL_Event *e, int *draw);
+	void m_selectgamemenu_window_menu_event (SDL_Event *e, int *draw);
+	void m_selectgamemenu_button_back_event (kiss_button *button, SDL_Event *e, int *draw);
 	
 	void m_optionsmenu_button_back_event (kiss_button *button, SDL_Event *e, int *draw);
 	
