@@ -129,7 +129,7 @@ void InputManager::m_mainmenu_window_menu_event (SDL_Event *e, int *draw)
 		
 		char *dropped_filedir = e->drop.file;
 		
-		std::cout << *dropped_filedir << std::endl;
+		std::cout << "Dropped " << *dropped_filedir << std::endl;
 		SDL_free(dropped_filedir);
 	}
 	
