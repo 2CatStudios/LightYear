@@ -2,8 +2,8 @@
 #define RENDERINGMANAGER_H
 
 #include <iostream>
-
 #include <string>
+
 #include "kiss_sdl.h"
 #include "LocalizationManager.h"
 
@@ -17,20 +17,36 @@
 #define NO 0
 
 
+/*Static Global Variables*/
+static const char VERSION[7] = {"0.0.4d"};
+
+static SDL_Color lightYear_black = {25, 33, 39, 255};
+
+static int button_padding = 12;
+static int label_padding = 15;
+
+static kiss_font font_title, font_subtitle;
+static int font_title_size = 168;
+static int font_subtitle_size = 36;
+static kiss_image background, globe_slice, horizontal_bar;
+/*-----------------------*/
+
+
 class Menu
 {
 
 public:
 	bool created = false;
 	
-	kiss_array gui_objects;
+	kiss_array *get_gui_objects_array ();
 	kiss_window window;
 	
-	//enum MenuItems: unsigned int;
+	virtual void Create (LocalizationManager &localizationManager, int &draw);
 	
-private: 
+private:
+	kiss_array m_gui_objects;
+	
 	void m_hideMenu ();
-
 };
 
 
@@ -49,6 +65,8 @@ typedef struct menu_main : Menu
 	
 	float scroll_view_starting_x;
 	float scroll_view_starting_y;
+	
+	void Create (LocalizationManager &localizationManager, int &draw);
 
 } menu_main;
 
@@ -59,6 +77,8 @@ typedef struct menu_selectgame : Menu
 	kiss_button button_back;
 	
 	kiss_label label_title;
+	
+	void Create (LocalizationManager &localizationManager, int &draw);
 
 } menu_selectgame;
 
@@ -69,6 +89,8 @@ typedef struct menu_options : Menu
 	kiss_button button_back;
 	
 	kiss_label label_title;
+	
+	void Create (LocalizationManager &localizationManager, int &draw);
 
 } menu_options;
 
@@ -92,6 +114,8 @@ typedef struct menu_about : Menu
 	kiss_label label_thanksto;
 	kiss_label label_supporters_bleikur;
 	kiss_label label_supporters_tarvok;
+	
+	void Create (LocalizationManager &localizationManager, int &draw);
 
 } menu_about;
 
@@ -100,8 +124,6 @@ class RenderingManager
 {
 
 public:
-	const char VERSION[7] = {"0.0.4d"};
-	
 	LocalizationManager *localizationManager;
 	
 	kiss_array objects;
@@ -136,16 +158,12 @@ private:
 	std::string m_resourcesPath;
 	std::string m_preferencesPath;
 	
-	unsigned int m_retinaDisplay = -1;
+	int m_retinaDisplay = -1;
+	float m_dpi_difference = -1;
 	
 	int m_AddExternalAssets (kiss_array *a);
 	
 	std::string m_appendAssetWithAt2X (const std::string original);
-	
-	int m_CreateMainMenu ();
-	int m_CreateSelectGameMenu ();
-	int m_CreateOptionsMenu ();
-	int m_CreateAboutMenu ();
 	
 	void m_DrawMainMenu ();
 	void m_DrawSelectGameMenu ();
@@ -171,18 +189,7 @@ private:
 		EA_BUTTON_ACTIVE = 14
 	};
 	
-	
-	int m_buttonPadding = 12;
-	int m_labelPadding = 15;
-	
-	kiss_font m_font_title, m_font_subtitle;
-	int m_font_title_size = 168;
-	int m_font_subtitle_size = 36;
-	kiss_image m_background, m_globe_slice, m_horizontal_bar;
-	
 	int m_globe_slice_y_position = 0;
-	
-	SDL_Color lightYear_black = {25, 33, 39, 255};
 };
 
 #endif /* end of include guard: RENDERINGMANAGER_H */

@@ -152,20 +152,27 @@ int kiss_font_new(kiss_font *font, char *fname, kiss_array *a, int size)
 {
 	char buf[KISS_MAX_LENGTH];
 
-	if (!font || !fname) return -1;
+	if (!font || !fname)
+		return -1;
+	
 	kiss_string_copy(buf, KISS_MAX_LENGTH, RESDIR, fname);
-	if (!(font->font = TTF_OpenFont(buf, size))) {
+	if (!(font->font = TTF_OpenFont(buf, size)))
+	{
+		
 		fprintf(stderr, "Cannot load font %s\n", fname);
 		return -1;
 	}
-	if (a) kiss_array_append(a, FONT_TYPE, font->font);
+	
+	if (a)
+		kiss_array_append(a, FONT_TYPE, font->font);
+	
 	font->fontheight = TTF_FontHeight(font->font);
 	font->spacing = (int) kiss_spacing * font->fontheight;
 	font->lineheight = font->fontheight + font->spacing;
 	font->ascent = TTF_FontAscent(font->font);
-	TTF_GlyphMetrics(font->font, 'W', NULL, NULL, NULL, NULL,
-		&(font->advance));
+	TTF_GlyphMetrics(font->font, 'W', NULL, NULL, NULL, NULL, &(font->advance));
 	font->magic = KISS_MAGIC;
+	
 	return 0;
 }
 

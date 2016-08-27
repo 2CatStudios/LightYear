@@ -38,6 +38,8 @@ private:
 	void m_aboutmenu_button_back_event (kiss_button *button, SDL_Event *e, int *draw);
 	void m_aboutmenu_window_event (kiss_vscrollbar *vscrollbar, SDL_Event *e, int *draw);
 	void m_aboutmenu_vscrollbar_event (kiss_vscrollbar *vscrollbar, SDL_Event *e, int *draw);
+	
+	int m_mainmenu_scroll_y = 0;
 };
 
 

@@ -1,8 +1,6 @@
 #include "InputManager.h"
 
 
-//[TD.1](for events, casting from array: ) TODO: Maybe "ask" for array (in receiving function, create menu if non-existant)
-
 int InputManager::GetInput (int &quit)
 {
 	
@@ -27,18 +25,15 @@ int InputManager::GetInput (int &quit)
 				break;
 		
 			case RenderingManager::SELECTGAME:
-				if (renderingManager->selectgameMenu.created == true) //TODO: See TD.1
-					m_SelectGameWindowInput ();
+				m_SelectGameWindowInput ();
 				break;
 		
 			case RenderingManager::OPTIONS:
-				if (renderingManager->optionsMenu.created == true) //TODO: See TD.1
-					m_OptionsWindowInput ();
+				m_OptionsWindowInput ();
 				break;
 		
 			case RenderingManager::ABOUT:
-				if (renderingManager->aboutMenu.created == true) //TODO: See TD.1
-					m_AboutWindowInput ();
+				m_AboutWindowInput ();
 				break;
 		
 			default:
@@ -53,13 +48,13 @@ int InputManager::GetInput (int &quit)
 void InputManager::m_MainMenuWindowInput (int &quit)
 {
 	
-	kiss_window_event ((kiss_window*) kiss_array_data (&renderingManager->mainMenu.gui_objects, 0), &m_event, &renderingManager->draw);
-	kiss_window_event ((kiss_window*) kiss_array_data (&renderingManager->mainMenu.gui_objects, 4), &m_event, &renderingManager->draw);
+	kiss_window_event ((kiss_window*) kiss_array_data (renderingManager->mainMenu.get_gui_objects_array (), 0), &m_event, &renderingManager->draw);
+	kiss_window_event ((kiss_window*) kiss_array_data (renderingManager->mainMenu.get_gui_objects_array (), 4), &m_event, &renderingManager->draw);
 	m_mainmenu_window_menu_event (&m_event, &renderingManager->draw);
-	m_mainmenu_button_playGame_event ((kiss_button*) kiss_array_data (&renderingManager->mainMenu.gui_objects, 5), &m_event, &renderingManager->draw);
-	m_mainmenu_button_options_event ((kiss_button*) kiss_array_data (&renderingManager->mainMenu.gui_objects, 6), &m_event, &renderingManager->draw);
-	m_mainmenu_button_about_event ((kiss_button*) kiss_array_data (&renderingManager->mainMenu.gui_objects, 7), &m_event, &renderingManager->draw);
-	m_mainmenu_button_quit_event ((kiss_button*) kiss_array_data (&renderingManager->mainMenu.gui_objects, 8), &m_event, &quit, &renderingManager->draw);
+	m_mainmenu_button_playGame_event ((kiss_button*) kiss_array_data (renderingManager->mainMenu.get_gui_objects_array (), 5), &m_event, &renderingManager->draw);
+	m_mainmenu_button_options_event ((kiss_button*) kiss_array_data (renderingManager->mainMenu.get_gui_objects_array (), 6), &m_event, &renderingManager->draw);
+	m_mainmenu_button_about_event ((kiss_button*) kiss_array_data (renderingManager->mainMenu.get_gui_objects_array (), 7), &m_event, &renderingManager->draw);
+	m_mainmenu_button_quit_event ((kiss_button*) kiss_array_data (renderingManager->mainMenu.get_gui_objects_array (), 8), &m_event, &quit, &renderingManager->draw);
 }
 
 
@@ -68,25 +63,25 @@ void InputManager::m_SelectGameWindowInput ()
 	
 	//kiss_window_event ((kiss_window*) kiss_array_data (&renderingManager->selectgameMenu.gui_objects, 0), &m_event, &renderingManager->draw);
 	m_selectgamemenu_window_menu_event (&m_event, &renderingManager->draw);
-	m_selectgamemenu_button_back_event ((kiss_button*) kiss_array_data (&renderingManager->selectgameMenu.gui_objects, 1), &m_event, &renderingManager->draw);
+	m_selectgamemenu_button_back_event ((kiss_button*) kiss_array_data (renderingManager->selectgameMenu.get_gui_objects_array (), 1), &m_event, &renderingManager->draw);
 }
 
 
 void InputManager::m_OptionsWindowInput ()
 {
 	
-	kiss_window_event ((kiss_window*) kiss_array_data (&renderingManager->optionsMenu.gui_objects, 0), &m_event, &renderingManager->draw);
-	m_optionsmenu_button_back_event ((kiss_button*) kiss_array_data (&renderingManager->optionsMenu.gui_objects, 1), &m_event, &renderingManager->draw);
+	kiss_window_event ((kiss_window*) kiss_array_data (renderingManager->optionsMenu.get_gui_objects_array (), 0), &m_event, &renderingManager->draw);
+	m_optionsmenu_button_back_event ((kiss_button*) kiss_array_data (renderingManager->optionsMenu.get_gui_objects_array (), 1), &m_event, &renderingManager->draw);
 }
 
 
 void InputManager::m_AboutWindowInput ()
 {
 	
-	kiss_window_event ((kiss_window*) kiss_array_data (&renderingManager->aboutMenu.gui_objects, 0), &m_event, &renderingManager->draw);
-	m_aboutmenu_button_back_event ((kiss_button*) kiss_array_data (&renderingManager->aboutMenu.gui_objects, 1), &m_event, &renderingManager->draw);
-	m_aboutmenu_vscrollbar_event ((kiss_vscrollbar*) kiss_array_data (&renderingManager->aboutMenu.gui_objects, 3), &m_event, &renderingManager->draw);
-	m_aboutmenu_window_event ((kiss_vscrollbar*) kiss_array_data (&renderingManager->aboutMenu.gui_objects, 3), &m_event, &renderingManager->draw);
+	kiss_window_event ((kiss_window*) kiss_array_data (renderingManager->aboutMenu.get_gui_objects_array (), 0), &m_event, &renderingManager->draw);
+	m_aboutmenu_button_back_event ((kiss_button*) kiss_array_data (renderingManager->aboutMenu.get_gui_objects_array (), 1), &m_event, &renderingManager->draw);
+	m_aboutmenu_vscrollbar_event ((kiss_vscrollbar*) kiss_array_data (renderingManager->aboutMenu.get_gui_objects_array (), 3), &m_event, &renderingManager->draw);
+	m_aboutmenu_window_event ((kiss_vscrollbar*) kiss_array_data (renderingManager->aboutMenu.get_gui_objects_array (), 3), &m_event, &renderingManager->draw);
 }
 
 
@@ -96,37 +91,15 @@ void InputManager::m_AboutWindowInput ()
 void InputManager::m_mainmenu_window_menu_event (SDL_Event *e, int *draw)
 {
 	
-	/*if (e->type == SDL_MOUSEMOTION)
+	if (e->type == SDL_MOUSEMOTION)
 	{
 		
-		int distance = sqrt (pow (std::abs (e->motion.x - renderingManager->mainMenu.scroll_view_starting_x), 2) + pow (std::abs (e->motion.y - renderingManager->mainMenu.scroll_view_starting_y), 2));
+		m_mainmenu_scroll_y = renderingManager->mainMenu.scroll_view_starting_y - (e->motion.y * 0.1);
 		
-		if (distance < 200)
-		{
-			
-			std::cout << "in rect" << std::endl;
-		} else {
-			
-			std::cout << "not" << std::endl;
-		}
-		
-		
-		int max_distance = 600;// renderingManager->mainMenu.scroll_view.rect.h;
-		
-		if (distance < max_distance)
-		{
-			
-			float offset = 0.1;
-			float y_range = 2.75; //kiss_screen_height / 2 + renderingManager->mainMenu.scroll_view.rect.h;
-			
-			float new_position = offset - (y_range * (distance / max_distance));
-			
-			renderingManager->mainMenu.scroll_view.rect.y = new_position;
-			renderingManager->CalculateMainMenuPositionsY ();
-			*draw = 1;
-		}
-		
-	}*/
+		renderingManager->mainMenu.scroll_view.rect.y = m_mainmenu_scroll_y;
+		renderingManager->CalculateMainMenuPositionsY ();
+		*draw = 1;
+	}
 }
 
 
