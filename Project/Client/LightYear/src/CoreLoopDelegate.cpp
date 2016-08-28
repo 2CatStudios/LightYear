@@ -4,10 +4,8 @@
 int CoreLoopDelegate::Run ()
 {
 	
-	//SDL_EventState(SDL_DROPFILE, SDL_ENABLE);
 	
-	
-	/*										Currently available translations:	english-us	or	dutch-nl	*/
+	/*									Currently available translations:	english-us	or	dutch-nl	*/
 	if (localizationManager.LoadApplicationText (renderingManager.GetResourcesPath (), "english-us") != 0)
 		return 1;
 	
@@ -25,15 +23,6 @@ int CoreLoopDelegate::Run ()
 		return 1;
 	
 	return 0;
-}
-
-
-void CoreLoopDelegate::m_DebugSDL2Paths ()
-{
-	
-	std::cout << std::endl << "GetApplicationPath () : " << renderingManager.GetApplicationPath () << std::endl;
-	std::cout << std::endl << "GetResourcesPath () : " << renderingManager.GetResourcesPath () << std::endl;
-	std::cout << std::endl << "GetPreferencesPath () : " << renderingManager.GetPreferencesPath () << std::endl;
 }
 
 

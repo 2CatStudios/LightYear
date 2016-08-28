@@ -4,17 +4,9 @@
 #include <iostream>
 #include <string>
 
+#include "Global.h"
 #include "kiss_sdl.h"
 #include "LocalizationManager.h"
-
-#if defined (WIN32) || defined (_WIN32)
-#define PATH_SEPARATOR '\\'
-#else
-#define PATH_SEPARATOR '/'
-#endif
-
-#define YES 1
-#define NO 0
 
 
 class RenderingManager;
