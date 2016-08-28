@@ -27,7 +27,7 @@
 kiss_font kiss_textfont, kiss_buttonfont;
 kiss_image kiss_normal, kiss_prelight, kiss_active, kiss_bar, kiss_up, kiss_down, kiss_left, kiss_right, kiss_vslider, kiss_hslider, kiss_selected, kiss_unselected, kiss_combo;
 int kiss_screen_width, kiss_screen_height;
-int kiss_screen_scale_factor;
+int kiss_screen_scalefactor;
 int kiss_textfont_size = 18;
 int kiss_buttonfont_size = 28;
 int kiss_click_interval = 140;
@@ -152,20 +152,27 @@ int kiss_font_new(kiss_font *font, char *fname, kiss_array *a, int size)
 {
 	char buf[KISS_MAX_LENGTH];
 
-	if (!font || !fname) return -1;
+	if (!font || !fname)
+		return -1;
+	
 	kiss_string_copy(buf, KISS_MAX_LENGTH, RESDIR, fname);
-	if (!(font->font = TTF_OpenFont(buf, size))) {
+	if (!(font->font = TTF_OpenFont(buf, size)))
+	{
+		
 		fprintf(stderr, "Cannot load font %s\n", fname);
 		return -1;
 	}
-	if (a) kiss_array_append(a, FONT_TYPE, font->font);
+	
+	if (a)
+		kiss_array_append(a, FONT_TYPE, font->font);
+	
 	font->fontheight = TTF_FontHeight(font->font);
 	font->spacing = (int) kiss_spacing * font->fontheight;
 	font->lineheight = font->fontheight + font->spacing;
 	font->ascent = TTF_FontAscent(font->font);
-	TTF_GlyphMetrics(font->font, 'W', NULL, NULL, NULL, NULL,
-		&(font->advance));
+	TTF_GlyphMetrics(font->font, 'W', NULL, NULL, NULL, NULL, &(font->advance));
 	font->magic = KISS_MAGIC;
+	
 	return 0;
 }
 
@@ -198,7 +205,7 @@ SDL_Renderer* kiss_init(const char* title, kiss_array *a, int w, int h)
 		
 		kiss_array_append(a, WINDOW_TYPE, window);
 		SDL_GL_GetDrawableSize (window, &kiss_screen_width, &kiss_screen_height);
-		kiss_screen_scale_factor = kiss_screen_width / w;
+		kiss_screen_scalefactor = kiss_screen_width / w;
 	}
 	
 	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);

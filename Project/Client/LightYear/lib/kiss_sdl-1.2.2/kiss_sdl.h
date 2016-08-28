@@ -56,7 +56,6 @@
 #define KISS_MAX_LABEL 500
 #define KISS_MAGIC 12345
 
-/*		0				1			2				3			4			5				6			7	*/
 enum {OTHER_TYPE, WINDOW_TYPE, RENDERER_TYPE, TEXTURE_TYPE, SURFACE_TYPE, FONT_TYPE, STRING_TYPE, ARRAY_TYPE};
 
 #ifdef _MSC_VER
@@ -267,7 +266,7 @@ extern int kiss_click_interval, kiss_progress_interval;
 extern int kiss_slider_padding;
 extern int kiss_border, kiss_edge;
 extern int kiss_screen_width, kiss_screen_height;
-extern int kiss_screen_scale_factor;
+extern int kiss_screen_scalefactor;
 
 #ifdef __cplusplus
 extern "C" {

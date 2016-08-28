@@ -98,7 +98,7 @@ Main Points: Standardized systems, lower-level functions automatically taken car
 
 ###d. Technical Details
 ---
-Main Points: Core written in C++, window in native style (macOS, Windows, Linux). API in C++. Git repo location (pro tip: you're already there), contributions welcome (get in touch before you submit a pull request). Roadmap/Trello board.
+Main Points: Core written in C++, OS-level window in native style (macOS, Windows, Linux). API in C++. Git repo location (pro tip: you're already there), contributions welcome (get in touch before you submit a pull request).
 
 [Return to Top](#0-table-of-contents)
 #5. LightYear Roadmap
@@ -107,6 +107,6 @@ Main Points: Core written in C++, window in native style (macOS, Windows, Linux)
 We're officially in-development, functional preview builds will be distributed every once-in-a-while for feedback and testing.
 
 ###b. Tracking Resources
-Follow the Trello board (link) for all updates, the official page (link) for important updates, and our News+Blog (link) for significant updates only.
+Follow the [Trello board](https://trello.com/b/sbkunaPH) for all updates, the official page (link) for important updates, and our [News+Blog](https://2catstudios.github.io/news+blog.html) for significant updates only.
 
 [Return to Top](#0-table-of-contents)

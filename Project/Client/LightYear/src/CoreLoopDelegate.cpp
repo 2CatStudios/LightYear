@@ -4,7 +4,11 @@
 int CoreLoopDelegate::Run ()
 {
 	
-	if (localizationManager.LoadApplicationText (renderingManager.GetResourcesPath ()) != 0)
+	//SDL_EventState(SDL_DROPFILE, SDL_ENABLE);
+	
+	
+	/*										Currently available translations:	english-us	or	dutch-nl	*/
+	if (localizationManager.LoadApplicationText (renderingManager.GetResourcesPath (), "english-us") != 0)
 		return 1;
 	
 	renderingManager.localizationManager = &localizationManager;
