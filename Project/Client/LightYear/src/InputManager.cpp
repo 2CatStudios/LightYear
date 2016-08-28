@@ -48,13 +48,13 @@ int InputManager::GetInput (int &quit)
 void InputManager::m_MainMenuWindowInput (int &quit)
 {
 	
-	kiss_window_event ((kiss_window*) kiss_array_data (renderingManager->mainMenu.get_gui_objects_array (), 0), &m_event, &renderingManager->draw);
-	kiss_window_event ((kiss_window*) kiss_array_data (renderingManager->mainMenu.get_gui_objects_array (), 4), &m_event, &renderingManager->draw);
+	kiss_window_event ((kiss_window*) kiss_array_data (renderingManager->mainMenu.gui_objects_array (), 0), &m_event, &renderingManager->draw);
+	kiss_window_event ((kiss_window*) kiss_array_data (renderingManager->mainMenu.gui_objects_array (), 4), &m_event, &renderingManager->draw);
 	m_mainmenu_window_menu_event (&m_event, &renderingManager->draw);
-	m_mainmenu_button_playGame_event ((kiss_button*) kiss_array_data (renderingManager->mainMenu.get_gui_objects_array (), 5), &m_event, &renderingManager->draw);
-	m_mainmenu_button_options_event ((kiss_button*) kiss_array_data (renderingManager->mainMenu.get_gui_objects_array (), 6), &m_event, &renderingManager->draw);
-	m_mainmenu_button_about_event ((kiss_button*) kiss_array_data (renderingManager->mainMenu.get_gui_objects_array (), 7), &m_event, &renderingManager->draw);
-	m_mainmenu_button_quit_event ((kiss_button*) kiss_array_data (renderingManager->mainMenu.get_gui_objects_array (), 8), &m_event, &quit, &renderingManager->draw);
+	m_mainmenu_button_playGame_event ((kiss_button*) kiss_array_data (renderingManager->mainMenu.gui_objects_array (), 5), &m_event, &renderingManager->draw);
+	m_mainmenu_button_options_event ((kiss_button*) kiss_array_data (renderingManager->mainMenu.gui_objects_array (), 6), &m_event, &renderingManager->draw);
+	m_mainmenu_button_about_event ((kiss_button*) kiss_array_data (renderingManager->mainMenu.gui_objects_array (), 7), &m_event, &renderingManager->draw);
+	m_mainmenu_button_quit_event ((kiss_button*) kiss_array_data (renderingManager->mainMenu.gui_objects_array (), 8), &m_event, &quit, &renderingManager->draw);
 }
 
 
@@ -63,25 +63,25 @@ void InputManager::m_SelectGameWindowInput ()
 	
 	//kiss_window_event ((kiss_window*) kiss_array_data (&renderingManager->selectgameMenu.gui_objects, 0), &m_event, &renderingManager->draw);
 	m_selectgamemenu_window_menu_event (&m_event, &renderingManager->draw);
-	m_selectgamemenu_button_back_event ((kiss_button*) kiss_array_data (renderingManager->selectgameMenu.get_gui_objects_array (), 1), &m_event, &renderingManager->draw);
+	m_selectgamemenu_button_back_event ((kiss_button*) kiss_array_data (renderingManager->selectgameMenu.gui_objects_array (), 1), &m_event, &renderingManager->draw);
 }
 
 
 void InputManager::m_OptionsWindowInput ()
 {
 	
-	kiss_window_event ((kiss_window*) kiss_array_data (renderingManager->optionsMenu.get_gui_objects_array (), 0), &m_event, &renderingManager->draw);
-	m_optionsmenu_button_back_event ((kiss_button*) kiss_array_data (renderingManager->optionsMenu.get_gui_objects_array (), 1), &m_event, &renderingManager->draw);
+	kiss_window_event ((kiss_window*) kiss_array_data (renderingManager->optionsMenu.gui_objects_array (), 0), &m_event, &renderingManager->draw);
+	m_optionsmenu_button_back_event ((kiss_button*) kiss_array_data (renderingManager->optionsMenu.gui_objects_array (), 1), &m_event, &renderingManager->draw);
 }
 
 
 void InputManager::m_AboutWindowInput ()
 {
 	
-	kiss_window_event ((kiss_window*) kiss_array_data (renderingManager->aboutMenu.get_gui_objects_array (), 0), &m_event, &renderingManager->draw);
-	m_aboutmenu_button_back_event ((kiss_button*) kiss_array_data (renderingManager->aboutMenu.get_gui_objects_array (), 1), &m_event, &renderingManager->draw);
-	m_aboutmenu_vscrollbar_event ((kiss_vscrollbar*) kiss_array_data (renderingManager->aboutMenu.get_gui_objects_array (), 3), &m_event, &renderingManager->draw);
-	m_aboutmenu_window_event ((kiss_vscrollbar*) kiss_array_data (renderingManager->aboutMenu.get_gui_objects_array (), 3), &m_event, &renderingManager->draw);
+	kiss_window_event ((kiss_window*) kiss_array_data (renderingManager->aboutMenu.gui_objects_array (), 0), &m_event, &renderingManager->draw);
+	m_aboutmenu_button_back_event ((kiss_button*) kiss_array_data (renderingManager->aboutMenu.gui_objects_array (), 1), &m_event, &renderingManager->draw);
+	m_aboutmenu_vscrollbar_event ((kiss_vscrollbar*) kiss_array_data (renderingManager->aboutMenu.gui_objects_array (), 3), &m_event, &renderingManager->draw);
+	m_aboutmenu_window_event ((kiss_vscrollbar*) kiss_array_data (renderingManager->aboutMenu.gui_objects_array (), 3), &m_event, &renderingManager->draw);
 }
 
 

@@ -17,28 +17,20 @@
 #define NO 0
 
 
-/*Static Global Variables*/
-static const char VERSION[7] = {"0.0.4d"};
-
-static SDL_Color lightYear_black = {25, 33, 39, 255};
-
-static int button_padding = 12;
-static int label_padding = 15;
-
-static kiss_font font_title, font_subtitle;
-static int font_title_size = 168;
-static int font_subtitle_size = 36;
-static kiss_image background, globe_slice, horizontal_bar;
-/*-----------------------*/
-
+class RenderingManager;
 
 class Menu
 {
 
 public:
+	friend struct menu_main;
+	friend struct menu_selectgame;
+	friend struct menu_options;
+	friend struct menu_about;
+	
 	bool created = false;
 	
-	kiss_array *get_gui_objects_array ();
+	kiss_array *gui_objects_array ();
 	kiss_window window;
 	
 	virtual void Create (LocalizationManager &localizationManager, int &draw);
@@ -136,7 +128,7 @@ public:
 	menu_options optionsMenu;
 	menu_about aboutMenu;
 	
-	int draw = 1;
+	int draw = YES;
 	
 	int InitializeKISS ();
 	std::string GetApplicationPath ();
@@ -191,5 +183,22 @@ private:
 	
 	int m_globe_slice_y_position = 0;
 };
+
+
+/*Static Global Variables*/
+static RenderingManager *renderingManager;
+
+static const char VERSION[7] = {"0.0.4d"};
+
+static SDL_Color lightYear_black = {25, 33, 39, 255};
+
+static int button_padding = 12;
+static int label_padding = 15;
+
+static kiss_font font_title, font_subtitle;
+static int font_title_size = 168;
+static int font_subtitle_size = 36;
+static kiss_image background, globe_slice, horizontal_bar;
+/*-----------------------*/
 
 #endif /* end of include guard: RENDERINGMANAGER_H */
