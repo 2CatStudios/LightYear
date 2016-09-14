@@ -1,8 +1,10 @@
 #ifndef INPUTMANAGER_H
 #define INPUTMANAGER_H
 
+#include "Global.h"
 #include "kiss_sdl.h"
 #include "RenderingManager.h"
+#include "UIManager.h"
 
 #include <iostream>
 #include <cmath>
@@ -13,6 +15,8 @@ class InputManager
 	
 public:
 	RenderingManager *renderingManager;
+	UIManager *uiManager;
+	
 	int GetInput (int &quit);
 	
 private:

@@ -14,25 +14,25 @@ int InputManager::GetInput (int &quit)
 		}
 
 		//TODO: DRY!
-		switch (renderingManager->menuState)
+		switch (uiManager->menuState)
 		{
 		
-			case RenderingManager::NONE:
+			case UIManager::NONE:
 				break;
 		
-			case RenderingManager::MAINMENU:
+			case UIManager::MAINMENU:
 				m_MainMenuWindowInput (quit);
 				break;
 		
-			case RenderingManager::SELECTGAME:
+			case UIManager::SELECTGAME:
 				m_SelectGameWindowInput ();
 				break;
 		
-			case RenderingManager::OPTIONS:
+			case UIManager::OPTIONS:
 				m_OptionsWindowInput ();
 				break;
 		
-			case RenderingManager::ABOUT:
+			case UIManager::ABOUT:
 				m_AboutWindowInput ();
 				break;
 		
@@ -48,40 +48,40 @@ int InputManager::GetInput (int &quit)
 void InputManager::m_MainMenuWindowInput (int &quit)
 {
 	
-	kiss_window_event ((kiss_window*) kiss_array_data (renderingManager->mainMenu.gui_objects_array (), 0), &m_event, &renderingManager->draw);
-	kiss_window_event ((kiss_window*) kiss_array_data (renderingManager->mainMenu.gui_objects_array (), 4), &m_event, &renderingManager->draw);
+	kiss_window_event ((kiss_window*) kiss_array_data (uiManager->mainMenu.gui_objects_array (), 0), &m_event, &renderingManager->draw);
+	kiss_window_event ((kiss_window*) kiss_array_data (uiManager->mainMenu.gui_objects_array (), 4), &m_event, &renderingManager->draw);
 	m_mainmenu_window_menu_event (&m_event, &renderingManager->draw);
-	m_mainmenu_button_playGame_event ((kiss_button*) kiss_array_data (renderingManager->mainMenu.gui_objects_array (), 5), &m_event, &renderingManager->draw);
-	m_mainmenu_button_options_event ((kiss_button*) kiss_array_data (renderingManager->mainMenu.gui_objects_array (), 6), &m_event, &renderingManager->draw);
-	m_mainmenu_button_about_event ((kiss_button*) kiss_array_data (renderingManager->mainMenu.gui_objects_array (), 7), &m_event, &renderingManager->draw);
-	m_mainmenu_button_quit_event ((kiss_button*) kiss_array_data (renderingManager->mainMenu.gui_objects_array (), 8), &m_event, &quit, &renderingManager->draw);
+	m_mainmenu_button_playGame_event ((kiss_button*) kiss_array_data (uiManager->mainMenu.gui_objects_array (), 5), &m_event, &renderingManager->draw);
+	m_mainmenu_button_options_event ((kiss_button*) kiss_array_data (uiManager->mainMenu.gui_objects_array (), 6), &m_event, &renderingManager->draw);
+	m_mainmenu_button_about_event ((kiss_button*) kiss_array_data (uiManager->mainMenu.gui_objects_array (), 7), &m_event, &renderingManager->draw);
+	m_mainmenu_button_quit_event ((kiss_button*) kiss_array_data (uiManager->mainMenu.gui_objects_array (), 8), &m_event, &quit, &renderingManager->draw);
 }
 
 
 void InputManager::m_SelectGameWindowInput ()
 {
 	
-	//kiss_window_event ((kiss_window*) kiss_array_data (&renderingManager->selectgameMenu.gui_objects, 0), &m_event, &renderingManager->draw);
+	//kiss_window_event ((kiss_window*) kiss_array_data (&uiManager->selectgameMenu.gui_objects, 0), &m_event, &renderingManager->draw);
 	m_selectgamemenu_window_menu_event (&m_event, &renderingManager->draw);
-	m_selectgamemenu_button_back_event ((kiss_button*) kiss_array_data (renderingManager->selectgameMenu.gui_objects_array (), 1), &m_event, &renderingManager->draw);
+	m_selectgamemenu_button_back_event ((kiss_button*) kiss_array_data (uiManager->selectgameMenu.gui_objects_array (), 1), &m_event, &renderingManager->draw);
 }
 
 
 void InputManager::m_OptionsWindowInput ()
 {
 	
-	kiss_window_event ((kiss_window*) kiss_array_data (renderingManager->optionsMenu.gui_objects_array (), 0), &m_event, &renderingManager->draw);
-	m_optionsmenu_button_back_event ((kiss_button*) kiss_array_data (renderingManager->optionsMenu.gui_objects_array (), 1), &m_event, &renderingManager->draw);
+	kiss_window_event ((kiss_window*) kiss_array_data (uiManager->optionsMenu.gui_objects_array (), 0), &m_event, &renderingManager->draw);
+	m_optionsmenu_button_back_event ((kiss_button*) kiss_array_data (uiManager->optionsMenu.gui_objects_array (), 1), &m_event, &renderingManager->draw);
 }
 
 
 void InputManager::m_AboutWindowInput ()
 {
 	
-	kiss_window_event ((kiss_window*) kiss_array_data (renderingManager->aboutMenu.gui_objects_array (), 0), &m_event, &renderingManager->draw);
-	m_aboutmenu_button_back_event ((kiss_button*) kiss_array_data (renderingManager->aboutMenu.gui_objects_array (), 1), &m_event, &renderingManager->draw);
-	m_aboutmenu_vscrollbar_event ((kiss_vscrollbar*) kiss_array_data (renderingManager->aboutMenu.gui_objects_array (), 3), &m_event, &renderingManager->draw);
-	m_aboutmenu_window_event ((kiss_vscrollbar*) kiss_array_data (renderingManager->aboutMenu.gui_objects_array (), 3), &m_event, &renderingManager->draw);
+	kiss_window_event ((kiss_window*) kiss_array_data (uiManager->aboutMenu.gui_objects_array (), 0), &m_event, &renderingManager->draw);
+	m_aboutmenu_button_back_event ((kiss_button*) kiss_array_data (uiManager->aboutMenu.gui_objects_array (), 1), &m_event, &renderingManager->draw);
+	m_aboutmenu_vscrollbar_event ((kiss_vscrollbar*) kiss_array_data (uiManager->aboutMenu.gui_objects_array (), 3), &m_event, &renderingManager->draw);
+	m_aboutmenu_window_event ((kiss_vscrollbar*) kiss_array_data (uiManager->aboutMenu.gui_objects_array (), 3), &m_event, &renderingManager->draw);
 }
 
 
@@ -94,10 +94,10 @@ void InputManager::m_mainmenu_window_menu_event (SDL_Event *e, int *draw)
 	if (e->type == SDL_MOUSEMOTION)
 	{
 		
-		m_mainmenu_scroll_y = renderingManager->mainMenu.scroll_view_starting_y - (e->motion.y * 0.1);
+		m_mainmenu_scroll_y = uiManager->mainMenu.scroll_view_starting_y - (e->motion.y * 0.1);
 		
-		renderingManager->mainMenu.scroll_view.rect.y = m_mainmenu_scroll_y;
-		renderingManager->CalculateMainMenuPositionsY ();
+		uiManager->mainMenu.scroll_view.rect.y = m_mainmenu_scroll_y;
+		uiManager->CalculateMainMenuPositionsY ();
 		*draw = 1;
 	}
 }
@@ -109,7 +109,7 @@ void InputManager::m_mainmenu_button_playGame_event (kiss_button *button, SDL_Ev
 	if (kiss_button_event (button, e, draw))
 	{
 		
-		renderingManager->menuState = RenderingManager::SELECTGAME;
+		uiManager->menuState = UIManager::SELECTGAME;
 	}
 }
 
@@ -120,7 +120,7 @@ void InputManager::m_mainmenu_button_options_event (kiss_button *button, SDL_Eve
 	if (kiss_button_event (button, e, draw))
 	{
 		
-		renderingManager->menuState = RenderingManager::OPTIONS;
+		uiManager->menuState = UIManager::OPTIONS;
 	}
 }
 
@@ -131,7 +131,7 @@ void InputManager::m_mainmenu_button_about_event (kiss_button *button, SDL_Event
 	if (kiss_button_event (button, e, draw))
 	{
 		
-		renderingManager->menuState = RenderingManager::ABOUT;
+		uiManager->menuState = UIManager::ABOUT;
 	}
 }
 
@@ -169,7 +169,7 @@ void InputManager::m_selectgamemenu_button_back_event (kiss_button *button, SDL_
 	if (kiss_button_event (button, e, draw))
 	{
 		
-		renderingManager->menuState = RenderingManager::MAINMENU;
+		uiManager->menuState = UIManager::MAINMENU;
 	}
 }
 
@@ -183,7 +183,7 @@ void InputManager::m_optionsmenu_button_back_event (kiss_button *button, SDL_Eve
 	if (kiss_button_event (button, e, draw))
 	{
 		
-		renderingManager->menuState = RenderingManager::MAINMENU;
+		uiManager->menuState = UIManager::MAINMENU;
 	}
 }
 
@@ -197,7 +197,7 @@ void InputManager::m_aboutmenu_button_back_event (kiss_button *button, SDL_Event
 	if (kiss_button_event (button, e, draw))
 	{
 		
-		renderingManager->menuState = RenderingManager::MAINMENU;
+		uiManager->menuState = UIManager::MAINMENU;
 	}
 }
 
@@ -215,11 +215,11 @@ void InputManager::m_aboutmenu_window_event (kiss_vscrollbar *vscrollbar, SDL_Ev
 		
 		//std::cout << "MOUSEWHEEL EVENT" << std::endl;
 		
-		double movement = renderingManager->aboutMenu.scroll_view.rect.y;
+		double movement = uiManager->aboutMenu.scroll_view.rect.y;
 		movement = -1 * e->wheel.y;// * 350;
 		
-		renderingManager->aboutMenu.scroll_view.rect.y = movement;
-		renderingManager->CalculateAboutMenuPositionsY ();
+		uiManager->aboutMenu.scroll_view.rect.y = movement;
+		uiManager->CalculateAboutMenuPositionsY ();
 		*draw = 1;
 	}*/
 }
@@ -231,10 +231,10 @@ void InputManager::m_aboutmenu_vscrollbar_event (kiss_vscrollbar *vscrollbar, SD
 	if (kiss_vscrollbar_event (vscrollbar, e, draw))
 	{
 		
-		double movement = renderingManager->aboutMenu.scroll_view.rect.y;
+		double movement = uiManager->aboutMenu.scroll_view.rect.y;
 		movement = -1 * vscrollbar->fraction * 350; //NOTE: 350 is an arbitrary number. //TODO: Calculate this, somehow.
 		
-		renderingManager->aboutMenu.scroll_view.rect.y = movement;
-		renderingManager->CalculateAboutMenuPositionsY ();
+		uiManager->aboutMenu.scroll_view.rect.y = movement;
+		uiManager->CalculateAboutMenuPositionsY ();
 	}
 }
