@@ -4,7 +4,6 @@
 int CoreLoopDelegate::Run ()
 {
 	
-	
 	/*									Currently available translations:	english-us	or	dutch-nl	*/
 	if (localizationManager.LoadApplicationText (renderingManager.GetResourcesPath (), "english-us") != 0)
 		return 1;
@@ -13,8 +12,7 @@ int CoreLoopDelegate::Run ()
 	
 	if (renderingManager.InitializeKISS () != 0)
 		return 1;
-	
-	renderingManager.menuState = RenderingManager::MAINMENU;
+
 	renderingManager.Update ();
 	
 	inputManager.renderingManager = &renderingManager;
@@ -32,7 +30,7 @@ int CoreLoopDelegate::m_Loop ()
 	while (quit == NO)
 	{
 		
-		SDL_Delay (m_millisecondLoopDelay);
+		SDL_Delay (m_millisecond_loop_delay);
 		inputManager.GetInput (quit);
 		renderingManager.Update ();
 	}
