@@ -1,20 +1,12 @@
 #ifndef RENDERINGMANAGER_H
 #define RENDERINGMANAGER_H
 
-#include <iostream>
-#include <string>
-
+#include "Global.h"
 #include "kiss_sdl.h"
 #include "LocalizationManager.h"
 
-#if defined (WIN32) || defined (_WIN32)
-#define PATH_SEPARATOR '\\'
-#else
-#define PATH_SEPARATOR '/'
-#endif
-
-#define YES 1
-#define NO 0
+#include <iostream>
+#include <string>
 
 
 class RenderingManager;
@@ -161,6 +153,8 @@ private:
 	void m_DrawSelectGameMenu ();
 	void m_DrawOptionsMenu ();
 	void m_DrawAboutMenu ();
+	
+	void m_DrawMenu (Menu &menu);
 	
 	
 	enum ExternalImageAssets {

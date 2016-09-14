@@ -21,7 +21,8 @@ void menu_main::Create (LocalizationManager &localizationManager, int &draw)
 	
 		kiss_window_new (&window, NULL, 0, 1, 0, 0, kiss_screen_width, kiss_screen_height);
 		window.bg = lightYear_black;
-		kiss_array_append (&m_gui_objects, 0, &window);
+		//kiss_array_append (&m_gui_objects, 0, &window);
+		kiss_array_assign (&m_gui_objects, 0, GUI_WINDOW, &window);
 		
 		kiss_label_new (
 			&label_version,
@@ -32,7 +33,8 @@ void menu_main::Create (LocalizationManager &localizationManager, int &draw)
 				);
 		label_version.textcolor = kiss_white;
 		label_version.font = kiss_textfont;
-		kiss_array_append (&m_gui_objects, 1, &label_version);
+		//kiss_array_append (&m_gui_objects, 1, &label_version);
+		kiss_array_assign (&m_gui_objects, 1, GUI_LABEL, &label_version);
 		
 		kiss_label_new (
 			&label_title,
@@ -43,7 +45,8 @@ void menu_main::Create (LocalizationManager &localizationManager, int &draw)
 				);
 		label_title.textcolor = kiss_white;
 		label_title.font = font_title;
-		kiss_array_append (&m_gui_objects, 2, &label_title);
+		//kiss_array_append (&m_gui_objects, 2, &label_title);
+		kiss_array_assign (&m_gui_objects, 2, GUI_LABEL, &label_title);
 		
 		kiss_label_new (
 			&label_subtitle,
@@ -54,7 +57,8 @@ void menu_main::Create (LocalizationManager &localizationManager, int &draw)
 				);
 		label_subtitle.textcolor = kiss_white;
 		label_subtitle.font = font_subtitle;
-		kiss_array_append (&m_gui_objects, 3, &label_subtitle);
+		//kiss_array_append (&m_gui_objects, 3, &label_subtitle);
+		kiss_array_assign (&m_gui_objects, 3, GUI_LABEL, &label_subtitle);
 		
 		
 		const int TOTAL_MENU_BUTTONS = 4;
@@ -66,7 +70,8 @@ void menu_main::Create (LocalizationManager &localizationManager, int &draw)
 		
 		kiss_window_new (&scroll_view, NULL, 0, 0, scroll_view_starting_x, scroll_view_starting_y, SCROLLVIEW_WIDTH, SCROLLVIEW_HEIGHT);
 		scroll_view.bg = kiss_white;
-		kiss_array_append (&m_gui_objects, 4, &scroll_view);
+		//kiss_array_append (&m_gui_objects, 4, &scroll_view);
+		kiss_array_assign (&m_gui_objects, 4, GUI_WINDOW, &scroll_view);
 		
 		kiss_button_new (
 			&button_playGame,
@@ -76,7 +81,8 @@ void menu_main::Create (LocalizationManager &localizationManager, int &draw)
 			scroll_view.rect.y + button_padding / 2
 				);
 		button_playGame.textcolor = kiss_white;
-		kiss_array_append (&m_gui_objects, 5, &button_playGame);
+		//kiss_array_append (&m_gui_objects, 5, &button_playGame);
+		kiss_array_assign (&m_gui_objects, 5, GUI_BUTTON, &button_playGame);
 		
 		kiss_button_new (
 			&button_options,
@@ -86,7 +92,8 @@ void menu_main::Create (LocalizationManager &localizationManager, int &draw)
 			button_playGame.rect.y + button_playGame.rect.h + button_padding
 				);
 		button_options.textcolor = kiss_white;
-		kiss_array_append (&m_gui_objects, 6, &button_options);
+		//kiss_array_append (&m_gui_objects, 6, &button_options);
+		kiss_array_assign (&m_gui_objects, 6, GUI_BUTTON, &button_options);
 		
 		kiss_button_new (
 			&button_about,
@@ -96,7 +103,8 @@ void menu_main::Create (LocalizationManager &localizationManager, int &draw)
 			button_options.rect.y + button_options.rect.h + button_padding
 				);
 		button_about.textcolor = kiss_white;
-		kiss_array_append (&m_gui_objects, 7, &button_about);
+		//kiss_array_append (&m_gui_objects, 7, &button_about);
+		kiss_array_assign (&m_gui_objects, 7, GUI_BUTTON, &button_about);
 		
 		kiss_button_new (
 			&button_quit,
@@ -106,7 +114,8 @@ void menu_main::Create (LocalizationManager &localizationManager, int &draw)
 			button_about.rect.y + button_about.rect.h + button_padding
 				);
 		button_quit.textcolor = kiss_white;
-		kiss_array_append (&m_gui_objects, 8, &button_quit);
+		//kiss_array_append (&m_gui_objects, 8, &button_quit);
+		kiss_array_assign (&m_gui_objects, 8, GUI_BUTTON, &button_quit);
 		
 		created = true;
 		draw = 1;
@@ -552,7 +561,7 @@ void RenderingManager::CalculateMainMenuPositionsY ()
 void RenderingManager::m_DrawMainMenu ()
 {
 	
-	if (mainMenu.created == false)
+	/*if (mainMenu.created == false)
 		mainMenu.Create (*localizationManager, draw);
 	
 	mainMenu.window.visible = 1;
@@ -566,7 +575,7 @@ void RenderingManager::m_DrawMainMenu ()
 	kiss_button_draw (&mainMenu.button_playGame, m_renderer);
 	kiss_button_draw (&mainMenu.button_options, m_renderer);
 	kiss_button_draw (&mainMenu.button_about, m_renderer);
-	kiss_button_draw (&mainMenu.button_quit, m_renderer);
+	kiss_button_draw (&mainMenu.button_quit, m_renderer);*/
 }
 
 
@@ -629,6 +638,36 @@ void RenderingManager::m_DrawAboutMenu ()
 }
 
 
+void RenderingManager::m_DrawMenu (Menu &menu)
+{
+	
+	if (menu.created == false)
+		menu.Create (*localizationManager, draw);
+	
+	menu.window.visible = 1;
+	
+	for (int i = 0; i < menu.gui_objects_array ()->length; i += 1)
+	{
+		
+		switch ((int)(size_t) menu.gui_objects_array ()->id)
+		{
+			
+			case GUI_WINDOW:
+			kiss_window_draw ((kiss_window*) kiss_array_data (mainMenu.gui_objects_array (), i), m_renderer);
+			break;
+				
+			case GUI_LABEL:
+			kiss_label_draw ((kiss_label*) kiss_array_data (mainMenu.gui_objects_array (), i), m_renderer);
+			break;
+			
+			case GUI_BUTTON:
+			kiss_button_draw ((kiss_button*) kiss_array_data (mainMenu.gui_objects_array (), i), m_renderer);
+			break;
+		}
+	}
+}
+
+
 void RenderingManager::Update ()
 {
 	
@@ -650,7 +689,8 @@ void RenderingManager::Update ()
 		
 		case MAINMENU:
 			
-			m_DrawMainMenu ();
+			//m_DrawMainMenu ();
+			m_DrawMenu (mainMenu);
 			break;
 		
 		case SELECTGAME:
@@ -678,6 +718,6 @@ void RenderingManager::Update ()
 
 void RenderingManager::Stop ()
 {
-	
+
 	kiss_clean (&objects);
 }
