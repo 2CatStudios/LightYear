@@ -11,7 +11,5 @@
 #define YES 1
 #define NO 0
 
-static const char VERSION[7] = {"0.0.4d"};
-
 
 #endif /* end of include guard: GLOBAL_H */

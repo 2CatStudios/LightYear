@@ -21,7 +21,7 @@ public:
 
 private:
 	
-	int m_millisecond_loop_delay = 16;
+	int m_millisecondLoopDelay = 16;
 
 	int m_Loop ();
 	
