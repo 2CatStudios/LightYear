@@ -3,12 +3,12 @@ before_install:
 	- sudo apt-get install libsdl2-dev
 	- sudo apt-get install libsdl2-image-dev
 	- sudo apt-get install libsdl2-ttf-dev
-
 language: cpp
-
 compiler:
   - clang
-
+os:
+	- osx
+	- linux
 script:
-  - cd Project/Client/LightYear_Build
+  - cd ./Project/Client/LightYear_Build
   - cmake .. && make
