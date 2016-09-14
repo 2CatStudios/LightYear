@@ -477,8 +477,8 @@ int RenderingManager::m_AddExternalAssets (kiss_array *a)
 	};
 	
 	
+	//TODO: DRY
 	/*Default Assets*/
-	//TODO: Replace eventually
 	kiss_image_new(&kiss_bar, const_cast<char*> (assets[EA_KISS_BAR].c_str ()), a, m_renderer);
 	kiss_image_new(&kiss_hslider, const_cast<char*> (assets[EA_KISS_HSLIDER].c_str ()), a, m_renderer);
 	kiss_image_new(&kiss_left, const_cast<char*> (assets[EA_KISS_LEFT].c_str ()), a, m_renderer);
@@ -495,8 +495,6 @@ int RenderingManager::m_AddExternalAssets (kiss_array *a)
 	/*Custom 2X Assets*/
 	if (IsRetinaDisplay () == true)
 	{
-		
-		const int DPI_DIFFERENCE = 
 		
 		kiss_textfont_size *= m_dpi_difference;
 		kiss_buttonfont_size *= m_dpi_difference;

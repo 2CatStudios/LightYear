@@ -142,18 +142,23 @@ int kiss_label_draw(kiss_label *label, SDL_Renderer *renderer)
 	return 1;
 }
 
-int kiss_button_new(kiss_button *button, kiss_window *wdw, char *text,
-	int x, int y)
+int kiss_button_new(kiss_button *button, kiss_window *wdw, char *text, int x, int y)
 {
-	if (!button || !text) return -1;
+	if (!button || !text)
+		return -1;
+	
 	if (button->font.magic != KISS_MAGIC)
 		button->font = kiss_buttonfont;
+	
 	if (button->normalimg.magic != KISS_MAGIC)
 		button->normalimg = kiss_normal;
+	
 	if (button->activeimg.magic != KISS_MAGIC)
 		button->activeimg = kiss_active;
+	
 	if (button->prelightimg.magic != KISS_MAGIC)
 		button->prelightimg = kiss_prelight;
+	
 	kiss_makerect(&button->rect, x, y, button->normalimg.w, button->normalimg.h);
 	button->textcolor = kiss_white;
 	kiss_string_copy(button->text, KISS_MAX_LENGTH, text, NULL);
