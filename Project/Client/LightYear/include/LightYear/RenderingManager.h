@@ -11,6 +11,7 @@
 
 class RenderingManager;
 
+
 class Menu
 {
 
@@ -60,8 +61,6 @@ typedef struct menu_selectgame : Menu
 	
 	kiss_button button_back;
 	
-	kiss_label label_title;
-	
 	void Create (LocalizationManager &localizationManager, int &draw);
 
 } menu_selectgame;
@@ -92,10 +91,12 @@ typedef struct menu_about : Menu
 	kiss_label label_preamble_bottom;
 	
 	kiss_label label_twocatstudios;
+	SDL_Rect rect_team;
 	kiss_label label_team_michaelb;
 	kiss_label label_team_janh;
 	
 	kiss_label label_thanksto;
+	SDL_Rect rect_thirdparty;
 	kiss_label label_supporters_bleikur;
 	kiss_label label_supporters_tarvok;
 	
@@ -146,13 +147,7 @@ private:
 	float m_dpi_difference = -1;
 	
 	int m_AddExternalAssets (kiss_array *a);
-	
 	std::string m_appendAssetWithAt2X (const std::string original);
-	
-	void m_DrawMainMenu ();
-	void m_DrawSelectGameMenu ();
-	void m_DrawOptionsMenu ();
-	void m_DrawAboutMenu ();
 	
 	void m_DrawMenu (Menu &menu);
 	
@@ -169,10 +164,9 @@ private:
 		EA_KISS_UNSELECTED = 8,
 		EA_FONT_ANSON_REGULAR = 9,
 		EA_GLOBE_SLICE = 10,
-		EA_HORIZONTAL_BAR = 11,
-		EA_BUTTON_NORMAL = 12,
-		EA_BUTTON_PRELIGHT = 13,
-		EA_BUTTON_ACTIVE = 14
+		EA_BUTTON_NORMAL = 11,
+		EA_BUTTON_PRELIGHT = 12,
+		EA_BUTTON_ACTIVE = 13
 	};
 	
 	int m_globe_slice_y_position = 0;
@@ -188,6 +182,8 @@ static SDL_Color lightYear_black = {25, 33, 39, 255};
 
 static int button_padding = 12;
 static int label_padding = 15;
+
+static int horizontalbar_width = 285;
 
 static kiss_font font_title, font_subtitle;
 static int font_title_size = 168;

@@ -75,12 +75,13 @@ int kiss_textwidth(kiss_font font, char *str1, char *str2)
 	return width;
 }
 
-int kiss_renderimage(SDL_Renderer *renderer, kiss_image image,
-	int x, int y, SDL_Rect *clip)
+int kiss_renderimage(SDL_Renderer *renderer, kiss_image image, int x, int y, SDL_Rect *clip)
 {
 	SDL_Rect dst;
 
-	if (!renderer || !image.image) return -1;
+	if (!renderer || !image.image)
+		return -1;
+	
 	kiss_makerect(&dst, x, y, image.w, image.h);
 	if (clip) dst.w = clip->w;
 	if (clip) dst.h = clip->h;
