@@ -258,7 +258,7 @@ void menu_about::Create (LocalizationManager &localizationManager, int &draw)
 		label_twocatstudios.font = font_subtitle;
 		kiss_array_append (&m_gui_objects, GUI_LABEL, &label_twocatstudios); /* Index: 7 */
 		
-		rect_team.w = scroll_view.rect.x;
+		rect_team.w = scroll_view.rect.x / 2;
 		rect_team.h = 2;
 		rect_team.x = scroll_view.rect.x + ((scroll_view.rect.w / 2) - (rect_team.w / 2));
 		rect_team.y = label_twocatstudios.rect.y + font_subtitle.fontheight;
@@ -298,7 +298,7 @@ void menu_about::Create (LocalizationManager &localizationManager, int &draw)
 		label_thanksto.font = font_subtitle;
 		kiss_array_append (&m_gui_objects, GUI_LABEL, &label_thanksto); /* Index: 11 */
 		
-		rect_thirdparty.w = scroll_view.rect.x;
+		rect_thirdparty.w = scroll_view.rect.x / 2;
 		rect_thirdparty.h = 2;
 		rect_thirdparty.x = scroll_view.rect.x + ((scroll_view.rect.w / 2) - (rect_thirdparty.w / 2));
 		rect_thirdparty.y = label_thanksto.rect.y + font_subtitle.fontheight;
