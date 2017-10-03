@@ -9,7 +9,7 @@ class XMLManager
 {
 	
 public:
-	int ReadFromFileToDoc (const std::string filePath, pugi::xml_document &doc);
+	pugi::xml_parse_result ReadFromFileToDoc (const std::string filePath, pugi::xml_document &doc);
 
 private:
 	
