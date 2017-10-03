@@ -128,7 +128,7 @@ public:
 	std::string GetResourcesPath ();
 	std::string GetPreferencesPath ();
 	
-	bool IsRetinaDisplay ();
+	bool IsRetinaDisplay (const bool force_recalculate);
 	
 	void CalculateAboutMenuPositionsY ();
 	void CalculateMainMenuPositionsY ();

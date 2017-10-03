@@ -258,10 +258,10 @@ void menu_about::Create (LocalizationManager &localizationManager, int &draw)
 		label_twocatstudios.font = font_subtitle;
 		kiss_array_append (&m_gui_objects, GUI_LABEL, &label_twocatstudios); /* Index: 7 */
 		
-		rect_team.x = scroll_view.rect.x + ((scroll_view.rect.w / 2) - (284 / 2));
-		rect_team.y = label_twocatstudios.rect.y + font_subtitle.fontheight;
-		rect_team.w = horizontalbar_width;
+		rect_team.w = scroll_view.rect.x;
 		rect_team.h = 2;
+		rect_team.x = scroll_view.rect.x + ((scroll_view.rect.w / 2) - (rect_team.w / 2));
+		rect_team.y = label_twocatstudios.rect.y + font_subtitle.fontheight;
 		kiss_array_append (&m_gui_objects, GUI_SOLIDRECT, &rect_team); /* Index: 8 */
 		
 		kiss_label_new (
@@ -298,10 +298,10 @@ void menu_about::Create (LocalizationManager &localizationManager, int &draw)
 		label_thanksto.font = font_subtitle;
 		kiss_array_append (&m_gui_objects, GUI_LABEL, &label_thanksto); /* Index: 11 */
 		
-		rect_thirdparty.x = scroll_view.rect.x + ((scroll_view.rect.w / 2) - (284 / 2));
-		rect_thirdparty.y = label_thanksto.rect.y + font_subtitle.fontheight;
-		rect_thirdparty.w = horizontalbar_width;
+		rect_thirdparty.w = scroll_view.rect.x;
 		rect_thirdparty.h = 2;
+		rect_thirdparty.x = scroll_view.rect.x + ((scroll_view.rect.w / 2) - (rect_thirdparty.w / 2));
+		rect_thirdparty.y = label_thanksto.rect.y + font_subtitle.fontheight;
 		kiss_array_append (&m_gui_objects, GUI_SOLIDRECT, &rect_thirdparty); /* Index: 12 */
 		
 		kiss_label_new (
@@ -408,10 +408,10 @@ std::string RenderingManager::GetPreferencesPath ()
 }
 
 
-bool RenderingManager::IsRetinaDisplay ()
+bool RenderingManager::IsRetinaDisplay (const bool force_recalculate = false)
 {
 	
-	if (m_retinaDisplay == -1)
+	if (m_retinaDisplay == -1 || force_recalculate == true)
 	{
 	
 		float diagDPI = -1;
