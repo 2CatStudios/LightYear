@@ -11,7 +11,14 @@
 #define YES 1
 #define NO 0
 
+<<<<<<< HEAD
 static const char VERSION[7] = {"0.0.4d"};
 
 
 #endif /* end of include guard: GLOBAL_H */
+=======
+enum {GUI_WINDOW, GUI_LABEL, GUI_BUTTON, GUI_VSCROLLBAR, GUI_SOLIDRECT};
+
+
+#endif /* end of include guard: GLOBAL_H */
+>>>>>>> dry-ui
