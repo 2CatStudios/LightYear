@@ -169,8 +169,7 @@ int kiss_array_append(kiss_array *a, int id, void *data)
 	if (!a) return -1;
 	if (a->length >= a->size) {
 		a->size *= 2;
-		a->data = (void **) realloc(a->data,
-			a->size * sizeof(void *));
+		a->data = (void **) realloc(a->data, a->size * sizeof(void *));
 		a->id = (int *) realloc(a->id, a->size * sizeof(int));
 		for (i = a->length; i < a->size; i++) {
 			a->data[i] = NULL;
@@ -201,8 +200,7 @@ int kiss_array_insert(kiss_array *a, int index, int id, void *data)
 	if (!a || index < 0 || index >= a->length) return -1;
 	if (a->length >= a->size) {
 		a->size *= 2;
-		a->data = (void **) realloc(a->data,
-			a->size * sizeof(void *));
+		a->data = (void **) realloc(a->data, a->size * sizeof(void *));
 		a->id = (int *) realloc(a->id, a->size * sizeof(int));
 		for (i = a->length; i < a->size; i++) {
 			a->data[i] = NULL;
