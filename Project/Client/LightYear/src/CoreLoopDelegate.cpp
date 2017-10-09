@@ -8,7 +8,7 @@ int CoreLoopDelegate::Run ()
 	
 	
 	/*										Currently available translations:	english-us	or	dutch-nl	*/
-	if (localizationManager.LoadApplicationText (renderingManager.GetResourcesPath (), "vietnamese-us") != 0)
+	if (localizationManager.LoadApplicationText (fileManager.GetResourcesPath (), "vietnamese-us") != 0)
 		return 1;
 	
 	renderingManager.localizationManager = &localizationManager;
@@ -31,9 +31,9 @@ int CoreLoopDelegate::Run ()
 void CoreLoopDelegate::m_DebugSDL2Paths ()
 {
 	
-	std::cout << std::endl << "GetApplicationPath () : " << renderingManager.GetApplicationPath () << std::endl;
-	std::cout << std::endl << "GetResourcesPath () : " << renderingManager.GetResourcesPath () << std::endl;
-	std::cout << std::endl << "GetPreferencesPath () : " << renderingManager.GetPreferencesPath () << std::endl;
+	std::cout << std::endl << "GetApplicationPath () : " << fileManager.GetApplicationPath () << std::endl;
+	std::cout << std::endl << "GetResourcesPath () : " << fileManager.GetResourcesPath () << std::endl;
+	std::cout << std::endl << "GetPreferencesPath () : " << fileManager.GetPreferencesPath () << std::endl;
 }
 
 

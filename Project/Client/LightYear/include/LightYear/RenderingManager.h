@@ -124,9 +124,11 @@ public:
 	int draw = YES;
 	
 	int InitializeKISS ();
+	/*
 	std::string GetApplicationPath ();
 	std::string GetResourcesPath ();
 	std::string GetPreferencesPath ();
+	*/
 	
 	bool IsRetinaDisplay (const bool force_recalculate);
 	
@@ -139,9 +141,11 @@ public:
 private:
 	SDL_Renderer *m_renderer;
 	
+	/*
 	std::string m_applicationPath;
 	std::string m_resourcesPath;
 	std::string m_preferencesPath;
+	*/
 	
 	int m_retinaDisplay = -1;
 	float m_dpi_difference = -1;

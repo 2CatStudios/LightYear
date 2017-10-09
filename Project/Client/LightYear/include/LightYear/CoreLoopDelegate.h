@@ -5,6 +5,7 @@
 #include "LocalizationManager.h"
 #include "InputManager.h"
 #include "RenderingManager.h"
+#include "FileManager.h"
 #include "kiss_sdl.h"
 
 #include <iostream>
@@ -18,6 +19,7 @@ public:
 	LocalizationManager localizationManager;
 	InputManager inputManager;
 	RenderingManager renderingManager;
+	FileManager fileManager;
 	
 	int quit = NO;
 	

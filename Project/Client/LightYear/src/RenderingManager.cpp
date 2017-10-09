@@ -346,7 +346,7 @@ int RenderingManager::InitializeKISS ()
 	return 0;
 }
 
-
+/*
 std::string RenderingManager::GetApplicationPath ()
 {
 	
@@ -406,7 +406,7 @@ std::string RenderingManager::GetPreferencesPath ()
 	
 	return m_preferencesPath;
 }
-
+*/
 
 bool RenderingManager::IsRetinaDisplay (const bool force_recalculate = false)
 {
