@@ -8,7 +8,7 @@ int CoreLoopDelegate::Run ()
 	
 	
 	/*										Currently available translations:	english-us	or	dutch-nl	*/
-	if (localizationManager.LoadApplicationText (fileManager.GetResourcesPath (), "vietnamese-us") != 0)
+	if (localizationManager.LoadApplicationText (fileManager.GetResourcesPath (), "english-us") != 0)
 		return 1;
 	
 	renderingManager.localizationManager = &localizationManager;

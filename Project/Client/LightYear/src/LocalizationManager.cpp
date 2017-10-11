@@ -14,7 +14,7 @@ int LocalizationManager::LoadApplicationText (const std::string fileLocation, co
 	
 	std::cout << parse_result << " =? " << pugi::status_file_not_found << std::endl;
 	
-	/*If the desired language could not be found, try to use English*/
+	/*If the desired language could not be found, default to English*/
 	if (parse_result == pugi::status_file_not_found)
 	{
 		
