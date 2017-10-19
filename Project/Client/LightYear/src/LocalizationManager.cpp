@@ -6,26 +6,21 @@ int LocalizationManager::LoadApplicationText (const std::string fileLocation, co
 
 	XMLManager xml;
 	pugi::xml_document doc;
-	pugi::xml_parse_result parse_result;
-	
 	std::string filePath = fileLocation + language + ".localized";
-	
-	parse_result = xml.ReadFromFileToDoc (filePath, doc);
-	
-	std::cout << parse_result << " =? " << pugi::status_file_not_found << std::endl;
+	pugi::xml_parse_result parse_result = xml.ReadFromFileToDoc (filePath, doc);
 	
 	/*If the desired language could not be found, default to English*/
-	if (parse_result == pugi::status_file_not_found)
+	if (!parse_result)
 	{
 		
+		std::cout << parse_result.description () << std::endl;
 		std::cout << "Localization not found, trying English" << std::endl;
 		
 		doc.reset();
-		filePath = fileLocation + "english-us.localized";
-		parse_result = xml.ReadFromFileToDoc (filePath, doc);
+		parse_result = xml.ReadFromFileToDoc (fileLocation + "english-us.localized", doc);
 	}
 	
-	if (parse_result == pugi::status_ok)
+	if (parse_result)
 	{
 		
 		pugi::xml_node localizationHeaders [5] = {
@@ -55,7 +50,7 @@ int LocalizationManager::LoadApplicationText (const std::string fileLocation, co
 		}
 	} else {
 		
-		/*	Try to default to English (maybe embed English xml)	*/
+		std::cout << "Unable to locate either " << language << " or english-us localization file!" << std::endl;
 		
 		return 1;
 	}
