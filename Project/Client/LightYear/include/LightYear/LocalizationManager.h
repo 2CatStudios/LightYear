@@ -5,6 +5,7 @@
 #include <string>
 #include <map>
 
+#include "Global.h"
 #include "kiss_sdl.h"
 #include "XMLManager.h"
 
@@ -56,15 +57,6 @@ public:
 		A_TARVO_KORROVITS_KISS_SDL = 8
 	};
 	
-	const int ALL_HEADERS = 5;
-	enum LocalizationApplicationHeaders {
-		META = 0,
-		GENERAL = 1,
-		MAINMENU = 2,
-		OPTIONS = 3,
-		ABOUT = 4
-	};
-	
 private:
 	
 	std::map <int, std::string> m_metaLocalization;
@@ -73,9 +65,8 @@ private:
 	std::map <int, std::string> m_optionsLocalization;
 	std::map <int, std::string> m_aboutLocalization;
 	
-	std::map <int, std::string>::iterator m_localizationSearch;
+	std::map <int, std::string> *m_localizations [5] = {&m_metaLocalization, &m_generalLocalization, &m_mainMenuLocalization, &m_optionsLocalization, &m_aboutLocalization};
 	
-	void m_PopulateApplicationLocalizationMap (const unsigned int menu, const unsigned int index, const std::string string);
 	void m_AddApplicationLocalizedText (int localizedTextIndex, char *localizedText);
 };
 

@@ -12,6 +12,7 @@
 #define NO 0
 
 enum {GUI_WINDOW, GUI_LABEL, GUI_BUTTON, GUI_VSCROLLBAR, GUI_SOLIDRECT};
+enum LocalizationApplicationHeaders {META, GENERAL, MAINMENU, OPTIONS, ABOUT, LOCALIZATION_HEADERS_COUNT = ABOUT};
 
 
 #endif /* end of include guard: GLOBAL_H */

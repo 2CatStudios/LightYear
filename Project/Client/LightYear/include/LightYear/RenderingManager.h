@@ -22,6 +22,11 @@ public:
 	friend struct menu_about;
 	
 	bool created = false;
+	virtual const std::string name ()
+	{
+	
+		return "Null";
+	};
 	
 	kiss_array *gui_objects_array ();
 	kiss_window window;
@@ -37,6 +42,12 @@ private:
 
 typedef struct menu_main : Menu
 {
+	
+	const std::string name ()
+	{
+		
+		return "Main Menu";
+	}
 	
 	kiss_label label_version;
 	kiss_label label_title;
@@ -59,6 +70,12 @@ typedef struct menu_main : Menu
 typedef struct menu_selectgame : Menu
 {
 	
+	const std::string name ()
+	{
+		
+		return "Select Game Menu";
+	}
+	
 	kiss_button button_back;
 	
 	void Create (LocalizationManager &localizationManager, int &draw);
@@ -68,6 +85,12 @@ typedef struct menu_selectgame : Menu
 
 typedef struct menu_options : Menu
 {
+	
+	const std::string name ()
+	{
+		
+		return "Options Menu";
+	}
 	
 	kiss_button button_back;
 	
@@ -80,6 +103,12 @@ typedef struct menu_options : Menu
 
 typedef struct menu_about : Menu
 {
+	
+	const std::string name ()
+	{
+		
+		return "About Menu";
+	}
 	
 	kiss_button button_back;
 	

@@ -36,8 +36,8 @@ void menu_main::Create (LocalizationManager &localizationManager, int &draw)
 		kiss_label_new (
 			&label_title,
 			&window,
-			const_cast<char*> (localizationManager.GetLocalizedApplicationText (LocalizationManager::GENERAL, LocalizationManager::G_LIGHTYEAR).c_str ()),
-			window.rect.x + ((window.rect.w / 2) - (kiss_textwidth (font_title, const_cast<char*> (localizationManager.GetLocalizedApplicationText (LocalizationManager::GENERAL, LocalizationManager::G_LIGHTYEAR).c_str ()), NULL) / 2)),
+			const_cast<char*> (localizationManager.GetLocalizedApplicationText (GENERAL, LocalizationManager::G_LIGHTYEAR).c_str ()),
+			window.rect.x + ((window.rect.w / 2) - (kiss_textwidth (font_title, const_cast<char*> (localizationManager.GetLocalizedApplicationText (GENERAL, LocalizationManager::G_LIGHTYEAR).c_str ()), NULL) / 2)),
 			window.rect.y + 10
 				);
 		label_title.textcolor = kiss_white;
@@ -47,8 +47,8 @@ void menu_main::Create (LocalizationManager &localizationManager, int &draw)
 		kiss_label_new (
 			&label_subtitle,
 			&window,
-			const_cast<char*> (localizationManager.GetLocalizedApplicationText (LocalizationManager::GENERAL, LocalizationManager::G_A_HYBIRD_IF_ENGINE_LIGHTYEARS_AHEAD).c_str ()),
-			window.rect.x + ((window.rect.w / 2) - (kiss_textwidth (font_subtitle, const_cast<char*> (localizationManager.GetLocalizedApplicationText (LocalizationManager::GENERAL, LocalizationManager::G_A_HYBIRD_IF_ENGINE_LIGHTYEARS_AHEAD).c_str ()), NULL) / 2)),
+			const_cast<char*> (localizationManager.GetLocalizedApplicationText (GENERAL, LocalizationManager::G_A_HYBIRD_IF_ENGINE_LIGHTYEARS_AHEAD).c_str ()),
+			window.rect.x + ((window.rect.w / 2) - (kiss_textwidth (font_subtitle, const_cast<char*> (localizationManager.GetLocalizedApplicationText (GENERAL, LocalizationManager::G_A_HYBIRD_IF_ENGINE_LIGHTYEARS_AHEAD).c_str ()), NULL) / 2)),
 			label_title.rect.y + font_title.fontheight
 				);
 		label_subtitle.textcolor = kiss_white;
@@ -70,7 +70,7 @@ void menu_main::Create (LocalizationManager &localizationManager, int &draw)
 		kiss_button_new (
 			&button_playGame,
 			&window,
-			const_cast<char*> (localizationManager.GetLocalizedApplicationText (LocalizationManager::MAINMENU, LocalizationManager::MM_PLAY).c_str ()),
+			const_cast<char*> (localizationManager.GetLocalizedApplicationText (MAINMENU, LocalizationManager::MM_PLAY).c_str ()),
 			window.rect.x + ((window.rect.w / 2) - (kiss_normal.w / 2)),
 			scroll_view.rect.y + button_padding / 2
 				);
@@ -80,7 +80,7 @@ void menu_main::Create (LocalizationManager &localizationManager, int &draw)
 		kiss_button_new (
 			&button_options,
 			&window,
-			const_cast<char*> (localizationManager.GetLocalizedApplicationText (LocalizationManager::MAINMENU, LocalizationManager::MM_OPTIONS).c_str ()),
+			const_cast<char*> (localizationManager.GetLocalizedApplicationText (MAINMENU, LocalizationManager::MM_OPTIONS).c_str ()),
 			window.rect.x + ((window.rect.w / 2) - (kiss_normal.w / 2)),
 			button_playGame.rect.y + button_playGame.rect.h + button_padding
 				);
@@ -90,7 +90,7 @@ void menu_main::Create (LocalizationManager &localizationManager, int &draw)
 		kiss_button_new (
 			&button_about,
 			&window,
-			const_cast<char*> (localizationManager.GetLocalizedApplicationText (LocalizationManager::MAINMENU, LocalizationManager::MM_ABOUT).c_str ()),
+			const_cast<char*> (localizationManager.GetLocalizedApplicationText (MAINMENU, LocalizationManager::MM_ABOUT).c_str ()),
 			window.rect.x + ((window.rect.w / 2) - (kiss_normal.w / 2)),
 			button_options.rect.y + button_options.rect.h + button_padding
 				);
@@ -100,7 +100,7 @@ void menu_main::Create (LocalizationManager &localizationManager, int &draw)
 		kiss_button_new (
 			&button_quit,
 			&window,
-			const_cast<char*> (localizationManager.GetLocalizedApplicationText (LocalizationManager::MAINMENU, LocalizationManager::MM_QUIT).c_str ()),
+			const_cast<char*> (localizationManager.GetLocalizedApplicationText (MAINMENU, LocalizationManager::MM_QUIT).c_str ()),
 			window.rect.x + ((window.rect.w / 2) - (kiss_normal.w / 2)),
 			button_about.rect.y + button_about.rect.h + button_padding
 				);
@@ -128,7 +128,7 @@ void menu_selectgame::Create (LocalizationManager &localizationManager, int &dra
 		kiss_button_new (
 			&button_back,
 			&window,
-			const_cast<char*> (localizationManager.GetLocalizedApplicationText (LocalizationManager::GENERAL, LocalizationManager::G_RETURN).c_str ()),
+			const_cast<char*> (localizationManager.GetLocalizedApplicationText (GENERAL, LocalizationManager::G_RETURN).c_str ()),
 			window.rect.x + button_padding,
 			window.rect.y + button_padding
 				);
@@ -156,7 +156,7 @@ void menu_options::Create (LocalizationManager &localizationManager, int &draw)
 		kiss_button_new (
 			&button_back,
 			&window,
-			const_cast<char*> (localizationManager.GetLocalizedApplicationText (LocalizationManager::GENERAL, LocalizationManager::G_RETURN).c_str ()),
+			const_cast<char*> (localizationManager.GetLocalizedApplicationText (GENERAL, LocalizationManager::G_RETURN).c_str ()),
 			window.rect.x + button_padding,
 			window.rect.y + button_padding
 				);
@@ -167,8 +167,8 @@ void menu_options::Create (LocalizationManager &localizationManager, int &draw)
 		kiss_label_new (
 			&label_title,
 			&window,
-			const_cast<char*> (localizationManager.GetLocalizedApplicationText (LocalizationManager::OPTIONS, LocalizationManager::O_OPTIONS).c_str ()),
-			window.rect.x + ((window.rect.w / 2) - (kiss_textwidth (font_title, const_cast<char*> (localizationManager.GetLocalizedApplicationText (LocalizationManager::OPTIONS, LocalizationManager::O_OPTIONS).c_str ()), NULL) / 2)),
+			const_cast<char*> (localizationManager.GetLocalizedApplicationText (OPTIONS, LocalizationManager::O_OPTIONS).c_str ()),
+			window.rect.x + ((window.rect.w / 2) - (kiss_textwidth (font_title, const_cast<char*> (localizationManager.GetLocalizedApplicationText (OPTIONS, LocalizationManager::O_OPTIONS).c_str ()), NULL) / 2)),
 			window.rect.y + 10
 				);
 		label_title.textcolor = kiss_white;
@@ -196,7 +196,7 @@ void menu_about::Create (LocalizationManager &localizationManager, int &draw)
 		kiss_button_new (
 			&button_back,
 			&window,
-			const_cast<char*> (localizationManager.GetLocalizedApplicationText (LocalizationManager::GENERAL, LocalizationManager::G_RETURN).c_str ()),
+			const_cast<char*> (localizationManager.GetLocalizedApplicationText (GENERAL, LocalizationManager::G_RETURN).c_str ()),
 			window.rect.x + button_padding,
 			window.rect.x + button_padding
 				);
@@ -204,7 +204,7 @@ void menu_about::Create (LocalizationManager &localizationManager, int &draw)
 		kiss_array_append (&m_gui_objects, GUI_BUTTON, &button_back); /* Index: 1 */
 		
 		
-		int titleWidth = kiss_textwidth (font_subtitle, const_cast<char*> (localizationManager.GetLocalizedApplicationText (LocalizationManager::ABOUT, LocalizationManager::A_THE_LIGHTYEAR_INTERACTIVE_FICTION_ENGINE).c_str ()), NULL);
+		int titleWidth = kiss_textwidth (font_subtitle, const_cast<char*> (localizationManager.GetLocalizedApplicationText (ABOUT, LocalizationManager::A_THE_LIGHTYEAR_INTERACTIVE_FICTION_ENGINE).c_str ()), NULL);
 		kiss_window_new (&scroll_view, NULL, NO, NO, (window.rect.w / 2) - (titleWidth / 2) - 10, 0, titleWidth + 20, 770);
 		kiss_array_append (&m_gui_objects, GUI_WINDOW, &scroll_view); /* Index: 2 */
 		
@@ -215,8 +215,8 @@ void menu_about::Create (LocalizationManager &localizationManager, int &draw)
 		kiss_label_new (
 			&label_title,
 			&scroll_view,
-			const_cast<char*> (localizationManager.GetLocalizedApplicationText (LocalizationManager::ABOUT, LocalizationManager::A_ABOUT).c_str ()),
-			scroll_view.rect.x + ((scroll_view.rect.w / 2) - (kiss_textwidth (font_title, const_cast<char*> (localizationManager.GetLocalizedApplicationText (LocalizationManager::ABOUT, LocalizationManager::A_ABOUT).c_str ()), NULL) / 2)),
+			const_cast<char*> (localizationManager.GetLocalizedApplicationText (ABOUT, LocalizationManager::A_ABOUT).c_str ()),
+			scroll_view.rect.x + ((scroll_view.rect.w / 2) - (kiss_textwidth (font_title, const_cast<char*> (localizationManager.GetLocalizedApplicationText (ABOUT, LocalizationManager::A_ABOUT).c_str ()), NULL) / 2)),
 			scroll_view.rect.y + 10
 				);
 		label_title.textcolor = kiss_white;
@@ -226,7 +226,7 @@ void menu_about::Create (LocalizationManager &localizationManager, int &draw)
 		kiss_label_new (
 			&label_preamble_top,
 			&scroll_view,
-			const_cast<char*> (localizationManager.GetLocalizedApplicationText (LocalizationManager::ABOUT, LocalizationManager::A_THE_LIGHTYEAR_INTERACTIVE_FICTION_ENGINE).c_str ()),
+			const_cast<char*> (localizationManager.GetLocalizedApplicationText (ABOUT, LocalizationManager::A_THE_LIGHTYEAR_INTERACTIVE_FICTION_ENGINE).c_str ()),
 			scroll_view.rect.x + ((scroll_view.rect.w / 2) - (titleWidth / 2)),
 			label_title.rect.y + font_title.fontheight
 				);
@@ -237,8 +237,8 @@ void menu_about::Create (LocalizationManager &localizationManager, int &draw)
 		kiss_label_new (
 			&label_preamble_bottom,
 			&scroll_view,
-			const_cast<char*> (localizationManager.GetLocalizedApplicationText (LocalizationManager::ABOUT, LocalizationManager::A_HAS_BEEN_LOVINGLY_CREATED_BY).c_str ()),
-			scroll_view.rect.x + ((scroll_view.rect.w / 2) - (kiss_textwidth (font_subtitle, const_cast<char*> (localizationManager.GetLocalizedApplicationText (LocalizationManager::ABOUT, LocalizationManager::A_HAS_BEEN_LOVINGLY_CREATED_BY).c_str ()), NULL) / 2)),
+			const_cast<char*> (localizationManager.GetLocalizedApplicationText (ABOUT, LocalizationManager::A_HAS_BEEN_LOVINGLY_CREATED_BY).c_str ()),
+			scroll_view.rect.x + ((scroll_view.rect.w / 2) - (kiss_textwidth (font_subtitle, const_cast<char*> (localizationManager.GetLocalizedApplicationText (ABOUT, LocalizationManager::A_HAS_BEEN_LOVINGLY_CREATED_BY).c_str ()), NULL) / 2)),
 			label_preamble_top.rect.y + font_subtitle.fontheight
 				);
 		label_preamble_bottom.textcolor = kiss_white;
@@ -250,8 +250,8 @@ void menu_about::Create (LocalizationManager &localizationManager, int &draw)
 		kiss_label_new (
 			&label_twocatstudios,
 			&scroll_view,
-			const_cast<char*> (localizationManager.GetLocalizedApplicationText (LocalizationManager::ABOUT, LocalizationManager::A_2CATSTUDIOS).c_str ()),
-			scroll_view.rect.x + ((scroll_view.rect.w / 2) - (kiss_textwidth (font_subtitle, const_cast<char*> (localizationManager.GetLocalizedApplicationText (LocalizationManager::ABOUT, LocalizationManager::A_2CATSTUDIOS).c_str ()), NULL) / 2)),
+			const_cast<char*> (localizationManager.GetLocalizedApplicationText (ABOUT, LocalizationManager::A_2CATSTUDIOS).c_str ()),
+			scroll_view.rect.x + ((scroll_view.rect.w / 2) - (kiss_textwidth (font_subtitle, const_cast<char*> (localizationManager.GetLocalizedApplicationText (ABOUT, LocalizationManager::A_2CATSTUDIOS).c_str ()), NULL) / 2)),
 			label_preamble_bottom.rect.y + font_subtitle.fontheight + label_padding
 				);
 		label_twocatstudios.textcolor = kiss_white;
@@ -267,8 +267,8 @@ void menu_about::Create (LocalizationManager &localizationManager, int &draw)
 		kiss_label_new (
 			&label_team_michaelb,
 			&scroll_view,
-			const_cast<char*> (localizationManager.GetLocalizedApplicationText (LocalizationManager::ABOUT, LocalizationManager::A_MICHAEL_BETHKE_LEAD_DEVELOPER).c_str ()),
-			scroll_view.rect.x + ((scroll_view.rect.w / 2) - (kiss_textwidth (font_subtitle, const_cast<char*> (localizationManager.GetLocalizedApplicationText (LocalizationManager::ABOUT, LocalizationManager::A_MICHAEL_BETHKE_LEAD_DEVELOPER).c_str ()), NULL) / 2)),
+			const_cast<char*> (localizationManager.GetLocalizedApplicationText (ABOUT, LocalizationManager::A_MICHAEL_BETHKE_LEAD_DEVELOPER).c_str ()),
+			scroll_view.rect.x + ((scroll_view.rect.w / 2) - (kiss_textwidth (font_subtitle, const_cast<char*> (localizationManager.GetLocalizedApplicationText (ABOUT, LocalizationManager::A_MICHAEL_BETHKE_LEAD_DEVELOPER).c_str ()), NULL) / 2)),
 			label_twocatstudios.rect.y + font_subtitle.fontheight + label_padding
 				);
 		label_team_michaelb.textcolor = kiss_white;
@@ -278,8 +278,8 @@ void menu_about::Create (LocalizationManager &localizationManager, int &draw)
 		kiss_label_new (
 			&label_team_janh,
 			&scroll_view,
-			const_cast<char*> (localizationManager.GetLocalizedApplicationText (LocalizationManager::ABOUT, LocalizationManager::A_JAN_HEEMSTRA_FEEDBACK_AND_SUPPORT).c_str ()),
-			scroll_view.rect.x + ((scroll_view.rect.w / 2) - (kiss_textwidth (font_subtitle, const_cast<char*> (localizationManager.GetLocalizedApplicationText (LocalizationManager::ABOUT, LocalizationManager::A_JAN_HEEMSTRA_FEEDBACK_AND_SUPPORT).c_str ()), NULL) / 2)),
+			const_cast<char*> (localizationManager.GetLocalizedApplicationText (ABOUT, LocalizationManager::A_JAN_HEEMSTRA_FEEDBACK_AND_SUPPORT).c_str ()),
+			scroll_view.rect.x + ((scroll_view.rect.w / 2) - (kiss_textwidth (font_subtitle, const_cast<char*> (localizationManager.GetLocalizedApplicationText (ABOUT, LocalizationManager::A_JAN_HEEMSTRA_FEEDBACK_AND_SUPPORT).c_str ()), NULL) / 2)),
 			label_team_michaelb.rect.y + font_subtitle.fontheight
 				);
 		label_team_janh.textcolor = kiss_white;
@@ -290,8 +290,8 @@ void menu_about::Create (LocalizationManager &localizationManager, int &draw)
 		kiss_label_new (
 			&label_thanksto,
 			&scroll_view,
-			const_cast<char*> (localizationManager.GetLocalizedApplicationText (LocalizationManager::ABOUT, LocalizationManager::A_WITH_THANKS_TO).c_str ()),
-			scroll_view.rect.x + ((scroll_view.rect.w / 2) - (kiss_textwidth (font_subtitle, const_cast<char*> (localizationManager.GetLocalizedApplicationText (LocalizationManager::ABOUT, LocalizationManager::A_WITH_THANKS_TO).c_str ()), NULL) / 2)),
+			const_cast<char*> (localizationManager.GetLocalizedApplicationText (ABOUT, LocalizationManager::A_WITH_THANKS_TO).c_str ()),
+			scroll_view.rect.x + ((scroll_view.rect.w / 2) - (kiss_textwidth (font_subtitle, const_cast<char*> (localizationManager.GetLocalizedApplicationText (ABOUT, LocalizationManager::A_WITH_THANKS_TO).c_str ()), NULL) / 2)),
 			label_team_janh.rect.y + (font_subtitle.fontheight * 2)
 				);
 		label_thanksto.textcolor = kiss_white;
@@ -307,8 +307,8 @@ void menu_about::Create (LocalizationManager &localizationManager, int &draw)
 		kiss_label_new (
 			&label_supporters_bleikur,
 			&scroll_view,
-			const_cast<char*> (localizationManager.GetLocalizedApplicationText (LocalizationManager::ABOUT, LocalizationManager::A_BLEIKUR_DESIGN_AND_FEEDBACK).c_str ()),
-			scroll_view.rect.x + ((scroll_view.rect.w / 2) - (kiss_textwidth (font_subtitle, const_cast<char*> (localizationManager.GetLocalizedApplicationText (LocalizationManager::ABOUT, LocalizationManager::A_BLEIKUR_DESIGN_AND_FEEDBACK).c_str ()), NULL) / 2)),
+			const_cast<char*> (localizationManager.GetLocalizedApplicationText (ABOUT, LocalizationManager::A_BLEIKUR_DESIGN_AND_FEEDBACK).c_str ()),
+			scroll_view.rect.x + ((scroll_view.rect.w / 2) - (kiss_textwidth (font_subtitle, const_cast<char*> (localizationManager.GetLocalizedApplicationText (ABOUT, LocalizationManager::A_BLEIKUR_DESIGN_AND_FEEDBACK).c_str ()), NULL) / 2)),
 			label_thanksto.rect.y + font_subtitle.fontheight
 				);
 		label_supporters_bleikur.textcolor = kiss_white;
@@ -318,8 +318,8 @@ void menu_about::Create (LocalizationManager &localizationManager, int &draw)
 		kiss_label_new (
 			&label_supporters_tarvok,
 			&scroll_view,
-			const_cast<char*> (localizationManager.GetLocalizedApplicationText (LocalizationManager::ABOUT, LocalizationManager::A_TARVO_KORROVITS_KISS_SDL).c_str ()),
-			scroll_view.rect.x + ((scroll_view.rect.w / 2) - (kiss_textwidth (font_subtitle, const_cast<char*> (localizationManager.GetLocalizedApplicationText (LocalizationManager::ABOUT, LocalizationManager::A_TARVO_KORROVITS_KISS_SDL).c_str ()), NULL) / 2)),
+			const_cast<char*> (localizationManager.GetLocalizedApplicationText (ABOUT, LocalizationManager::A_TARVO_KORROVITS_KISS_SDL).c_str ()),
+			scroll_view.rect.x + ((scroll_view.rect.w / 2) - (kiss_textwidth (font_subtitle, const_cast<char*> (localizationManager.GetLocalizedApplicationText (ABOUT, LocalizationManager::A_TARVO_KORROVITS_KISS_SDL).c_str ()), NULL) / 2)),
 			label_supporters_bleikur.rect.y + font_subtitle.fontheight
 				);
 		label_supporters_tarvok.textcolor = kiss_white;
@@ -338,7 +338,7 @@ void Menu::Create (LocalizationManager &localizationManager, int &draw) {}
 int RenderingManager::InitializeKISS ()
 {
 	
-	m_renderer = kiss_init (localizationManager->GetLocalizedApplicationText (LocalizationManager::GENERAL, LocalizationManager::G_LIGHTYEAR).c_str (), &objects, 1024, 576);
+	m_renderer = kiss_init (localizationManager->GetLocalizedApplicationText (GENERAL, LocalizationManager::G_LIGHTYEAR).c_str (), &objects, 1024, 576);
 	m_AddExternalAssets (&objects);
 	
 	renderingManager = this;
@@ -346,67 +346,6 @@ int RenderingManager::InitializeKISS ()
 	return 0;
 }
 
-/*
-std::string RenderingManager::GetApplicationPath ()
-{
-	
-	if (m_applicationPath.empty ())
-	{
-		
-		std::string base_path = SDL_GetBasePath ();
-		
-		if (base_path.empty ())
-			base_path = "./";
-		
-		m_applicationPath = base_path;
-	}
-	
-	return m_applicationPath;
-}
-
-
-std::string RenderingManager::GetResourcesPath ()
-{
-	
-	if (m_resourcesPath.empty ())
-	{
-		
-		std::string fullPath = GetApplicationPath ();
-		std::string appendedString = fullPath;
-		
-		if (fullPath != "./")
-		{
-			
-			appendedString.pop_back ();
-			appendedString = appendedString.substr (0, appendedString.find_last_of (PATH_SEPARATOR) + 1);
-			appendedString.append ("resources");
-			appendedString += PATH_SEPARATOR;
-		}
-		
-		m_resourcesPath = appendedString;
-	}
-	
-	return m_resourcesPath;
-}
-
-
-std::string RenderingManager::GetPreferencesPath ()
-{
-	
-	if (m_preferencesPath.empty ())
-	{
-		
-		std::string base_path = SDL_GetPrefPath ("2Cat Studios", "LightYear IF");
-		
-		if (base_path.empty ())
-			base_path = "./";
-		
-		m_preferencesPath = base_path;
-	}
-	
-	return m_preferencesPath;
-}
-*/
 
 bool RenderingManager::IsRetinaDisplay (const bool force_recalculate = false)
 {
@@ -567,7 +506,11 @@ void RenderingManager::m_DrawMenu (Menu &menu)
 {
 	
 	if (menu.created == false)
+	{
+		
 		menu.Create (*localizationManager, draw);
+		std::cout << "Create " << menu.name () << std::endl;
+	}
 	
 	for (int index = 0; index < menu.gui_objects_array ()->length; index += 1)
 	{
