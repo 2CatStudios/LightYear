@@ -10,7 +10,7 @@ pugi::xml_parse_result XMLManager::ReadFromFileToDoc (const std::string filePath
 
 void XMLManager::CreateDocumentTree (pugi::xml_document &doc, std::map <int, std::string> *localizations)
 {
-	pugi::xml_node localizationHeaders [5] = {
+	pugi::xml_node localizationHeaders [LOCALIZATION_HEADERS_COUNT + 1] = {
 		doc.child ("Localization").child ("Meta"),
 		doc.child ("Localization").child ("General"),
 		doc.child ("Localization").child ("Windows").child ("MainMenu"),
@@ -19,7 +19,7 @@ void XMLManager::CreateDocumentTree (pugi::xml_document &doc, std::map <int, std
 	};
 	
 	int headerIndex = 0;
-	while (headerIndex < LOCALIZATION_HEADERS_COUNT)
+	while (headerIndex <= LOCALIZATION_HEADERS_COUNT)
 	{
 		
 		for (pugi::xml_node langString = localizationHeaders[headerIndex].first_child (); langString; langString = langString.next_sibling ())
@@ -40,33 +40,7 @@ void XMLManager::CreateDocumentTree (pugi::xml_document &doc, std::map <int, std
 void XMLManager::m_PopulateApplicationLocalizationMap (const unsigned int menu, const unsigned int index, const std::string string, std::map <int, std::string> *localizations)
 {
 	
-	std::map <int, std::string> *localizationMap;
-	
-	localizationMap = &localizations[menu];
-	
-	/*switch (menu)
-	{
-		
-		case META:
-			localizationMap = &m_metaLocalization;
-			break;
-			
-		case GENERAL:
-			localizationMap = &m_generalLocalization;
-			break;
-		
-		case MAINMENU:
-			localizationMap = &m_mainMenuLocalization;
-			break;
-			
-		case OPTIONS:
-			localizationMap = &m_optionsLocalization;
-			break;
-	
-		case ABOUT:
-			localizationMap = &m_aboutLocalization;
-			break;
-	}*/
-	
+	std::map <int, std::string> *localizationMap = &localizations[menu];
+
 	localizationMap->insert (std::map<int, std::string>::value_type (index, string));
 }

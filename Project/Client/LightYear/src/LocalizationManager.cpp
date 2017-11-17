@@ -25,7 +25,7 @@ int LocalizationManager::LoadApplicationText (const std::string fileLocation, co
 		xml.CreateDocumentTree (doc, *m_localizations);
 	} else {
 		
-		std::cout << "Unable to locate either " << language << " or english-us localization file. This is a fatal error. Check application resources for desired localization." << std::endl;
+		std::cout << "Unable to locate either " << language << " or english-us localization file. This is a fatal error, you should probably reinstall the application." << std::endl;
 		
 		return 1;
 	}

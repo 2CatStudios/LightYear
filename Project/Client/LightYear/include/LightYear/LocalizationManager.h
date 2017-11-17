@@ -42,7 +42,8 @@ public:
 	};
 	
 	enum LocalizationOptions {
-		O_OPTIONS = 0
+		O_OPTIONS = 0,
+		O_TEST = 1
 	};
 	
 	enum LocalizationAbout {

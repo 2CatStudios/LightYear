@@ -22,16 +22,12 @@ public:
 	friend struct menu_about;
 	
 	bool created = false;
-	virtual const std::string name ()
-	{
-	
-		return "Null";
-	};
+	virtual const std::string name () { return "Null"; }
 	
 	kiss_array *gui_objects_array ();
 	kiss_window window;
 	
-	virtual void Create (LocalizationManager &localizationManager, int &draw);
+	virtual int Create (LocalizationManager &localizationManager, int &draw);
 	
 private:
 	kiss_array m_gui_objects;
@@ -43,11 +39,7 @@ private:
 typedef struct menu_main : Menu
 {
 	
-	const std::string name ()
-	{
-		
-		return "Main Menu";
-	}
+	const std::string name () { return "Main Menu"; }
 	
 	kiss_label label_version;
 	kiss_label label_title;
@@ -62,7 +54,7 @@ typedef struct menu_main : Menu
 	float scroll_view_starting_x;
 	float scroll_view_starting_y;
 	
-	void Create (LocalizationManager &localizationManager, int &draw);
+	int Create (LocalizationManager &localizationManager, int &draw);
 
 } menu_main;
 
@@ -70,15 +62,11 @@ typedef struct menu_main : Menu
 typedef struct menu_selectgame : Menu
 {
 	
-	const std::string name ()
-	{
-		
-		return "Select Game Menu";
-	}
+	const std::string name () { return "Select Game Menu"; }
 	
 	kiss_button button_back;
 	
-	void Create (LocalizationManager &localizationManager, int &draw);
+	int Create (LocalizationManager &localizationManager, int &draw);
 
 } menu_selectgame;
 
@@ -86,17 +74,14 @@ typedef struct menu_selectgame : Menu
 typedef struct menu_options : Menu
 {
 	
-	const std::string name ()
-	{
-		
-		return "Options Menu";
-	}
+	const std::string name () { return "Options Menu"; }
 	
 	kiss_button button_back;
 	
 	kiss_label label_title;
+	kiss_label label_test;
 	
-	void Create (LocalizationManager &localizationManager, int &draw);
+	int Create (LocalizationManager &localizationManager, int &draw);
 
 } menu_options;
 
@@ -104,11 +89,7 @@ typedef struct menu_options : Menu
 typedef struct menu_about : Menu
 {
 	
-	const std::string name ()
-	{
-		
-		return "About Menu";
-	}
+	const std::string name () { return "About Menu"; }
 	
 	kiss_button button_back;
 	
@@ -129,7 +110,7 @@ typedef struct menu_about : Menu
 	kiss_label label_supporters_bleikur;
 	kiss_label label_supporters_tarvok;
 	
-	void Create (LocalizationManager &localizationManager, int &draw);
+	int Create (LocalizationManager &localizationManager, int &draw);
 
 } menu_about;
 
@@ -153,11 +134,6 @@ public:
 	int draw = YES;
 	
 	int InitializeKISS ();
-	/*
-	std::string GetApplicationPath ();
-	std::string GetResourcesPath ();
-	std::string GetPreferencesPath ();
-	*/
 	
 	bool IsRetinaDisplay (const bool force_recalculate);
 	
@@ -169,12 +145,6 @@ public:
 
 private:
 	SDL_Renderer *m_renderer;
-	
-	/*
-	std::string m_applicationPath;
-	std::string m_resourcesPath;
-	std::string m_preferencesPath;
-	*/
 	
 	int m_retinaDisplay = -1;
 	float m_dpi_difference = -1;

@@ -10,7 +10,7 @@ kiss_array *Menu::gui_objects_array ()
 }
 
 
-void menu_main::Create (LocalizationManager &localizationManager, int &draw)
+int menu_main::Create (LocalizationManager &localizationManager, int &draw)
 {
 	
 	if (created == false)
@@ -110,10 +110,12 @@ void menu_main::Create (LocalizationManager &localizationManager, int &draw)
 		created = true;
 		draw = 1;
 	}
+	
+	return 0;
 }
 
 
-void menu_selectgame::Create (LocalizationManager &localizationManager, int &draw)
+int menu_selectgame::Create (LocalizationManager &localizationManager, int &draw)
 {
 	
 	if (created == false)
@@ -138,10 +140,12 @@ void menu_selectgame::Create (LocalizationManager &localizationManager, int &dra
 		created = true;
 		draw = 1;
 	}
+	
+	return 0;
 }
 
 
-void menu_options::Create (LocalizationManager &localizationManager, int &draw)
+int menu_options::Create (LocalizationManager &localizationManager, int &draw)
 {
 	
 	if (created == false)
@@ -175,13 +179,27 @@ void menu_options::Create (LocalizationManager &localizationManager, int &draw)
 		label_title.font = font_title;
 		kiss_array_append (&m_gui_objects, GUI_LABEL, &label_title); /* Index: 2 */
 		
+		kiss_label_new (
+			&label_test,
+			&window,
+			const_cast<char*> (localizationManager.GetLocalizedApplicationText (OPTIONS, LocalizationManager::O_TEST).c_str ()),
+			window.rect.x + ((window.rect.w / 2) - (kiss_textwidth (font_subtitle, const_cast<char*> (localizationManager.GetLocalizedApplicationText (OPTIONS, LocalizationManager::O_TEST).c_str ()), NULL) / 2)),
+			label_test.rect.y + font_title.fontheight + 60
+		);
+		
+		label_test.textcolor = kiss_white;
+		label_test.font = font_subtitle;
+		kiss_array_append (&m_gui_objects, GUI_LABEL, &label_test); /* Index: 3 */	
+		
 		created = true;
 		draw = 1;
 	}
+	
+	return 0;
 }
 
 
-void menu_about::Create (LocalizationManager &localizationManager, int &draw)
+int menu_about::Create (LocalizationManager &localizationManager, int &draw)
 {
 	
 	if (created == false)
@@ -329,10 +347,18 @@ void menu_about::Create (LocalizationManager &localizationManager, int &draw)
 		created = true;
 		draw = 1;
 	}
+	
+	return 0;
 }
 
 
-void Menu::Create (LocalizationManager &localizationManager, int &draw) {}
+int Menu::Create (LocalizationManager &localizationManager, int &draw)
+{
+	
+	std::cout << "Tried to create non-inherited menu! This is a fatal error. Contact the developers about this, please." << std::endl;
+	
+	return 1;
+}
 
 
 int RenderingManager::InitializeKISS ()
@@ -509,7 +535,12 @@ void RenderingManager::m_DrawMenu (Menu &menu)
 	{
 		
 		menu.Create (*localizationManager, draw);
-		std::cout << "Create " << menu.name () << std::endl;
+		
+		if (DEBUG == true)
+		{
+			
+			std::cout << "Creating: " << menu.name () << std::endl;
+		}
 	}
 	
 	for (int index = 0; index < menu.gui_objects_array ()->length; index += 1)

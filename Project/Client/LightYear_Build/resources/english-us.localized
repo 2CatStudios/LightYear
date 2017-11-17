@@ -27,6 +27,7 @@
 		
 		<Options>
 			<string index="0">Options</string>
+			<string index="1">Test String!</string>
 		</Options>
 		
 		<About>
